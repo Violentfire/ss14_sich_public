@@ -1,0 +1,21 @@
+﻿- type: entity
+  id: FirelockElectronics
+  parent: BaseElectronics
+  name: плата протипожежних дверей
+  description: Плата, що використовується в збірці протипожежних дверей.
+  components:
+    - type: Item
+      storedRotation: 0
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: mainboard
+    - type: Tag
+      tags:
+      - FirelockElectronics
+    - type: StaticPrice
+      price: 14
+    - type: PhysicalComposition
+      materialComposition:
+        Glass: 0
+      chemicalComposition:
+        Silicon: 20

@@ -1,0 +1,121 @@
+- type: entity
+  id: Joint
+  parent: BaseCigar
+  name: косяк
+  description: Згорток висушенної рослинної сировини, загорнутий у тонкий папір.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Smokeables/Cannabis/joint.rsi
+    state: unlit-icon
+  - type: Tag
+    tags:
+      - Cigarette
+      - Trash
+  - type: SpaceGarbage
+  - type: Clothing
+    sprite: Objects/Consumable/Smokeables/Cannabis/joint.rsi
+    slots: [ mask ]
+    equippedPrefix: unlit
+  - type: Item
+    size: Tiny
+  - type: Construction
+    graph: smokeableJoint
+    node: joint
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 30
+        reagents:
+          - ReagentId: THC
+            Quantity: 20
+  - type: RandomMetadata
+    nameSegments: [NamesRollie]
+
+- type: entity
+  id: JointRainbow
+  parent: Joint
+  name: косяк
+  suffix: Веселковий
+  description: Згорток висушенної рослинної сировини, загорнутий у тонкий папір. Кольоровий всередині..
+  components:
+  - type: Construction
+    graph: smokeableJointRainbow
+    node: jointRainbow
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 20
+        reagents:
+        - ReagentId: SpaceDrugs
+          Quantity: 4
+        - ReagentId: Lipolicide
+          Quantity: 4
+        - ReagentId: MindbreakerToxin
+          Quantity: 2.66
+        - ReagentId: Happiness
+          Quantity: 2.66
+#       - ReagentId: ColorfulReagent
+#         Quantity: 1.33
+        - ReagentId: Psicodine
+          Quantity: 0.8
+
+- type: entity
+  id: Blunt
+  parent: BaseCigar
+  name: косяк
+  description: Згорток висушенної рослинної сировини, загорнутий у тютюновий лист.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Smokeables/Cannabis/blunt.rsi
+    state: unlit-icon
+  - type: Tag
+    tags:
+      - Cigarette
+      - Trash
+  - type: SpaceGarbage
+  - type: Clothing
+    sprite: Objects/Consumable/Smokeables/Cannabis/blunt.rsi
+    slots: [ mask ]
+    equippedPrefix: unlit
+  - type: Item
+    size: Tiny
+  - type: Construction
+    graph: smokeableBlunt
+    node: blunt
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 30
+        reagents:
+          - ReagentId: THC
+            Quantity: 20
+  - type: RandomMetadata
+    nameSegments: [NamesRollie]
+
+- type: entity
+  id: BluntRainbow
+  parent: Blunt
+  name: косяк
+  suffix: Веселковий
+  description: Згорток висушенної рослинної сировини, загорнутий у тютюновий лист. Кольоровий в середині...
+  components:
+  - type: Construction
+    graph: smokeableBluntRainbow
+    node: bluntRainbow
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 20
+        reagents:
+        - ReagentId: SpaceDrugs
+          Quantity: 4
+        - ReagentId: Lipolicide
+          Quantity: 4
+        - ReagentId: MindbreakerToxin
+          Quantity: 2.66
+        - ReagentId: Happiness
+          Quantity: 2.66
+#       - ReagentId: ColorfulReagent
+#         Quantity: 1.33
+        - ReagentId: Psicodine
+          Quantity: 0.8

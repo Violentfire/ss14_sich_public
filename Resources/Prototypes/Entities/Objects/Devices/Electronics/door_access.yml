@@ -1,0 +1,328 @@
+# Command
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsCaptain
+  suffix: Капітанська, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Captain"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsHeadOfPersonnel
+  suffix: ГоловиПерсоналу, Зачинено
+  components:
+  - type: AccessReader
+    access: [["HeadOfPersonnel"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsCommand
+  suffix: Командний, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Command"]]
+
+# Service
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsBar
+  suffix: Бар, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Bar"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsBarKitchen
+  suffix: Бар, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Bar"], ["Kitchen"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsHydroponics
+  suffix: Гідропоніка, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Hydroponics"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsChapel
+  suffix: Церква, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Chapel"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsTheatre
+  suffix: Театр, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Theatre"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsKitchen
+  suffix: Кухня, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Kitchen"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsKitchenHydroponics
+  suffix: Кухня/Гідропоніка, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Kitchen"], ["Hydroponics"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsJanitor
+  suffix: Прибиральник, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Janitor"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsLawyer
+  suffix: Адвокат, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Lawyer"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsService
+  suffix: Сервіс, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Service"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsServiceTheatre
+  suffix: Service, Theatre, Locked
+  components:
+  - type: AccessReader
+    access: [["Service"], ["Theatre"]]
+
+# Cargo
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsQuartermaster
+  suffix: ГоловаКарго, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Quartermaster"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsSalvage
+  suffix: Шахтар, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Salvage"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsCargo
+  suffix: Карго, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Cargo"]]
+
+# Engineering
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsChiefEngineer
+  suffix: ГоловнийІнженер, Зачинено
+  components:
+  - type: AccessReader
+    access: [["ChiefEngineer"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsAtmospherics
+  suffix: Атмосферний, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Atmospherics"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsEngineering
+  suffix: Інженер, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Engineering"]]
+
+# Science
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsMorgue
+  suffix: Морг, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Medical"], ["Detective"], ["Chapel"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsResearchDirector
+  suffix: ДиректорНауковогоВідділу, Зачинено
+  components:
+  - type: AccessReader
+    access: [["ResearchDirector"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsMedicalResearch
+  suffix: Медичний/Науковий, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Research"], ["Medical"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsResearch
+  suffix: Науковий, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Research"]]
+
+# Security
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsHeadOfSecurity
+  suffix: ГоловаБезпеки, Зачинено
+  components:
+  - type: AccessReader
+    access: [["HeadOfSecurity"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsArmory
+  suffix: Зброярня, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Armory"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsDetective
+  suffix: Детектив, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Detective"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsSecurity
+  suffix: Охорона, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Security"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsSecurityLawyer
+  suffix: Охорона/Адвокат, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Security"], ["Lawyer"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsBrig
+  suffix: Бріг, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Brig"]]
+
+# Medical
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsChiefMedicalOfficer
+  suffix: ГоловнийЛікар, Зачинено
+  components:
+  - type: AccessReader
+    access: [["ChiefMedicalOfficer"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsChemistry
+  suffix: ХімічнаЛабораторія, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Chemistry"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsMedical
+  suffix: Медичний, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Medical"]]
+
+# Syndicate
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsNukeop
+  suffix: Ядерники, Зачинено
+  components:
+  - type: AccessReader
+    access: [["NuclearOperative"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsSyndicateAgent
+  suffix: АгентСиндикату, Зачинено
+  components:
+  - type: AccessReader
+    access: [["SyndicateAgent"]]
+
+# Misc
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsCentralCommand
+  suffix: ЦентральнеКомандування, Зачинено
+  components:
+  - type: AccessReader
+    access: [["CentralCommand"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsExternal
+  suffix: Зовнішній, Зачинено
+  components:
+  - type: AccessReader
+    access: [["External"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsMaintenance
+  suffix: Обслуговування, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Maintenance"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsVault
+  suffix: Сховище, Зачинено
+  components:
+  - type: AccessReader
+    access: [["Security"], ["Command"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsXenoborg
+  suffix: Xenoborg, Locked
+  components:
+  - type: AccessReader
+    access: [["Xenoborg"]]

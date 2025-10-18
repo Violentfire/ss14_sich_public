@@ -1,0 +1,160 @@
+- type: entity
+  id: BannerBase
+  parent: BaseStructureDynamic
+  name: базовий банер
+  description: Це концепція банера, ви не повинні цього бачити.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner
+    noRot: true
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  id: BannerNanotrasen
+  parent: BannerBase
+  name: банер нанотрейзен
+  description: Банер з логотипом Нанотрейзен. Виглядає досить дешево.
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner
+
+- type: entity
+  id: BannerCargo
+  parent: BannerBase
+  name: банер карго
+  description: Банер, у кольорах відділу Карго. Ні... Каргонії.
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner_cargo
+
+- type: entity
+  id: BannerEngineering
+  parent: BannerBase
+  name: банер інженерного відділу
+  description: Банер, у кольорах інженерного відділу. Сингулярно.
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner_engineering
+
+- type: entity
+  id: BannerMedical
+  parent: BannerBase
+  name: банер медичного відділу
+  description: Банер, у кольорах медичного відділу. Як стерильно.
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner_medical
+
+- type: entity
+  id: BannerRevolution
+  parent: BannerBase
+  name: банер революціонерів
+  description: Банер у кольорах революціонерів. Віва революція!
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner_revolution
+
+- type: entity
+  id: BannerSyndicate
+  parent: BannerBase
+  name: банер синдикату
+  description: Банер, від якого, на думку синдикату, ви повинні відчувати ненависть до НТ.
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner_syndicate
+
+- type: entity
+  id: BannerScience
+  parent: BannerBase
+  name: банер наукового відділу
+  description: Банер із зображенням кольорів наукового відділу. Де наука не має меж, а правила рідко дотримуються.
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner_science
+
+- type: entity
+  id: BannerSecurity
+  parent: BannerBase
+  name: банер відділу безпеки
+  description: Банер із зображенням кольорів служби безпеки. Ви здивовані, що це не вандалізм.
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner_security
+
+- type: entity
+  id: BannerBlue
+  parent: BannerBase
+  name: синій банер
+  description: Банер у синіх кольорах. Дабудідабудай.
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner-blue
+
+- type: entity
+  id: BannerRed
+  parent: BannerBase
+  name: червоний банер
+  description: Банер у червоних кольорах. Крутий банер.
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner-red
+
+- type: entity
+  id: BannerYellow
+  parent: BannerBase
+  name: жовтий банер
+  description: Банер у жовтих кольорах. Нагадує качок та лимонні кіоски.
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner-yellow
+
+- type: entity
+  id: BannerGreen
+  parent: BannerBase
+  name: зелений банер
+  description: Банер у зелених кольорах. Трава, листя, гуакамоле.
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner-green
+
+

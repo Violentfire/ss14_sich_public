@@ -1,0 +1,126 @@
+- type: entity
+  name: коробка шприців
+  parent: BoxCardboard
+  id: BoxSyringe
+  description: Коробка повна шприців.
+  components:
+  - type: StorageFill
+    contents:
+      - id: Syringe
+        amount: 6
+  - type: Sprite
+    layers:
+      - state: box
+      - state: syringe
+
+- type: entity
+  name: коробка упаковок для пігулок
+  parent: BoxCardboard
+  id: BoxPillCanister
+  description: Повна коробка упаковок для пігулок.
+  components:
+  - type: StorageFill
+    contents:
+      - id: PillCanister
+        amount: 9
+  - type: Sprite
+    layers:
+      - state: box
+      - state: pillbox
+
+- type: entity
+  name: коробка з пляшками
+  parent: BoxCardboard
+  id: BoxBottle
+  description: Повна коробка пляшок.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ChemistryEmptyBottle01
+        amount: 6
+  - type: Sprite
+    layers:
+      - state: box
+      - state: bottle
+
+- type: entity
+  name: коробка стерильних масок
+  parent: BoxCardboard
+  id: BoxSterileMask
+  description: Ця коробка містить стерильні маски.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingMaskSterile
+        amount: 4
+  - type: Sprite
+    layers:
+      - state: box
+      - state: sterile
+
+- type: entity
+  name: коробка латексних рукавиць
+  parent: BoxCardboard
+  id: BoxLatexGloves
+  description: Містить стерильні латексні рукавиці.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingHandsGlovesLatex
+        amount: 4
+  - type: Sprite
+    layers:
+      - state: box
+      - state: latex
+
+- type: entity
+  name: коробка нітрилових рукавиць
+  parent: BoxCardboard
+  id: BoxNitrileGloves
+  description: Містить нітрилові рукавиці. Краще за латексні.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingHandsGlovesNitrile
+        amount: 4
+  - type: Sprite
+    layers:
+      - state: box
+      - state: nitrile
+
+- type: entity
+  name: коробка мішків для трупів
+  parent: BoxCardboard
+  id: BoxBodyBag
+  description: Містить мішки для трупів.
+  components:
+  - type: StorageFill
+    contents:
+      - id: BodyBagFolded
+        amount: 4
+  - type: Sprite
+    layers:
+      - state: box
+      - state: bodybags
+  - type: Storage # TODO cardboard boxes shouldn't have whitelisting
+    whitelist:
+      tags:
+        - BodyBag
+
+- type: entity
+  name: коробка флаконів
+  parent: BoxCardboard
+  id: BoxVial
+  description: Повна коробка флаконів.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,2,1
+  - type: StorageFill
+    contents:
+      - id: BaseChemistryEmptyVial
+        amount: 6
+  - type: Sprite
+    layers:
+      - state: box
+      - state: vials

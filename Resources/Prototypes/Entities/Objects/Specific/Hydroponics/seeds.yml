@@ -1,0 +1,774 @@
+- type: entity
+  parent: BaseItem
+  id: SeedBase
+  abstract: true
+  components:
+    - type: SolutionContainerManager
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/seeds.rsi
+      layers:
+      - state: seed
+      - state: paper
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+        sprite: Objects/Specific/Hydroponics/seeds.rsi
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.PaperLabelVisuals.HasLabel:
+          enum.PaperLabelVisuals.Layer:
+            True: { visible: true }
+            False: { visible: false }
+    - type: Item
+      size: Tiny
+    - type: StaticPrice
+      price: 20
+    - type: ItemSlots
+    - type: ContainerContainer
+      containers:
+        paper_label: !type:ContainerSlot
+    - type: PaperLabel
+      labelSlot:
+        insertVerbText: comp-paper-label-insert
+        ejectVerbText: comp-paper-label-eject
+        whitelist:
+          components:
+          - Paper
+        blacklist:
+          tags:
+          - Book
+    - type: PhysicalComposition
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння пшениці
+  id: WheatSeeds
+  components:
+    - type: Seed
+      seedId: wheat
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/wheat.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння м'ясниці
+  description: "Якщо ви коли-небудь хотіли довести вегетаріанця до божевілля, то ось як це зробити - м'ясна пшениця"
+  id: MeatwheatSeeds
+  components:
+    - type: Seed
+      seedId: meatwheat
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/meatwheat.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння вівса
+  id: OatSeeds
+  components:
+    - type: Seed
+      seedId: oat
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/oat.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння банану
+  id: BananaSeeds
+  components:
+    - type: Seed
+      seedId: banana
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/banana.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння мімана
+  id: MimanaSeeds
+  components:
+    - type: Seed
+      seedId: mimana
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/mimana.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння моркви
+  id: CarrotSeeds
+  components:
+    - type: Seed
+      seedId: carrots
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/carrot.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння капусти
+  id: CabbageSeeds
+  components:
+    - type: Seed
+      seedId: cabbage
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/cabbage.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння часнику
+  id: GarlicSeeds
+  components:
+    - type: Seed
+      seedId: garlic
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/garlic.rsi
+
+- type: entity
+  parent: SeedBase
+  id: LaughinPeaSeeds
+  name: пачка стручків веселого гороху
+  description: "Це насіння випромінює дуже м’яке фіолетове сяйво... воно повинно вирости в веселий горох"
+  components:
+    - type: Seed
+      seedId: laughinPea
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/laughin_pea.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння лимона
+  id: LemonSeeds
+  components:
+    - type: Seed
+      seedId: lemon
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/lemon.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння лимонісяця
+  id: LemoonSeeds
+  components:
+    - type: Seed
+      seedId: lemoon
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/lemoon.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння лайма
+  id: LimeSeeds
+  components:
+    - type: Seed
+      seedId: lime
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/lime.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння апельсина
+  id: OrangeSeeds
+  components:
+    - type: Seed
+      seedId: orange
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/orange.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння екстравимерного апельсинового дерева
+  description: "Полігональне насіння."
+  id: ExtradimensionalOrangeSeeds
+  components:
+    - type: Seed
+      seedId: extradimensionalOrange
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/extradimensional_orange.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння ананаса
+  id: PineappleSeeds
+  components:
+    - type: Seed
+      seedId: pineapple
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/pineapple.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння картоплі
+  id: PotatoSeeds
+  components:
+    - type: Seed
+      seedId: potato
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/potato.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння цукрової тростини
+  id: SugarcaneSeeds
+  components:
+    - type: Seed
+      seedId: sugarcane
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/sugarcane.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of tea plant seeds
+  id: TeaPlantSeeds
+  components:
+    - type: Seed
+      seedId: teaPlant
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/tea_plant.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of papercane seeds
+  id: PapercaneSeeds
+  components:
+    - type: Seed
+      seedId: papercane
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/papercane.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка спор дерев’янистого гриба
+  id: TowercapSeeds
+  components:
+    - type: Seed
+      seedId: towercap
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/towercap.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка спор сталевого гриба
+  id: SteelcapSeeds
+  components:
+    - type: Seed
+      seedId: steelcap
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/steelcap.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння томатів
+  id: TomatoSeeds
+  components:
+    - type: Seed
+      seedId: tomato
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/tomato.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння блакитних томатів
+  id: BlueTomatoSeeds
+  components:
+    - type: Seed
+      seedId: blueTomato
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/blue_tomato.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння кривавих томатів
+  id: BloodTomatoSeeds
+  components:
+    - type: Seed
+      seedId: bloodTomato
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/blood_tomato.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння томату вбивці
+  id: KillerTomatoSeeds
+  components:
+    - type: Seed
+      seedId: killerTomato
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/tomatokiller.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння баклажану
+  id: EggplantSeeds
+  components:
+    - type: Seed
+      seedId: eggplant
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/eggplant.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння яблук
+  id: AppleSeeds
+  components:
+    - type: Seed
+      seedId: apple
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/apple.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка з насінням яблуні голден
+  id: GoldenAppleSeeds
+  components:
+    - type: Seed
+      seedId: goldenApple
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/golden_apple.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння кукурудзи
+  id: CornSeeds
+  components:
+    - type: Seed
+      seedId: corn
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/corn.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка спор лисичок
+  id: ChanterelleSeeds
+  components:
+    - type: Seed
+      seedId: chanterelle
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/chanterelle.rsi
+
+- type: entity
+  parent: SeedBase
+  name: насіння яєчної рослини
+  id: EggySeeds
+  components:
+    - type: Seed
+      seedId: eggy
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/eggy.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння тютюну
+  description: "З цього насіння виростають рослини тютюну."
+  id: TobaccoSeeds
+  components:
+    - type: Seed
+      seedId: tobacco
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/tobacco.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння каннабісу
+  description: "Оподатковується."
+  id: CannabisSeeds
+  components:
+    - type: Seed
+      seedId: cannabis
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/cannabis.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння конопель веселка
+  description: «Ці насіння виростають у райдужний бур’ян. Чудовий... і також викликає сильну залежність».
+  id: RainbowCannabisSeeds
+  components:
+    - type: Seed
+      seedId: rainbowCannabis
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/rainbow_cannabis.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння кропиви
+  description: "Працювати в рукавичках."
+  id: NettleSeeds
+  components:
+    - type: Seed
+      seedId: nettle
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/nettle.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння глухої кропиви
+  description: "Працюйте в дуже товстих рукавичках."
+  id: DeathNettleSeeds
+  components:
+    - type: Seed
+      seedId: deathNettle
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/death_nettle.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння чилі
+  description: "Пряний."
+  id: ChiliSeeds
+  components:
+    - type: Seed
+      seedId: chili
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/chili.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння холодочілі
+  description: "Frostburn."
+  id: ChillySeeds
+  components:
+    - type: Seed
+      seedId: chilly
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/chilly.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння алое
+  description: "Заспокійливий."
+  id: AloeSeeds
+  components:
+    - type: Seed
+      seedId: aloe
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/aloe.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння маку
+  description: "Не їжте протягом 72 годин після тесту на наркотики."
+  id: PoppySeeds
+  components:
+    - type: Seed
+      seedId: poppy
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/poppy.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння лілії
+  description: "З цього насіння виростають лілії."
+  id: LilySeeds
+  components:
+    - type: Seed
+      seedId: lily
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/lily.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка спор лінчжі
+  description: "Також відомий як рейші."
+  id: LingzhiSeeds
+  components:
+    - type: Seed
+      seedId: lingzhi
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/lingzhi.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння амброзії звичайної
+  description: "Лікарська рослина для простого народу."
+  id: AmbrosiaVulgarisSeeds
+  components:
+    - type: Seed
+      seedId: ambrosiaVulgaris
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/ambrosia_vulgaris.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння амброзії деус
+  description: "Лікарська рослина для самих богів."
+  id: AmbrosiaDeusSeeds
+  components:
+    - type: Seed
+      seedId: ambrosiaDeus
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/ambrosia_deus.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння галактичного чортополоху
+  description: "Кисті зоряних ночей."
+  id: GalaxythistleSeeds
+  components:
+    - type: Seed
+      seedId: galaxythistle
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/galaxythistle.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of glasstle seeds
+  description: "Scars of gloomy nights."
+  id: GlasstleSeeds
+  components:
+    - type: Seed
+      seedId: glasstle
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/glasstle.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка спор мухомора
+  description: "Культовий, надзвичайно смертоносний гриб, який використовується виключно в декоративних цілях."
+  id: FlyAmanitaSeeds
+  components:
+    - type: Seed
+      seedId: flyAmanita
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/fly_amanita.rsi
+
+- type: entity
+  parent: [SeedBase, BaseSyndicateContraband]
+  name: насіння дерева гатфрута
+  description: "Це не горохостріли."
+  id: GatfruitSeeds
+  components:
+    - type: Seed
+      seedId: gatfruit
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/gatfruit.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння цибулі
+  description: "Не шалот."
+  id: OnionSeeds
+  components:
+    - type: Seed
+      seedId: onion
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/onion.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння рису
+  id: RiceSeeds
+  components:
+    - type: Seed
+      seedId: rice
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/rice.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння сої
+  id: SoybeanSeeds
+  components:
+    - type: Seed
+      seedId: soybeans
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/soybeans.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння spaceman's trumpet
+  id: SpacemansTrumpetSeeds
+  components:
+    - type: Seed
+      seedId: spacemansTrumpet
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/spacemans_trumpet.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння koibean
+  id: KoibeanSeeds
+  components:
+    - type: Seed
+      seedId: koibean
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/koibean.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння червоної цибулі
+  description: "Фіолетовий, незважаючи на назву."
+  id: OnionRedSeeds
+  components:
+    - type: Seed
+      seedId: onionred
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/onion_red.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння кавуна
+  id: WatermelonSeeds
+  components:
+    - type: Seed
+      seedId: watermelon
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/watermelon.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння хурми
+  id: HolymelonSeeds
+  components:
+    - type: Seed
+      seedId: holymelon
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/holymelon.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння винограду
+  id: GrapeSeeds
+  components:
+    - type: Seed
+      seedId: grape
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/grape.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння какао дерева
+  id: CocoaSeeds
+  components:
+    - type: Seed
+      seedId: cocoa
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/cocoa.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння ягод
+  id: BerrySeeds
+  components:
+    - type: Seed
+      seedId: berries
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/berries.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння bungo
+  description: "Не їж кісточки."
+  id: BungoSeeds
+  components:
+    - type: Seed
+      seedId: bungo
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/bungo.rsi
+
+- type: entity
+  parent: SeedBase
+  id: PeaSeeds
+  name: пачка насіння гороху
+  description: "Аби не скафандр то можна було б використовувати реактивну силу, після вживання в їжу, для переміщення в невагомості."
+  components:
+    - type: Seed
+      seedId: pea
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/pea.rsi
+
+- type: entity
+  parent: SeedBase
+  id: WorldPeaSeeds
+  name: пачка насіння світового гороху
+  description: "Це досить велике насіння випромінює заспокійливе блакитне сяйво."
+  components:
+    - type: Seed
+      seedId: worldPea
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/world_pea.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка гарбузового насіння
+  id: PumpkinSeeds
+  components:
+    - type: Seed
+      seedId: pumpkin
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/pumpkin.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка синього гарбузового насіння
+  id: BluePumpkinSeeds
+  components:
+    - type: Seed
+      seedId: bluePumpkin
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/blue_pumpkin.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння бавовни
+  id: CottonSeeds
+  components:
+    - type: Seed
+      seedId: cotton
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/cotton.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пачка насіння піроттону
+  id: PyrottonSeeds
+  components:
+    - type: Seed
+      seedId: pyrotton
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/pyrotton.rsi
+
+- type: entity
+  parent: SeedBase
+  id: RealCapfruitSeeds
+  name: пачка насіння капфрута
+  description: "Це справжнє чи фейк?"
+  components:
+    - type: Seed
+      seedId: realCapfruit
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/capfruit.rsi
+
+- type: entity
+  parent: RealCapfruitSeeds
+  id: FakeCapfruitSeeds
+  suffix: Fake
+  components:
+    - type: Seed
+      seedId: fakeCapfruit
+
+- type: entity
+  parent: SeedBase
+  name: packet of cherry seeds
+  id: CherrySeeds
+  components:
+    - type: Seed
+      seedId: cherry
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/cherry.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of anomaly berry seeds
+  id: AnomalyBerrySeeds
+  components:
+    - type: Seed
+      seedId: anomalyBerry
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/anomaly_berry.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of bloonion seeds
+  id: BloonionSeeds
+  components:
+  - type: Seed
+    seedId: bloonion
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/bloonion.rsi

@@ -1,0 +1,30 @@
+﻿- type: entity
+  parent: BaseItem
+  id: AppraisalTool
+  name: оціночний інструмент
+  description: Найкращий друг для справжніх скняр, який має квантовий зв’язок із галактичним ринком. Має здатність оцінювати навіть найскладніші предмети.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/appraisal-tool.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Tools/appraisal-tool.rsi
+    size: Small
+  - type: PriceGun
+  - type: UseDelay
+    delay: 3
+  - type: Clothing
+    sprite: Objects/Tools/appraisal-tool.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 250
+  - type: Tag
+    tags:
+    - AppraisalTool
+    - Sidearm
+  - type: GuideHelp
+    guides:
+    - Cargo

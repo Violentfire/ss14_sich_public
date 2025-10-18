@@ -1,0 +1,59 @@
+- type: entity
+  parent: BaseFlag
+  id: UAFlag
+  name: Прапор Української Космічної Держави
+  description: "Слава Україні!"
+  components:
+  - type: Sprite
+    sprite: _Sich/Structures/Wallmounts/flags.rsi
+    state: USN_flag
+    
+- type: entity
+  parent: BaseFlag
+  id: SolFedFlag
+  name: Прапор Сонячної Федерації
+  description: "Прапор головної держави Людства. За демократію!"
+  components:
+  - type: Sprite
+    sprite: _Sich/Structures/Wallmounts/flags.rsi
+    state: SolFed_flag
+    
+- type: entity
+  parent: BaseFlag
+  id: DorenvirFlag
+  name: Прапор Доренвірської Конфедерації
+  description: "Слава Каменюці! Породі Слава!"
+  components:
+  - type: Sprite
+    sprite: _Sich/Structures/Wallmounts/flags.rsi
+    state: Dorenvir_flag
+    
+- type: entity
+  parent: BaseFlag
+  id: MikarisFlag
+  name: Прапор Зоряної Республіки Мікаріс
+  description: "Сатія сяє над вашою головою."
+  components:
+  - type: Sprite
+    sprite: _Sich/Structures/Wallmounts/flags.rsi
+    state: Mikaris_flag
+    
+- type: entity
+  parent: BaseFlag
+  id: AdomaiFlag
+  name: Прапор Нового Королівства Адомай
+  description: "Вітри Адомаю пронизують вашу шкіру крізь одяг."
+  components:
+  - type: Sprite
+    sprite: _Sich/Structures/Wallmounts/flags.rsi
+    state: adomai_flag
+    
+- type: entity
+  parent: BaseFlag
+  id: RenuinFlag
+  name: Прапор Міжпланетної Асоціації Ренюінь
+  description: "Ренюінь партія пишатись вами."
+  components:
+  - type: Sprite
+    sprite: _Sich/Structures/Wallmounts/flags.rsi
+    state: Renuin_flag

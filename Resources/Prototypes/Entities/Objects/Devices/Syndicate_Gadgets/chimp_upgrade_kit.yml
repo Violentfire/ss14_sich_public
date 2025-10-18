@@ -1,0 +1,14 @@
+- type: entity
+  name: чип покращення ЧІМПа
+  parent: [BaseItem, BaseSyndicateContraband]
+  id: WeaponPistolCHIMPUpgradeKit
+  description: Експерементальне покращення ЧІМПа.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: abductor_mod
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - WeaponPistolCHIMPUpgradeKit

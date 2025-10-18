@@ -1,0 +1,417 @@
+- type: entity
+  parent: [Clothing, ContentsExplosionResistanceBase]
+  id: ClothingBackpack
+  name: рюкзак
+  description: Ви носите це на своїй спині та зберігаєте там речі.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/backpack.rsi
+    state: icon
+  - type: Item
+    size: Huge
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+  - type: Storage
+    grid:
+    - 0,0,6,3
+    maxItemSize: Huge
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  # to prevent bag open/honk spam
+  - type: UseDelay
+    delay: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - Backpack
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackClown
+  name: сміхотун фон хонкертон
+  description: Цей рюкзак виготовлено у найкрутішій державі усія галактики! КОАЛІЦІЇ КЛОУНІВ!
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/clown.rsi
+  - type: Storage
+    storageOpenSound:
+      collection: BikeHorn
+      params:
+        variation: 0.125
+    storageInsertSound:
+      collection: FootstepClown
+      params:
+        variation: 0.125
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackIan
+  name: рюкзак іана
+  description: Іноді він носить його.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/ian.rsi
+  - type: Storage
+    storageOpenSound:
+      collection: IanBark
+
+- type: entity
+  parent: [ClothingBackpack, BaseSecurityContraband]
+  id: ClothingBackpackSecurity
+  name: рюкзак служби безпеки
+  description: Це дуже робасний рюкзак.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/security.rsi
+
+- type: entity
+  parent: [ClothingBackpack, BaseSecurityContraband]
+  id: ClothingBackpackBrigmedic
+  name: рюкзак бригмедика
+  description: Дуже стерильний рюкзак.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/brigmedic.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackEngineering
+  name: рюкзак інженера
+  description: Це міцний рюкзак для повсякденної роботи на станції.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/engineering.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackAtmospherics
+  name: рюкзак атмосферного інженера
+  description: Рюкзак зшитий з вогнестійких матеріалів. Пахне плазмою.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/atmospherics.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackMedical
+  name: рюкзак медика
+  description: Цей рюкзак спеціально розроблений для роботу в стерильних приміщеннях.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/medical.rsi
+
+- type: entity
+  parent: [ClothingBackpack, BaseCommandContraband]
+  id: ClothingBackpackCaptain
+  name: рюкзак капітана
+  description: Це спеціальний рюкзак, виготовлений спеціально для офіцерів Нанотрейзен.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/captain.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackMime
+  name: рюкзак міма
+  description: Рюкзак виготовлений спеціально для мовчазних працівників Мовчати! Ко.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/mime.rsi
+  - type: Storage
+    storageOpenSound: null
+    storageInsertSound: null
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackChemistry
+  name: рюкзак хіміка
+  description: Рюкзак, виготовлений спеціально для захисту від плям і небезпечних рідин.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/chemistry.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackHydroponics
+  name: рюкзак ботаніка
+  description: Рюкзак виготовлений з натуральних тканин.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/hydroponics.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackScience
+  name: рюкзак науковця
+  description: Рюкзак, виготовлений для того аби носити крихкі плати не ламаючи їх.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/science.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackVirology
+  name: рюкзак вірусолога
+  description: Рюкзак що може захистити вміст від незначного розливу хімікатів. Має прикольні помаранчеві смужки на лямках. До речі, чули про дальтонізм?
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/virology.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackGenetics
+  name: рюкзак генетика
+  description: Надміцний рюкзак на випадок, якщо хтось накинеться на вас.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/genetics.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackCargo
+  name: рюкзак карго
+  description: Робасний рюкзак для вкрадених з карго речей.
+  components:
+    - type: Sprite
+      sprite: Clothing/Back/Backpacks/cargo.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackSalvage
+  name: шахтарський рюкзак
+  description: Робасний рюкзак для вашого хабара.
+  components:
+    - type: Sprite
+      sprite: Clothing/Back/Backpacks/salvage.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackMerc
+  name: рюкзак найманця
+  description: Рюкзак, який побував у багатьох небезпечних місцях, надійний бойовий рюкзак.
+  components:
+    - type: Sprite
+      sprite: Clothing/Back/Backpacks/merc.rsi
+
+#ERT
+- type: entity
+  parent: [ ClothingBackpack, BaseCentcommContraband ]
+  id: ClothingBackpackERTLeader
+  name: рюкзак лідера ГШР
+  description: Місткий рюкзак з великою кількістю кишень, який носить керівник групи швидкого реагування на надзвичайні ситуації.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/ertleader.rsi
+  - type: Storage
+    grid:
+    - 0,0,10,3
+
+- type: entity
+  parent: ClothingBackpackERTLeader
+  id: ClothingBackpackERTSecurity
+  name: рюкзак офіцера ГШР
+  description: Місткий рюкзак з великою кількістю кишень, який носить офіцер охорони групи швидкого реагування на надзвичайні ситуації.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/ertsec.rsi
+
+- type: entity
+  parent: ClothingBackpackERTLeader
+  id: ClothingBackpackERTMedical
+  name: рюкзак медика ГШР
+  description: Місткий рюкзак з великою кількістю кишень, який носить медик групи швидкого реагування на надзвичайні ситуації.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/ertmed.rsi
+
+- type: entity
+  parent: ClothingBackpackERTLeader
+  id: ClothingBackpackERTEngineer
+  name: рюкзак інженера ГШР
+  description: Місткий рюкзак з великою кількістю кишень, який носить Інженер групи швидкого реагування на надзвичайні ситуації.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/erteng.rsi
+
+- type: entity
+  parent: ClothingBackpackERTLeader
+  id: ClothingBackpackERTJanitor
+  name: рюкзак прибиральника ГШР
+  description: Місткий рюкзак з великою кількістю кишень, який носить прибиральник групи швидкого реагування на надзвичайні ситуації.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/ertjanitor.rsi
+
+- type: entity
+  parent: ClothingBackpackERTLeader
+  id: ClothingBackpackERTClown
+  name: рюкзак клоуна ГШР
+  description: Місткий рюкзак з великою кількістю кишень, який носить Клоун групи швидкого реагування на надзвичайні ситуації.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/ertclown.rsi
+
+- type: entity
+  parent: ClothingBackpackERTLeader
+  id: ClothingBackpackERTChaplain
+  name: рюкзак капелана ГШР
+  description: Місткий рюкзак із великою кількістю кишень, який носять капелани групи реагування на надзвичайні ситуації.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/ertchaplain.rsi
+
+- type: entity
+  parent: ClothingBackpackERTSecurity
+  id: ClothingBackpackDeathSquad
+  name: рюкзак загону смерті
+  description: Містить набір найстрашніших агентів ЦК.
+  components:
+    - type: Storage
+      grid:
+      - 0,0,7,6
+
+#Syndicate
+- type: entity
+  parent: [ClothingBackpack, BaseSyndicateContraband]
+  id: ClothingBackpackSyndicate
+  name: рюкзак синдикату
+  description:
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/syndicate.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+  - type: Storage
+    grid:
+    - 0,0,7,3
+    - 8,1,8,3
+  - type: StaticPrice
+    price: 1000
+
+#Special
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackHolding
+  name: рюкзак утримання
+  description: Рюкзак, що містить в собі локалізований Блюспейс.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/holding.rsi
+    state: holding
+    layers:
+    - state: holding
+    - state: holding-unlit
+      shader: unshaded
+  - type: Clothing
+    equippedPrefix: holding
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,19,9
+
+- type: entity
+  parent: ClothingBackpackClown
+  id: ClothingBackpackCluwne
+  name: сміхотун фон хонкертон
+  suffix: Незнімний
+  description: It's a backpack made by Jonk! Co.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/cluwne.rsi
+  - type: Unremoveable
+    deleteOnDrop: false
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackElectropack
+  name: Електрорюкзак
+  suffix: Не знімається самостійно
+  description: "Б'є струмом по сигналу. Використовується для того, щоб тримати під контролем особливо небезпечного злочинця."
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/electropack.rsi
+    state: icon
+  - type: Clothing
+    stripDelay: 10
+    equipDelay: 5 # to avoid accidentally falling into the trap associated with SelfUnremovableClothing
+  - type: SelfUnremovableClothing
+  - type: ShockOnTrigger
+    targetContainer: true
+    damage: 5
+    duration: 3
+  - type: TriggerOnSignal
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
+
+# Debug
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackDebug
+  name: вакзак
+  description: Що це в біса взагалі таке?
+  suffix: Debug
+  components:
+  - type: Storage
+    grid:
+    - 0,0,3,3
+    - 5,0,7,2
+    - 0,5,7,5
+    - 6,4,7,5
+    - 9,2,10,3
+    - 9,5,9,5
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackDebug2
+  name: великий вакзак
+  description: Що це в біса взагалі таке?
+  suffix: Debug
+  components:
+  - type: Storage
+    grid:
+    - 0,0,39,24
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackDebug3
+  name: гейський вакзак
+  description: Що це в біса взагалі таке?
+  suffix: Debug
+  components:
+  - type: Storage
+    grid:
+    - 0,0,0,3
+    - 0,0,2,0
+    - 0,3,2,3
+    - 2,2,2,2
+    - 4,1,4,3
+    - 6,1,6,3
+    - 5,2,5,2
+    - 5,0,5,0
+    - 9,2,9,3
+    - 8,0,8,1
+    - 10,0,10,1
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackDebug4
+  name: офсетний вакзак
+  description: Що це в біса взагалі таке?
+  suffix: Debug
+  components:
+  - type: Storage
+    grid:
+    - 5,5,11,8

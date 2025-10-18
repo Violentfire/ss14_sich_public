@@ -1,0 +1,45 @@
+- type: entity
+  id: BulletLightRifle
+  name: куля (.30 гвинтівочний)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 19
+
+- type: entity
+  id: BulletLightRiflePractice
+  name: куля (.30 гвинтівочний тренувальний)
+  parent: BaseBulletPractice
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 2
+
+- type: entity
+  id: BulletLightRifleIncendiary
+  parent: BaseBulletIncendiary
+  name: куля (.30 гвинтівочний запалювальний)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 14
+        Heat: 5
+
+- type: entity
+  id: BulletLightRifleUranium
+  parent: BaseBulletUranium
+  name: куля (.30 гвинтівочний урановий)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Radiation: 9
+        Piercing: 10

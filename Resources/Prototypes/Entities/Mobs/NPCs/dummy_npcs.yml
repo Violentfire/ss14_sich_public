@@ -1,0 +1,10 @@
+- type: entity
+  save: false
+  name: манекен для пошуку шляхів
+  parent: BaseMobHuman
+  id: MobHumanPathDummy
+  description: Жалюгідна купа таємниць.
+  suffix: ШІ
+  components:
+  - type: InputMover
+  - type: MobMover

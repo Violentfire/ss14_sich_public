@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "license": "Sich.me",
+  "copyright": "Coded by Crvenih, painted by Miyugi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "Bonsai_1",
+      "delays": [
+        [
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Bonsai_2",
+      "delays": [
+        [
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Bonsai_3",
+      "delays": [
+        [
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Bonsai_4",
+      "delays": [
+        [
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Bonsai_5",
+      "delays": [
+        [
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Bonsai_6",
+      "delays": [
+        [
+          1.0
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+- type: entity
+  id: HolosignWetFloor
+  name: голографічний знак мокрої підлоги
+  description: Слова миготять так, ніби нічого не означають.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Sprite
+    sprite: Structures/Holo/wetfloor.rsi
+    state: icon
+  - type: TimedDespawn
+    lifetime: 90
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 30
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  id: HoloFan
+  parent: HolosignWetFloor
+  name: голографічний протипожежний бар'єр
+  description: Бар'єр жорсткого світла, який блокує повітря, але не більше.
+  components:
+  - type: Sprite
+    sprite: Structures/Holo/holofan.rsi
+    state: icon
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.5,-0.5,0.5,0.5"
+  - type: TimedDespawn
+    lifetime: 180
+  - type: Airtight
+    noAirWhenFullyAirBlocked: false
+
+- type: entity
+  id: HoloPeel
+  parent: HolosignWetFloor
+  name: holopeel
+  description: A banana peel made of slippery hard light, watch your step!
+  components:
+  - type: Sprite
+    sprite: Structures/Holo/peel.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: Slippery
+  - type: StepTrigger
+    intersectRatio: 0.2
+  - type: CollisionWake
+    enabled: false
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        layer:
+        - SlipLayer
+  - type: TimedDespawn
+    lifetime: 30
+  - type: Clickable
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 10
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  id: HolosignSecurity
+  parent: HolosignWetFloor
+  name: голографічний бар'єр
+  description: Бар'єр жорсткого світла, який блокує рух, але досить слабкий.
+  components:
+    - type: Physics
+      bodyType: Static
+      canCollide: true
+    - type: Sprite
+      sprite: Structures/Holo/security.rsi
+      state: icon
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.3,-0.3,0.3,0.3"
+          mask:
+            - TableMask
+          layer:
+            - TableLayer
+    - type: TimedDespawn
+      lifetime: 180
+    - type: PointLight
+      enabled: true
+      radius: 3
+      color: red
+    - type: Climbable
+    - type: Clickable
+
+- type: entity
+  id: HolosignForcefield
+  parent: HolosignWetFloor
+  name: голографічне силове поле
+  description: Потужне темпоральне стримуюче поле, яке не пропускає нічого, навіть теслу чи сингулярність.
+  components:
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: Sprite
+    sprite: Structures/Holo/field.rsi
+    state: icon
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
+  - type: TimedDespawn
+    lifetime: 180
+  - type: PointLight
+    enabled: true
+    radius: 3
+    color: blue
+  - type: Clickable
+  - type: ContainmentField
+    throwForce: 0
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 60
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]

@@ -1,0 +1,184 @@
+﻿- type: entity
+  abstract: true
+  parent: ClothingHeadset
+  id: ClothingHeadsetAlt
+  name: навушники
+  description: Оновлений модульний інтерком, який одягається на голову. Приймає ключі шифрування.
+  components:
+  - type: Sprite
+    state: icon_alt
+  - type: Clothing
+    equippedPrefix: alt
+
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAltCargo
+  name: навушники квартирмейстера
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCargo
+      - EncryptionKeyCommand
+      - EncryptionKeyCommon
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/cargo.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/cargo.rsi
+
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAltCentCom
+  name: навушники Центрального Командування
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCentCom
+      - EncryptionKeyStationMaster
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+
+- type: entity
+  parent: ClothingHeadsetAltCentCom
+  id: ClothingHeadsetAltCentComFake
+  suffix: Фальшиві
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCommon
+
+- type: entity
+  parent: [ClothingHeadsetAlt, BaseCommandContraband]
+  id: ClothingHeadsetAltCommand
+  name: навушники командування
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyStationMaster
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/command.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/command.rsi
+
+- type: entity
+  parent: [ClothingHeadsetAlt, BaseCommandContraband]
+  id: ClothingHeadsetAltEngineering
+  name: навушники головного інженера
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyEngineering
+      - EncryptionKeyCommand
+      - EncryptionKeyCommon
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/engineering.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/engineering.rsi
+
+- type: entity
+  parent: [ClothingHeadsetAlt, BaseCommandContraband]
+  id: ClothingHeadsetAltMedical
+  name: навушники головного лікаря
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyMedical
+      - EncryptionKeyCommand
+      - EncryptionKeyCommon
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/medical.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/medical.rsi
+  - type: StealTarget
+    stealGroup: ClothingHeadsetAltMedical
+
+- type: entity
+  parent: [ClothingHeadsetAlt, BaseCommandContraband]
+  id: ClothingHeadsetAltSecurity
+  name: навушники голови безпеки
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeySecurity
+      - EncryptionKeyCommand
+      - EncryptionKeyCommon
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/security.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/security.rsi
+
+- type: entity
+  parent: [ClothingHeadsetAlt, BaseCommandContraband]
+  id: ClothingHeadsetAltScience
+  name: навушники директора наукового відділу
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyScience
+      - EncryptionKeyCommand
+      - EncryptionKeyCommon
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/science.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/science.rsi
+
+- type: entity
+  parent: [ClothingHeadsetAlt, BaseSyndicateContraband]
+  id: ClothingHeadsetAltSyndicate
+  name: криваво-червоні навушники
+  description: Оновлений модульний синдикатний інтерком, який одягається на голову і приймає ключі шифрування (є 5 слотів для ключів).
+  components:
+  - type: Headset
+  - type: EncryptionKeyHolder
+    keySlots: 5
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeySyndie
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/syndicate.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/syndicate.rsi
+
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAltFreelancer
+  name: навушники фрілансера
+  components:
+    - type: Headset
+    - type: EncryptionKeyHolder
+      keySlots: 5
+    - type: ContainerFill
+      containers:
+        key_slots:
+          - EncryptionKeyFreelance
+    - type: Sprite
+      sprite: Clothing/Ears/Headsets/freelance.rsi
+    - type: Clothing
+      sprite: Clothing/Ears/Headsets/freelance.rsi
+
+- type: entity
+  parent: [ClothingHeadsetAlt, BaseMagicalContraband]
+  id: ClothingHeadsetAltWizard
+  name: wizard's over-ear headset
+  components:
+    - type: Headset
+    - type: EncryptionKeyHolder
+      keySlots: 5
+    - type: ContainerFill
+      containers:
+        key_slots:
+        - EncryptionKeyStationMaster
+    - type: Sprite
+      sprite: Clothing/Ears/Headsets/wizard.rsi
+    - type: Clothing
+      sprite: Clothing/Ears/Headsets/wizard.rsi

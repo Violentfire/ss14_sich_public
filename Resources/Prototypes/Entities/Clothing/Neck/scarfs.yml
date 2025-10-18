@@ -1,0 +1,268 @@
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedRed
+  name: червоний смугастий шалик
+  description: Стильний червоний шарф в смужку. Ідеальний зимовий аксесуар для тих, хто відчуває себе модним, а також для тих, хто просто не може впоратися з холодним вітром на шиї.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/red.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/red.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedBlue
+  name: синій смугастий шалик
+  description: Стильний синій шарф в смужку. Ідеальний зимовий аксесуар для тих, хто відчуває себе модним, а також для тих, хто просто не може впоратися з холодним вітром на шиї.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/blue.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/blue.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedGreen
+  name: зелений смугастий шалик
+  description: Стильний зелений шарф в смужку. Ідеальний зимовий аксесуар для тих, хто відчуває себе модним, а також для тих, хто просто не може впоратися з холодним вітром на шиї.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/green.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/green.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedBlack
+  name: чорний смугастий шалик
+  description: Стильний чорний шарф в смужку. Ідеальний зимовий аксесуар для тих, хто відчуває себе модним, а також для тих, хто просто не може впоратися з холодним вітром на шиї.
+  components:
+    - type: Sprite
+      sprite: Clothing/Neck/Scarfs/black.rsi
+    - type: Clothing
+      sprite: Clothing/Neck/Scarfs/black.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedBrown
+  name: коричневий смугастий шалик
+  description: Стильний коричневий шарф в смужку. Ідеальний зимовий аксесуар для тих, хто відчуває себе модним, а також для тих, хто просто не може впоратися з холодним вітром на шиї.
+  components:
+    - type: Sprite
+      sprite: Clothing/Neck/Scarfs/brown.rsi
+    - type: Clothing
+      sprite: Clothing/Neck/Scarfs/brown.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedLightBlue
+  name: блакитний смугастий шалик
+  description: Стильний блакитний шарф в смужку. Ідеальний зимовий аксесуар для тих, хто відчуває себе модним, а також для тих, хто просто не може впоратися з холодним вітром на шиї.
+  components:
+    - type: Sprite
+      sprite: Clothing/Neck/Scarfs/lightblue.rsi
+    - type: Clothing
+      sprite: Clothing/Neck/Scarfs/lightblue.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedOrange
+  name: помаранчевий смугастий шалик
+  description: Стильний помаранчевий шарф в смужку. Ідеальний зимовий аксесуар для тих, хто відчуває себе модним, а також для тих, хто просто не може впоратися з холодним вітром на шиї.
+  components:
+    - type: Sprite
+      sprite: Clothing/Neck/Scarfs/orange.rsi
+    - type: Clothing
+      sprite: Clothing/Neck/Scarfs/orange.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedPurple
+  name: пурпурний смугастий шалик
+  description: Стильний пурпурний шарф в смужку. Ідеальний зимовий аксесуар для тих, хто відчуває себе модним, а також для тих, хто просто не може впоратися з холодним вітром на шиї.
+  components:
+    - type: Sprite
+      sprite: Clothing/Neck/Scarfs/purple.rsi
+    - type: Clothing
+      sprite: Clothing/Neck/Scarfs/purple.rsi
+
+- type: entity
+  parent: [ ClothingScarfBase, BaseSyndicateContraband ]
+  id: ClothingNeckScarfStripedSyndieGreen
+  name: зелений смугастий шалик синдикату
+  description: Стильний синдикатський зелений шарф у смужку. Ідеальний зимовий аксесуар для тих, хто має відчуття моди, і тих, хто в настрої щось вкрасти.
+  components:
+    - type: Sprite
+      sprite: Clothing/Neck/Scarfs/syndiegreen.rsi
+    - type: Clothing
+      sprite: Clothing/Neck/Scarfs/syndiegreen.rsi
+    - type: StaticPrice
+      price: 500
+
+- type: entity
+  parent: [ ClothingScarfBase, BaseSyndicateContraband ]
+  id: ClothingNeckScarfStripedSyndieRed
+  name: червоний смугастий шалик синдикату
+  description: Стильний синдикатський червоний шарф у смужку. Ідеальний зимовий аксесуар для тих, хто має відчуття моди, і тих, хто в настрої щось вкрасти.
+  components:
+    - type: Sprite
+      sprite: Clothing/Neck/Scarfs/syndiered.rsi
+    - type: Clothing
+      sprite: Clothing/Neck/Scarfs/syndiered.rsi
+    - type: StaticPrice
+      price: 500
+
+- type: entity
+  parent: [ ClothingScarfBase, BaseCentcommContraband ]
+  id: ClothingNeckScarfStripedCentcom
+  name: смугастий шалик центрального командування
+  description: Стильний кольоровий шарф у смужку. Ідеальний зимовий аксесуар для тих, хто відчуває себе гостро, а також для тих, кому потрібно зайнятися паперами в мороз.
+  components:
+    - type: Sprite
+      sprite: Clothing/Neck/Scarfs/centcom.rsi
+    - type: Clothing
+      sprite: Clothing/Neck/Scarfs/centcom.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedZebra
+  name: шалик-зебра
+  description: Смугастий шарф, обов'язковий аксесуар артистів.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/zebra.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/zebra.rsi
+
+# Pride Scarves
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedAce
+  name: смугастий шалик асексуала
+  description: Стильний смугастий асексуальний шарф. Ідеальний зимовий аксесуар для тих, хто має гостре почуття стилю, і тих, хто просто не переносить холодного вітерцю на шиї.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/ace.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/ace.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedAro
+  name: смугастий шалик аромантика
+  description: Стильний смугастий аромантичний шарф. Ідеальний зимовий аксесуар для тих, хто має гостре почуття стилю, і тих, хто просто не переносить холодного вітерцю на шиї.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/aro.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/aro.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedAroace
+  name: смугастий шалик аро-асе
+  description: Стильний смугастий аромантично-асексуальний шарф. Ідеальний зимовий аксесуар для тих, хто має гостре почуття стилю, і тих, хто просто не переносить холодного вітерцю на шиї.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/aroace.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/aroace.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedBiSexual
+  name: смугастий шалик бісексуала
+  description: Стильний смугастий бісексуальний шарф. Ідеальний зимовий аксесуар для тих, хто має гостре почуття стилю, і тих, хто просто не переносить холодного вітерцю на шиї.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/bi.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/bi.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedGay
+  name: смугастий шалик гея
+  description: Стильний смугастий гейський шарф. Ідеальний зимовий аксесуар для тих, хто має гостре почуття стилю, і тих, хто просто не переносить холодного вітерцю на шиї.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/gay.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/gay.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedInter
+  name: смугастий шалик інтерсексуала
+  description: Стильний смугастий інтерсексуальний шарф. Ідеальний зимовий аксесуар для тих, хто має гостре почуття стилю, і тих, хто просто не переносить холодного вітерцю на шиї.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/inter.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/inter.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedLesbian
+  name: смугастий шалик лесбійки
+  description: Стильний смугастий лесбійський шарф. Ідеальний зимовий аксесуар для тих, хто має гостре почуття стилю, і тих, хто просто не переносить холодного вітерцю на шиї.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/lesbian.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/lesbian.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedPan
+  name: смугастий шалик пансексуала
+  description: Стильний смугастий пансексуальний шарф. Ідеальний зимовий аксесуар для тих, хто має гостре почуття стилю, і тих, хто просто не переносить холодного вітерцю на шиї.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/pan.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/pan.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedNonBinary
+  name: смугастий небінарний шалик
+  description: Стильний смугастий небінарний шарф. Ідеальний зимовий аксесуар для тих, хто має гостре почуття стилю, і тих, хто просто не переносить холодного вітерцю на шиї.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/non.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/non.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedRainbow
+  name: веселковий шалик
+  description: Стильний шалик. Ідеальний зимовий аксесуар для тих, хто має гостре почуття стилю, і тих, хто просто не переносить холодного вітерцю на шиї.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/rainbow.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/rainbow.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedTrans
+  name: смугастий шалик трансу
+  description: Стильний смугастий трансгендерний шарф. Ідеальний зимовий аксесуар для тих, хто має гостре почуття стилю, і тих, хто просто не переносить холодного вітерцю на шиї.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/trans.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/trans.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedLesbianLong
+  name: «довгий бекон»
+  description: Довжелезна смужка бекону! Ідеально підходить, аби розділити з твоєю дівчиною!
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/lesbian-long.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/lesbian-long.rsi

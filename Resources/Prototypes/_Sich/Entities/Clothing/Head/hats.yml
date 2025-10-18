@@ -1,0 +1,29 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatChaosIncBeret
+  name: берет Корпорації Хаосу
+  description: Чорний берет Корпорації Хаосу. Контроль Хаосу - Запорука Безпеки!
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/Head/Hats/chaosincberet.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Head/Hats/chaosincberet.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCIABeret
+  name: берет МКР НТ
+  description: Берет що носять агенти Мережі Корпоративної Розвідки НТ. Мило.
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/Head/Hats/beret_cia.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Head/Hats/beret_cia.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon

@@ -1,0 +1,24 @@
+﻿- type: entity
+  parent: BaseItem
+  id: NodeScanner
+  name: сканер вузлів
+  description: Найліпший друг археолога, здатний ідентифікувати вузол артефакту за допомогою лише одного сканування.
+  components:
+    - type: Sprite
+      sprite: Objects/Specific/Xenoarchaeology/node_scanner.rsi
+      state: icon
+    - type: Item
+      sprite: Objects/Specific/Xenoarchaeology/node_scanner.rsi
+    - type: NodeScanner
+    - type: UseDelay
+      delay: 1
+    - type: GuideHelp
+      guides:
+      - ArtifactReports
+    - type: ActivatableUI
+      key: enum.NodeScannerUiKey.Key
+      singleUser: true
+    - type: UserInterface #needs to be here for certain effects
+      interfaces:
+        enum.NodeScannerUiKey.Key:
+          type: NodeScannerBoundUserInterface

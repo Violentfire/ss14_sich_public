@@ -1,0 +1,102 @@
+- type: entity
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothingGasTanks]
+  id: ClothingOuterBioGeneral
+  name: біо комбінезон
+  suffix: Generic
+  description: Комбінезон для захисту від біологічного зараження.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Bio/general.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Bio/general.rsi
+  - type: HideLayerClothing
+    slots:
+    - Tail
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.75
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.35
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+
+- type: entity
+  parent: ClothingOuterBioGeneral
+  id: ClothingOuterBioCmo
+  name: біо комбінезон головного лікаря
+  suffix: CMO
+  description: Вдосконалений комбінезон для захисту від біологічного зараження, у кольорах ГЛ.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Bio/cmo.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Bio/cmo.rsi
+
+- type: entity
+  parent: ClothingOuterBioGeneral
+  id: ClothingOuterBioJanitor
+  name: біо комбінезон прибиральника
+  suffix: Janitor
+  description: Костюм, що захищає від біологічних забруднень і розливів їдких речовин.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Bio/janitor.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Bio/janitor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.4
+
+- type: entity
+  parent: ClothingOuterBioGeneral
+  id: ClothingOuterBioScientist
+  name: біо комбінезон вчених
+  suffix: Science
+  description: Комбінезон для захисту від біологічного зараження, у кольорах НВ.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Bio/scientist.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Bio/scientist.rsi
+
+- type: entity
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseSecurityContraband]
+  id: ClothingOuterBioSecurity
+  name: біо комбінезон охорони
+  suffix: Security
+  description: Костюм, що захищає від біологічного зараження, оснащений додатковою бронею.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Bio/security.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Bio/security.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.8
+        Slash: 0.6
+        Piercing: 0.8
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.4
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+    
+- type: entity
+  parent: ClothingOuterBioGeneral
+  id: ClothingOuterBioVirology
+  name: біо комбінезон вірусолога
+  suffix: Virology
+  description: Костюм, який надійно захищає від біологічного забруднення.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Bio/virology.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Bio/virology.rsi
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.25

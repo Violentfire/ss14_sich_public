@@ -1,0 +1,20 @@
+- type: entity
+  id: ForensicPad
+  name: криміналістичний блокнот
+  parent: BaseItem
+  description: Криміналістичний блокнот для запису даних про відбитки пальців або волокна.
+  components:
+  - type: Item
+    size: Tiny
+  - type: ForensicPad
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: yellow
+  - type: Tag
+    tags:
+    - Document
+  - type: GuideHelp
+    guides:
+    - Forensics

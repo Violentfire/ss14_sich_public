@@ -1,0 +1,75 @@
+- type: entity
+  parent: Clothing
+  id: ClothingNeckStethoscope
+  name: стетоскоп
+  description: Застарілий медичний апарат для прослуховування звуків людського тіла. Це також створює враження, що ви знаєте, що робите.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Clothing/Neck/Misc/stethoscope.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Neck/Misc/stethoscope.rsi
+    quickEquip: true
+    slots:
+    - neck
+  - type: Stethoscope
+
+- type: entity
+  parent: BaseAction
+  id: ActionStethoscope
+  name: Listen with stethoscope
+  components:
+  - type: Action
+    icon:
+      sprite: Clothing/Neck/Misc/stethoscope.rsi
+      state: icon
+    priority: -1
+    itemIconStyle: BigAction
+    checkCanInteract: false
+  - type: TargetAction
+  - type: EntityTargetAction
+    event: !type:StethoscopeActionEvent
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckBling
+  name: золота цепочка
+  description: Дідько, так круто бути вуйком на заробітках!
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Misc/bling.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Misc/bling.rsi
+  - type: Item
+    sprite: Clothing/Neck/Misc/bling.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckLawyerbadge
+  name: відзнака адвоката
+  description: Значок, який свідчить про те, що власник є «законним» юристом, який склав іспит на право адвоката НТ, необхідний для юридичної практики.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Misc/lawyerbadge.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Misc/lawyerbadge.rsi
+  - type: TypingIndicatorClothing
+    proto: lawyer
+
+- type: entity
+  parent: ClothingNeckBase
+  id: Dinkystar
+  name: наліпка із зіркою
+  description: Маленька зірочка для найвідважніших охоронців! Вона вже навіть не липка.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Misc/dinkystar.rsi
+    state: icon
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - Trash
+    - WhitelistChameleon

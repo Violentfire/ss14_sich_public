@@ -1,0 +1,30 @@
+- type: entity
+  parent: BaseItem
+  id: Igniter
+  name: запалювач
+  description: Створює іскру, коли активується сигналом.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/igniter.rsi
+    state: icon
+  - type: IgnitionSource
+    temperature: 800
+  - type: IgniteOnTrigger
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: WelderOn
+  - type: UseDelayOnTrigger
+  - type: UseDelayTriggerCondition
+  - type: TriggerOnSignal
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+    - Trigger
+  - type: UseDelay # prevent sound spam
+  - type: Tag
+    tags:
+    - Igniter

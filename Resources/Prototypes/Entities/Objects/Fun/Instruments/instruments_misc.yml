@@ -1,0 +1,182 @@
+﻿- type: entity
+  parent: BaseHandheldInstrument
+  id: MusicalLungInstrument
+  name: музична легеня
+  description: Духовна і магічна легеня колишньої оперної співачки. Хоча, чесно кажучи, все це роблять голосові зв'язки.
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+    state: lung-l
+  - type: Instrument
+    program: 121
+  - type: Item
+    size: Small
+
+- type: entity
+  parent: BaseHandheldInstrument
+  id: SeashellInstrument
+  name: морська мушля
+  description: For laying down the shoreline beat Для вкладання у звук лінії вашого серцебиття.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Instruments/otherinstruments.rsi
+    state: seashell
+  - type: Instrument
+    program: 122
+  - type: Item
+    size: Small
+
+- type: entity
+  parent: BaseHandheldInstrument
+  id: BirdToyInstrument
+  name: пташиний свисток
+  description: Чудовий маленький свисток у формі пташки. Він гарно співає..
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Instruments/otherinstruments.rsi
+    state: birdtoy
+  - type: Instrument
+    program: 123
+  - type: Item
+    size: Small
+    storedRotation: 90
+
+- type: entity
+  parent: BaseHandheldInstrument
+  id: PhoneInstrument
+  name: червоний телефон
+  description: Варто тільки чомусь піти не так...
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Instruments/otherinstruments.rsi
+    state: red_phone
+  - type: EmitSoundOnLand
+    sound:
+       path: /Audio/Items/ring.ogg
+  - type: Instrument
+    program: 124
+  - type: Item
+    size: Small
+  - type: Prayable
+    sentMessage: prayer-popup-notify-centcom-sent
+    notificationPrefix: prayer-chat-notify-centcom
+    verb: prayer-verbs-call
+    verbImage: null
+
+- type: entity
+  parent: PhoneInstrument
+  id: PhoneInstrumentSyndicate
+  name: криваво-червоний телефон
+  description: Для поганих хлопців, аби покликати своїх друзів.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Instruments/blood_red_phone.rsi
+    state: icon
+  - type: Prayable
+    sentMessage: prayer-popup-notify-syndicate-sent
+    notificationPrefix: prayer-chat-notify-syndicate
+
+- type: entity
+  parent: BaseHandheldInstrument
+  id: HelicopterInstrument
+  name: іграшковий гелікоптер
+  description: Гелікоптер-гелікоптер... Паракоптер-паракоптер..
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Instruments/otherinstruments.rsi
+    state: helicopter
+  - type: Instrument
+    program: 125
+  - type: Item
+    size: Small
+    storedRotation: -90
+
+- type: entity
+  parent: BaseHandheldInstrument
+  id: CannedApplauseInstrument
+  name: законсервовані аплодисменти
+  description: Здається, хтось уже все використав...
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Instruments/otherinstruments.rsi
+    state: cannedapplause
+  - type: Instrument
+    program: 126
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: BaseHandheldInstrument
+  id: GunpetInstrument
+  name: звуковий пістолет
+  description: Навіщо вам це вивчати? Хіба воно не є само собою зрозумілим?
+  components:
+  - type: Instrument
+    program: 127
+  - type: Sprite
+    sprite: Objects/Fun/Instruments/gunpet.rsi
+  - type: Item
+    size: Small
+    storedRotation: -90
+  - type: Tag
+    tags:
+    - Sidearm
+    - BrassInstrument
+
+- type: entity
+  parent: BaseHandheldInstrument
+  id: BikeHornInstrument
+  name: позолочений велосипедний гудок
+  description: Вишукано декорований велосипедний клаксон, здатний сигналити різними нотами.
+  components:
+  - type: Instrument
+    program: 1
+    bank: 1
+  - type: Sprite
+    sprite: Objects/Fun/Instruments/bike_horn.rsi
+  - type: Tag
+    tags:
+    - BrassInstrument #Go figure.
+  - type: Item
+    size: Small
+    storedRotation: -90
+  - type: Clothing
+    slots: [Belt]
+    quickEquip: false
+
+- type: entity
+  parent: PhoneInstrument
+  id: BananaPhoneInstrument
+  name: банановий телефон
+  description: Гаряча лінія до Гонкоматері. Здається, завжди переадресовує на голосову пошту.
+  components:
+  - type: Sprite
+    state: banana_phone
+  - type: EmitSoundOnLand
+    sound:
+       path: /Audio/Items/bikehorn.ogg
+  - type: Slippery
+  - type: StepTrigger
+  - type: CollisionWake
+    enabled: false
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.3,0.4,0.3"
+        hard: false
+        layer:
+        - SlipLayer
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.3,0.4,0.3"
+        density: 5
+        mask:
+        - ItemMask
+  - type: Prayable
+    sentMessage: prayer-popup-notify-honkmother-sent
+    notificationPrefix: prayer-chat-notify-honkmother
+    verb: prayer-verbs-call
+    verbImage: null

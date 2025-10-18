@@ -1,0 +1,178 @@
+- type: entity
+  parent: BaseItem
+  id: Holoprojector
+  name: голографічний проєктор вивісок
+  description: Зручний і стильний голографічний проектор, який відображає знак прибиральника.
+  components:
+  - type: Item
+    storedRotation: -90
+  - type: HolosignProjector
+  - type: UseDelay
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot {}
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: Sprite
+    sprite: Objects/Devices/Holoprojectors/custodial.rsi
+    state: icon
+  - type: Tag
+    tags:
+      - HolosignProjector
+
+- type: entity
+  parent: Holoprojector
+  id: HoloprojectorEmpty
+  suffix: Пустий
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+
+- type: entity
+  parent: Holoprojector
+  id: HoloprojectorBorg
+  suffix: borg
+  name: голографічний проектор знаків
+  description: Модифікований проектор голографічних знаків для використання в прибиральних кіборгах. Автоматично заряджається.
+  components:
+  - type: HolosignProjector
+    chargeUse: 240
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMicroreactor
+        disableEject: true
+        swap: false
+
+- type: entity
+  parent: Holoprojector
+  id: HoloprojectorClownBorg
+  name: holopeel projector
+  description: A holopeel projector that creates a slippery, hard light banana peel. It recharges, so that the fun never ends!
+  suffix: borg
+  components:
+  - type: HolosignProjector
+    signProto: HoloPeel
+    chargeUse: 240
+  - type: Sprite
+    sprite: Objects/Devices/Holoprojectors/peel.rsi
+    state: icon
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMicroreactor
+        disableEject: true
+        swap: false
+
+- type: entity
+  parent: Holoprojector
+  id: HolofanProjector
+  name: голофазний проєктор
+  description: Зупиняє пасажирів-самогубців від вбивства всіх під час розгерметизації.
+  components:
+  - type: HolosignProjector
+    signProto: HoloFan
+    chargeUse: 120
+  - type: Sprite
+    sprite: Objects/Devices/Holoprojectors/atmos.rsi
+    state: icon
+  - type: Tag
+    tags:
+      - HolofanProjector
+  - type: StaticPrice
+    price: 50
+  - type: GuideHelp
+    guides:
+    - AtmosTools
+    - Fires
+    - Spacing
+
+- type: entity
+  parent: HolofanProjector
+  id: HolofanProjectorEmpty
+  suffix: Пустий
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+
+- type: entity
+  parent: HolofanProjector
+  id: HolofanProjectorBorg
+  name: інтегрований гологенератор
+  description: Запобігає тому, щоб дурні завдавали більше шкоди екіпажу під час атмосферних аварій. Встановлюється безпосередньо в інженерного кіборга, заряджається з часом.
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMicroreactor
+        disableEject: true
+        swap: false
+
+- type: entity
+  parent: Holoprojector
+  id: HoloprojectorField
+  name: проєктор силового поля
+  description: Створює непрохідне силове поле, яке нічого не пропускає. Постійне знаходження поруч може викликати, а може і не викликати - рак.
+  components:
+    - type: HolosignProjector
+      signProto: HolosignForcefield
+      chargeUse: 120
+    - type: Sprite
+      sprite: Objects/Devices/Holoprojectors/field.rsi
+      state: icon
+    - type: Tag
+      tags:
+        - HolofanProjector
+    - type: StaticPrice
+      price: 130
+
+- type: entity
+  parent: HoloprojectorField
+  id: HoloprojectorFieldEmpty
+  suffix: Пустий
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+
+- type: entity
+  parent: Holoprojector
+  id: HoloprojectorSecurity
+  name: "голобар'єрний проєктор"
+  description: "Створює твердий, але крихкий голографічний бар'єр."
+  components:
+    - type: HolosignProjector
+      signProto: HolosignSecurity
+      chargeUse: 90
+    - type: Sprite
+      sprite: Objects/Devices/Holoprojectors/security.rsi
+      state: icon
+    - type: Tag
+      tags:
+        - HolofanProjector
+        - SecBeltEquip
+    - type: StaticPrice
+      price: 50
+
+- type: entity
+  parent: HoloprojectorSecurity
+  id: HoloprojectorSecurityEmpty
+  suffix: Пустий
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default

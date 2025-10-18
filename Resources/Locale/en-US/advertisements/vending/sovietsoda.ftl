@@ -1,0 +1,9 @@
+﻿advertisement-sovietsoda-1 = За дєда і страну.
+advertisement-sovietsoda-2 = А вьі ісполнілі севодняшнюю норму патреблєнія піщі?
+advertisement-sovietsoda-3 = Красівоє!
+advertisement-sovietsoda-4 = Мьі прастьіє люді! А шьто мьі можєм сдєлать?
+advertisement-sovietsoda-5 = Чєлавєк — праблєма. Нєт чєлавєка — нєт праблєм!
+advertisement-sovietsoda-6 = Якщо його достатньо для повсякденного життя, це достатньо для нас!
+thankyou-sovietsoda-1 = Упатрєбляйтє в піщу!
+thankyou-sovietsoda-2 = Тєпєрь за работу, таваріщ!
+thankyou-sovietsoda-3 = Це все, що ви отримуєте.

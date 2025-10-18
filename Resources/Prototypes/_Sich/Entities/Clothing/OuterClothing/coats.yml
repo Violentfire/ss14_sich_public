@@ -1,0 +1,20 @@
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatChaosIncTrench
+  name: пальто Корпорації Хаосу
+  description: Пальто з додатковими броньованими пластинами під тканиною, що частіше всього носять Представники Корпорації Хаосу.
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/OuterClothing/Coats/chaosinc_trenchcoat.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/OuterClothing/Coats/chaosinc_trenchcoat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.80
+        Heat: 0.80
+        Caustic: 0.85 #not the full 90% from ss13 because of the head
+  - type: ExplosionResistance
+    damageCoefficient: 0.90

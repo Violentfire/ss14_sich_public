@@ -1,0 +1,224 @@
+# Plate
+# In the future, I (Swept) want a system for putting stuff on plates and it'll provide more nutrition
+# If it's on that plate. I've modified all load/slices to fit on the plate, so all we need
+# is that system. Ideally, food on plates would have a system where when thrown, it would
+# break the plate and the loaf would fall off.
+
+# Large Plate
+
+- type: entity
+  name: широка тарілка
+  parent: BaseItem
+  id: FoodPlate
+  description: Велика тарілка, відмінно підходить для хліба.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/plates.rsi
+    state: plate
+  - type: Item
+    shape:
+    - 0,0,1,0
+    storedOffset: 0,-6
+    inhandVisuals:
+      left:
+      - state: plate-inhand-left
+      right:
+      - state: plate-inhand-right
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+          params:
+            volume: -8
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FoodPlateTrash:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - Trash
+  - type: PhysicalComposition
+    materialComposition:
+      Glass: 60
+  - type: SpaceGarbage
+
+- type: entity
+  name: розбита тарілка
+  parent: BaseItem
+  id: FoodPlateTrash
+  description: Розбита тарілка. Марно.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/plates.rsi
+    state: plate-trash
+  - type: Item
+    shape:
+    - 0,0,1,0
+    storedOffset: 0,-6
+  - type: Tag
+    tags:
+    - Trash
+  - type: SpaceGarbage
+
+# Small Plate
+
+- type: entity
+  name: маленька тарілка
+  parent: FoodPlate
+  id: FoodPlateSmall
+  description: Маленька тарілочка. Делікатна.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/plates.rsi
+    state: plate-small
+  - type: Item
+    storedOffset: 0,-3
+    inhandVisuals:
+      left:
+      - state: plate-inhand-left
+      right:
+      - state: plate-inhand-right
+# Needs the full thing because inherting is dumb sometimes.
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+          params:
+            volume: -8
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FoodPlateSmallTrash:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      Glass: 30
+
+- type: entity
+  parent: FoodPlateTrash
+  id: FoodPlateSmallTrash
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/plates.rsi
+    state: plate-small-trash
+  - type: Item
+    storedOffset: 0,-3
+
+# Plastic Plate
+
+- type: entity
+  parent: BaseItem
+  id: FoodPlatePlastic
+  name: велика пластикова тарілка
+  description: Велика синя пластикова тарілка, чудово підходить для святкового торта.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/plates.rsi
+    state: plate-plastic
+  - type: Item
+    shape:
+    - 0,0,1,0
+    storedOffset: 0,-6
+    inhandVisuals:
+      left:
+      - state: plate-plastic-inhand-left
+      right:
+      - state: plate-plastic-inhand-right
+  - type: Tag
+    tags:
+    - Trash
+
+- type: entity
+  parent: BaseItem
+  id: FoodPlateSmallPlastic
+  name: мала пластикова тарілочка
+  description: Блакитна пластикова тарілочка, ідеально підходить для шматочків святкового торта.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/plates.rsi
+    state: plate-small-plastic
+  - type: Item
+    shape:
+    - 0,0,1,0
+    storedOffset: 0,-3
+    inhandVisuals:
+      left:
+      - state: plate-plastic-inhand-left
+      right:
+      - state: plate-plastic-inhand-right
+  - type: Tag
+    tags:
+    - Trash
+
+# Pie Tin
+
+- type: entity
+  name: форма для пирога
+  parent: BaseItem
+  id: FoodPlateTin
+  description: Дешева фольгована форма для пирогів.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/plates.rsi
+    state: tin
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    storedOffset: 0,-3
+  - type: Tag
+    tags:
+    - Trash
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 60
+  - type: SpaceGarbage
+
+# Muffin Tin
+
+- type: entity
+  parent: BaseItem
+  id: FoodPlateMuffinTin
+  name: muffin tin
+  description: A cheap foil tin for muffins.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/plates.rsi
+    state: muffin-tin
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
+    storedOffset: 0,-2
+  - type: Tag
+    tags:
+    - Trash
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 30
+  - type: SpaceGarbage

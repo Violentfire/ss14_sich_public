@@ -1,0 +1,65 @@
+- type: entity
+  id: Wristwatch
+  parent: BaseItem
+  name: ручний годинник
+  description: Дешевий годинник для визначення часу. Скільки часу ви витратили, граючи в Space Station 14?
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/wristwatch.rsi
+    layers:
+    - state: wristwatch
+    - map: [ "enum.ClockVisualLayers.MinuteHand"]
+    - map: [ "enum.ClockVisualLayers.HourHand"]
+  - type: Clock
+  - type: Item
+    sprite: Objects/Devices/wristwatch.rsi
+    size: Small
+  - type: Clothing
+    sprite: Objects/Devices/wristwatch.rsi
+    slots:
+    - gloves
+  - type: Appearance
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: StaticPrice
+    price: 50
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageGroupTrigger
+        damageGroup: Brute
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Breakage" ]
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 300
+
+- type: entity
+  id: WristwatchGold
+  parent: Wristwatch
+  name: золотий годинник
+  description: Модний годинник, що коштує більше, ніж твоя нирка. Він належав сумнозвісному мафіозі з Синдикату Вунібальдо «200-фунтова кінська м'ясорубка» Фредіані.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/goldwatch.rsi
+    layers:
+    - state: goldwatch
+    - map: [ "enum.ClockVisualLayers.MinuteHand"]
+    - map: [ "enum.ClockVisualLayers.HourHand"]
+  - type: Item
+    sprite: Objects/Devices/goldwatch.rsi
+  - type: Clothing
+    sprite: Objects/Devices/goldwatch.rsi
+  - type: StaticPrice
+    price: 500 #if you ever increase the price of kidneys, increase this too.
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 500

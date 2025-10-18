@@ -1,0 +1,1110 @@
+- type: entity
+  parent: BaseItem
+  id: BaseHealingItem
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medical.rsi
+  - type: Item
+    size: Small
+    sprite: Objects/Specific/Medical/medical.rsi
+    heldPrefix: ointment
+  # Inherited
+  - type: StaticPrice
+    price: 0
+
+- type: entity
+  name: мазь від опіків
+  description: Використовуйте для лікування цих клятих опіків.
+  parent: BaseHealingItem
+  id: Ointment
+  suffix: Повна
+  components:
+  - type: Tag
+    tags:
+    - Ointment
+  - type: Sprite
+    state: ointment
+  - type: Item
+    heldPrefix: ointment
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      types:
+        Heat: -5
+        Cold: -5
+        Shock: -5
+        Caustic: -1.5
+    healingBeginSound:
+      path: "/Audio/Items/Medical/ointment_begin.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+    healingEndSound:
+      path: "/Audio/Items/Medical/ointment_end.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+  - type: Stack
+    stackType: Ointment
+    count: 10
+  - type: StackPrice
+    price: 5
+
+- type: entity
+  id: Ointment1
+  parent: Ointment
+  suffix: Один
+  components:
+  - type: Stack
+    stackType: Ointment
+    count: 1
+
+- type: entity
+  name: регенеративна сітка
+  description: Використовується для лікування навіть найсерйозніших опіків. Також ефективна проти хімічних опіків.
+  parent: BaseHealingItem
+  id: RegenerativeMesh
+  suffix: Повна
+  components:
+  - type: Tag
+    tags:
+    - Ointment
+  - type: Sprite
+    state: regenerative-mesh
+  - type: Item
+    heldPrefix: regenerative-mesh
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      types:
+        Heat: -10
+        Cold: -10
+        Shock: -10
+        Caustic: -10
+    healingBeginSound:
+      path: "/Audio/Items/Medical/ointment_begin.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+    healingEndSound:
+      path: "/Audio/Items/Medical/ointment_end.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+  - type: Stack
+    stackType: RegenerativeMesh
+    count: 10
+  - type: StackPrice
+    price: 20
+
+- type: entity
+  id: OintmentAdvanced1
+  parent: RegenerativeMesh
+  suffix: Один
+  components:
+  - type: Stack
+    stackType: RegenerativeMesh
+    count: 1
+
+- type: entity
+  name: пакет від синців
+  description: "Терапевтичний гелевий пакет і пов’язки, призначені для лікування травм від тупої шкоди."
+  parent: BaseHealingItem
+  id: Brutepack
+  suffix: Повний
+  components:
+  - type: Tag
+    tags:
+    - Brutepack
+  - type: Sprite
+    state: brutepack
+  - type: Item
+    heldPrefix: brutepack
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      groups:
+        Brute: -15 # 5 for each type in the group
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+  - type: Stack
+    stackType: Brutepack
+    count: 10
+  - type: StackPrice
+    price: 5
+
+- type: entity
+  id: Brutepack1
+  parent: Brutepack
+  suffix: Один
+  components:
+  - type: Stack
+    stackType: Brutepack
+    count: 1
+
+- type: entity
+  name: медикаментозний шов
+  description: Шов, просочений лікарським засобом, ефективно лікує травми від тупої сили та зашиває рани.
+  parent: BaseHealingItem
+  id: MedicatedSuture
+  suffix: Повний
+  components:
+  - type: Tag
+    tags:
+    - Brutepack
+  - type: Sprite
+    state: medicated-suture
+  - type: Item
+    heldPrefix: medicated-suture
+    storedRotation: -90
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      groups:
+        Brute: -30 # 10 for each type in the group
+    bloodlossModifier: -10 # a suture should stop ongoing bleeding
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+  - type: Stack
+    stackType: MedicatedSuture
+    count: 10
+  - type: StackPrice
+    price: 20
+
+- type: entity
+  id: BrutepackAdvanced1
+  parent: MedicatedSuture
+  suffix: Один
+  components:
+  - type: Stack
+    stackType: MedicatedSuture
+    count: 1
+
+- type: entity
+  name: пакет крові
+  description: Містить новаторський універсальний кровозамінник, створений передовою медичною наукою Nanotrasen.
+  parent: BaseHealingItem
+  id: Bloodpack
+  suffix: Повний
+  components:
+  - type: Item
+    heldPrefix: bloodpack
+  - type: Tag
+    tags:
+    - Bloodpack
+  - type: Sprite
+    state: bloodpack
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      types:
+        Bloodloss: -0.5 #lowers bloodloss damage
+    modifyBloodLevel: 15 #restores about 5% blood per use on standard humanoids.
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+  - type: Stack
+    stackType: Bloodpack
+    count: 10
+  - type: StackPrice
+    price: 10
+
+- type: entity
+  parent: Bloodpack
+  id: Bloodpack1
+  suffix: Single
+  components:
+  - type: Stack
+    stackType: Bloodpack
+    count: 1
+
+- type: entity
+  parent: BaseHealingItem
+  id: Tourniquet
+  name: турнікет
+  description: Зупиняє кровотечу! Сподіваюся.
+  components:
+    - type: Tag
+      tags:
+        - SecBeltEquip
+    - type: Sprite
+      state: tourniquet
+    - type: Item
+      heldPrefix: tourniquet
+    - type: Healing
+      damageContainers:
+        - Biological
+      damage:
+        groups:
+          Brute: 5 # Tourniquets HURT!
+        types:
+          Asphyxiation: 5 # Essentially Stopping all blood reaching a part of your body
+      bloodlossModifier: -10 # Tourniquets stop bleeding
+      delay: 0.5
+      healingBeginSound:
+        path: "/Audio/Items/Medical/brutepack_begin.ogg"
+        params:
+          volume: 1.0
+          variation: 0.125
+      healingEndSound:
+        path: "/Audio/Items/Medical/brutepack_end.ogg"
+        params:
+          volume: 1.0
+          variation: 0.125
+
+- type: entity
+  name: бинти
+  description: Стерильні бинти, задля зупинки кровотечі.
+  parent: BaseHealingItem
+  id: Gauze
+  suffix: Повні
+  components:
+  - type: Tag
+    tags:
+    - Gauze
+  - type: Sprite
+    state: gauze
+  - type: Item
+    heldPrefix: gauze
+  - type: Construction
+    graph: Gauze
+    node: gauze
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      types:
+        Slash: -5
+        Piercing: -10
+    bloodlossModifier: -10
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+  - type: Stack
+    stackType: Gauze
+    count: 10
+  - type: StackPrice
+    price: 10
+
+- type: entity
+  id: Gauze1
+  parent: Gauze
+  suffix: Один
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  name: алое крем
+  description: Поверхневий крем для нанесення на опіки.
+  parent: Ointment ##Yes it's a direct reskin
+  id: AloeCream
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/aloe.rsi
+    state: cream
+  - type: Stack
+    stackType: AloeCream
+    count: 10
+
+- type: entity
+  parent: BaseHealingItem
+  id: HealingToolbox
+  name: лікуючий ящик інструментів
+  description: Потужнійший ящик інструментів наповнений робасною енергією. Він може зцілити ваші рани і сповнити вас вбивчим наміром.
+  categories: [ DoNotMap ]
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/healing_toolbox.rsi
+    state: icon
+  - type: Healing
+    damageContainers:
+    - Biological
+    damage:
+      groups: # these are all split across multiple types
+        Brute: -150
+        Burn: -150
+        Toxin: -150
+    bloodlossModifier: -20
+    delay: 1
+    selfHealPenaltyMultiplier: 0
+    healingBeginSound:
+      path: "/Audio/Items/Medical/ointment_begin.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+    healingEndSound:
+      path: "/Audio/Items/Medical/ointment_end.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+
+# Pills
+- type: entity
+  name: пігулка
+  suffix: Дексалін 10u
+  parent: Pill
+  id: PillDexalin
+  components:
+  - type: Pill
+    pillType: 15
+  - type: Sprite
+    state: pill16
+  - type: Label
+    currentLabel: dexalin 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Dexalin
+          Quantity: 10
+
+- type: entity
+  name: упаковка пігулок
+  parent: PillCanister
+  id: PillCanisterDexalin
+  suffix: Дексалін 10u, 7
+  components:
+  - type: Label
+    currentLabel: dexalin 10u
+  - type: StorageFill
+    contents:
+    - id: PillDexalin
+      amount: 7
+
+- type: entity
+  name: пігулка
+  suffix: Диловен 10u
+  parent: Pill
+  id: PillDylovene
+  components:
+  - type: Pill
+    pillType: 9
+  - type: Sprite
+    state: pill10
+  - type: Label
+    currentLabel: dylovene 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Dylovene
+          Quantity: 10
+
+- type: entity
+  name: упаковка пігулок
+  parent: PillCanister
+  id: PillCanisterDylovene
+  suffix: Диловен 10u, 5
+  components:
+  - type: Label
+    currentLabel: dylovene 10u
+  - type: StorageFill
+    contents:
+    - id: PillDylovene
+      amount: 5
+
+- type: entity
+  name: пігулка
+  suffix: Хіроналін 10u
+  parent: Pill
+  id: PillHyronalin
+  components:
+  - type: Pill
+    pillType: 16
+  - type: Sprite
+    state: pill17
+  - type: Label
+    currentLabel: hyronalin 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Hyronalin
+          Quantity: 10
+
+- type: entity
+  name: упаковка пігулок
+  parent: PillCanister
+  id: PillCanisterHyronalin
+  suffix: Хіроналін 10u, 5
+  components:
+  - type: Label
+    currentLabel: hyronalin 10u
+  - type: StorageFill
+    contents:
+    - id: PillHyronalin
+      amount: 5
+
+- type: entity
+  name: пігулка
+  suffix: Йодистий калій 10u
+  parent: Pill
+  id: PillPotassiumIodide
+  components:
+  - type: Pill
+    pillType: 8
+  - type: Sprite
+    state: pill9
+  - type: Label
+    currentLabel: potassium iodide 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: PotassiumIodide
+          Quantity: 10
+
+- type: entity
+  name: упаковка пігулок
+  parent: PillCanister
+  id: PillCanisterPotassiumIodide
+  suffix: Йодистий калій 10u, 5
+  components:
+  - type: Label
+    currentLabel: potassium iodide 10u
+  - type: StorageFill
+    contents:
+    - id: PillPotassiumIodide
+      amount: 5
+
+- type: entity
+  name: пігулка
+  suffix: Залізо 10u
+  parent: Pill
+  id: PillIron
+  components:
+  - type: Pill
+    pillType: 13
+  - type: Sprite
+    state: pill14
+  - type: Label
+    currentLabel: iron 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Iron
+          Quantity: 10
+
+- type: entity
+  name: пігулка
+  suffix: Мідь 10u
+  parent: Pill
+  id: PillCopper
+  components:
+  - type: Pill
+    pillType: 12
+  - type: Sprite
+    state: pill13
+  - type: Label
+    currentLabel: copper 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Copper
+          Quantity: 10
+
+- type: entity
+  name: упаковка пігулок
+  parent: PillCanister
+  id: PillCanisterIron
+  suffix: Залізо 10u, 5
+  components:
+  - type: Label
+    currentLabel: iron 10u
+  - type: StorageFill
+    contents:
+    - id: PillIron
+      amount: 5
+
+- type: entity
+  name: упаковка пігулок
+  parent: PillCanister
+  id: PillCanisterCopper
+  suffix: Мідь 10u, 5
+  components:
+  - type: Label
+    currentLabel: copper 10u
+  - type: StorageFill
+    contents:
+    - id: PillCopper
+      amount: 5
+
+- type: entity
+  name: пігулка
+  suffix: Келотан 10u
+  parent: Pill
+  id: PillKelotane
+  components:
+  - type: Pill
+    pillType: 3
+  - type: Sprite
+    state: pill4
+  - type: Label
+    currentLabel: kelotane 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Kelotane
+          Quantity: 10
+
+- type: entity
+  name: упаковка пігулок
+  parent: PillCanister
+  id: PillCanisterKelotane
+  suffix: Келотан 10u, 5
+  components:
+  - type: Label
+    currentLabel: kelotane 10u
+  - type: StorageFill
+    contents:
+    - id: PillKelotane
+      amount: 5
+
+- type: entity
+  name: пігулка
+  suffix: Дермалін 10u
+  parent: Pill
+  id: PillDermaline
+  components:
+  - type: Pill
+    pillType: 7
+  - type: Sprite
+    state: pill8
+  - type: Label
+    currentLabel: dermaline 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Dermaline
+          Quantity: 10
+
+- type: entity
+  name: упаковка пігулок
+  parent: PillCanister
+  id: PillCanisterDermaline
+  suffix: Дермалін 10u, 5
+  components:
+  - type: Label
+    currentLabel: dermaline 10u
+  - type: StorageFill
+    contents:
+    - id: PillDermaline
+      amount: 5
+
+- type: entity
+  name: космічний міраж
+  parent: Pill
+  id: PillSpaceDrugs
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: SpaceDrugs
+          Quantity: 15
+
+- type: entity
+  name: пігулка
+  suffix: Трикордразин 10u
+  parent: Pill
+  id: PillTricordrazine
+  components:
+  - type: Pill
+    pillType: 2
+  - type: Sprite
+    state: pill3
+  - type: Label
+    currentLabel: tricordrazine 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Tricordrazine
+          Quantity: 10
+
+- type: entity
+  name: упаковка пігулок
+  parent: PillCanister
+  id: PillCanisterTricordrazine
+  suffix: Трикордразин 10u, 5
+  components:
+  - type: Label
+    currentLabel: tricordrazine 10u
+  - type: StorageFill
+    contents:
+    - id: PillTricordrazine
+      amount: 5
+
+- type: entity
+  name: пігулка
+  suffix: Бікарівдин 10u
+  parent: Pill
+  id: PillBicaridine
+  components:
+  - type: Pill
+    pillType: 4
+  - type: Sprite
+    state: pill5
+  - type: Label
+    currentLabel: bicaridine 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Bicaridine
+          Quantity: 10
+
+- type: entity
+  name: упаковка пігулок
+  parent: PillCanister
+  id: PillCanisterBicaridine
+  suffix: Бікарідин 10u, 5
+  components:
+  - type: Label
+    currentLabel: bicaridine 10u
+  - type: StorageFill
+    contents:
+    - id: PillBicaridine
+      amount: 5
+
+- type: entity
+  name: пігулка
+  suffix: Вугілля 10u
+  parent: Pill
+  id: PillCharcoal
+  components:
+  - type: Pill
+    pillType: 20
+  - type: Sprite
+    state: pill21
+  - type: Label
+    currentLabel: charcoal 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Charcoal
+          Quantity: 10
+
+- type: entity
+  name: упаковка пігулок
+  parent: PillCanister
+  id: PillCanisterCharcoal
+  suffix: Вугілля 10u, 3
+  components:
+  - type: Label
+    currentLabel: charcoal 10u
+  - type: StorageFill
+    contents:
+    - id: PillCharcoal
+      amount: 3
+
+- type: entity
+  name: пігулка ромеролу
+  parent: Pill
+  id: PillRomerol
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Romerol
+          Quantity: 10
+
+- type: entity
+  name: пігулка амбузолу
+  parent: Pill
+  id: PillAmbuzol
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 20
+          reagents:
+            - ReagentId: Ambuzol
+              Quantity: 10
+
+- type: entity
+  name: пігулка амбузол+
+  parent: Pill
+  id: PillAmbuzolPlus
+  components:
+    - type: Pill
+      pillType: 2
+    - type: Sprite
+      state: pill3
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 20
+          reagents:
+            - ReagentId: AmbuzolPlus
+              Quantity: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterRandom
+  suffix: Випадкове
+  components:
+  - type: StorageFill
+    contents:
+    - id: PillDexalin
+      prob: 0.10
+      maxAmount: 7
+      orGroup: RandomPill
+    - id: PillDylovene
+      prob: 0.10
+      maxAmount: 7
+      orGroup: RandomPill
+    - id: PillHyronalin
+      prob: 0.10
+      maxAmount: 7
+      orGroup: RandomPill
+    - id: PillPotassiumIodide
+      prob: 0.10
+      maxAmount: 7
+      orGroup: RandomPill
+    - id: PillIron
+      prob: 0.10
+      maxAmount: 7
+      orGroup: RandomPill
+    - id: PillCopper
+      prob: 0.10
+      maxAmount: 7
+      orGroup: RandomPill
+    - id: PillKelotane
+      prob: 0.10
+      maxAmount: 7
+      orGroup: RandomPill
+    - id: PillDermaline
+      prob: 0.10
+      maxAmount: 7
+      orGroup: RandomPill
+    - id: PillTricordrazine
+      prob: 0.10
+      maxAmount: 7
+      orGroup: RandomPill
+    - id: PillBicaridine
+      prob: 0.10
+      maxAmount: 7
+      orGroup: RandomPill
+    - id: PillCharcoal
+      prob: 0.10
+      maxAmount: 7
+      orGroup: RandomPill
+    - id: PillAmbuzol
+      prob: 0.075
+      maxAmount: 7
+      orGroup: RandomPill
+    - id: PillAmbuzolPlus
+      prob: 0.075
+      maxAmount: 7
+      orGroup: RandomPill
+    - id: PillSpaceDrugs
+      prob: 0.075
+      maxAmount: 7
+      orGroup: RandomPill
+    - id: StrangePill
+      prob: 0.075
+      maxAmount: 7
+      orGroup: RandomPill
+
+# Syringes
+- type: entity
+  suffix: ефедрин
+  parent: PrefilledSyringe
+  id: SyringeEphedrine
+  components:
+  - type: Label
+    currentLabel: reagent-name-ephedrine
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: Ephedrine
+          Quantity: 15
+
+- type: entity
+  suffix: інопровалін
+  parent: PrefilledSyringe
+  id: SyringeInaprovaline
+  components:
+  - type: Label
+    currentLabel: reagent-name-inaprovaline
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: Inaprovaline
+          Quantity: 15
+
+- type: entity
+  suffix: транексамова кислота
+  parent: PrefilledSyringe
+  id: SyringeTranexamicAcid
+  components:
+  - type: Label
+    currentLabel: reagent-name-tranexamic-acid
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: TranexamicAcid
+          Quantity: 15
+
+- type: entity
+  suffix: бікарідин
+  parent: PrefilledSyringe
+  id: SyringeBicaridine
+  components:
+  - type: Label
+    currentLabel: reagent-name-bicaridine
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: Bicaridine
+          Quantity: 15
+
+- type: entity
+  suffix: дермалін
+  parent: PrefilledSyringe
+  id: SyringeDermaline
+  components:
+  - type: Label
+    currentLabel: reagent-name-dermaline
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: Dermaline
+          Quantity: 15
+
+- type: entity
+  suffix: хіроналін
+  parent: PrefilledSyringe
+  id: SyringeHyronalin
+  components:
+  - type: Label
+    currentLabel: reagent-name-hyronalin
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: Hyronalin
+          Quantity: 15
+
+- type: entity
+  suffix: іпекак
+  parent: PrefilledSyringe
+  id: SyringeIpecac
+  components:
+  - type: Label
+    currentLabel: reagent-name-ipecac
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: Ipecac
+          Quantity: 15
+
+- type: entity
+  suffix: амбузол
+  parent: PrefilledSyringe
+  id: SyringeAmbuzol
+  components:
+  - type: Label
+    currentLabel: reagent-name-ambuzol
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+          - ReagentId: Ambuzol
+            Quantity: 15
+
+- type: entity
+  suffix: сигінат
+  parent: PrefilledSyringe
+  id: SyringeSigynate
+  components:
+  - type: Label
+    currentLabel: reagent-name-sigynate
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+          - ReagentId: Sigynate
+            Quantity: 15
+
+- type: entity
+  suffix: етилдексоразин
+  parent: PrefilledSyringe
+  id: SyringeEthylredoxrazine
+  components:
+  - type: Label
+    currentLabel: reagent-name-ethylredoxrazine
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+          - ReagentId: Ethylredoxrazine
+            Quantity: 15
+
+- type: entity
+  suffix: фаланксимін
+  parent: PrefilledSyringe
+  id: SyringePhalanximine
+  components:
+  - type: Label
+    currentLabel: reagent-name-phalanximine
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+          - ReagentId: Phalanximine
+            Quantity: 15
+
+- type: entity
+  suffix: салін
+  parent: PrefilledSyringe
+  id: SyringeSaline
+  components:
+  - type: Label
+    currentLabel: reagent-name-saline
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+          - ReagentId: Saline
+            Quantity: 15
+
+#this is where all the syringes are so i didn't know where to put it
+- type: entity
+  suffix: ромерол
+  parent: PrefilledSyringe
+  id: SyringeRomerol
+  components:
+  - type: Label
+    currentLabel: reagent-name-romerol
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: Romerol
+          Quantity: 15
+
+- type: entity
+  suffix: гіперзин
+  parent: PrefilledSyringe
+  id: SyringeStimulants
+  components:
+  - type: Label
+    currentLabel: reagent-name-stimulants
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: Stimulants
+          Quantity: 15
+
+# Entity Tables
+- type: entityTable
+  id: RandomSafePillTable
+  table: !type:GroupSelector
+    children:
+    - id: PillBicaridine
+    - id: PillCharcoal
+    - id: PillCopper
+    - id: PillDermaline
+    - id: PillDexalin
+    - id: PillDylovene
+    - id: PillHyronalin
+    - id: PillIron
+    - id: PillKelotane
+    - id: PillPotassiumIodide
+    - id: PillTricordrazine
+    - id: StrangePill
+
+- type: entityTable
+  id: RandomSafeSyringeTable
+  table: !type:GroupSelector
+    children:
+    - id: SyringeBicaridine
+    - id: SyringeDermaline
+    - id: SyringeEphedrine
+    - id: SyringeEthylredoxrazine
+    - id: SyringeHyronalin
+    - id: SyringeInaprovaline
+    - id: SyringeIpecac
+    - id: SyringePhalanximine
+    - id: SyringeSaline
+    - id: SyringeSigynate
+    - id: SyringeTranexamicAcid

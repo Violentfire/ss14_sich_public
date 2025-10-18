@@ -1,0 +1,26 @@
+- type: entity
+  parent: BaseItem
+  id: WhiteCane
+  name: біла тростина
+  description: Це не для вас. Це для людей, які не можуть зрозуміти, що ви сліпі, коли запитуєте, чи постачання це бар.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/white_cane.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    sprite: Objects/Weapons/Melee/white_cane.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: 45
+    damage:
+      types:
+        Blunt: 5
+  - type: StaminaDamageOnHit
+    damage: 5
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 3
+  - type: UseDelay
+    delay: 1

@@ -1,0 +1,14 @@
+- type: entity
+  id: IntercomElectronics
+  parent: BaseElectronics
+  name: плата інтеркому
+  description: Плата, що використовується в збірці інтеркому.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: id_mod
+  - type: Tag
+    tags:
+      - IntercomElectronics
+  - type: StaticPrice
+    price: 55

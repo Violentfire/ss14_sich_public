@@ -1,0 +1,27 @@
+- type: entity
+  parent: ParticleAcceleratorFinishedPart
+  id: ParticleAcceleratorFuelChamber
+  name: паливна камера ПЧ
+  description: Офіційно відома як камера прискорення ЕМ. Це місце, де альфа-частинки прискорюються до радикальної швидкості.
+  components:
+  - type: Sprite
+    sprite: Structures/Power/Generation/PA/fuel_chamber.rsi
+  - type: ParticleAcceleratorFuelChamber
+  - type: Construction
+    graph: ParticleAcceleratorFuelChamber
+  - type: MultipartMachinePart
+
+# Unfinished
+
+- type: entity
+  parent: ParticleAcceleratorUnfinishedBase
+  id: ParticleAcceleratorFuelChamberUnfinished
+  name: паливна камера ПЧ
+  suffix: Unfinished
+  description: Офіційно відома як камера прискорення ЕМ. Це місце, де альфа-частинки прискорюються до радикальної швидкості. Виглядає незавершеним.
+  components:
+  - type: Sprite
+    sprite: Structures/Power/Generation/PA/fuel_chamber.rsi
+  - type: Construction
+    graph: ParticleAcceleratorFuelChamber
+  - type: MultipartMachinePart

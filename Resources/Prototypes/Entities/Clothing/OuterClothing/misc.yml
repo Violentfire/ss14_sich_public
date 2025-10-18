@@ -1,0 +1,414 @@
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterApron
+  name: фартух
+  description: Шикарний та стильний фартух, для шикарної та стильної персони.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/apron.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/apron.rsi
+  - type: Tag
+    tags:
+    - Apron
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterApronBar
+  suffix: Бармен
+  name: фартух 
+  description: Темний фартух, призначений для барменів.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/apronbar.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/apronbar.rsi
+  - type: Tag
+    tags:
+    - Apron
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterApronBotanist
+  name: фартух 
+  suffix: Ботанік
+  description: Товстий блакитний фартух, який ідеально підходить для ізоляції вашої ніжної плоті від розливів, ґрунту, та кодючок.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/apronbotanist.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/apronbotanist.rsi
+  - type: Tag
+    tags:
+    - Apron
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterApronChef
+  name: фартух
+  suffix: Шеф-кухар
+  description: Фартух, що використовується провесійними кухарями станції. Чудово захищає від плям, 
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/apronchef.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/apronchef.rsi
+  - type: Tag
+    tags:
+    - Apron
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterJacketChef
+  name: куртка шеф-кухара
+  description: Куртка, що використовується професійними кухарями станції.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/chef.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/chef.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterHoodieBlack
+  name: чорна толстовка
+  description: О боже мій! Це чорна толстовка!
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/black_hoodie.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/black_hoodie.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterHoodieGrey
+  name: сіра толстовка
+  description: Це сіра толстовка.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/grey_hoodie.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/grey_hoodie.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterCardborg
+  name: картонний костюм робота
+  description: Звичайні коробки, з прорізами для рук, ніг, та голови. "Біп-буп, ідентифіковано крутий косплей!"
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/cardborg.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/cardborg.rsi
+  - type: TypingIndicatorClothing
+    proto: robot
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingOuterBaseToggleable
+  id: ClothingOuterHoodieChaplain
+  name: капеланська толстовка
+  description: Чорна та строга толстовка капелана.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/chaplain_hoodie.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/chaplain_hoodie.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodChaplainHood
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterPonchoClassic
+  name: класичне пончо
+  description: Тепле та зручне пончо. Більш класичне ніж просто пончо.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/classicponcho.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/classicponcho.rsi
+  - type: AddAccentClothing
+    accent: SpanishAccent
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterRobesCult
+  name: мантія культиста
+  description: Не існує культу без їх "культових" червоно-малинових мантій.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/cultrobes.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/cultrobes.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterRobesJudge
+  name: мантія судді
+  description: Від цієї мантії так і віє владою.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/judge.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/judge.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterPoncho
+  name: пончо
+  description: Тепле та зручне пончо.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/poncho.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/poncho.rsi
+  - type: AddAccentClothing
+    accent: SpanishAccent
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterSanta
+  name: костюм Санти
+  description: Хоу-хоу-хоу!
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/santa.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/santa.rsi
+
+- type: entity
+  abstract: true
+  parent: [ ClothingOuterBase, AllowSuitStorageClothingGasTanks, BaseMagicalContraband ]
+  id: ClothingOuterWizardBase
+  components:
+  - type: WizardClothes
+
+# Is this wizard wearing a fanny pack???
+- type: entity
+  parent: ClothingOuterWizardBase
+  id: ClothingOuterWizardViolet
+  name: фіолетова чаклунська мантія
+  description: Загадкова фіолетова мантія, декорована самоцвітами, та випромінює магічну енергію.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/violetwizard.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/violetwizard.rsi
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingOuterWizardBase
+  id: ClothingOuterWizard
+  name: синя чаклунська мантія
+  description: Загадкова синя мантія, декорована самоцвітами, та випромінює магічну енергію.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/wizard.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/wizard.rsi
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingOuterWizardBase
+  id: ClothingOuterWizardRed
+  name: червона чаклунська мантія
+  description: Загадкова червона мантія, декорована самоцвітами, та випромінює магічну енергію.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/redwizard.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/redwizard.rsi
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterSkub
+  name: костюм скуб
+  description: '"Skub" написано на зовнішній стороні цього циліндричного костюму.'
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/skubbody.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/skubbody.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterPlagueSuit
+  name: костюм чумного лікаря
+  description: -"Куди йдеш?" -"На вечірку." -"На яку?" -"НА ЧУМОВУ!"
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/plaguedoctorsuit.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/plaguedoctorsuit.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterNunRobe
+  name: мантія монахині
+  description: Максимальна побожність у цій зоряній системі.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/nunrobe.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/nunrobe.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterGhostSheet
+  name: костюм привида
+  description: Це п-при-и-и-и-и-ивид!
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/ghostsheet.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/ghostsheet.rsi
+  - type: Construction
+    graph: GhostSheet
+    node: ghost_sheet
+  - type: IdentityBlocker
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterHospitalGown
+  name: лікарняний халат
+  description: Виготовлений з вовни забитих ягнят. Жорстокість робить його м'якішим.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/hospitalgown.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/hospitalgown.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterFlannelRed
+  name: червона сорочка
+  description: Старомодна червона сорочка у клітинку, для космічної осені.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/flannel_jacket.rsi
+    layers:
+    - state: icon
+      color: "#670a09"
+    - state: icon-lines
+      color: "#000000"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#670a09"
+      - state: inhand-left-lines
+        color: "#000000"
+      right:
+      - state: inhand-right
+        color: "#670a09"
+      - state: inhand-right-lines
+        color: "#000000"
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/flannel_jacket.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: "#670a09"
+      - state: equipped-OUTERCLOTHING-lines
+        color: "#000000"
+  - type: TemperatureProtection
+    coolingCoefficient: 0.3
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterFlannelBlue
+  name: синя сорочка
+  description: Старомодна синя сорочка у клітинку, для космічної осені.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/flannel_jacket.rsi
+    layers:
+    - state: icon
+      color: "#3232a6"
+    - state: icon-lines
+      color: "#000000"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3232a6"
+      - state: inhand-left-lines
+        color: "#000000"
+      right:
+      - state: inhand-right
+        color: "#3232a6"
+      - state: inhand-right-lines
+        color: "#000000"
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/flannel_jacket.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: "#3232a6"
+      - state: equipped-OUTERCLOTHING-lines
+        color: "#000000"
+  - type: TemperatureProtection
+    coolingCoefficient: 0.3
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterFlannelGreen
+  name: зелена сорочка
+  description: Старомодна зелена сорочка у клітинку, для космічної осені.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/flannel_jacket.rsi
+    layers:
+    - state: icon
+      color: "#164d0f"
+    - state: icon-lines
+      color: "#000000"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#164d0f"
+      - state: inhand-left-lines
+        color: "#000000"
+      right:
+      - state: inhand-right
+        color: "#164d0f"
+      - state: inhand-right-lines
+        color: "#000000"
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/flannel_jacket.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: "#164d0f"
+      - state: equipped-OUTERCLOTHING-lines
+        color: "#000000"
+  - type: TemperatureProtection
+    coolingCoefficient: 0.3
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterRedRacoon
+  name: костюм червоного єнота
+  description: Пухнастий костюм, не менш пухнастого червоного єнота!
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/red_racoon.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/red_racoon.rsi

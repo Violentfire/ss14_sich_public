@@ -1,0 +1,1369 @@
+﻿- type: entity
+  id: AutolatheMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата автолату
+  description: Друкована плата програмованого автоматичного токарно-фрезерувального верстату.
+  components:
+    - type: MachineBoard
+      prototype: Autolathe
+      stackRequirements:
+        Manipulator: 4
+        Glass: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: AutolatheHyperConvectionMachineCircuitboard
+  name: плата гіперконвекційного автолату
+  description: Друкована плата просунутого програмованого автоматичного токарно-фрезерувального верстату.
+  components:
+  - type: MachineBoard
+    prototype: AutolatheHyperConvection
+    stackRequirements:
+      Manipulator: 3
+      Glass: 1
+    tagRequirements:
+      Igniter:
+        amount: 1
+        defaultPrototype: Igniter
+
+- type: entity
+  id: ProtolatheMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата протолату
+  description: Друкована плата для програмованого прототокарного верстату.
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: Protolathe
+    stackRequirements:
+      Manipulator: 4
+    tagRequirements:
+      GlassBeaker:
+        amount: 2
+        defaultPrototype: Beaker
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: ProtolatheHyperConvectionMachineCircuitboard
+  name: плата гіперконвекційного протолату
+  description: Друкована плата для просунутого програмованого прототокарного верстату.
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: ProtolatheHyperConvection
+    stackRequirements:
+      Manipulator: 4
+    tagRequirements:
+      GlassBeaker:
+        amount: 2
+        defaultPrototype: Beaker
+      Igniter:
+        amount: 1
+        defaultPrototype: Igniter
+
+- type: entity
+  id: BiofabricatorMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата біо-фабрикатора
+  description: Друкована плата для біо-фабрикатора.
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: Biofabricator
+    stackRequirements:
+      Manipulator: 4
+      Glass: 1
+
+- type: entity
+  id: SecurityTechFabCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата техфабу охорони
+  description: Друкована плата для техфабу служби безпеки.
+  components:
+    - type: Sprite
+      state: security
+    - type: MachineBoard
+      prototype: SecurityTechFab
+      stackRequirements:
+        Manipulator: 4
+      tagRequirements:
+        GlassBeaker:
+          amount: 2
+          defaultPrototype: Beaker
+
+- type: entity
+  id: AmmoTechFabCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата техфабу набоїв
+  description: Друкована плата для техфабу набоїв, аби принести демократії.
+  components:
+    - type: Sprite
+      state: security
+    - type: MachineBoard
+      prototype: AmmoTechFab
+      stackRequirements:
+        Manipulator: 2
+
+- type: entity
+  id: MedicalTechFabCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата медичного техфабу
+  description: Друкована плата для медичного техфабу.
+  components:
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: MedicalTechFab
+      stackRequirements:
+        Manipulator: 4
+      tagRequirements:
+        GlassBeaker:
+          amount: 2
+          defaultPrototype: Beaker
+    - type: StealTarget
+      stealGroup: MedicalTechFabCircuitboard
+
+- type: entity
+  id: CircuitImprinterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата для принтера плат
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: CircuitImprinter
+    stackRequirements:
+      Manipulator: 2
+    tagRequirements:
+      GlassBeaker:
+        amount: 2
+        defaultPrototype: Beaker
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: CircuitImprinterHyperConvectionMachineCircuitboard
+  name: плата гіперконвекційного принтера плат
+  description: Друкована плата просунутого принтера плат.
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: CircuitImprinterHyperConvection
+    stackRequirements:
+      Manipulator: 2
+    tagRequirements:
+      GlassBeaker:
+        amount: 2
+        defaultPrototype: Beaker
+      Igniter:
+        amount: 1
+        defaultPrototype: Igniter
+
+- type: entity
+  id: ExosuitFabricatorMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата фабрикатора СПД (EVA)
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: ExosuitFabricator
+    stackRequirements:
+      Manipulator: 4
+      Glass: 5
+  - type: GuideHelp
+    guides:
+    - Robotics
+
+# yes i know this prototype name is long i'm just following conventions
+- type: entity
+  id: ResearchAndDevelopmentServerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата серверу відділу досліджень та розробки
+  description: Друкована плата серверу відділу Досліджень та Розробки.
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: ResearchAndDevelopmentServer
+    stackRequirements:
+      Plasma: 5
+
+- type: entity
+  id: BiogeneratorMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата біогенератора
+  description: Друкована плата біогенератора.
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: Biogenerator
+    stackRequirements:
+      Manipulator: 2
+    tagRequirements:
+      GlassBeaker:
+        amount: 1
+        defaultPrototype: Beaker
+
+- type: entity
+  id: UniformPrinterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата принтера уніформи
+  components:
+  - type: MachineBoard
+    prototype: UniformPrinter
+    stackRequirements:
+      Manipulator: 3
+
+- type: entity
+  id: VaccinatorMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата вакцинатора
+  components:
+  - type: Sprite
+    state: medical
+  - type: MachineBoard
+    prototype: Vaccinator
+    stackRequirements:
+      Manipulator: 2
+      Cable: 5
+    tagRequirements:
+        GlassBeaker:
+          amount: 1
+          defaultPrototype: Beaker
+
+- type: entity
+  id: DiagnoserMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата діагностувальної машини
+  components:
+  - type: Sprite
+    state: medical
+  - type: MachineBoard
+    prototype: DiseaseDiagnoser
+    stackRequirements:
+      Cable: 5
+    tagRequirements:
+      GlassBeaker:
+        amount: 1
+        defaultPrototype: Beaker
+    componentRequirements:
+      BotanySwab:
+        amount: 1
+        defaultPrototype: DiseaseSwab
+
+- type: entity
+  id: ArtifactAnalyzerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата аналізатора артефактів
+  description: Друкована плата для аналізатора артефактів. Що, знову взірвали ксеноархеологію?
+  components:
+    - type: Sprite
+      state: science
+    - type: MachineBoard
+      prototype: MachineArtifactAnalyzer
+      stackRequirements:
+        Manipulator: 1
+        Glass: 5
+
+- type: entity
+  id: ArtifactCrusherMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата подрібнювача артефактів
+  description: Друкована плата подрібнювача артефактів.
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: MachineArtifactCrusher
+    stackRequirements:
+      Manipulator: 2
+      Glass: 1
+      Steel: 5
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: AnomalyVesselCircuitboard
+  name: плата накопичувача аномалій
+  description: Друкована плата накопичувача аномалій.
+  components:
+    - type: Sprite
+      state: science
+    - type: MachineBoard
+      prototype: MachineAnomalyVessel
+      stackRequirements:
+        Manipulator: 3
+        Cable: 1
+        PlasmaGlass: 10
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: AnomalyVesselExperimentalCircuitboard
+  name: плата експерементального накопичувача аномалій
+  description: Друкована плата експерементального накопичувача аномалій. Ого, хтось справді збере його нарешті?
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: MachineAnomalyVesselExperimental
+    stackRequirements:
+      Manipulator: 3
+      Cable: 5
+      PlasmaGlass: 15
+      MetalRod: 4
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: AnomalySynchronizerCircuitboard
+  name: плата синхронізатора аномалій
+  description: Друкована плата синхронізатора аномалій.
+  components:
+    - type: Sprite
+      state: science
+    - type: MachineBoard
+      prototype: MachineAnomalySynchronizer
+      stackRequirements:
+        Manipulator: 7
+        PlasmaGlass: 5
+        Cable: 5
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: APECircuitboard
+  name: плата A.P.E.
+  description: Друкована плата для A.P.E.
+  components:
+    - type: Sprite
+      state: science
+    - type: MachineBoard
+      prototype: MachineAPE
+      stackRequirements:
+        Manipulator: 2
+        Cable: 1
+        Glass: 1
+
+- type: entity
+  id: ThermomachineFreezerMachineCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: плата морозильної камери
+  description: Виглядає, ніби можна усього лише самою викруткою змінити тип плати.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: GasThermoMachineFreezer
+    stackRequirements:
+      Manipulator: 4
+      Cable: 5
+  - type: Construction
+    deconstructionTarget: null
+    graph: ThermomachineBoard
+    node: freezer
+
+- type: entity
+  id: ThermomachineHeaterMachineCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: плата нагрівача
+  description: Виглядає, ніби можна усього лише самою викруткою змінити тип плати.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: GasThermoMachineHeater
+    stackRequirements:
+      Manipulator: 4
+      Cable: 5
+  - type: Construction
+    graph: ThermomachineBoard
+    deconstructionTarget: null
+    node: heater
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: HellfireFreezerMachineCircuitBoard
+  name: "плата морозильної камери пекельного полум'я"
+  description: Виглядає, ніби можна усього лише самою викруткою змінити тип плати.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: GasThermoMachineHellfireFreezer
+    stackRequirements:
+      Manipulator: 4
+      Plasma: 1
+  - type: Construction
+    deconstructionTarget: null
+    graph: ThermomachineBoard
+    node: hellfirefreezer
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: HellfireHeaterMachineCircuitBoard
+  name: "плата нагрівача пекельного полум'я"
+  description: Виглядає, ніби можна усього лише самою викруткою змінити тип плати.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: GasThermoMachineHellfireHeater
+    stackRequirements:
+      Manipulator: 4
+      Plasma: 1
+  - type: Construction
+    graph: ThermomachineBoard
+    deconstructionTarget: null
+    node: hellfireheater
+
+- type: entity
+  id: CondenserMachineCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: плата конденсатора
+  description: Друкована плата для конденсатора.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: BaseGasCondenser
+    stackRequirements:
+      Manipulator: 1
+      Glass: 1
+
+- type: entity
+  id: PortableScrubberMachineCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: плата портативного повітряного всмоктувача
+  description: Друкована плата потративного пов. всмоктувача.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: PortableScrubber
+    stackRequirements:
+      Manipulator: 3
+      Cable: 5
+      Glass: 2
+
+- type: entity
+  id: SpaceHeaterMachineCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: плата космічного обігрівача
+  description: Друкована плата космічного обігрівача.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: SpaceHeater
+    stackRequirements:
+      Manipulator: 3
+      Cable: 5
+
+- type: entity
+  id: CloningPodMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата капсули для клонування
+  description: Друкована плата капсули для клонування. Тільки не показуйте її іншій платі.
+  components:
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: CloningPod
+      stackRequirements:
+        Manipulator: 4
+        Glass: 1
+        Cable: 1
+
+- type: entity
+  id: MedicalScannerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата медичного сканера
+  description: Друкована плата медичного сканера.
+  components:
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: MedicalScanner
+      stackRequirements:
+        Manipulator: 1
+        Glass: 5
+        Cable: 1
+
+- type: entity
+  id: CrewMonitoringServerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата консолі моніторингу екіпажу
+  description: Друкоавана плата консолі моніторингу екіпажу.
+  components:
+    - type: MachineBoard
+      prototype: CrewMonitoringServer
+      stackRequirements:
+        Steel: 1
+        Cable: 2
+
+- type: entity
+  id: CryoPodMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата кріокапсули
+  description: Друкована плата для кріокапсули.
+  components:
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: CryoPod
+      stackRequirements:
+        Glass: 5
+        Cable: 1
+
+- type: entity
+  id: ChemMasterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата ХімМайстра 4000
+  description: Друкована плата ХімМайстра 4000.
+  components:
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: ChemMaster
+      stackRequirements:
+        Manipulator: 1
+        Glass: 1
+        Cable: 1
+      tagRequirements:
+        GlassBeaker:
+          amount: 2
+          defaultPrototype: Beaker
+
+- type: entity
+  id: ChemDispenserMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата хімічного диспенсеру
+  description: Друкована плата хімічного диспенсеру.
+  components:
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: ChemDispenserEmpty
+      stackRequirements:
+        Manipulator: 1
+        Glass: 1
+        Steel: 3
+      tagRequirements:
+        GlassBeaker:
+          amount: 2
+          defaultPrototype: Beaker
+
+- type: entity
+  id: BiomassReclaimerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата утилізатора біомаси
+  description: Друкована плата утилізатора біомаси.
+  components:
+  - type: Sprite
+    state: medical
+  - type: MachineBoard
+    prototype: BiomassReclaimer
+    stackRequirements:
+      Manipulator: 3
+      Steel: 5
+    tagRequirements:
+      Knife:
+        amount: 2
+        defaultPrototype: KitchenKnife
+        examineName: construction-insert-info-examine-name-knife
+
+- type: entity
+  id: HydroponicsTrayMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата гідропонного піддону
+  description: Друкована плата гідпропонного піддону.
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: HydroponicsTrayEmpty
+      stackRequirements:
+        # replacing the console screen
+        Glass: 5
+        Cable: 2
+      tagRequirements:
+        GlassBeaker:
+          amount: 2
+          defaultPrototype: Beaker
+
+- type: entity
+  id: SeedExtractorMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата екстрактора насіння
+  description: Друкована плата екстрактора насіння.
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: SeedExtractor
+      stackRequirements:
+        Manipulator: 3
+        # replacing the console screen
+        Glass: 1
+        Cable: 2
+
+- type: entity
+  id: SMESMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата НМА
+  description: Друкована плата Надпровідного Магнітного Акумулятора, він же SMES.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: power_mod
+    - type: MachineBoard
+      prototype: SMESBasicEmpty
+      stackRequirements:
+        Manipulator: 1
+        CableHV: 10
+      componentRequirements:
+        PowerCell:
+          amount: 4
+          defaultPrototype: PowerCellSmall
+
+- type: entity
+  id: SMESAdvancedMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: advanced SMES machine board
+  description: A machine printed circuit board for an Advanced SMES.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: power_mod
+  - type: MachineBoard
+    prototype: SMESAdvancedEmpty
+    stackRequirements:
+      Manipulator: 2
+      CableHV: 20
+    componentRequirements:
+      PowerCell:
+        amount: 4
+        defaultPrototype: PowerCellMedium
+
+- type: entity
+  id: CellRechargerCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата зарядного пристрою для батарей
+  description: Друкована плата зарядного пристрою для батарей.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: charger_APC
+    - type: MachineBoard
+      prototype: PowerCellRecharger
+      stackRequirements:
+        Manipulator: 2
+        Cable: 5
+    - type: PhysicalComposition
+      materialComposition:
+        Steel: 30
+        Plastic: 30
+    - type: StaticPrice
+      price: 15
+
+- type: entity
+  id: PowerCageRechargerCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата зарядного пристрою обіймиці
+  description: Друкована плата зарядного пристрою обіймиці.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: charger_APC
+    - type: MachineBoard
+      prototype: PowerCageRecharger
+      stackRequirements:
+        Manipulator: 4
+        Steel: 5
+        Cable: 10
+    - type: PhysicalComposition
+      materialComposition:
+        Steel: 30
+        Plastic: 30
+    - type: StaticPrice
+      price: 30
+
+- type: entity
+  id: BorgChargerCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата зарядної станції боргів
+  description: Друкована плата зарядної станції боргів.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: charger_APC
+    - type: MachineBoard
+      prototype: BorgCharger
+      stackRequirements:
+        Manipulator: 2
+        Cable: 5
+    - type: PhysicalComposition
+      materialComposition:
+        Steel: 30
+        Plastic: 30
+    - type: StaticPrice
+      price: 15
+
+- type: entity
+  id: WeaponCapacitorRechargerCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата зарядного пристрою
+  description: Друкована плата зарядного пристрою.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: charger_APC
+    - type: MachineBoard
+      prototype: WeaponCapacitorRecharger
+      stackRequirements:
+        Manipulator: 2
+        CableMV: 5
+    - type: PhysicalComposition
+      materialComposition:
+        Steel: 30
+        Plastic: 30
+    - type: StaticPrice
+      price: 15
+
+- type: entity
+  id: TurboItemRechargerCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата турбо зарядного пристрою
+  description: Друкована плата турбо зарядного пристрою.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: charger_APC
+  - type: MachineBoard
+    prototype: TurboItemRecharger
+    stackRequirements:
+      Manipulator: 2
+      CableMV: 5
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 30
+      Plastic: 30
+
+- type: entity
+  id: SubstationMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата підстанції
+  description: Друкована плата підстанції.
+  components:
+    - type: MachineBoard
+      prototype: SubstationBasicEmpty
+      stackRequirements:
+        Manipulator: 1
+        CableMV: 5
+        CableHV: 5
+      componentRequirements:
+        PowerCell:
+          amount: 1
+          defaultPrototype: PowerCellSmall
+    - type: PhysicalComposition
+      materialComposition:
+        Glass: 200
+      chemicalComposition:
+        Silicon: 20
+    - type: StaticPrice
+      price: 58
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: DawInstrumentMachineCircuitboard
+  name: плата цифрової аудіостанції
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: DawInstrument
+    stackRequirements:
+      Glass: 1
+      Cable: 1
+    tagRequirements:
+#      One instrument to bring them all and in the darkness bind them...
+       KeyedInstrument:
+          amount: 1
+          defaultPrototype: SynthesizerInstrument
+          examineName: construction-insert-info-examine-name-instrument-keyed
+       StringInstrument:
+          amount: 1
+          defaultPrototype: AcousticGuitarInstrument
+          examineName: construction-insert-info-examine-name-instrument-string
+       PercussionInstrument:
+          amount: 1
+          defaultPrototype: GlockenspielInstrument
+          examineName: construction-insert-info-examine-name-instrument-percussion
+       BrassInstrument:
+          amount: 1
+          defaultPrototype: TrumpetInstrument
+          examineName: construction-insert-info-examine-name-instrument-brass
+       WoodwindInstrument:
+          amount: 1
+          defaultPrototype: SaxophoneInstrument
+          examineName: construction-insert-info-examine-name-instrument-woodwind
+
+- type: entity
+  id: PortableGeneratorPacmanMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата портативного генератора типу P.A.C.M.A.N.
+  components:
+    - type: Sprite
+      state: engineering
+    - type: MachineBoard
+      prototype: PortableGeneratorPacman
+      stackRequirements:
+        Manipulator: 1
+        CableHV: 5
+    - type: PhysicalComposition
+      materialComposition:
+        Glass: 200
+      chemicalComposition:
+        Silicon: 20
+    - type: StaticPrice
+      price: 40
+
+- type: entity
+  id: ThrusterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата прискорювача
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: Thruster
+    stackRequirements:
+      Manipulator: 4
+      Steel: 5
+
+- type: entity
+  id: GyroscopeMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата гіроскопу
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: Gyroscope
+    stackRequirements:
+      Manipulator: 3
+      Glass: 2
+
+- type: entity
+  id: PortableGeneratorSuperPacmanMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата портативного генератора типу S.U.P.E.R.P.A.C.M.A.N.
+  components:
+    - type: Sprite
+      state: engineering
+    - type: MachineBoard
+      prototype: PortableGeneratorSuperPacman
+      stackRequirements:
+        Manipulator: 2
+        CableHV: 10
+    - type: PhysicalComposition
+      materialComposition:
+        Glass: 200
+      chemicalComposition:
+        Silicon: 20
+    - type: StaticPrice
+      price: 40
+
+- type: entity
+  id: PortableGeneratorJrPacmanMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата портативного генератора типу J.R.P.A.C.M.A.N.
+  components:
+    - type: Sprite
+      state: engineering
+    - type: MachineBoard
+      prototype: PortableGeneratorJrPacman
+      stackRequirements:
+        Manipulator: 1
+        Cable: 10
+    - type: PhysicalComposition
+      materialComposition:
+        Glass: 200
+      chemicalComposition:
+        Silicon: 20
+    - type: StaticPrice
+      price: 40
+
+- type: entity
+  id: ReagentGrinderMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата міксера
+  description: Друкована плата міксера.
+  components:
+    - type: MachineBoard
+      prototype: KitchenReagentGrinder
+      stackRequirements:
+        Manipulator: 4
+      tagRequirements:
+        GlassBeaker:
+          amount: 1
+          defaultPrototype: Beaker
+
+- type: entity
+  id: HotplateMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата плити
+  description: Друкована плата плити.
+  components:
+  - type: Sprite
+    state: medical
+  - type: MachineBoard
+    prototype: ChemistryHotplate
+    stackRequirements:
+      Manipulator: 2
+      Glass: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: ElectricGrillMachineCircuitboard
+  name: плата електричного грилю
+  description: Друкована плата електричного грилю.
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: KitchenElectricGrill
+    stackRequirements:
+      Manipulator: 4
+      Glass: 2
+      Cable: 5
+
+- type: entity
+  id: StasisBedMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата стазисного ліжка
+  components:
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: StasisBed
+      stackRequirements:
+        Manipulator: 2
+        Cable: 3
+        Steel: 2
+
+- type: entity
+  id: ElectrolysisUnitMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата електролізного агрегату
+  description: Друкована плата електролізного агрегату.
+  components:
+  - type: Sprite
+    state: medical
+  - type: MachineBoard
+    prototype: MachineElectrolysisUnit
+    stackRequirements:
+      Manipulator: 2
+      Cable: 1
+
+- type: entity
+  id: CentrifugeMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата настільної центрифуги
+  description: Друкована плата настільної центрифуги.
+  components:
+  - type: Sprite
+    state: medical
+  - type: MachineBoard
+    prototype: MachineCentrifuge
+    stackRequirements:
+      Manipulator: 1
+      Steel: 1
+
+- type: entity
+  id: MaterialSiloMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: material silo machine board
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: MachineMaterialSilo
+    stackRequirements:
+      Manipulator: 4
+      Cable: 1
+
+- type: entity
+  id: OreProcessorMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата перероблювача руди
+  components:
+    - type: Sprite
+      state: supply
+    - type: MachineBoard
+      prototype: OreProcessor
+      stackRequirements:
+        Manipulator: 4
+        Glass: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: OreProcessorIndustrialMachineCircuitboard
+  name: плата просунутого перероблювача руди
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: OreProcessorIndustrial
+    stackRequirements:
+      Manipulator: 4
+      Glass: 1
+
+- type: entity
+  id: SheetifierMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата лист-машини
+  components:
+  - type: MachineBoard
+    prototype: Sheetifier
+    stackRequirements:
+      Manipulator: 2
+
+- type: entity
+  id: MicrowaveMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата мікрохвильової печі
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: KitchenMicrowave
+      stackRequirements:
+        Manipulator: 1
+        Glass: 2
+        Cable: 2
+    - type: Tag
+      tags:
+      - MicrowaveMachineBoard
+
+- type: entity
+  id: SyndicateMicrowaveMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата мікрохвильової печі "donk. co"
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: SyndicateMicrowave
+      stackRequirements:
+        Manipulator: 1
+        Glass: 2
+        Cable: 2
+
+- type: entity
+  id: FatExtractorMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата екстрактору жиру
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: FatExtractor
+      stackRequirements:
+        Manipulator: 1
+      componentRequirements:
+        Utensil:
+          amount: 1
+          defaultPrototype: ForkPlastic
+          examineName: construction-insert-info-examine-name-utensil
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: FlatpackerMachineCircuitboard
+  name: плата Флетпакера 1001
+  components:
+  - type: MachineBoard
+    prototype: MachineFlatpacker
+    stackRequirements:
+      Manipulator: 3
+      Steel: 1
+
+- type: entity
+  id: EmitterCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата випромінювача
+  components:
+    - type: Sprite
+      state: engineering
+    - type: MachineBoard
+      prototype: Emitter
+      stackRequirements:
+        Manipulator: 2
+        CableHV: 5
+        Glass: 2
+
+- type: entity
+  id: SurveillanceCameraRouterCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата камери спостереження
+  description: Друкована плата камери спостереження. Що це? Хтось маленьким шрифтом вивів на ній "1984", що б це могло значити?
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: SurveillanceCameraRouterConstructed
+    stackRequirements:
+      Cable: 1
+
+- type: entity
+  id: SurveillanceCameraWirelessRouterCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата бездротового маршрутизатора камер спостереження
+  description: Друкована плата бездротового маршрутизатора камер спостереження. Що це? Хтось маленьким шрифтом вивів на ній "1984", що б це могло значити?
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: SurveillanceCameraWirelessRouterConstructed
+    stackRequirements:
+      Cable: 2
+      Glass: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: SurveillanceCameraWirelessRouterXenoborgCircuitboard
+  name: xenoborg camera wireless router
+  description: A machine printed circuit board for a xenoborg camera wireless router.
+  components:
+  - type: Sprite
+    state: generic
+  - type: MachineBoard
+    prototype: SurveillanceCameraWirelessRouterXenoborg
+    stackRequirements:
+      Cable: 2
+      Glass: 1
+
+- type: entity
+  id: SurveillanceWirelessCameraMovableCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата пересувної камери спостереження
+  description: Друкована плата пересувної камери спостереження. Що це? Хтось маленьким шрифтом вивів на ній "1984", що б це могло значити?
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: SurveillanceWirelessCameraMovableConstructed
+    stackRequirements:
+      Glass: 2
+      Cable: 2
+
+- type: entity
+  id: SurveillanceWirelessCameraAnchoredCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата бездротової камери спостереження
+  description: Друкована плата бездротової камери спостереження. Що це? Хтось маленьким шрифтом вивів на ній "1984", що б це могло значити?
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: SurveillanceWirelessCameraAnchoredConstructed
+    stackRequirements:
+      Cable: 2
+      Glass: 1
+
+- type: entity
+  id: GasRecyclerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата переробника газу
+  description: Друкована плата переробника газу.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: GasRecycler
+    stackRequirements:
+      Manipulator: 2
+      Steel: 10
+      Plasma: 5
+
+- type: entity
+  id: BoozeDispenserMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата дозатора напоїв
+  description: Друкована плата дозатора напоїв.
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: BoozeDispenserEmpty
+      stackRequirements:
+        Steel: 5
+      tagRequirements:
+          GlassBeaker:
+            amount: 1
+            defaultPrototype: Beaker
+
+- type: entity
+  id: CargoTelepadMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата телепаду карго
+  description: Друкована плата телепаду карго.
+  components:
+    - type: Sprite
+      state: supply
+    - type: MachineBoard
+      prototype: CargoTelepad
+      stackRequirements:
+        Manipulator: 2
+        Steel: 5
+
+- type: entity
+  id: MailTeleporterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: mail teleporter machine board
+  description: A machine printed circuit board for a mail teleporter.
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: CargoMailTeleporter
+    stackRequirements:
+      Manipulator: 2
+      Steel: 5
+
+- type: entity
+  id: SodaDispenserMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата дозатора газованки
+  description: Друкована плата дозатора газованки.
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: SodaDispenserEmpty
+      stackRequirements:
+        Steel: 5
+      tagRequirements:
+          GlassBeaker:
+            amount: 1
+            defaultPrototype: Beaker
+
+- type: entity
+  id: TelecomServerCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата серверу телекомів
+  description: Друкована плата серверу телекомів.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: TelecomServer
+    stackRequirements:
+      Steel: 1
+      Cable: 2
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: SalvageMagnetMachineCircuitboard
+  name: плата шахтарського магніту
+  description: Друкована плата шахтарського магніту.
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: SalvageMagnet
+    stackRequirements:
+      Manipulator: 4
+      Steel: 5
+      CableHV: 5
+      Cable: 2
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: MiniGravityGeneratorCircuitboard
+  name: плата міні-генератора гравітації
+  description: Друкована плата міні-генератора гравітації.
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: GravityGeneratorMini
+    stackRequirements:
+      Manipulator: 7
+      Steel: 5
+      CableHV: 5
+      Uranium: 2
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: StationAnchorCircuitboard
+  name: плата якоря станції
+  description: Друкована плата якоря станції.
+  components:
+  - type: MachineBoard
+    prototype: StationAnchor
+    stackRequirements:
+      Manipulator: 7
+      Steel: 10
+      Glass: 5
+      CableHV: 8
+      Uranium: 2
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: ReagentGrinderIndustrialMachineCircuitboard
+  name: плата просунутого подрібнювача
+  components:
+  - type: MachineBoard
+    prototype: ReagentGrinderIndustrial
+    stackRequirements:
+      Manipulator: 4
+      Glass: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: JukeboxCircuitBoard
+  name: плата музикального програвача
+  description: Друкована плата музикального програвача.
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: Jukebox
+    stackRequirements:
+      WoodPlank: 5
+      Steel: 2
+      Glass: 5
+      Cable: 2
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: CutterMachineCircuitboard
+  name: плата різчика плитки
+  components:
+  - type: MachineBoard
+    prototype: CutterMachine
+    stackRequirements:
+      Steel: 2
+      Manipulator: 2
+      Cable: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: SmartFridgeCircuitboard
+  name: SmartFridge machine board
+  description: A machine printed circuit board for a SmartFridge.
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: SmartFridge
+    stackRequirements:
+      Glass: 5
+      Manipulator: 2
+    tagRequirements:
+        GlassBeaker:
+          amount: 2
+          defaultPrototype: Beaker

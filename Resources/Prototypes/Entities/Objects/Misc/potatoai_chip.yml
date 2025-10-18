@@ -1,0 +1,17 @@
+- type: entity
+  id: PotatoAIChip
+  name: суперкомпактний чіп ШІ
+  parent: BaseItem
+  description: Для правильної роботи цієї високотехнологічної мікросхеми ШІ потрібна напруга рівно у 1,1 В.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/potatoai_chip.rsi
+      state: icon
+    - type: Item
+      size: Tiny
+    - type: Tag
+      tags:
+        - SmallAIChip
+    - type: Construction
+      graph: PotatoAIChip
+      node: potatoaichip

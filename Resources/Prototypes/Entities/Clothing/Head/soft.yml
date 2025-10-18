@@ -1,0 +1,335 @@
+- type: entity
+  parent: [ClothingHeadBaseButcherable, BaseFoldable]
+  id: ClothingHeadHeadHatBaseFlippable
+  abstract: true
+  components:
+  - type: Appearance
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  - type: Sprite
+    layers:
+    - state: icon
+      map: [ "unfoldedLayer" ]
+    - state: icon_flipped
+      map: ["foldedLayer"]
+      visible: false
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHeadHatBaseFlipped
+  suffix: flipped
+  abstract: true
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: flipped
+  - type: Item
+    heldPrefix: flipped
+  - type: Sprite
+    layers:
+    - state: icon
+      map: [ "unfoldedLayer" ]
+      visible: false
+    - state: icon_flipped
+      map: ["foldedLayer"]
+      visible: true
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatBluesoft
+  name: синя кепка
+  description: "Ця кепка пофарбована у синій колір."
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/bluesoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/bluesoft.rsi
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatBluesoft]
+  id: ClothingHeadHatBluesoftFlipped
+  name: синя кепка
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatCargosoft
+  name: кепка вантажника
+  description: "Ця кепка пофарбована у кольори карго."
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/cargosoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/cargosoft.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatCargosoft]
+  id: ClothingHeadHatCargosoftFlipped
+  name: кепка вантажника
+  components:
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatQMsoft
+  name: кепка квартирмейстра
+  description: "Ця кепка пофарбована у кольори квартирмейстра."
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/qmsoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/qmsoft.rsi
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatQMsoft]
+  id: ClothingHeadHatQMsoftFlipped
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatCommandSoft
+  name: кепка командування
+  description: Бейсболка у традиційних кольорах командування.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/commandsoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/commandsoft.rsi
+
+- type: entity
+  parent: [ ClothingHeadHeadHatBaseFlipped, ClothingHeadHatCommandSoft ]
+  id: ClothingHeadHatCommandSoftFlipped
+  name: кепка командування
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatCorpsoft
+  name: корпоративна кепка
+  description: Ця кепка пофарбована у монотонні кольори якоїсь там корпорації.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/corpsoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/corpsoft.rsi
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatCorpsoft]
+  id: ClothingHeadHatCorpsoftFlipped
+  name: корпоративна кепка
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatGreensoft
+  name: зелена кепка
+  description: "Ця кепка пофарбована у зелений колір."
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/greensoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/greensoft.rsi
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatGreensoft]
+  id: ClothingHeadHatGreensoftFlipped
+  name: зелена кепка
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatBlacksoft
+  name: чорна кепка
+  description: "Ця кепка пофарбована у чорний колір."
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/blacksoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/blacksoft.rsi
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatBlacksoft]
+  id: ClothingHeadHatBlacksoftFlipped
+  name: чорна кепка
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatGreysoft
+  name: сіра кепка
+  description: "Ця кепка пофарбована у сірий колір."
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/greysoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/greysoft.rsi
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatGreysoft]
+  id: ClothingHeadHatGreysoftFlipped
+  name: сіра кепка
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatMimesoft
+  name: біла кепка
+  description: "Ця кепка пофарбована у білий колір."
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/mimesoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/mimesoft.rsi
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatMimesoft]
+  id: ClothingHeadHatMimesoftFlipped
+  name: біла кепка
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatOrangesoft
+  name: помаранчева кепка
+  description: Ця кепка пофарбована у приємний для очей помаранчевий колір.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/orangesoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/orangesoft.rsi
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatOrangesoft]
+  id: ClothingHeadHatOrangesoftFlipped
+  name: помаранчева кепка
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatPurplesoft
+  name: фіолетова кепка
+  description: "Ця кепка пофарбована у фіолетовий колір. Від неї так і віє словами \"Куди по помитому?\""
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/purplesoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/purplesoft.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatPurplesoft]
+  id: ClothingHeadHatPurplesoftFlipped
+  name: фіолетова кепка
+  components:
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatRedsoft
+  name: червона кепка
+  description: Ця кепка пофарбована у червоний колір.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/redsoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/redsoft.rsi
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatRedsoft]
+  id: ClothingHeadHatRedsoftFlipped
+  name: червона
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatSecsoft
+  name: кепка офіцера
+  description: Ця кепка пофарбована у вишуканий червоний колір.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/secsoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/secsoft.rsi
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatSecsoft]
+  id: ClothingHeadHatSecsoftFlipped
+  name: кепка офіцера
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatYellowsoft
+  name: жовта кепка
+  description: Ця кепка пофарбована у жовтий колір.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/yellowsoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/yellowsoft.rsi
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatYellowsoft]
+  id: ClothingHeadHatYellowsoftFlipped
+  name: жовта кепка
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatBizarreSoft
+  name: кепка порушника спокою
+  description: Ну і ну... Дивний аксесуар.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/bizarresoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/bizarresoft.rsi
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatBizarreSoft]
+  id: ClothingHeadHatBizarreSoftFlipped
+  name: кепка порушника спокою
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatParamedicsoft
+  name: кепка парамедика
+  description: "Ця кепка пофарбована у кольори парамедика, та має логотип меду на передній частині."
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/paramedicsoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/paramedicsoft.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatParamedicsoft]
+  id: ClothingHeadHatParamedicsoftFlipped
+  name: кепка парамедика
+  components:
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon

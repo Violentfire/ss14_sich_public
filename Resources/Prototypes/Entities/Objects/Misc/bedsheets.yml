@@ -1,0 +1,361 @@
+- type: entity
+  parent: BaseItem
+  id: BedsheetBase
+  name: BedsheetBase
+  abstract: true
+  description: A surprisingly soft linen bedsheet.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Bed
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bedsheets.rsi
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Clothing
+    quickEquip: true
+    slots:
+    - neck
+  - type: StaticPrice
+    price: 12
+  - type: Tag
+    tags:
+    - Bedsheet
+
+- type: entity
+  id: BedsheetBlack
+  parent: BedsheetBase
+  name: чорна ковдра
+  components:
+  - type: Sprite
+    state: sheetblack
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/black.rsi
+
+- type: entity
+  id: BedsheetBlue
+  parent: BedsheetBase
+  name: блактина ковдра
+  components:
+  - type: Sprite
+    state: sheetblue
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/blue.rsi
+
+- type: entity
+  id: BedsheetBrown
+  parent: BedsheetBase
+  name: коричнева ковдра
+  components:
+  - type: Sprite
+    state: sheetbrown
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/brown.rsi
+
+- type: entity
+  id: BedsheetCaptain
+  parent: BedsheetBase
+  name: ковдра капітана
+  description: На ньому є символ Nanotrasen, і він був витканий з революційно нового виду ниток, які гарантовано мають 0,01% проникності для більшості нехімічних речовин, популярних серед більшості сучасних капітанів.
+  components:
+  - type: Sprite
+    state: sheetcaptain
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/captain.rsi
+  - type: StealTarget
+    stealGroup: HeadBedsheet
+
+- type: entity
+  id: BedsheetCE
+  parent: BedsheetBase
+  name: ковдра головного інженера
+  description: Прикрашений емблемою гайкового ключа. Він дуже світловідбиваючий і стійкий до плям, тому вам не потрібно турбуватися про те, що ви зіпсуєте його олією.
+  components:
+  - type: Sprite
+    state: sheetce
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/ce.rsi
+  - type: StealTarget
+    stealGroup: HeadBedsheet
+
+- type: entity
+  id: BedsheetCentcom
+  parent: BedsheetBase
+  name: ковдра центрального командування
+  description: Сплетений із сучасної нанонитки для додаткового утеплення, а також дуже гарно оздоблений, що є необхідним для всіх чиновників.
+  components:
+  - type: Sprite
+    state: sheetcentcom
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/centcom.rsi
+  - type: StealTarget
+    stealGroup: HeadBedsheet
+
+- type: entity
+  id: BedsheetClown
+  parent: BedsheetBase
+  name: ковдра клоуна
+  description: Райдужна ковдра з витканою маскою клоуна. Слабко пахне бананами.
+  components:
+  - type: Sprite
+    state: sheetclown
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/rainbow.rsi
+
+- type: entity
+  id: BedsheetCMO
+  parent: BedsheetBase
+  name: ковдра головного лікаря
+  description: Це стерилізована ковдра з емблемою хреста. На ній є трохи котячого хутра, ймовірно, з «Виконання».
+  components:
+  - type: Sprite
+    state: sheetcmo
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/cmo.rsi
+  - type: StealTarget
+    stealGroup: HeadBedsheet
+
+- type: entity
+  id: BedsheetCosmos
+  parent: BedsheetBase
+  name: космічна ковдра
+  description: Зроблена з мрій тих, хто спостерігає за зірками.
+  components:
+  - type: Sprite
+    state: sheetcosmos
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/cosmos.rsi
+
+- type: entity
+  id: BedsheetCult
+  parent: BedsheetBase
+  name: ковдра культу
+  description: Якщо ви будете спати з нею, вам може наснитися Нар'сі. Він виглядає досить пошарпаним і світиться від присутності стародавніх.
+  components:
+  - type: Sprite
+    state: sheetcult
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/cult.rsi
+
+- type: entity
+  id: BedsheetGreen
+  parent: BedsheetBase
+  name: зелена ковдра
+  components:
+  - type: Sprite
+    state: sheetgreen
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/green.rsi
+
+- type: entity
+  id: BedsheetGrey
+  parent: BedsheetBase
+  name: сіра ковдра
+  components:
+  - type: Sprite
+    state: sheetgrey
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/grey.rsi
+
+- type: entity
+  id: BedsheetHOP
+  parent: BedsheetBase
+  name: ковдра голови персоналу
+  description: Вона прикрашена емблемою у вигляді ключа. Для тих рідкісних моментів, коли ви можете відпочити і обійнятися з Іаном без криків по рації.
+  components:
+  - type: Sprite
+    state: sheethop
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/hop.rsi
+  - type: StealTarget
+    stealGroup: HeadBedsheet
+
+- type: entity
+  id: BedsheetHOS
+  parent: BedsheetBase
+  name: ковдра голови безпеки
+  description: Вона прикрашена емблемою у вигляді щита. Поки злочинність не спить, спите ви, але ви все ще ЗАКОН!
+  components:
+  - type: Sprite
+    state: sheethos
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/hos.rsi
+  - type: StealTarget
+    stealGroup: HeadBedsheet
+
+- type: entity
+  id: BedsheetIan
+  parent: BedsheetBase
+  name: ковдра Іана
+  components:
+  - type: Sprite
+    state: sheetian
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/ian.rsi
+
+- type: entity
+  id: BedsheetMedical
+  parent: BedsheetBase
+  name: ковдра медичного відділу
+  description: Це стерилізована ковдра, яка зазвичай використовується в медичному відділенні. Стерилізація відміняється, якщо на борту станції присутній вірусолог.
+  components:
+  - type: Sprite
+    state: sheetmedical
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/medical.rsi
+
+- type: entity
+  id: BedsheetMime
+  parent: BedsheetBase
+  name: ковдра міма
+  description: Дуже заспокійлива смугаста ковдра.  Здається, що весь шум просто зникає, коли ти вкриваєшся цією ковдрою.
+  components:
+  - type: Sprite
+    state: sheetmime
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/mime.rsi
+
+- type: entity
+  id: BedsheetNT
+  parent: BedsheetBase
+  name: ковдра Нанотрейзен
+  description: На ній є логотип Нанотрейзен та відчуття обов'язку.
+  components:
+  - type: Sprite
+    state: sheetNT
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/NT.rsi
+
+- type: entity
+  id: BedsheetOrange
+  parent: BedsheetBase
+  name: помаранчева ковдра
+  components:
+  - type: Sprite
+    state: sheetorange
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/orange.rsi
+
+- type: entity
+  id: BedsheetPurple
+  parent: BedsheetBase
+  name: фіолетова ковдра
+  components:
+  - type: Sprite
+    state: sheetpurple
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/purple.rsi
+
+- type: entity
+  id: BedsheetQM
+  parent: BedsheetBase
+  name: ковдра квартирмейстера
+  components:
+  - type: Sprite
+    state: sheetqm
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/qm.rsi
+  - type: StealTarget
+    stealGroup: HeadBedsheet
+
+- type: entity
+  id: BedsheetRainbow
+  parent: BedsheetBase
+  name: веселкова ковдра
+  components:
+  - type: Sprite
+    state: sheetrainbow
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/rainbow.rsi
+
+- type: entity
+  id: BedsheetRD
+  parent: BedsheetBase
+  name: ковдра директору наукового відділу
+  description: Вона має емблему у вигляді мензурки та виготовлена з вогнестійкого матеріалу, хоча, скоріш за все, не захистить вас у випадку пожежі, з якою ви стикаєтесь щодня.
+  components:
+  - type: Sprite
+    state: sheetrd
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/rd.rsi
+  - type: StealTarget
+    stealGroup: HeadBedsheet
+
+- type: entity
+  id: BedsheetBrigmedic
+  parent: BedsheetBase
+  name: ковдра бріг медика
+  description: Not worse than cotton.
+  components:
+  - type: Sprite
+    state: sheetbrigmedic
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/brigmedic.rsi
+
+- type: entity
+  id: BedsheetRed
+  parent: BedsheetBase
+  name: червона ковдра
+  components:
+  - type: Sprite
+    state: sheetred
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/red.rsi
+
+- type: entity
+  id: BedsheetSyndie
+  parent: [ BedsheetBase, BaseSyndicateContraband ]
+  name: ковдра синдикату
+  description: Він має емблему синдикату і має ауру зла.
+  components:
+  - type: Sprite
+    state: sheetsyndie
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/syndie.rsi
+
+- type: entity
+  id: BedsheetUSA
+  parent: BedsheetBase
+  name: ковдра США
+  components:
+  - type: Sprite
+    state: sheetUSA
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/USA.rsi
+
+- type: entity
+  id: BedsheetWhite
+  parent: BedsheetBase
+  name: біла ковдра
+  components:
+  - type: Butcherable
+    spawned:
+    - id: ClothingOuterGhostSheet #ghostly!
+      amount: 1
+  - type: Sprite
+    state: sheetwhite
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/white.rsi
+
+- type: entity
+  id: BedsheetWiz
+  parent: BedsheetBase
+  name: ковдра чаклуна
+  description: Спеціальна тканина, зачарована магією, щоб ви могли провести зачаровану ніч. Вона навіть світиться!
+  components:
+  - type: Sprite
+    state: sheetwiz
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/wiz.rsi
+
+- type: entity
+  id: BedsheetYellow
+  parent: BedsheetBase
+  name: жовта ковдра
+  components:
+  - type: Sprite
+    state: sheetyellow
+  - type: Clothing
+    sprite: Clothing/Neck/Bedsheets/yellow.rsi

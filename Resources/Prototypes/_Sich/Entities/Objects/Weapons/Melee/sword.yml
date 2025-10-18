@@ -1,0 +1,49 @@
+- type: entity
+  name: blue energy katana
+  parent: Katana
+  id: EnergyKatanaBlue
+  description: A katana infused with strong energy. Blue version.
+  components:
+  - type: Sprite
+    sprite: _Sich/Objects/Weapons/Melee/energykatanablue.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -60
+    damage:
+      types:
+        Slash: 24
+  - type: Item
+    size: Normal
+    sprite: _Sich/Objects/Weapons/Melee/energykatanablue.rsi
+  - type: EnergyKatana
+  - type: Clothing
+    sprite: _Sich/Objects/Weapons/Melee/energykatanablue.rsi
+    slots:
+    - Back
+    - Belt
+  - type: Reflect
+
+- type: entity
+  name: red energy katana
+  parent: Katana
+  id: EnergyKatanaRed
+  description: A katana infused with strong energy. Red version.
+  components:
+  - type: Sprite
+    sprite: _Sich/Objects/Weapons/Melee/energykatanared.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -60
+    damage:
+      types:
+        Slash: 24
+  - type: Item
+    size: Normal
+    sprite: _Sich/Objects/Weapons/Melee/energykatanared.rsi
+  - type: EnergyKatana
+  - type: Clothing
+    sprite: _Sich/Objects/Weapons/Melee/energykatanared.rsi
+    slots:
+    - Back
+    - Belt
+  - type: Reflect

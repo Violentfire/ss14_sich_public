@@ -1,0 +1,97 @@
+- type: entity
+  parent: BaseItem
+  abstract: true
+  id: BasePayload
+  components:
+  - type: Appearance
+  - type: Sprite
+  - type: Tag
+    tags:
+    - Payload
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  name: вибуховий заряд
+  parent: [ BasePayload, BaseSecurityContraband ]
+  id: ExplosivePayload
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/payload.rsi
+    state: payload-explosive-armed
+  - type: Explosive
+    explosionType: Default
+    # same as the standard grenade, but those numbers were also just picked out of a hat.
+    maxIntensity: 10
+    intensitySlope: 3
+    totalIntensity: 120 # about a ~4 tile radius
+  - type: ExplodeOnTrigger
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  name: хімічний заряд
+  parent: [ BasePayload, BaseMedicalScienceContraband ]
+  id: ChemicalPayload
+  description: Хімічний заряд. Має місце для зберігання двох мензурок. У поєднанні з пусковим механізмом та корпусом може використовуватися для ініціювання хімічних реакцій.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/payload.rsi
+    state: payload-empty
+    layers:
+    - state: payload-empty
+      map: ["base"]
+  - type: ChemicalPayload
+    beakerSlotA: &slotDef
+      whitelist:
+        components:
+        - FitsInDispenser
+      swap: false
+    beakerSlotB: *slotDef
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ChemicalPayloadVisuals.Slots:
+        base:
+          None: { state: payload-empty }
+          Left: { state: payload-chemical-left }
+          Right: { state: payload-chemical-right }
+          Both: { state: payload-chemical-armed }
+  - type: ItemSlots
+  - type: ContainerContainer
+    containers:
+      BeakerSlotA: !type:ContainerSlot
+      BeakerSlotB: !type:ContainerSlot
+  - type: StaticPrice
+    price: 60
+
+- type: entity
+  name: заряд спалаху
+  parent: [ BasePayload, BaseSecurityScienceCommandContraband ]
+  id: FlashPayload
+  description: A single-use flash payload.
+  components:
+    - type: Sprite
+      sprite: Objects/Devices/payload.rsi
+      state: payload-flash-armed
+    - type: DeleteOnTrigger
+    - type: FlashOnTrigger
+      range: 6
+    - type: EmitSoundOnTrigger
+      sound:
+        path: "/Audio/Effects/flash_bang.ogg"
+      positional: true

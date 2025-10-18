@@ -1,0 +1,43 @@
+- type: entity
+  id: StatueVenusRed
+  parent: BaseStructure
+  name: статуя непорочної діви
+  suffix: Червоний
+  description: Антична мармурова статуя. Об'єкт зображений з косою до підлоги і тримає в руках червоний ящик з інструментами.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Decoration/statues.rsi
+    state: venus_red
+    drawdepth: Mobs
+    offset: "0.0,0.5"
+
+- type: entity
+  id: StatueVenusBlue
+  parent: BaseStructure
+  name: статуя непорочної діви
+  suffix: Синій
+  description: Антична мармурова статуя. Об'єкт зображений з косою до підлоги і тримає в руках синій ящик з інструментами.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Decoration/statues.rsi
+    state: venus_blue
+    drawdepth: Mobs
+    offset: "0.0,0.5"
+
+- type: entity
+  id: StatueBananiumClown
+  parent: BaseStructure
+  name: бананова статуя рятівника
+  description: Бананова статуя. Вона зображує повернення спасителя, який повстане і поведе клоунів під великий гудок.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Decoration/statues.rsi
+    state: bananium_clown
+    drawdepth: Mobs
+    offset: "0.0,0.5"
+  - type: Construction
+    graph: BananiumStatueClown
+    node: bananiumStatue

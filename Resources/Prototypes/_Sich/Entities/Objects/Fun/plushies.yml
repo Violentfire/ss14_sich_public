@@ -1,0 +1,158 @@
+- type: entity
+  parent: BasePlushie
+  id: PlushieN1
+  name: плюшевий N1 
+  description: Це справді плюшевий N1!?
+  components:
+  - type: Sprite
+    state: plushie_n1
+    sprite: _Sich/Objects/Fun/plushies.rsi
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Machines/Arcade/hahaha.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Machines/Arcade/hahaha.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Machines/Arcade/hahaha.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Machines/Arcade/hahaha.ogg
+  - type: Food
+    useSound:
+      path: /Audio/Machines/Arcade/hahaha.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Machines/Arcade/pew_pew.ogg
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieGabriel
+  name: Плюшевий Янгол
+  description: СПОГЛЯДАЙ СИЛОМИЦЬ ЯНГОЛА!
+  components:
+  - type: Sprite
+    sprite: _Sich/Objects/Fun/plushies.rsi
+    state: gabriel_plushie
+  - type: Item
+    heldPrefix: gabrielplushie
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Effects/holy.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Effects/holy.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Effects/holy.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Effects/holy.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Effects/holy.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/Effects/holy.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/Effects/holy.ogg
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Holywater
+        Quantity: 30
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+        - ReagentId: Holywater
+          Quantity: 10
+  - type: Speech
+    speechVerb: Reptilian
+  - type: Tag
+    tags:
+    - ClothMade
+    - Payload
+    - PlushieLizard
+    
+- type: entity
+  parent: BasePlushie
+  id: PlushieUknown
+  name: error.mising.itemname
+  description: error.mising.itemdiscription
+  components:
+  - type: Sprite
+    sprite: _Sich/Objects/Fun/plushies.rsi
+    layers:
+    - state: errorplushie_on
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: UseDelay
+    delay: 100.0
+  - type: Item
+    heldPrefix: errorplushie
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Ambience/ambicave.ogg
+    handle: false
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Effects/bodyfall1.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Ambience/ambicave.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Ambience/ambicave.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Effects/bodyfall1.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/Machines/airlock_electrify_on.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/UserInterface/hover.ogg
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 30
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+        - ReagentId: Blood
+          Quantity: 10
+  - type: Speech
+    speechVerb: Reptilian
+  - type: Tag
+    tags:
+    - ClothMade
+    - Payload
+    - PlushieLizard
+  - type: TimerTrigger
+    delay: 20
+    examinable: false
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 1
+    intensitySlope: 1
+    totalIntensity: 1
+    canCreateVacuum: false
+  - type: ExplodeOnTrigger
+  - type: PointLight
+    radius: 1
+    energy: 2.5
+    color: "#ffde46"

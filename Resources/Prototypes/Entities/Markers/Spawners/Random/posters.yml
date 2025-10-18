@@ -1,0 +1,190 @@
+- type: entity
+  parent: MarkerBase
+  id: RandomPosterAny
+  name: random poster spawner
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Structures/Wallmounts/posters.rsi
+        state: random_anything
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+      - RandomPosterContraband
+      - RandomPosterLegit
+    chance: 0.95
+    rarePrototypes:
+      - PosterBroken
+    rareChance: 0.05
+
+- type: entity
+  parent: MarkerBase
+  id: RandomPosterContraband
+  name: random contraband poster spawner
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Structures/Wallmounts/posters.rsi
+        state: random_contraband
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+      - PosterContrabandGodJachur
+      - PosterContrabandFreeTonto
+      - PosterContrabandAtmosiaDeclarationIndependence
+      - PosterContrabandFunPolice
+      - PosterContrabandRealExomorph
+      - PosterContrabandSyndicateRecruitment
+      - PosterContrabandClown
+      - PosterContrabandSmoke
+      - PosterContrabandGreyTide
+      - PosterContrabandMissingGloves
+      - PosterContrabandHackingGuide
+      - PosterContrabandRIPBadger
+      - PosterContrabandAmbrosiaVulgaris
+      - PosterContrabandDonutCorp
+      - PosterContrabandEAT
+      - PosterContrabandTools
+      - PosterContrabandPower
+      - PosterContrabandSpaceCube
+      - PosterContrabandCommunistState
+      - PosterContrabandLamarr
+      - PosterContrabandBorgFancy
+      - PosterContrabandBorgFancyv2
+      - PosterContrabandKosmicheskayaStantsiya
+      - PosterContrabandRebelsUnite
+      - PosterContrabandC20r
+      - PosterContrabandHaveaPuff
+      - PosterContrabandRevolver
+      - PosterContrabandDDayPromo
+      - PosterContrabandSyndicatePistol
+      - PosterContrabandEnergySwords
+      - PosterContrabandRedRum
+      - PosterContrabandCC64KAd
+      - PosterContrabandPunchShit
+      - PosterContrabandTheGriffin
+      - PosterContrabandFreeDrone
+      - PosterContrabandRouny
+      - PosterContrabandRobustSoftdrinks
+      - PosterContrabandShamblersJuice
+      - PosterContrabandPwrGame
+      - PosterContrabandSunkist
+      - PosterContrabandSpaceCola
+      - PosterContrabandSpaceUp
+      - PosterContrabandKudzu
+      - PosterContrabandMaskedMen
+      - PosterContrabandUnreadableAnnouncement
+      - PosterContrabandFreeSyndicateEncryptionKey
+      - PosterContrabandBountyHunters
+      - PosterContrabandTheBigGasTruth
+      - PosterContrabandWehWatches
+      - PosterContrabandVoteWeh
+      - PosterContrabandBeachStarYamamoto
+      - PosterContrabandHighEffectEngineering
+      - PosterContrabandNuclearDeviceInformational
+      - PosterContrabandRevolt
+      - PosterContrabandRise
+      - PosterContrabandMoth
+      - PosterContrabandCybersun600
+      - PosterContrabandDonk
+      - PosterContrabandEnlistGorlex
+      - PosterContrabandInterdyne
+      - PosterContrabandWaffleCorp
+      - PosterContrabandMissingSpacepen
+      - sich_poster_settler
+      - sich_poster_reinyn
+      - PosterContrabandExoAcid
+      - PosterContrabandExoRun
+      - PosterContrabandExoChomp
+    chance: 1
+
+- type: entity
+  parent: MarkerBase
+  id: RandomPosterLegit
+  name: random legit poster spawner
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Structures/Wallmounts/posters.rsi
+        state: random_legit
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+      - PosterLegitHereForYourSafety
+      - PosterLegitNanotrasenLogo
+      - PosterCatLegit
+      - PosterLegitCleanliness
+      - PosterLegitHelpOthers
+      - PosterLegitBuild
+      - PosterLegitBlessThisSpess
+      - PosterLegitScience
+      - PosterLegitIan
+      - PosterLegitObey
+      - PosterLegitWalk
+      - PosterLegitStateLaws
+      - PosterLegitLoveIan
+      - PosterLegitSpaceCops
+      - PosterLegitUeNo
+      - PosterLegitGetYourLEGS
+      - PosterLegitDoNotQuestion
+      - PosterLegitWorkForAFuture
+      - PosterLegitSoftCapPopArt
+      - PosterLegitSafetyInternals
+      - PosterLegitSafetyEyeProtection
+      - PosterLegitSafetyReport
+      - PosterLegitReportCrimes
+      - PosterLegitIonRifle
+      - PosterLegitFoamForceAd
+      - PosterLegitCohibaRobustoAd
+      - PosterLegit50thAnniversaryVintageReprint
+      - PosterLegitFruitBowl
+      - PosterLegitPDAAd
+      - PosterLegitEnlist
+      - PosterLegitNanomichiAd
+      - PosterLegit12Gauge
+      - PosterLegitHighClassMartini
+      - PosterLegitTheOwl
+      - PosterLegitNoERP
+      - PosterLegitCarbonDioxide
+      - PosterLegitDickGumshue
+      - PosterLegitThereIsNoGasGiant
+      - PosterLegitJustAWeekAway
+      - PosterLegitSecWatch
+      - PosterLegitVacation
+      - PosterLegitRenault
+      - PosterLegitNTTGC
+      - PosterLegitSafetyMothDelam
+      - PosterLegitSafetyMothEpi
+      - PosterLegitSafetyMothPiping
+      - PosterLegitSafetyMothMeth
+      - PosterLegitSafetyMothHardhat
+      - PosterLegitSafetyMothSSD
+      - sich_poster_book_unath
+      - sich_poster_drg
+      - sich_poster_dse
+      - sich_poster_free_slime2
+      - sich_poster_slime_free
+      - sich_poster_map_space
+      - sich_poster_map_space2
+      - sich_poster_solar_federation
+      - sich_plastic_poster
+      - sich_poster_blood_knife
+      - PosterSichFarCry
+      - PosterSichGladiator
+      - PosterSichHellowin
+      - PosterSichJaill
+      - PosterSichRimworld
+      - PosterSichSkyPunk
+      - PosterSichSosfall
+      - PosterSichStalker
+      - PosterSichWarclown
+      - PosterSichWarmime
+      - poster_sich_passenger
+      - poster_sich_space_marine
+      - PosterLegitOppenhopper
+      - PosterLegitTyrone
+      - PosterLegitHelio
+    chance: 1

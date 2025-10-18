@@ -1,0 +1,26 @@
+- type: damageModifierSet
+  id: Robotic
+  coefficients:
+    Blunt: 0.8
+    Slash: 0.6
+    Piercing: 0.8
+    Radiation: 0.0
+    Asphyxiation: 0.0
+    Heat: 1.2
+    Shock: 2
+    
+- type: damageModifierSet
+  id: Tajara
+  coefficients:
+    Blunt: 0.9
+    Slash: 0.8
+    Heat: 1.3
+    Shock: 1.1
+    Cold: 0.5
+
+- type: damageModifierSet
+  id: Avali # Slightly worse at everything but cold
+  coefficients:
+    Cold: 0.7
+    Heat: 1.3
+    Bloodloss: 0.85

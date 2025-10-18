@@ -1,0 +1,88 @@
+- type: entity
+  parent: [ RingBase, GoldRingBase ]
+  id: GoldRing
+  name: золоте кільце
+  description: Коштовне кільце.
+  components:
+  - type: Sprite
+    layers:
+      - state: ring
+        color: "#ffc833"
+
+- type: entity
+  parent: [ RingBase, SilverRingBase ]
+  id: SilverRing
+  name: срібне кільце
+  description: Виглядає трохи менш коштовно, аніж золоте.
+  components:
+  - type: Sprite
+    layers:
+      - state: ring
+
+- type: entity
+  parent: [ RingBase, GoldRingBase ]
+  id: GoldRingDiamond
+  name: золотий перстень з діамантом
+  description: Виготовлено з етично видобутих космічних діамантів.
+  components:
+  - type: Sprite
+    layers:
+      - state: ring
+        color: "#ffc833"
+      - state: gem
+        color: "#c1ffff"
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: [ RingBase, SilverRingBase ]
+  id: SilverRingDiamond
+  name: срібний перстень з діамантом
+  description: Виготовлено з етично видобутих космічних алмазів
+  components:
+  - type: Sprite
+    layers:
+      - state: ring
+      - state: gem
+        color: "#c1ffff"
+  - type: StaticPrice
+    price: 1400
+
+- type: entity
+  parent: [ RingBase, GoldRingBase ]
+  id: GoldRingGem
+  name: золотий перстень з самоцвітом
+  description: Блискучий і коштовний!
+  components:
+  - type: Sprite
+    layers:
+      - state: ring
+        color: "#ffc833"
+      - state: gem
+        map: [ "gemColor" ]
+  - type: StaticPrice
+    price: 2100
+  - type: RandomSprite
+    getAllGroups: true
+    available:
+      - gemColor:
+          gem: Rainbow
+
+- type: entity
+  parent: [ RingBase, SilverRingBase ]
+  id: SilverRingGem
+  name: срібний перстень з самоцвітом
+  description: Блискучий і трохи менш коштовний!
+  components:
+  - type: Sprite
+    layers:
+      - state: ring
+      - state: gem
+        map: [ "gemColor" ]
+  - type: StaticPrice
+    price: 2000
+  - type: RandomSprite
+    getAllGroups: true
+    available:
+      - gemColor:
+          gem: Rainbow

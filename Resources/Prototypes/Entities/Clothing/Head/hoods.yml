@@ -1,0 +1,779 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHoodBioGeneral
+  name: біо шолом
+  suffix: Генетик
+  description: Шолом, який захищає всю голову від біологічних забруднень.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Bio/general.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Bio/general.rsi
+  - type: BreathMask
+  - type: IngestionBlocker
+  - type: GroupExamine
+  - type: Armor
+    modifiers: { }
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      Snout: HEAD
+      HeadTop: HEAD
+      HeadSide: HEAD
+
+- type: entity
+  parent: ClothingHeadHatHoodBioGeneral
+  id: ClothingHeadHatHoodBioCmo
+  name: біо шолом
+  suffix: ГЛ
+  description: Шолом, призначений для ГЛ, який захищає всю голову біологічних забруднень.
+  components:
+  - type: IdentityBlocker
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Bio/cmo.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Bio/cmo.rsi
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.8
+
+- type: entity
+  parent: ClothingHeadHatHoodBioGeneral
+  id: ClothingHeadHatHoodBioJanitor
+  name: біо шолом
+  suffix: Прибиральник
+  description: Шолом, призначений для прибиральника, який захищає голову від біологічних забруднень.
+  components:
+  - type: IdentityBlocker
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Bio/janitor.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Bio/janitor.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodBioGeneral
+  id: ClothingHeadHatHoodBioScientist
+  name: біо шолом
+  suffix: НВ
+  description: Шолом, призначений для вчених, який захищає голову від біологічних забруднень.
+  components:
+  - type: IdentityBlocker
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Bio/scientist.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Bio/scientist.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodBioGeneral
+  id: ClothingHeadHatHoodBioSecurity
+  name: біо шолом
+  suffix: Охорона
+  description: Шолом, призначений для охорони, який захищає всю голову біологічних забруднень.
+  components:
+  - type: IdentityBlocker
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Bio/security.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Bio/security.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodBioGeneral
+  id: ClothingHeadHatHoodBioVirology
+  name: біо шолом
+  suffix: Вірусологія
+  description: Шолом, який надійно захищає голову та обличчя від біологічних забруднень.
+  components:
+  - type: IdentityBlocker
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Bio/virology.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Bio/virology.rsi
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.8
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHoodChaplainHood
+  categories: [ HideSpawnMenu ]
+  name: капюшон капелана
+  description: Максимальна побожність у цій зоряній системі.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/chaplain.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/chaplain.rsi
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHoodCulthood
+  name: капюшон культиста
+  description: Не існує культу без їх "культових" червоно-малинових капюшонів.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/cult.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/cult.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHoodNunHood
+  name: капюшон монахині
+  description: Максимальна побожність у цій зоряній системі.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/nun.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/nun.rsi
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHoodRad
+  name: радіаційний шолом
+  description: Шолом, що захищає від радіації.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/rad.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/rad.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.95
+        Radiation: 0.65
+  - type: IdentityBlocker
+  - type: BreathMask
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHoodGoliathCloak
+  name: капюшон плаща Голіафа
+  description: Капюшон плаща, що втголовлений зі шкіри могутньої фауни далекої планети.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/goliathcloak.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/goliathcloak.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHoodIan
+  categories: [ HideSpawnMenu ]
+  name: капюшон Іана
+  description: Хто хороший хлопчик? Той з голови якого зробили цей капюшон!.. Так, стоп...
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/iansuit.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/iansuit.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHoodCarp
+  categories: [ HideSpawnMenu ]
+  name: капюшон коропа
+  description: Вузлуватий капюшон, прикрашений пластиковими зубами космічного коропа.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/carpsuit.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/carpsuit.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
+  parent: ClothingHeadHatHoodCarp
+  id: ClothingHeadHelmetHardsuitCarp
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PressureProtection
+    highPressureMultiplier: 0.6
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    heatingCoefficient: 0.2
+    coolingCoefficient: 0.2
+  - type: BreathMask
+  # this is on the hood so you only fool the fish if you wear the whole set
+  # wear carp suit and security helmet, they'll know you are fake
+  - type: FactionClothing
+    faction: Dragon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHoodMoth
+  name: маска ніана
+  description: Маска у вигляді голови ніана, зазвичай виготовляється з легких матеріалів. Вона імітує форму голови ніана з великими очима і довгими вусиками. Такі маски часто використовують в косплеї, або при зйомках фільмів і відео.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/moth.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/moth.rsi
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
+
+#Winter Coat Hoods
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterDefault
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterBartender
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон бармена
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodbartender.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodbartender.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterCaptain
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон капітана
+  description: Дорогий капюшон, щоб зберегти тепло голови головного.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodcaptain.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodcaptain.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterCargo
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон вантажника
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodcargo.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodcargo.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterCE
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон головного інженера
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodce.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodce.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterCentcom
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон центрального командування
+  description: Капюшон, для зберігання голови ПЦК в теплі.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodcentcom.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodcentcom.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterChem
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон хіміка
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodchemist.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodchemist.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterCMO
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон головного лікаря
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodcmo.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodcmo.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterEngineer
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон інженера
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodengi.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodengi.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterHOP
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон голови персоналу
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodhop.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodhop.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterHOS
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон голови охорони
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodhos.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodhos.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterHydro
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон ботаніка
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodhydro.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodhydro.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterJani
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон прибиральника
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodjani.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodjani.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterMed
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон лікаря
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodmed.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodmed.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterMime
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон міма
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodmime.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodmime.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterMiner
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон шахтаря
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodminer.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodminer.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterPara
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон парамедика
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodpara.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodpara.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterQM
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон квартирмейстера
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodqm.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodqm.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterRD
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон ДНВ
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodrd.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodrd.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterRobo
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон робототехніка
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodrobo.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodrobo.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterSci
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон вченого
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodsci.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodsci.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterSec
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон офіцера
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodsec.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodsec.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterSyndie
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон Синдикату
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodsyndicate.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodsyndicate.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterWarden
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон наглядача
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodsec.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodsec.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterWeb
+  categories: [ HideSpawnMenu ]
+  name: зимовий капюшон з павутини
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodweb.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodweb.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterColorBlack
+  categories: [ HideSpawnMenu ]
+  name: чорний зимовий капюшон
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    layers:
+    - state: coatybits-icon
+      color: "#3f3f3f"
+    - state: winterbits-icon
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    clothingVisuals:
+      head:
+      - state: coatybits-equipped-HELMET
+        color: "#3f3f3f"
+      - state: winterbits-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterColorPurple
+  categories: [ HideSpawnMenu ]
+  name: фіолетовий зимовий капюшон
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    layers:
+    - state: coatybits-icon
+      color: "#9C0DE1"
+    - state: winterbits-icon
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    clothingVisuals:
+      head:
+      - state: coatybits-equipped-HELMET
+        color: "#9C0DE1"
+      - state: winterbits-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterColorRed
+  categories: [ HideSpawnMenu ]
+  name: червоний зимовий капюшон
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    layers:
+    - state: coatybits-icon
+      color: "#940000"
+    - state: winterbits-icon
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    clothingVisuals:
+      head:
+      - state: coatybits-equipped-HELMET
+        color: "#940000"
+      - state: winterbits-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterColorBlue
+  categories: [ HideSpawnMenu ]
+  name: синій зимовий капюшон
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    layers:
+    - state: coatybits-icon
+      color: "#0089EF"
+    - state: winterbits-icon
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    clothingVisuals:
+      head:
+      - state: coatybits-equipped-HELMET
+        color: "#0089EF"
+      - state: winterbits-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterColorBrown
+  categories: [ HideSpawnMenu ]
+  name: коричневий зимовий капюшон
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    layers:
+    - state: coatybits-icon
+      color: "#723A02"
+    - state: winterbits-icon
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    clothingVisuals:
+      head:
+      - state: coatybits-equipped-HELMET
+        color: "#723A02"
+      - state: winterbits-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterColorGray
+  categories: [ HideSpawnMenu ]
+  name: сірий зимовий капюшон
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    layers:
+    - state: coatybits-icon
+      color: "#999999"
+    - state: winterbits-icon
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    clothingVisuals:
+      head:
+      - state: coatybits-equipped-HELMET
+        color: "#999999"
+      - state: winterbits-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterColorGreen
+  categories: [ HideSpawnMenu ]
+  name: зелений зимовий капюшон
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    layers:
+    - state: coatybits-icon
+      color: "#5ABF2F"
+    - state: winterbits-icon
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    clothingVisuals:
+      head:
+      - state: coatybits-equipped-HELMET
+        color: "#5ABF2F"
+      - state: winterbits-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterColorLightBrown
+  categories: [ HideSpawnMenu ]
+  name: світло-коричневий зимовий капюшон
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    layers:
+    - state: coatybits-icon
+      color: "#C09F72"
+    - state: winterbits-icon
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    clothingVisuals:
+      head:
+      - state: coatybits-equipped-HELMET
+        color: "#C09F72"
+      - state: winterbits-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterColorOrange
+  categories: [ HideSpawnMenu ]
+  name: помаранчевий зимовий капюшон
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    layers:
+    - state: coatybits-icon
+      color: "#EF8100"
+    - state: winterbits-icon
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    clothingVisuals:
+      head:
+      - state: coatybits-equipped-HELMET
+        color: "#EF8100"
+      - state: winterbits-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterColorWhite
+  categories: [ HideSpawnMenu ]
+  name: білий зимовий капюшон
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    layers:
+    - state: coatybits-icon
+      color: "#EAE8E8"
+    - state: winterbits-icon
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    clothingVisuals:
+      head:
+      - state: coatybits-equipped-HELMET
+        color: "#EAE8E8"
+      - state: winterbits-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterColorYellow
+  categories: [ HideSpawnMenu ]
+  name: жовтий зимовий капюшон
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    layers:
+    - state: coatybits-icon
+      color: "#EBE216"
+    - state: winterbits-icon
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hooddefault.rsi
+    clothingVisuals:
+      head:
+      - state: coatybits-equipped-HELMET
+        color: "#EBE216"
+      - state: winterbits-equipped-HELMET
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHoodVoidCloak
+  name: void cloak hood
+  description: The hood of a void cloak. For those who have gone to the dark side of the force.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/voidcloak.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/voidcloak.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Hair

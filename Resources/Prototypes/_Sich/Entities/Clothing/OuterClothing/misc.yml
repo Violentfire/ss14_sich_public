@@ -1,0 +1,28 @@
+- type: entity
+  parent: ClothingOuterBaseToggleable
+  id: ClothingOuterMansusRobe
+  name: таємнича роба
+  description: Дивного вигляду роба, яка тримає в собі таємничу силу...
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/OuterClothing/Misc/mansus_robe.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/OuterClothing/Misc/mansus_robe.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodMansusRobe
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.5
+        Radiation: 0.25
+        Caustic: 0.4
+        Cellular: 0.25
+    

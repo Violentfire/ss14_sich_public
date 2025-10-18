@@ -1,0 +1,18 @@
+- type: entity
+  parent: [ClothingEyesBase]
+  id: MechanicalGlasses
+  name: механічні окуляри
+  description: Механічні окуляри на ремішку, з можливістью налаштовувати приближення, що дозволяє дуже зручно паяти та збирати маленьки механізми, також має захист від сварки.
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/Eyes/Glasses/mechanical_glasses.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Eyes/Glasses/mechanical_glasses.rsi
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: EyeProtection
+  - type: Tag
+    tags:
+    - Sunglasses
+    - HamsterWearable
+    - WhitelistChameleon

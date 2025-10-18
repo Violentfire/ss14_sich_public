@@ -1,0 +1,9 @@
+- type: entity
+  id: Vape
+  parent: BaseVape
+  name: вейп
+  description: "Як сигара, але для крутих підлітків. (ПОПЕРЕДЖЕННЯ: заливайте у вейп лише воду)"
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Smokeables/Vapes/vape-standard.rsi
+    state: icon

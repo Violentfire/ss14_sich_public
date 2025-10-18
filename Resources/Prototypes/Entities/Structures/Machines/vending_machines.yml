@@ -1,0 +1,2310 @@
+﻿# base
+
+- type: entity
+  id: VendingMachine
+  parent: BaseMachinePowered
+  name:  торговий автомат
+  description: Просто додайте капіталізму від СШПА!
+  abstract: true
+  components:
+  - type: ActionGrant
+    actions:
+    - ActionVendingThrow
+  - type: StationAiWhitelist
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -9
+    range: 3
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/vending_machine_hum.ogg
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/empty.rsi
+    snapCardinals: true
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.45,0.25,0.45"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 200
+  - type: Destructible
+    thresholds:
+    - trigger: # Excess damage, don't do anything
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Breakage"]
+      - !type:EjectVendorItems
+  - type: Repairable
+    doAfterDelay: 8
+  - type: ActivatableUI
+    key: enum.VendingMachineUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.VendingMachineUiKey.Key:
+        type: VendingMachineBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: WiresPanel
+  - type: Wires
+    boardName: wires-board-name-vendingmachine
+    layoutId: Vending
+  - type: Anchorable
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Vending
+  - type: Vocalizer
+    minVocalizeInterval: 8m
+    maxVocalizeInterval: 10m
+    hideChat: true
+  - type: VocalizerRequiresPower
+  - type: SpookySpeaker
+    messageSet: SpookySpeakerMessagesGeneric
+    speakChance: 0.2
+  - type: IntrinsicRadioReceiver
+  - type: ActiveRadio
+    channels:
+    - Common
+  - type: DoAfter
+  - type: Electrified
+    enabled: false
+    usesApcPower: true
+  - type: PointLight
+    enabled: false
+    castShadows: false
+    radius: 1.5
+  - type: LitOnPowered
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: Actions
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-mechanical
+    weight: 0.025 # fuck you in particular (it now needs 40 vending machines to be as likely as 1 interesting animal)
+  - type: StaticPrice
+    price: 100
+  - type: Appearance
+  - type: WiresVisuals
+
+- type: entity
+  id: VendingMachineWallmount
+  parent: BaseWallmountMachine
+  name: vending machine
+  abstract: true
+  components:
+  - type: StationAiWhitelist
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -9
+    range: 3
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/vending_machine_hum.ogg
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Breakage"]
+      - !type:EjectVendorItems
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+  - type: Repairable
+    doAfterDelay: 8
+  - type: ActivatableUI
+    key: enum.VendingMachineUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.VendingMachineUiKey.Key:
+        type: VendingMachineBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: WiresPanel
+  - type: Wires
+    boardName: wires-board-name-vendingmachine
+    layoutId: Vending
+  - type: PointLight
+    enabled: false
+    castShadows: false
+    radius: 1.5
+  - type: LitOnPowered
+  - type: Appearance
+  - type: WiresVisuals
+  - type: Electrified
+    enabled: false
+    usesApcPower: true
+  - type: Rotatable
+
+# Vending machines
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineCondiments
+  name: торговий автомат з інгридієнтами
+  description: Додай ці дивні речовини аби твоя їжа стало кращою!.
+  components:
+  - type: VendingMachine
+    pack: CondimentInventory
+    offState: off
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/condiments.rsi
+    drawdepth: SmallObjects
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.16,0.3,0.40"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 190
+  - type: DatasetVocalizer
+    dataset: CondimentVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Transform
+    noRot: false
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineAmmo
+  name: торговий автомат демократії
+  description: Дивлячись на цей торговий автомат, ви чуєте далекий крик орла.
+  components:
+  - type: VendingMachine
+    pack: AmmoVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: CondimentVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/ammo.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBooze
+  name: торговий автомат з випивкою
+  description: Технологічне диво, що готове тримати вашу випивку в найкращому стані!
+  components:
+  - type: VendingMachine
+    pack: BoozeOMatInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+    loopDeny: false
+  - type: DatasetVocalizer
+    dataset: BoozeOMatAds
+  - type: SpeakOnUIClosed
+    pack: BoozeOMatGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/boozeomat.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Bar"]]
+  - type: GuideHelp
+    guides:
+    - Bartender
+    - Drinks
+
+- type: entity
+  parent: VendingMachineBooze
+  id: VendingMachineBoozeSyndicate # syndie booze-o-mat for nukie outpost
+  name: Bruise-O-Mat
+  description: A refurbished Booze-O-Mat for boosting operative morale. An imprint of a blood-red hardsuit is visible on one side, and the paint seems ashed off on the other side.
+  components:
+  - type: VendingMachine
+    pack: BoozeOMatInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+    loopDeny: false
+  - type: DatasetVocalizer
+    dataset: BruiseOMatAds
+  - type: SpeakOnUIClosed
+    pack: BruiseOMatGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/bruiseomat.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["SyndicateAgent"]]
+  - type: GuideHelp
+    guides:
+    - Bartender
+    - Drinks
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineCart
+  name: торговий автомат з технікою для ПДА
+  description: Великий вибір техніки для ПДА, й це для тебе, щур що сидить у купці паперу!
+  components:
+  - type: VendingMachine
+    pack: PTechInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/cart.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1
+    energy: 1.3
+    color: "#ffb0b0"
+  - type: AccessReader
+    access: [["HeadOfPersonnel"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineChefvend
+  name: торговий автомат шефа
+  description: Постачає інгридієнти на ваш стіл.
+  components:
+  - type: VendingMachine
+    pack: ChefvendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+  - type: DatasetVocalizer
+    dataset: ChefvendAds
+  - type: SpeakOnUIClosed
+    pack: ChefvendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/chefvend.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Service"]]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#4b93ad"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineCigs
+  name: торговий автомат з сигаретами "Делюкс"
+  description: Хочеш померти у стражданнях від раку? Тоді роби це стильно!
+  components:
+  - type: VendingMachine
+    pack: CigaretteMachineInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: DatasetVocalizer
+    dataset: CigaretteMachineAds
+  - type: SpeakOnUIClosed
+    pack: CigaretteMachineGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/cigs.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineClothing
+  name: торговий автомат з одягом
+  description: Просто торговий автомат з одягом
+  components:
+  - type: VendingMachine
+    pack: ClothesMateInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+  - type: DatasetVocalizer
+    dataset: ClothesMateAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/clothing.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.8
+    energy: 1.6
+    color: "#3db83b"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineWinter
+  name: зимовий торговий автомат
+  description: Найкраще місце для того аби відчути холод!
+  components:
+  - type: VendingMachine
+    pack: WinterDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+  - type: DatasetVocalizer
+    dataset: ClothesMateAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/winterdrobe.rsi
+    layers:
+    - state: "off"
+      map: [ "enum.VendingMachineVisualLayers.Base" ]
+    - state: "off"
+      map: [ "enum.VendingMachineVisualLayers.BaseUnshaded" ]
+      shader: unshaded
+    - state: panel
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  - type: PointLight
+    radius: 1.8
+    energy: 1.6
+    color: "#3db83b"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineCoffee
+  name: найкращі гарячі напої галактики
+  description: Подається киплячим, щоб залишався гарячим протягом усієї зміни!
+  components:
+  - type: VendingMachine
+    pack: HotDrinksMachineInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+    screenState: screen
+    ejectDelay: 5
+    soundVend: /Audio/Machines/machine_vend_hot_drink.ogg
+    initialStockQuality: 0.33
+  - type: DatasetVocalizer
+    dataset: HotDrinksMachineAds
+  - type: SpeakOnUIClosed
+    pack: HotDrinksMachineGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/coffee.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: "screen"
+      map: ["enum.VendingMachineVisualLayers.Screen"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.3
+    color: "#ad7c4b"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineCola
+  name: торговий автомат з газовинкою
+  description: Постачальник безалкогольних напоїв
+  components:
+  - type: VendingMachine
+    pack: RobustSoftdrinksInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+    ejectDelay: 1.9
+    initialStockQuality: 0.33
+  - type: DatasetVocalizer
+    dataset: RobustSoftdrinksAds
+  - type: SpeakOnUIClosed
+    pack: RobustSoftdrinksGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/cola.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#3c5eb5"
+
+- type: entity
+  parent: VendingMachineCola
+  id: VendingMachineColaBlack
+  suffix: Black
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/cola-black.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#423438"
+
+- type: entity
+  parent: VendingMachineCola
+  id: VendingMachineColaRed
+  name: торговий автомат коли
+  description: Це продає колу, у космосі.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/cola-red.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#A50824"
+
+- type: entity
+  parent: VendingMachineCola
+  id: VendingMachineSpaceUp
+  name: торговий автомат "Вгору!"
+  description: Спробуй вибуховий смак.
+  components:
+  - type: VendingMachine
+    pack: SpaceUpInventory
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/spaceup.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#44964A"
+
+- type: entity
+  parent: VendingMachineCola
+  id: VendingMachineSoda
+  suffix: Soda
+  components:
+  - type: VendingMachine
+    pack: SodaInventory
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/soda.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#CBC6BE"
+
+- type: entity
+  parent: VendingMachineCola
+  id: VendingMachineStarkist
+  name: торговий автомат "зірка"
+  description: Смак зірки у рідкому стані.
+  components:
+  - type: VendingMachine
+    pack: StarkistInventory
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/starkist.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#D3A44D"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineShamblersJuice
+  name: торговий автомат "Сік Шамблера"
+  description: ~Налийте мені соку Шамблера!~
+  components:
+  - type: VendingMachine
+    pack: ShamblersJuiceInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+    ejectDelay: 1.9
+    initialStockQuality: 0.33
+  - type: DatasetVocalizer
+    dataset: RobustSoftdrinksAds
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/shamblersjuice.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#66538F"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachinePwrGame
+  name: торговий автомат "ПоверГейм"
+  description: Ви просили - ми зробили!
+  components:
+  - type: VendingMachine
+    pack: PwrGameInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+    ejectDelay: 1.9
+    initialStockQuality: 0.33
+  - type: DatasetVocalizer
+    dataset: RobustSoftdrinksAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/pwrgame.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#6927C5"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineDrGibb
+  name: торговий автомат "Доктор Гібб"
+  description: Вибух різноманіття  смаків саме у Доктора Гібба! 
+  components:
+  - type: VendingMachine
+    pack: DrGibbInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+    ejectDelay: 1.9
+    initialStockQuality: 0.33
+  - type: DatasetVocalizer
+    dataset: DrGibbAds
+  - type: SpeakOnUIClosed
+    pack: DrGibbGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/gib.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#D82929"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSmite
+  name: Smite Vendor
+  description: Popular with the administration.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/smite.rsi
+    layers:
+    - state: "off"
+      map: [ "enum.VendingMachineVisualLayers.Base" ]
+    - state: "off"
+      map: [ "enum.VendingMachineVisualLayers.BaseUnshaded" ]
+      shader: unshaded
+    - state: panel
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  - type: VendingMachine
+    pack: SmiteInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+    ejectDelay: 1.9
+    initialStockQuality: 0.33
+  - type: DatasetVocalizer
+    dataset: SmiteAds
+  - type: SpeakOnUIClosed
+    pack: SmiteGoodbyes
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#00E645"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineDinnerware
+  name: торговий автомат "Посуд шефа"
+  description: Обладнання для кухні і ресторану саме тут.
+  components:
+  - type: VendingMachine
+    pack: DinnerwareInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+  - type: DatasetVocalizer
+    dataset: DinnerwareAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/dinnerware.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Kitchen"]]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#4b93ad"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineMagivend
+  name: торговий автомат магії
+  description: Магічний торговий автомат... ні, ядерку не легалізують
+  components:
+  - type: VendingMachine
+    pack: MagiVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: MagiVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/magivend.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9a18d6"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineDiscount
+  name: торговий автомат "закуски Дена"
+  description: Торговий автомат "закуски Дена" з знижками нище пекла!
+  components:
+  - type: VendingMachine
+    pack: DiscountDansInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    initialStockQuality: 0.33
+  - type: DatasetVocalizer
+    dataset: DiscountDansAds
+  - type: SpeakOnUIClosed
+    pack: DiscountDansGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/discount.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - texture: Structures/Machines/VendingMachines/maintenance_panel.png
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#6148c7"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineEngivend
+  name: торговий автомат інженера
+  description: Торгівля запасними інструментами. Що? Ви очікували смішний опис?
+  components:
+  - type: VendingMachine
+    pack: EngiVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/engivend.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Engineering"]]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#b89e2a"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineMedicalBase
+  name: Цивільний НаноМед 
+  description: Це медичний дозатор для ліків. Тільки натуральні хімікати!
+  components:
+  - type: VendingMachine
+    pack: NanoMedCivilianInventory
+    offState: off-civilian
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+    ejectDelay: 0.6
+  - type: DatasetVocalizer
+    dataset: NanoMedAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/medical.rsi
+    layers:
+    - state: "off-civilian"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off-civilian"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+  - type: GuideHelp
+    guides:
+    - MedicalDoctor
+
+- type: entity
+  parent: VendingMachineMedicalBase
+  id: VendingMachineMedical
+  name: НаноМед+
+  components:
+  - type: VendingMachine
+    pack: NanoMedPlusInventory
+    offState: off
+  - type: Sprite
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Medical"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineNutri
+  name: торговий автомат "максимальна пожива"
+  description: Торговий автомат наповнений поживними елементами і ботанічними інструментами.
+  components:
+  - type: VendingMachine
+    pack: NutriMaxInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: DatasetVocalizer
+    dataset: NutriMaxAds
+  - type: SpeakOnUIClosed
+    pack: NutriMaxGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/nutri.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Hydroponics"]]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#326e3f"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSec
+  name: торговий автомат "ОхоронаТех"
+  description: торговий автомат з спорядженням служби безпеки. І це означає ДЛЯ СЛУЖБИ БЕЗПЕКИ, А НЕ ПРОСТОГО ПЕРСОНАЛУ!
+  components:
+  - type: VendingMachine
+    pack: SecTechInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: DatasetVocalizer
+    dataset: SecTechAds
+  - type: SpeakOnUIClosed
+    pack: SecTechGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/sec.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Security"]]
+  - type: PointLight
+    radius: 1
+    energy: 1.2
+    color: "#78645c"
+  - type: GuideHelp
+    guides:
+    - Security
+    - Antagonists
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSeedsUnlocked
+  name: торговий автомат з насінням
+  description: Коли тобі потрібно швидко насіння й найкращої якості - шукай тут!
+  suffix: Unlocked
+  components:
+  - type: VendingMachine
+    pack: MegaSeedServitorInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: DatasetVocalizer
+    dataset: MegaSeedAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/seeds.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#326e3f"
+
+- type: entity
+  parent: VendingMachineSeedsUnlocked
+  id: VendingMachineSeeds
+  suffix: Hydroponics
+  components:
+  - type: AccessReader
+    access: [["Hydroponics"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSnack
+  name: торговий автомат солодощами Вафл корп
+  description: Автомат із солодощами Вафл корп, які точно не викликають залежність.
+  components:
+  - type: VendingMachine
+    pack: GetmoreChocolateCorpInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+    initialStockQuality: 0.33
+  - type: DatasetVocalizer
+    dataset: GetmoreChocolateCorpAds
+  - type: SpeakOnUIClosed
+    pack: GetmoreChocolateCorpGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/snack.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#c73434"
+
+- type: entity
+  parent: VendingMachineSnack
+  id: VendingMachineSustenance
+  name: торговий автомат їжі
+  description: Торговий автомат, який продає їжу, як того вимагає космозакон.
+  components:
+  - type: VendingMachine
+    pack: SustenanceInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/sustenance.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#737785"
+
+- type: entity
+  parent: VendingMachineSnack
+  id: VendingMachineSnackBlue
+  suffix: Blue
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/snack-blue.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#3c5eb5"
+
+- type: entity
+  parent: VendingMachineSnack
+  id: VendingMachineSnackOrange
+  suffix: Orange
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/snack-orange.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#CE3401"
+
+- type: entity
+  parent: VendingMachineSnack
+  id: VendingMachineSnackGreen
+  suffix: Green
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/snack-green.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#5F6A1C"
+
+- type: entity
+  parent: VendingMachineSnack
+  id: VendingMachineSnackTeal
+  suffix: Teal
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/snack-teal.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#207E79"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSovietSoda
+  name: ВОДА
+  description: Досить старий торговий автомат, смердить соціалізмом, мабуть, від цієї води ти будеш блювати.
+  components:
+  - type: VendingMachine
+    pack: BodaInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+    initialStockQuality: 0.33
+  - type: DatasetVocalizer
+    dataset: BodaAds
+  - type: SpeakOnUIClosed
+    pack: BodaGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/sovietsoda.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#389690"
+  - type: RussianAccent
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineTheater
+  name: торговий автомат з костюмами
+  description: Торговий автомат наповнений різноманітними костюмами.
+  components:
+  - type: VendingMachine
+    pack: AutoDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+    screenState: screen
+  - type: DatasetVocalizer
+    dataset: AutoDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/theater.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - state: "screen"
+      map: ["enum.VendingMachineVisualLayers.Screen"]
+      shader: unshaded
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#c73434"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineVendomat
+  name: торговий автомат обладанням
+  description: Лиш найкраще обладнання в космосі!
+  components:
+  - type: VendingMachine
+    pack: VendomatInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: DatasetVocalizer
+    dataset: VendomatAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/vendomat.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineRobotics
+  name: торговий автомат "РобоТех Делюкс"
+  description: Усе обладання для створення власної армії роботів.
+  components:
+  - type: VendingMachine
+    pack: RoboticsInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: DatasetVocalizer
+    dataset: VendomatAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/robotics.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Research"]]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#B0ADA9"
+  - type: GuideHelp
+    guides:
+    - Robotics
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineYouTool
+  name: торговий автомат "Твої інструменти"
+  description: "Торговий автомат що має у собі стандартні інструменти. "
+  components:
+  - type: VendingMachine
+    pack: YouToolInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/youtool.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#d4ab33"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineGames
+  name: торговий автомат з речами для ігор
+  description: Продає речі котрі потрібні для того аби капітан і голова персоналу сварили вас за невиконання  роботи..
+  components:
+  - type: VendingMachine
+    pack: GoodCleanFunInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    ejectDelay: 1.8
+  - type: DatasetVocalizer
+    dataset: GoodCleanFunAds
+  - type: SpeakOnUIClosed
+    pack: GoodCleanFunGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/games.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#326e3f"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineChang
+  name: торговий автомат "Містер Чанг"
+  description: Автомат самобслуговування ренюінської кухні, без допомоги кухаря. Так, ми крадемо зарплату кухаря.
+  components:
+  - type: VendingMachine
+    pack: ChangInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    initialStockQuality: 0.33
+  - type: DatasetVocalizer
+    dataset: ChangAds
+  - type: SpeakOnUIClosed
+    pack: ChangGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/changs.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#ffe599"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSalvage
+  name: торговий автомат шахтарів
+  description: Найкращий друг дворфів! Слава каменюці!
+  components:
+  - type: VendingMachine
+    pack: SalvageEquipmentInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/mining.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#b89f25"
+  - type: AccessReader
+    access: [["Salvage"]]
+  - type: GuideHelp
+    guides:
+    - Salvage
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineDonut
+  name: торговий автомат "Пончики Донк Корп"
+  description: Торговий автомат що продає пончики виробництва Донк Корп, я ж не один відчуваю слабкий запах пороху?
+  components:
+  - type: VendingMachine
+    pack: DonutInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    initialStockQuality: 0.33
+  - type: DatasetVocalizer
+    dataset: DonutAds
+  - type: SpeakOnUIClosed
+    pack: DonutGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/donut.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#d4ab33"
+
+# job clothing
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineHydrobe
+  name: торговий автомат одягу ботаніка
+  description: Автомат з промовистою назвою. Він видає одяг та спорядження, пов'язані з ботанікою.
+  components:
+  - type: VendingMachine
+    pack: HyDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: HyDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/hydrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#326e3f"
+  - type: AccessReader
+    access: [["Hydroponics"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineLawDrobe
+  name: торговий автомат одягу адвоката
+  description: ПРОТЕСТУЮ! Пане суддя, цей торговий автомат видає адвокатський одяг.... навіщо я тикаю у вас пальцем, пане суддя?
+  components:
+  - type: VendingMachine
+    pack: LawDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: LawDrobeAds
+  - type: SpeakOnUIClosed
+    pack: LawDrobeGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/lawdrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Lawyer"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSecDrobe
+  name: торговий автомат одягу служби безпеки
+  description: Торговий автомат наповнений одягом пов'язаний з службою і безпекою.
+  components:
+  - type: VendingMachine
+    pack: SecDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: SecDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/secdrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#d82929"
+  - type: AccessReader
+    access: [["Security"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingBarDrobe
+  name: торговий автомат одягу бармена
+  description: Стильний торговий автомат для продажу найстильнішого одягу для найстильнішого бармена!
+  components:
+  - type: VendingMachine
+    pack: BarDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: BarDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/bardrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Bar"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineChapel
+  name: Торговий автомат одягу священника
+  components:
+  - type: VendingMachine
+    pack: PietyVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/chapdrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Chapel"]]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#CCCCCC" #The holy C
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineCargoDrobe
+  name: торговий автомат одягом карго
+  description: Високотехнологічний торговий автомат для безкоштовного придбання одягу, пов'язаного з вантажними перевезеннями.
+  components:
+  - type: VendingMachine
+    pack: CargoDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: CargoDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/cargodrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#b89e2a"
+  - type: AccessReader
+    access: [["Cargo"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineMediDrobe
+  name: торговий автомат одягу медика
+  description: Торговий автомат, який, за чутками, може видавати одяг для медичного персоналу.
+  components:
+  - type: VendingMachine
+    pack: MediDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: MediDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/medidrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Medical"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineChemDrobe
+  name: торговий автомат одягу хіміка
+  description: Торговий автомат для видачі одягу, пов'язений з хімією. Не думайте пускатись берега!
+  components:
+  - type: VendingMachine
+    pack: ChemDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: ChemDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/chemdrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Chemistry"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineCuraDrobe
+  name: торговий автомат одягу бібліотекаря
+  description: Постачальник з невеликим асортиментом, здатний продавати одяг лише для кураторів та бібліотекарів.
+  components:
+  - type: VendingMachine
+    pack: CuraDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: CuraDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/curadrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Service"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineAtmosDrobe
+  name: торговий автомат одягу атмосферного інженера
+  description: Цей відносно невідомий торговий автомат видає одяг для атмосферних інженерів, не менш невідомої професії.
+  components:
+  - type: VendingMachine
+    pack: AtmosDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: AtmosDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/atmosdrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#b89e2a"
+  - type: AccessReader
+    access: [["Engineering"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineEngiDrobe
+  name: торговий автомат одягу інженера
+  description: Торговий автомат, відомий тим, що продає одяг промислового класу.
+  components:
+  - type: VendingMachine
+    pack: EngiDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: EngiDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/engidrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#b89e2a"
+  - type: AccessReader
+    access: [["Engineering"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineChefDrobe
+  name: торговий автомат одягом кухаря
+  description: Цей торговий автомат не продає м'ясо, а лише хороший одяг шеф кухаря.
+  components:
+  - type: VendingMachine
+    pack: ChefDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: ChefDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/chefdrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Kitchen"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineDetDrobe
+  name: торговий автомат одягом детектива
+  description: Машина для всіх ваших детективних потреб, доки вам потрібен одяг.
+  components:
+  - type: VendingMachine
+    pack: DetDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: DetDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/detdrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Detective"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineJaniDrobe
+  name: торговий автомат одягу прибиральника
+  description: Самоочисний торговий автомат, здатний видавати одяг для прибиральників.
+  components:
+  - type: VendingMachine
+    pack: JaniDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: JaniDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/janidrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#6927C5"
+  - type: AccessReader
+    access: [["Janitor"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSciDrobe
+  name: торговий автомат одягом вчених
+  description: Простий торговий автомат, придатний для видачі добре пошитого наукового одягу. 
+  components:
+  - type: VendingMachine
+    pack: SciDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: SciDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/scidrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Research"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSyndieDrobe
+  name: торговий автомат одягу синдикату
+  description: Гардеробна машина, закодована синдикатом, містить елітне вбрання для різних операцій.
+  components:
+  - type: VendingMachine
+    pack: SyndieDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: SyndieDrobeAds
+  - type: SpeakOnUIClosed
+    pack: SyndieDrobeGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/syndiedrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#d82929"
+  - type: AccessReader
+    access: [["NuclearOperative"], ["SyndicateAgent"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineRoboDrobe
+  name: торговий автомат одягу робототехніка
+  description: Торговий автомат що продає одяг лише для робототехників.
+  components:
+  - type: VendingMachine
+    pack: RoboDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: RoboDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/robodrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Research"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineGeneDrobe
+  name: торговий автомат одягу генетика
+  description: Торговий автомат для продажі якісного одягу генетика.
+  components:
+  - type: VendingMachine
+    pack: GeneDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: GeneDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/genedrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Medical"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineViroDrobe
+  name: торговий автомат одягу вірусолога
+  description: Нестерелізований торговий автомат для продажі якісного стерелізованого одягу вірусолога.
+  components:
+  - type: VendingMachine
+    pack: ViroDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: ViroDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/virodrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Medical"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineCentDrobe
+  name: торговий автомат одягу центрального командування
+  description: Єдиний у своєму роді торговий автомат для всіх ваших естетичних потреб!
+  components:
+  - type: VendingMachine
+    pack: CentDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/centdrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#48CF48"
+  - type: AccessReader
+    access: [["CentralCommand"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineHappyHonk
+  name: торговий автомат "Веселий Хонк"
+  description: Торговий автомат веселий хонк міл.
+  components:
+  - type: VendingMachine
+    pack: HappyHonkDispenserInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectDelay: 1.9
+    soundVend: /Audio/Items/bikehorn.ogg
+    initialStockQuality: 1.0 # Nobody knows how Honk does it, but their vending machines always seem well-stocked...
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/happyhonk.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#3c5eb5"
+  - type: DatasetVocalizer
+    dataset: HappyHonkAds
+  - type: SpeakOnUIClosed
+    pack: HappyHonkGoodbyes
+  - type: AccessReader
+    access: [["Kitchen"], ["Theatre"]]
+
+# Pride Vending Machine
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachinePride
+  name: Pride-O-Mat
+  description: A vending machine containing pride.
+  components:
+  - type: VendingMachine
+    pack: PrideDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: PrideDrobeAds
+  - type: SpeakOnUIClosed
+    pack: PrideDrobeGoodbyes
+  - type: Speech
+  - type: PointLight
+    radius: 1.5
+    energy: 1.3 # reduced energy since the color is pure white
+    color: "#FFFFFF"
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/pride.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+
+# Gas Tank Dispenser
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineTankDispenserEVA
+  suffix: EVA [O2, N2]
+  name: диспенсер газових балонів
+  description: Торговий автомат для роздачі газових балонів.
+  components:
+  - type: VendingMachine
+    pack: TankDispenserEVAInventory
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/tankdispenser.rsi #TODO add visualiser for remaining tanks as layers
+    state: dispenser
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineTankDispenserEngineering
+  suffix: ENG [O2, Plasma]
+  name: диспенсер газових балонів
+  description: Торговий автомат для роздачі газових балонів. Цей, для інженерних справ.
+  components:
+  - type: VendingMachine
+    pack: TankDispenserEngineeringInventory
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/tankdispenser.rsi #TODO add visualiser for remaining tanks as layers
+    layers:
+    - state: dispenser
+    - state: dispensereng
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineChemicals
+  name: торговий автомат хімікатами
+  description: Це точно не торговий автомат кавою.
+  components:
+  - type: VendingMachine
+    pack: ChemVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal
+    denyState: deny
+    ejectDelay: 2
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/chemvend.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Chemistry"]]
+  - type: GuideHelp
+    guides:
+    - Chemicals
+    - Chemist
+
+- type: entity
+  parent: VendingMachineChemicals
+  id: VendingMachineChemicalsSyndicate
+  name: торговий автомат "Сік синдикату"
+  description: Сподіваюся, не зі свіжовичавлених агентів.
+  components:
+  - type: VendingMachine
+    pack: ChemVendInventorySyndicate
+    offState: off
+    brokenState: broken
+    normalState: normal
+    denyState: deny
+    ejectDelay: 2
+  - type: AccessReader
+    access: [["SyndicateAgent"]]
+
+# wallmount
+- type: entity
+  parent: VendingMachineWallmount
+  id: VendingMachineWallMedicalCivilian
+  name: NanoMed band-aid
+  description: It's a wall-mounted medical equipment dispenser. Natural chemicals only!
+  components:
+  - type: VendingMachine
+    pack: NanoMedCivilianWallInventory
+    offState: off-civilian
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/wallmed.rsi
+    layers:
+    - state: "off-civilian"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off-civilian"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - texture: Structures/Machines/VendingMachines/maintenance_panel.png
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.3
+    energy: 1.6
+    color: "#43ccb5"
+  - type: GuideHelp
+    guides:
+    - Medical
+
+- type: entity
+  parent: VendingMachineWallMedicalCivilian
+  id: VendingMachineWallMedical
+  name: NanoMed
+  components:
+  - type: VendingMachine
+    pack: NanoMedInventory
+    offState: off
+  - type: Sprite
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - texture: Structures/Machines/VendingMachines/maintenance_panel.png
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Medical"]]

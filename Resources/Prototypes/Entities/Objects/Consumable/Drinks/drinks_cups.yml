@@ -1,0 +1,332 @@
+# A cup is a small container used to hold liquids for drinking.[1]
+- type: entity
+  abstract: true
+  parent: DrinkBase
+  id: DrinkBaseCup
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 20
+  - type: FitsInDispenser
+    solution: drink
+  - type: SolutionTransfer
+    canChangeTransferAmount: true
+    maxTransferAmount: 10
+  - type: Tag
+    tags:
+    - DrinkCup
+  - type: StaticPrice
+    price: 10
+
+# A mug is a type of cup.[2]
+- type: entity
+  abstract: true
+  parent: [ DrinkBaseMaterialPorcelain, DrinkBaseCup, DrinkVisualsFill ]
+  id: DrinkBaseMug
+  name: mug
+  description: A mug.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/mug.rsi
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    inHandsFillBaseName: null
+
+## Misc Cups
+
+- type: entity
+  parent: [DrinkBaseMaterialGold, DrinkBaseCup]
+  id: DrinkGoldenCup
+  name: золотий кубок
+  description: Золотий кубок.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/golden_cup.rsi
+  - type: StaticPrice
+    price: 125
+
+- type: entity
+  parent: DrinkBaseMug # a teacup is basically a mug
+  id: DrinkTeacupEmpty
+  name: чайна чашка
+  description: Проста біла порцелянова чайна чашка.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/teacup.rsi
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+
+- type: entity
+  parent: [ DrinkBaseMaterialGlass, DrinkBaseCup, DrinkVisualsFillOverlay ]
+  id: DrinkGlassCoupeShaped
+  name: coupe glass
+  description: A classic thin neck coupe glass, the icon of fragile labels on crates around the galaxy.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/glass_coupe_shape.rsi
+  - type: SolutionContainerVisuals
+    inHandsMaxFillLevels: 1
+
+- type: entity
+  parent: [DrinkBaseMaterialCardboard, DrinkBaseCup, DrinkBaseEmptyTrash, DrinkVisualsFill]
+  id: DrinkWaterCup
+  name: water cup
+  description: A paper water cup.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 5 # One sip at a time. No rushing at the water cooler
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/water_cup.rsi
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    inHandsFillBaseName: null
+  - type: Tag
+    tags:
+    - Trash
+    - DrinkCup
+    - WhitelistChameleon
+  - type: Clothing
+    slots:
+    - HEAD
+    quickEquip: false
+    sprite: Clothing/Head/Hats/party_water_cup.rsi
+
+# Mugs
+- type: entity
+  parent: DrinkBaseMug
+  id: DrinkMug
+  name: кухлик
+  description: Звичайне біле горнятко.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/mug.rsi
+
+- type: entity
+  parent: DrinkBaseMug
+  id: DrinkMugBlack
+  name: чорний кухлик
+  description: Чистеньке чорне горнятко.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/mug_black.rsi
+
+- type: entity
+  parent: DrinkBaseMug
+  id: DrinkMugBlue
+  name: синій кухлик
+  description: Синє горнятко.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/mug_blue.rsi
+
+- type: entity
+  parent: DrinkBaseMug
+  id: DrinkMugGreen
+  name: зелений кухлик
+  description: Блідо-зелене горнятко.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/mug_green.rsi
+
+- type: entity
+  parent: DrinkBaseMug
+  id: DrinkMugDog
+  name: кумедний кухлик з собакою
+  description: Він схожий на мультяшного бігля.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/mug_dog.rsi
+
+- type: entity
+  parent: DrinkBaseMug
+  id: DrinkMugHeart
+  name: кухлик з сердечком
+  description: На білому горнятку помітно червоне серце.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/mug_heart.rsi
+
+- type: entity
+  parent: [DrinkBaseMaterialMetal, DrinkBaseMug]
+  id: DrinkMugMetal
+  name: металеве горнятко
+  description: Металевий кухоль. Невідомо, з якого він металу.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/mug_metal.rsi
+
+- type: entity
+  parent: DrinkBaseMug
+  id: DrinkMugMoebius
+  name: кухоль мебіуса
+  description: Горнятко з логотипом «Moebius Laboratories». Навіть ваша ранкова кава не застрахована від корпоративної реклами.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/mug_moebius.rsi
+
+- type: entity
+  parent: DrinkBaseMug
+  id: DrinkMugOne
+  name: "горнятко №1"
+  description: Білий кухлик, на ньому помітно видніється цифра 1.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/mug_one.rsi
+
+- type: entity
+  parent: DrinkBaseMug
+  id: DrinkMugRainbow
+  name: веселковий кухлик
+  description: Райдужне горнятко. Кольори засліплюють майже так само, як зварювальник.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/mug_rainbow.rsi
+
+- type: entity
+  parent: DrinkBaseMug
+  id: DrinkMugRed
+  name: червоний кухлик
+  description: Червоно-чорний кухоль.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/mug_red.rsi
+
+## Filled
+
+- type: entity
+  parent: DrinkBaseMug
+  id: DrinkHotCoco
+  name: гарячий шоколад
+  suffix: Full
+  description: Підігрітий напій, що складається з розтопленого шоколаду та підігрітого молока.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: HotCocoa
+          Quantity: 20
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/mug.rsi
+    state: icon-vend-brown
+  - type: Sprite
+    layers:
+    - state: icon
+    - state: fill-3
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: TrashOnSolutionEmpty
+    solution: drink
+
+- type: entity
+  parent: DrinkBaseMug
+  id: DrinkHotCoffee
+  name: кава
+  suffix: Full
+  description: Кава - це заварений напій, приготований зі смаженого насіння кавової рослини, яке зазвичай називають кавовими зернами.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Coffee
+          Quantity: 20
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/mug.rsi
+    state: icon-vend-brown
+  - type: Sprite
+    layers:
+    - state: icon
+    - state: fill-3
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: TrashOnSolutionEmpty
+    solution: drink
+
+- type: entity
+  parent: DrinkBaseMug
+  id: DrinkCafeLatte
+  name: лате
+  suffix: Full
+  description: Приємний, міцний і смачний напій, поки ви читаєте.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: CafeLatte
+          Quantity: 20
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/cafe_latte.rsi
+    state: icon-vend
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/cafe_latte.rsi
+    layers:
+    - state: icon
+    - state: fill-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+  - type: TrashOnSolutionEmpty
+    solution: drink
+
+- type: entity
+  parent: DrinkTeacupEmpty
+  id: DrinkTeacup
+  name: чай
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Tea
+          Quantity: 20
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/teacup.rsi
+    state: icon-vend-tea
+  - type: TrashOnSolutionEmpty
+    solution: drink
+
+- type: entity
+  parent: DrinkTeacupEmpty
+  id: DrinkGreenTea
+  name: зелений чай
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: GreenTea
+          Quantity: 20
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/teacup.rsi
+    state: icon-vend-green-tea
+  - type: TrashOnSolutionEmpty
+    solution: drink
+
+# TODO this needs fill levels
+- type: entity
+  parent: [DrinkBaseMaterialPlastic, DrinkBaseCup]
+  id: DrinkLean
+  name: виноградний сік
+  description: Чорт, ніяких розваг.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: JuiceGrape
+          Quantity: 20
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/lean.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/lean.rsi
+  - type: TrashOnSolutionEmpty
+    solution: drink
+
+#[1] https://en.wikipedia.org/wiki/Cup
+#[2] https://en.wikipedia.org/wiki/Mug

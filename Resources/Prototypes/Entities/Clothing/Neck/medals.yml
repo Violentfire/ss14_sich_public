@@ -1,0 +1,124 @@
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckBronzeheart
+  name: медаль бронзового серця
+  description: Нею нагороджують членів екіпажу за взірцеву хоробрість перед обличчям небезпеки.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Medals/bronzeheart.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Medals/bronzeheart.rsi
+  - type: Tag
+    tags:
+      - Medal
+      - WhitelistChameleon
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckGoldmedal
+  name: золота медаль екіпажу
+  description: Надається членам екіпажу, які демонструють чудову майстерність.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Medals/gold.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Medals/gold.rsi
+  - type: StealTarget
+    stealGroup: ClothingNeckGoldmedal
+  - type: Tag
+    tags:
+      - Medal
+      - WhitelistChameleon
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCargomedal
+  name: медаль карго
+  description: Вручається за кращу роботу в вантажному відділі.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Medals/cargomedal.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Medals/cargomedal.rsi
+  - type: Tag
+    tags:
+      - Medal
+      - WhitelistChameleon
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckEngineermedal
+  name: медаль інженера
+  description: Вручається за кращу роботу в інженерному відділі.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Medals/engineermedal.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Medals/engineermedal.rsi
+  - type: Tag
+    tags:
+      - Medal
+      - WhitelistChameleon
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckMedicalmedal
+  name: медаль медика
+  description: Вручається за кращі досягнення в медичному відділі.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Medals/medicalmedal.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Medals/medicalmedal.rsi
+  - type: Tag
+    tags:
+      - Medal
+      - WhitelistChameleon
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckSciencemedal
+  name: медаль науковця
+  description: Вручається за найбільший вклад у розвиток науки!
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Medals/sciencemedal.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Medals/sciencemedal.rsi
+  - type: Tag
+    tags:
+      - Medal
+      - WhitelistChameleon
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckSecuritymedal
+  name: медаль охоронця
+  description: Вручається за найбільшу кількість побиттів клоу... Тобто за найкращу роботу у відділі СБ!
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Medals/securitymedal.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Medals/securitymedal.rsi
+  - type: Tag
+    tags:
+      - Medal
+      - WhitelistChameleon
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckClownmedal
+  name: медаль клоуна
+  description: Вручається за найкращий жарт у всесвіті!
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Medals/clownmedal.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Medals/clownmedal.rsi
+  - type: StealTarget
+    stealGroup: ClothingNeckClownmedal
+  - type: Tag
+    tags:
+      - Medal
+      - WhitelistChameleon

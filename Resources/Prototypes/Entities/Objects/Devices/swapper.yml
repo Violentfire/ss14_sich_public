@@ -1,0 +1,28 @@
+- type: entity
+  parent: BaseItem
+  id: DeviceQuantumSpinInverter
+  name: квантовий інвертор часток
+  description: Експериментальний пристрій, здатний міняти місцями два об'єкти, змінюючи значення їхніх частинок. Для роботи має бути пов'язаний з іншим пристроєм.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/swapper.rsi
+    layers:
+    - state: icon
+      map: ["base"]
+  - type: Item
+    size: Small
+  - type: Appearance
+  - type: ArrivalsBlacklist
+  - type: SwapTeleporter
+    teleporterWhitelist:
+      tags:
+      - QuantumSpinInverter
+  - type: GenericVisualizer
+    visuals:
+      enum.SwapTeleporterVisuals.Linked:
+        base:
+          True: { state: linked }
+          False: { state: icon }
+  - type: Tag
+    tags:
+    - QuantumSpinInverter

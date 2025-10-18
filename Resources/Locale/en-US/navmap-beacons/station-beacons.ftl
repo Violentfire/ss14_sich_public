@@ -1,0 +1,100 @@
+station-beacon-general = Загальний
+
+station-beacon-command = Командування
+station-beacon-bridge = Місток
+station-beacon-vault = Сховище
+station-beacon-gateway = Шлюз
+station-beacon-captain = Капітан
+station-beacon-hop = ГП
+
+station-beacon-security = Охорона
+station-beacon-brig = Бріг
+station-beacon-brig-med = Бріг мед
+station-beacon-warden = Наглядач
+station-beacon-hos = ГБ
+station-beacon-armory = Зброярня
+station-beacon-perma-brig = Перма
+station-beacon-detective = Детектив
+station-beacon-courtroom = Зала суду
+station-beacon-law = Адвокатське бюро
+station-beacon-security-checkpoint = Контрольний пункт
+
+station-beacon-medical = Медичний
+station-beacon-medbay = Медпункт
+station-beacon-chemistry = Хім
+station-beacon-cryonics = Кріоподи
+station-beacon-cmo = ГЛ
+station-beacon-morgue = Морг
+station-beacon-surgery = Хірургія
+station-beacon-psychology = Кабінет психолога
+station-beacon-clinic = Клініка
+
+station-beacon-science = Науковий
+station-beacon-research-and-development = Дослідження
+station-beacon-research-server = Сервер
+station-beacon-research-director = ДНВ
+station-beacon-robotics = Робототехніка
+station-beacon-artifact-lab = Артефакт
+station-beacon-anomaly-gen = Аномалістика
+
+station-beacon-supply = Постачання
+station-beacon-cargo = Карго
+station-beacon-cargo-bay = Вантажний відсік
+station-beacon-qm = КМ
+station-beacon-salvage = Salvage
+
+station-beacon-engineering = Інженерія
+station-beacon-ce = ГІ
+station-beacon-ame = АМД
+station-beacon-solars = Solars
+station-beacon-solars-N = Solars N
+station-beacon-solars-NE = Solars NE
+station-beacon-solars-E = Solars E
+station-beacon-solars-SE = Solars SE
+station-beacon-solars-S = Solars S
+station-beacon-solars-SW = Solars SW
+station-beacon-solars-W = Solars W
+station-beacon-solars-NW = Solars NW
+station-beacon-gravgen = Грав
+station-beacon-pa = Консоль Керування ПЧ
+station-beacon-smes = НМА
+station-beacon-telecoms = Телекоми
+station-beacon-atmos = Атмос
+station-beacon-teg = ТЕГ
+station-beacon-tech-vault = Технічне Cховище
+station-beacon-anchor = Якір
+
+station-beacon-service = Сервіс
+station-beacon-kitchen = Кухня
+station-beacon-bar = Бар
+station-beacon-botany = Ботаніка
+station-beacon-janitor = Прибиральник
+
+station-beacon-ai = ШІ
+station-beacon-ai-sat = Супутник ШІ
+station-beacon-ai-core = Ядро ШІ
+station-beacon-ai-upload = Завантаження ШІ
+station-beacon-ai-power = Живлення ШІ
+
+station-beacon-arrivals = Прибуття
+station-beacon-evac = Евак
+station-beacon-docking-arm = Стикувальний кронштейн
+station-beacon-eva-storage = EVA Сховище
+station-beacon-chapel = Каплиця
+station-beacon-library = Бібліотека
+station-beacon-reporter = Репортерська
+station-beacon-dorms = Дорми
+station-beacon-theater = Театр
+station-beacon-tools = Інструменти
+station-beacon-disposals = Утилізація
+station-beacon-cryosleep = Кріосон
+station-beacon-escape-pod = Рятівна капсула
+station-beacon-escape-pod-N = Escape Pod N
+station-beacon-escape-pod-NE = Escape Pod NE
+station-beacon-escape-pod-E = Escape Pod E
+station-beacon-escape-pod-SE = Escape Pod SE
+station-beacon-escape-pod-S = Escape Pod S
+station-beacon-escape-pod-SW = Escape Pod SW
+station-beacon-escape-pod-W = Escape Pod W
+station-beacon-escape-pod-NW = Escape Pod NW
+station-beacon-vox = Кімната відпочинку воксів

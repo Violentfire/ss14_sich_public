@@ -1,0 +1,268 @@
+- type: entity
+  parent: BaseItem
+  id: BaseFlatpack
+  name: базовий флетпак
+  description: Флетпак, який використовується для конструювання чогось.
+  categories:
+  - HideSpawnMenu
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: Objects/Devices/flatpack.rsi
+    layers:
+    - state: base
+    - state: overlay
+      color: "#cec8ac"
+      map: ["enum.FlatpackVisualLayers.Overlay"]
+    - state: icon-default
+  - type: Appearance
+  - type: Flatpack
+    boardColors:
+      command: "#334E6D"
+      medical: "#52B4E9"
+      service: "#9FED58"
+      engineering: "#EFB341"
+      security: "#DE3A3A"
+      science: "#D381C9"
+      supply: "#A46106"
+      cpu_command: "#334E6D"
+      cpu_medical: "#52B4E9"
+      cpu_service: "#9FED58"
+      cpu_engineering: "#EFB341"
+      cpu_security: "#DE3A3A"
+      cpu_science: "#D381C9"
+      cpu_supply: "#A46106"
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  parent: BaseFlatpack
+  id: SolarAssemblyFlatpack
+  name: флетпак сонячної панелі
+  description: Флетпак, для конструювання сонячної панелі. Використайте мультитул.
+  components:
+  - type: Flatpack
+    entity: SolarAssembly
+  - type: Sprite
+    layers:
+    - state: solar-assembly-part
+  - type: StaticPrice
+    price: 75
+
+- type: entity
+  parent: BaseFlatpack
+  id: AmePartFlatpack
+  name: АМД флетпак
+  description: Флетпак для конструювання анти-матеріяльного двигуну. Використайте мультитул.
+  components:
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: Flatpack
+    entity: AmeShielding
+  - type: StaticPrice
+    price: 500
+  - type: GuideHelp
+    guides:
+    - AME
+    - Power
+  - type: StealTarget
+    stealGroup: AmePartFlatpack
+
+- type: entity
+  parent: BaseFlatpack
+  id: SingularityGeneratorFlatpack
+  name: флетпак генератора сингулярности
+  description: Флетпак для конструювання генератора сингулярности. Використайте мультитул.
+  components:
+  - type: Flatpack
+    entity: SingularityGenerator
+  - type: Sprite
+    layers:
+    - state: singularity-generator
+  - type: GuideHelp
+    guides:
+    - SingularityEngine
+    - Power
+
+- type: entity
+  parent: BaseFlatpack
+  id: RadiationCollectorFlatpack
+  name: флетпак колектора радіації
+  description: Флетпак для конструювання колектора радіації. Використайте мультитул.
+  components:
+  - type: Flatpack
+    entity: RadiationCollectorNoTank
+  - type: Sprite
+    layers:
+    - state: radiation-collector
+  - type: GuideHelp
+    guides:
+    - SingularityEngine
+    - Power
+
+- type: entity
+  parent: BaseFlatpack
+  id: ContainmentFieldGeneratorFlatpack
+  name: флетпак генератора утримуючого поля
+  description: Флетпак для конструювання генератора утримуючого поля. Використайте мультитул.
+  components:
+  - type: Flatpack
+    entity: ContainmentFieldGenerator
+  - type: Sprite
+    layers:
+    - state: containment-field-generator
+  - type: GuideHelp
+    guides:
+    - SingularityEngine
+    - Power
+
+- type: entity
+  parent: BaseFlatpack
+  id: EmitterFlatpack
+  name: флетпак випромінювача
+  description: Флетпак для конструювання випромінювача. Використайте мультитул.
+  components:
+  - type: Flatpack
+    entity: Emitter
+  - type: Sprite
+    layers:
+    - state: emitter
+  - type: GuideHelp
+    guides:
+    - SingularityEngine
+    - Power
+
+- type: entity
+  parent: BaseFlatpack
+  id: TeslaGeneratorFlatpack
+  name: флетпак генератора тесли
+  description: Флетпак для конструювання генератора тесли. Використайте мультитул.
+  components:
+  - type: Flatpack
+    entity: TeslaGenerator
+  - type: Sprite
+    layers:
+    - state: tesla-generator
+  - type: GuideHelp
+    guides:
+    - TeslaEngine
+    - Power
+
+- type: entity
+  parent: BaseFlatpack
+  id: TeslaCoilFlatpack
+  name: флетпак котушки тесли
+  description: Флетпак для конструювання котушки тесли. Використайте мультитул.
+  components:
+  - type: Flatpack
+    entity: TeslaCoil
+  - type: Sprite
+    layers:
+    - state: tesla-coil
+  - type: GuideHelp
+    guides:
+    - TeslaEngine
+    - Power
+
+- type: entity
+  parent: BaseFlatpack
+  id: TeslaGroundingRodFlatpack
+  name: флетпак заземлюючого стержня
+  description: Флетпак для конструювання заземлюючого стержня. Використайте мультитул.
+  components:
+  - type: Flatpack
+    entity: TeslaGroundingRod
+  - type: Sprite
+    layers:
+    - state: grounding-rod
+  - type: GuideHelp
+    guides:
+    - TeslaEngine
+    - Power
+
+- type: entity
+  parent: BaseFlatpack
+  id: GyroscopeFlatpack
+  name: флетпак гіроскопу
+  description: Флетпак для конструювання гіроскопу. Використайте мультитул.
+  components:
+  - type: Flatpack
+    entity: Gyroscope
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay
+      color: "#cec8ac"
+    - state: icon-default
+
+- type: entity
+  parent: BaseFlatpack
+  id: ThrusterFlatpack
+  name: флетпак прискорювача
+  description: Флетпак для конструювання прискорювача. Використайте мультитул.
+  components:
+  - type: Flatpack
+    entity: Thruster
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay
+      color: "#cec8ac"
+    - state: icon-default
+
+- type: entity
+  parent: BaseFlatpack
+  id: SpaceHeaterFlatpack
+  name: флетпак космічного обігрівача
+  description: Флетпак для конструювання космічного обігрівача. Використайте мультитул.
+  components:
+  - type: Flatpack
+    entity: SpaceHeaterAnchored
+
+- type: entity
+  parent: BaseFlatpack
+  id: FaxMachineFlatpack
+  name: флетпак факсу
+  description: Флетпак для конструювання факсу. Використайте мультитул.
+  components:
+  - type: Sprite
+    layers:
+    - state: fax-machine
+  - type: Flatpack
+    entity: FaxMachineBase
+
+- type: entity
+  parent: BaseFlatpack
+  id: CrewMonitoringServerFlatpack
+  name: crew monitoring server flatpack
+  description: A flatpack used for constructing a crew monitoring server.
+  components:
+  - type: Flatpack
+    entity: CrewMonitoringServer
+
+- type: entity
+  parent: BaseFlatpack
+  id: CrewMonitoringComputerFlatpack
+  name: crew monitoring computer flatpack
+  description: A flatpack used for constructing a crew monitoring console.
+  components:
+  - type: Flatpack
+    entity: ComputerCrewMonitoring
+
+- type: entity
+  parent: BaseFlatpack
+  id: HydroponicsTrayFlatpack
+  name: hydroponics tray flatpack
+  description: A flatpack used for constructing a hydroponics tray.
+  components:
+  - type: Flatpack
+    entity: hydroponicsTray
+  - type: Sprite
+    layers:
+    - state: hydroponics-tray
+  - type: GuideHelp
+    guides:
+    - Botany
+    - Chemicals

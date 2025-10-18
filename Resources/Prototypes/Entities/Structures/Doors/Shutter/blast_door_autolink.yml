@@ -1,0 +1,129 @@
+# AutoLink variants of BlastDoor (from Outer Rim)
+
+- type: entity
+  id: BlastDoorExterior1
+  parent: BlastDoor
+  suffix: Автозв'язок, Ext1
+  components:
+    - type: AutoLinkReceiver
+      channel: Ext1
+
+
+- type: entity
+  id: BlastDoorExterior1Open
+  parent: BlastDoorOpen
+  suffix: Відкриті, Автозв'язок, Ext1
+  components:
+    - type: AutoLinkReceiver
+      channel: Ext1
+
+- type: entity
+  id: BlastDoorExterior2
+  parent: BlastDoor
+  suffix: Автозв'язок, Ext2
+  components:
+    - type: AutoLinkReceiver
+      channel: Ext2
+
+
+- type: entity
+  id: BlastDoorExterior2Open
+  parent: BlastDoorOpen
+  suffix: Відкриті, Автозв'язок, Ext2
+  components:
+    - type: AutoLinkReceiver
+      channel: Ext2
+
+- type: entity
+  id: BlastDoorExterior3
+  parent: BlastDoor
+  suffix: Автозв'язок, Ext3
+  components:
+    - type: AutoLinkReceiver
+      channel: Ext3
+
+
+- type: entity
+  id: BlastDoorExterior3Open
+  parent: BlastDoorOpen
+  suffix: Відкриті, Автозв'язок, Ext3
+  components:
+    - type: AutoLinkReceiver
+      channel: Ext3
+
+- type: entity
+  id: BlastDoorBridge
+  parent: BlastDoor
+  suffix: Автозв'язок, Місток
+  components:
+    - type: AccessReader
+      access: [["Command"]]
+    - type: AutoLinkReceiver
+      channel: Bridge
+
+- type: entity
+  id: BlastDoorBridgeOpen
+  parent: BlastDoorOpen
+  suffix: Відкриті, Автозв'язок, Місток
+  components:
+    - type: AccessReader
+      access: [["Command"]]
+    - type: AutoLinkReceiver
+      channel: Bridge
+
+- type: entity
+  id: BlastDoorEngineering
+  parent: BlastDoor
+  suffix: Autolink, Engineering
+  components:
+  - type: AccessReader
+    access: [["Command"], ["Engineering"]]
+  - type: AutoLinkReceiver
+    channel: Engineering
+
+- type: entity
+  id: BlastDoorEngineeringOpen
+  parent: BlastDoorOpen
+  suffix: Open, Autolink, Engineering
+  components:
+  - type: AccessReader
+    access: [["Command"], ["Engineering"]]
+  - type: AutoLinkReceiver
+    channel: Engineering
+
+- type: entity
+  id: BlastDoorScience
+  parent: BlastDoor
+  suffix: Autolink, Science
+  components:
+  - type: AccessReader
+    access: [["Command"], ["Research"]]
+  - type: AutoLinkReceiver
+    channel: Research
+
+- type: entity
+  id: BlastDoorScienceOpen
+  parent: BlastDoorOpen
+  suffix: Open, Autolink, Science
+  components:
+  - type: AccessReader
+    access: [["Command"], ["Research"]]
+  - type: AutoLinkReceiver
+    channel: Research
+
+- type: entity
+  id: BlastDoorWindows
+  parent: BlastDoor
+  suffix: Автозв'язок, Вікна
+  components:
+    - type: AutoLinkReceiver
+      channel: Windows
+
+- type: entity
+  id: BlastDoorWindowsOpen
+  parent: BlastDoorOpen
+  suffix: Відкриті, Автозв'язок, Вікна
+  components:
+    - type: AutoLinkReceiver
+      channel: Windows
+

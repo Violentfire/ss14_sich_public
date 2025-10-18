@@ -1,0 +1,239 @@
+- type: entity
+  id: ClosetWall
+  parent: BaseWallCloset
+  name: стінна технічна шафа
+  description: Це сховище для речей.
+  components:
+  - type: EntityStorageVisuals
+    stateBaseClosed: generic
+    stateDoorOpen: generic_open
+    stateDoorClosed: generic_door
+
+- type: entity
+  id: ClosetWallEmergency
+  name: стінна аварійна шафа
+  parent: BaseWallCloset
+  description: Це сховище з кисневим балоном, дихальною маскою, та аварійним костюмом
+  components:
+  - type: EntityStorageVisuals
+    stateBaseClosed: emergency
+    stateDoorOpen: emergency_open
+    stateDoorClosed: emergency_door
+
+- type: entity
+  parent: BaseWallCloset
+  id: ClosetWallEmergencyN2
+  name: emergency nitrogen wall closet
+  description: It's full of life-saving equipment. Assuming, that is, that you breathe nitrogen.
+  components:
+  - type: EntityStorageVisuals
+    stateBaseClosed: n2
+    stateDoorOpen: n2_open
+    stateDoorClosed: n2_door
+
+- type: entity
+  id: ClosetWallFire
+  name: стінна протипожежна шафа
+  parent: BaseWallCloset
+  description: Це сховище для вогнеборців 
+  components:
+  - type: EntityStorageVisuals
+    stateBaseClosed: fire
+    stateDoorOpen: fire_open
+    stateDoorClosed: fire_door
+
+- type: entity
+  id: ClosetWallBlue
+  parent: BaseWallCloset
+  name: синя стінна шафа
+  description: "Гардероб зі стильним синім одягом"
+  components:
+  - type: EntityStorageVisuals
+    stateBaseClosed: generic
+    stateDoorOpen: generic_open
+    stateDoorClosed: blue_door
+
+- type: entity
+  id: ClosetWallPink
+  parent: BaseWallCloset
+  name: рожева стінна шафа
+  description: "Гардероб з казково рожевим одягом"
+  components:
+  - type: EntityStorageVisuals
+    stateBaseClosed: generic
+    stateDoorOpen: generic_open
+    stateDoorClosed: pink_door
+
+- type: entity
+  id: ClosetWallBlack
+  parent: BaseWallCloset
+  name: чорна стіннна шафа
+  description: "Гардероб з стильним чорним одягом. Ні, ви не знайдете тут пакети для русні"
+  components:
+  - type: EntityStorageVisuals
+    stateBaseClosed: generic
+    stateDoorOpen: generic_open
+    stateDoorClosed: black_door
+
+- type: entity
+  id: ClosetWallGreen
+  parent: BaseWallCloset
+  name: зелена стінна шафа
+  description: "Гардероб з стильним зеленим одягом"
+  components:
+  - type: EntityStorageVisuals
+    stateBaseClosed: generic
+    stateDoorOpen: generic_open
+    stateDoorClosed: green_door
+
+- type: entity
+  id: ClosetWallOrange
+  parent: BaseWallCloset
+  name: стінна шафа в'язня 
+  components:
+  - type: EntityStorageVisuals
+    stateBaseClosed: generic
+    stateDoorOpen: generic_open
+    stateDoorClosed: orange_door
+
+- type: entity
+  id: ClosetWallYellow
+  parent: BaseWallCloset
+  name: жовта стінна шафа
+  description: "Гардероб зі стильним жовтим одягом"
+  components:
+  - type: EntityStorageVisuals
+    stateBaseClosed: generic
+    stateDoorOpen: generic_open
+    stateDoorClosed: yellow_door
+
+- type: entity
+  id: ClosetWallWhite
+  parent: BaseWallCloset
+  name: біла стінна шафа
+  description: "Гардероб зі стильно білим одягом"
+  components:
+  - type: EntityStorageVisuals
+    stateBaseClosed: generic
+    stateDoorOpen: generic_open
+    stateDoorClosed: white_door
+
+- type: entity
+  id: ClosetWallGrey
+  parent: BaseWallCloset
+  name: сіра стінна шафа
+  description: "Гардероб зі стильно сірим одягом"
+  components:
+  - type: EntityStorageVisuals
+    stateBaseClosed: generic
+    stateDoorOpen: generic_open
+    stateDoorClosed: gray_door
+
+- type: entity
+  id: ClosetWallMixed
+  parent: BaseWallCloset
+  name: змішана стінна шафа
+  description: "Гардероб зі змішаним різнокольоровим одягом"
+  components:
+  - type: EntityStorageVisuals
+    stateBaseClosed: generic
+    stateDoorOpen: generic_open
+    stateDoorClosed: mixed_door
+
+- type: entity
+  id: ClosetWallAtmospherics
+  parent: BaseWallCloset
+  name: стінна шафа атмосферного інженера
+  components:
+  - type: EntityStorageVisuals
+    stateBaseClosed: generic
+    stateDoorOpen: generic_open
+    stateDoorClosed: atmos_door
+
+- type: entity
+  id: LockerWallMedical
+  parent: BaseWallLocker
+  name: медична стінна шафа
+  components:
+  - type: EntityStorageVisuals
+    stateBaseClosed: med
+    stateDoorOpen: med_open
+    stateDoorClosed: med_door
+  - type: AccessReader
+    access: [["Medical"]]
+
+- type: entity
+  parent: BaseWallLocker
+  id: LockerWallEvacRepair
+  name: emergency shuttle emergency wall locker
+  description: It's emergencies all the way down.
+  components:
+  - type: EntityStorageVisuals
+    stateBaseClosed: eng
+    stateDoorOpen: eng_open
+    stateDoorClosed: eng_evac_door
+  - type: AccessReader
+    access: [["Engineering"]]
+
+- type: entity
+  parent: [ GenpopBase , BaseWallLocker ]
+  id: LockerWallBasePrisoner
+  name: prisoner wall closet
+  description: It's a secure locker for an inmate's personal belongings during their time in prison.
+  suffix: 1
+
+- type: entity
+  parent: LockerWallBasePrisoner
+  id: LockerWallPrisoner2
+  suffix: 2
+  components:
+  - type: EntityStorageVisuals
+    stateDoorClosed: genpop_door_2
+
+- type: entity
+  parent: LockerWallBasePrisoner
+  id: LockerWallPrisoner3
+  suffix: 3
+  components:
+  - type: EntityStorageVisuals
+    stateDoorClosed: genpop_door_3
+
+- type: entity
+  parent: LockerWallBasePrisoner
+  id: LockerWallPrisoner4
+  suffix: 4
+  components:
+  - type: EntityStorageVisuals
+    stateDoorClosed: genpop_door_4
+
+- type: entity
+  parent: LockerWallBasePrisoner
+  id: LockerWallPrisoner5
+  suffix: 5
+  components:
+  - type: EntityStorageVisuals
+    stateDoorClosed: genpop_door_5
+
+- type: entity
+  parent: LockerWallBasePrisoner
+  id: LockerWallPrisoner6
+  suffix: 6
+  components:
+  - type: EntityStorageVisuals
+    stateDoorClosed: genpop_door_6
+
+- type: entity
+  parent: LockerWallBasePrisoner
+  id: LockerWallPrisoner7
+  suffix: 7
+  components:
+  - type: EntityStorageVisuals
+    stateDoorClosed: genpop_door_7
+
+- type: entity
+  parent: LockerWallBasePrisoner
+  id: LockerWallPrisoner8
+  suffix: 8
+  components:
+  - type: EntityStorageVisuals
+    stateDoorClosed: genpop_door_8

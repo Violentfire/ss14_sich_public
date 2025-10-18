@@ -1,0 +1,25 @@
+<Document>
+  # Арахніди
+
+  <Box>
+    <GuideEntityEmbed Entity="MobArachnid" Caption=""/>
+  </Box>
+
+  У них є два додаткових кишенькових слоти в інвентарі. Вони можуть їсти сире м'ясо без шкоди для здоров'я, але деякі продукти, такі як шоколад і цибуля, отруюють їх.
+  Вони задихаються на 50% швидше, а їхня блакитна кров не може метаболізуватися із заліза, оскільки її основою є мідь.
+
+  Їхні неозброєні атаки завдають проникаючої шкоди замість тупої.
+
+  ## Можливості
+
+  <Box>
+    <GuideEntityEmbed Entity="MaterialWebSilk" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingUniformJumpskirtWeb" Caption=""/>
+    <GuideEntityEmbed Entity="WebShield" Caption=""/>
+    <GuideEntityEmbed Entity="WallWeb" Caption=""/>
+  </Box>
+
+  Арахніди можуть створювати павутину ціною більшого голоду. Вони (і тільки вони) можуть створювати з павутиння різні предмети - від одягу і щитів до цілих стін.
+
+
+</Document>

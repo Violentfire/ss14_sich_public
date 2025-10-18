@@ -1,0 +1,44 @@
+- type: entity
+  id: SignalTimerElectronics
+  parent: BaseElectronics
+  name: плата сигнального таймеру
+  description: Плата, що використовується в збірці сигнального таймеру. Схоже, що для зміни типу плати можна скористатися викруткою.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: charger_APC
+  - type: Construction
+    deconstructionTarget: null
+    graph: TimerElectronics
+    node: signal
+  - type: Tag
+    tags:
+    - TimerSignalElectronics
+  - type: StaticPrice
+    price: 30
+
+- type: entity
+  id: ScreenTimerElectronics
+  parent: SignalTimerElectronics
+  name: плата екранного таймера
+  components:
+  - type: Construction
+    deconstructionTarget: null
+    graph: TimerElectronics
+    node: screen
+  - type: Tag
+    tags:
+    - TimerScreenElectronics
+
+- type: entity
+  id: BrigTimerElectronics
+  parent: SignalTimerElectronics
+  name: плата бріг таймера
+  components:
+  - type: Construction
+    deconstructionTarget: null
+    graph: TimerElectronics
+    node: brig
+  - type: Tag
+    tags:
+    - TimerBrigElectronics

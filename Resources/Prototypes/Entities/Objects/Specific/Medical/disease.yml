@@ -1,0 +1,55 @@
+- type: entity
+  parent: BaseItem
+  id: DiseaseSwab
+  name: стерильна паличка
+  description: Використовується для знімання та транспортування зразків. Стерильна допоки не відчинені. Одноразові.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Objects/Specific/Medical/mouth_swab.rsi
+    state: icon
+  - type: Tag
+    tags:
+    - Recyclable
+    - Trash
+  - type: BotanySwab
+  - type: GuideHelp
+    guides:
+  # - Virology (when it's back)
+    - Botany
+    - Chemicals
+
+- type: entity
+  parent: BaseAmmoProvider # this is for cycling swabs out and not spawning 30 entities, trust
+  id: BoxMouthSwab
+  name: дозатор стерильних паличок
+  description: Містить 30 стерильних паличок, особливо корисно для ботаніка.
+  components:
+  - type: Sprite
+    layers:
+    - state: boxwide
+    - state: swab
+  - type: BallisticAmmoProvider
+    whitelist:
+      components:
+      - BotanySwab
+    proto: DiseaseSwab
+    capacity: 30
+  - type: GuideHelp
+    guides:
+  # - Virology (when it's back)
+    - Botany
+    - Chemicals
+
+- type: entity
+  parent: BaseItem
+  id: Vaccine
+  name: вакцина
+  description: Допомогає людям які НЕ МАЮТЬ хвороби запобігти її підхопити.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    state: salpen

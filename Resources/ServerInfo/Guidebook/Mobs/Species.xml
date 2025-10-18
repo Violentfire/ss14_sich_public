@@ -1,0 +1,25 @@
+<Document>
+  # Види
+
+  Нанотрейзен наймають різноманітні види розумних істот.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobArachnid" Caption="Арахнід"/>
+  <GuideEntityEmbed Entity="MobDiona" Caption="Діона"/>
+  <GuideEntityEmbed Entity="MobDwarf" Caption="Дворф"/>
+  <GuideEntityEmbed Entity="MobHuman" Caption="Людина"/>
+  <GuideEntityEmbed Entity="MobMoth" Caption="Ніана"/>
+  <GuideEntityEmbed Entity="MobReptilian" Caption="Унатх"/>
+  </Box>
+  <Box>
+  <GuideEntityEmbed Entity="MobSlimePerson" Caption="Слайм-персона"/>
+  <GuideEntityEmbed Entity="MobVox" Caption="Вокс"/>
+  <GuideEntityEmbed Entity="MobIPC" Caption="ІПШ"/>
+  <GuideEntityEmbed Entity="MobTajara" Caption="Таяран"/>
+  <GuideEntityEmbed Entity="MobAvali" Caption="Авалі"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="MobVulpkanin" Caption="Vulpkanin"/>
+  </Box>
+
+</Document>

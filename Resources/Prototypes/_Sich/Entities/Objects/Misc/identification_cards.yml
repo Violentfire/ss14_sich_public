@@ -1,0 +1,162 @@
+- type: entity
+  parent: Clothing
+  id: IDCardFaction
+  name: identification card
+  description: A card necessary to access various areas aboard the station.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Sich/Objects/Misc/id_cards.rsi
+  - type: Clothing
+    slots:
+    - idcard
+    sprite: _Sich/Objects/Misc/id_cards.rsi
+  - type: Item
+    size: Small
+    heldPrefix: default
+    storedRotation: -90
+  - type: Access
+  - type: IdCard
+  - type: StationRecordKeyStorage
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+  - type: StealTarget
+    stealGroup: IDCard
+
+#Faction IDs
+
+- type: entity
+  parent: IDCardFaction
+  id: FactionBlankIDCard
+  name: Фракційна ID картка
+  components:
+  - type: Sprite
+    layers:
+    - state: factionblank
+  - type: Access
+    groups:
+    - AllAccess
+    tags:
+    - CentralCommand
+
+- type: entity
+  parent: IDCardFaction
+  id: SolFedIDCard
+  name: ID картка Сонячної Федерації
+  components:
+  - type: Sprite
+    layers:
+    - state: SolFed
+  - type: Access
+    groups:
+    - AllAccess
+    tags:
+    - CentralCommand
+    
+- type: entity
+  parent: IDCardFaction
+  id: USNIDCard
+  name: ID картка УКД
+  components:
+  - type: Sprite
+    layers:
+    - state: USN
+  - type: Access
+    groups:
+    - AllAccess
+    tags:
+    - CentralCommand
+    
+- type: entity
+  parent: IDCardFaction
+  id: RenuinIDCard
+  name: ID картка Ренюіня
+  components:
+  - type: Sprite
+    layers:
+    - state: Renuin
+  - type: Access
+    groups:
+    - AllAccess
+    tags:
+    - CentralCommand
+    
+- type: entity
+  parent: IDCardFaction
+  id: ChaosIncIDCard
+  name: ID картка Корпорації Хаосу
+  components:
+  - type: Sprite
+    layers:
+    - state: ChaosInc
+  - type: Access
+    groups:
+    - AllAccess
+    tags:
+    - CentralCommand
+    
+- type: entity
+  parent: IDCardFaction
+  id: TCCIDCard
+  name: ID картка Коаліції Тео-Контролю
+  components:
+  - type: Sprite
+    layers:
+    - state: TCC
+  - type: Access
+    groups:
+    - AllAccess
+    tags:
+    - CentralCommand
+
+#Job Faction IDs
+
+- type: entity
+  parent: ChaosIncIDCard
+  id: CIRespentativeIDCard
+  name: ID картка Представника Корпорації Хаосу
+  components:
+  - type: Sprite
+    layers:
+    - state: ChaosInc
+    - state: idciresp
+  - type: IdCard
+    jobTitle: "Представник Корпорації Хаосу"
+    
+- type: entity
+  parent: SolFedIDCard
+  id: SolFedOfficerIDCard
+  name: ID картка Офіцера Поліції СолФеду
+  components:
+  - type: Sprite
+    layers:
+    - state: SolFed
+    - state: idsecfaction
+  - type: IdCard
+    jobTitle: "Офіцер Поліції СолФеду"
+    
+- type: entity
+  parent: USNIDCard
+  id: SBUSNIDCard
+  name: ID картка Офіцера СБУКД
+  components:
+  - type: Sprite
+    layers:
+    - state: USN
+    - state: idsecfaction
+  - type: IdCard
+    jobTitle: "Офіцер СБУКД"
+    
+- type: entity
+  parent: RenuinIDCard
+  id: RenuinSoliderIDCard
+  name: ID картка Солдата МАР
+  components:
+  - type: Sprite
+    layers:
+    - state: Renuin
+    - state: idsecurityofficer
+  - type: IdCard
+    jobTitle: "Департамент Оперативного Реагування МАР"

@@ -1,0 +1,17 @@
+- type: entity
+  id: BookshelfFilledLore
+  parent: Bookshelf
+  suffix: random filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BookRandom
+        prob: 0.4
+        amount: 1
+        maxAmount: 4
+      - id: BookLoreSummary
+        prob: 0.1
+      - id: BookArachnidLore
+        prob: 0.1
+      - id: BookCicatrix
+        prob: 0.1

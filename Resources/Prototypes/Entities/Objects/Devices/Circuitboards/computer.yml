@@ -1,0 +1,573 @@
+﻿- type: entity
+  parent: BaseItem
+  id: BaseComputerCircuitboard
+  name: "комп'ютерна плата"
+  abstract: true
+  components:
+    - type: ComputerBoard
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: cpuboard
+    - type: Item
+      storedRotation: -90
+    - type: StaticPrice
+      price: 100
+    - type: PhysicalComposition
+      materialComposition:
+        Glass: 230
+      chemicalComposition:
+        Silicon: 20
+    - type: Circuitboard
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: AlertsComputerCircuitboard
+  name: "плата комп'ютера атмосферних сповіщень"
+  description: "Друкована плата комп'ютера атмосферних сповіщень."
+  components:
+    - type: Sprite
+      state: cpu_engineering
+    - type: ComputerBoard
+      prototype: ComputerAlert
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: AtmosMonitoringComputerCircuitboard
+  name: atmospheric network monitor board
+  description: A computer printed circuit board for an atmospheric network monitor.
+  components:
+    - type: Sprite
+      state: cpu_engineering
+    - type: ComputerBoard
+      prototype: ComputerAtmosMonitoring
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: PowerComputerCircuitboard
+  name: "плата комп'ютер моніторингу живлення"
+  description: Друкована плата консолі моніторингу живлення.
+  components:
+    - type: Sprite
+      state: cpu_engineering
+    - type: ComputerBoard
+      prototype: ComputerPowerMonitoring
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: MedicalRecordsComputerCircuitboard
+  name: "плата комп'ютера медичних записів"
+  description: "Друкована плата комп'ютера медичних записів"
+  components:
+    - type: Sprite
+      state: cpu_medical
+    - type: ComputerBoard
+      prototype: ComputerMedicalRecords
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: CriminalRecordsComputerCircuitboard
+  name: "плата комп'ютера криміналістики"
+  description: "Друкована плата комп'ютера криміналістики."
+  components:
+    - type: Sprite
+      state: cpu_security
+    - type: ComputerBoard
+      prototype: ComputerCriminalRecords
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: StationRecordsComputerCircuitboard
+  name: "плата комп'ютера даних екіпажу"
+  description: "Друкована плата комп'ютера даних екіпажу."
+  components:
+    - type: Sprite
+      state: cpu_command
+    - type: ComputerBoard
+      prototype: ComputerStationRecords
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: CargoRequestComputerCircuitboard
+  name: "плата комп'ютера запитів відділу постачання"
+  description: "Друкована плата комп'ютера запитів відділу постачання."
+  components:
+    - type: Sprite
+      state: cpu_supply
+    - type: ComputerBoard
+      prototype: ComputerCargoOrders
+    - type: StaticPrice
+      price: 750
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: CargoRequestEngineeringComputerCircuitboard
+  name: engineering request computer board
+  description: A computer printed circuit board for an engineering request computer.
+  components:
+  - type: Sprite
+    state: cpu_engineering
+  - type: ComputerBoard
+    prototype: ComputerCargoOrdersEngineering
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: CargoRequestMedicalComputerCircuitboard
+  name: medical request computer board
+  description: A computer printed circuit board for a medical request computer.
+  components:
+  - type: Sprite
+    state: cpu_medical
+  - type: ComputerBoard
+    prototype: ComputerCargoOrdersMedical
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: CargoRequestScienceComputerCircuitboard
+  name: science request computer board
+  description: A computer printed circuit board for a science request computer.
+  components:
+  - type: Sprite
+    state: cpu_science
+  - type: ComputerBoard
+    prototype: ComputerCargoOrdersScience
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: CargoRequestSecurityComputerCircuitboard
+  name: security request computer board
+  description: A computer printed circuit board for a security request computer.
+  components:
+  - type: Sprite
+    state: cpu_security
+  - type: ComputerBoard
+    prototype: ComputerCargoOrdersSecurity
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: CargoRequestServiceComputerCircuitboard
+  name: service request computer board
+  description: A computer printed circuit board for a service request computer.
+  components:
+  - type: Sprite
+    state: cpu_service
+  - type: ComputerBoard
+    prototype: ComputerCargoOrdersService
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: FundingAllocationComputerCircuitboard
+  name: funding allocation computer board
+  description: A computer printed circuit board for a funding allocation card console.
+  components:
+  - type: Sprite
+    state: cpu_command
+  - type: ComputerBoard
+    prototype: ComputerFundingAllocation
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: CargoSaleComputerCircuitboard
+  name: "плата комп'ютера для продажів"
+  description: "Друкована плата комп'ютера для продажів."
+  components:
+    - type: Sprite
+      state: cpu_supply
+    - type: ComputerBoard
+      prototype: ComputerPalletConsole
+
+- type: entity
+  id: CargoBountyComputerCircuitboard
+  parent: BaseComputerCircuitboard
+  name: "плата комп'ютера завдань карго"
+  description: "Друкована плата комп'ютера завдань карго."
+  components:
+  - type: Sprite
+    state: cpu_supply
+  - type: ComputerBoard
+    prototype: ComputerCargoBounty
+  - type: StaticPrice
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: SalvageJobBoardComputerCircuitboard
+  name: salvage job board computer board
+  description: A computer printed circuit board for a salvage job board computer.
+  components:
+  - type: Sprite
+    state: cpu_supply
+  - type: ComputerBoard
+    prototype: ComputerSalvageJobBoard
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: SalvageExpeditionsComputerCircuitboard
+  name: salvage expeditions computer board
+  description: A computer printed circuit board for a salvage expeditions computer.
+  components:
+    - type: Sprite
+      state: cpu_supply
+    - type: ComputerBoard
+      prototype: ComputerSalvageExpedition
+    - type: StealTarget
+      stealGroup: SalvageExpeditionsComputerCircuitboard
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: CargoShuttleConsoleCircuitboard
+  name: "плата комп'ютера шахтарських експедицій"
+  description: "Друкована плата комп'ютера шахтарських експедицій."
+  components:
+  - type: Sprite
+    state: cpu_supply
+  - type: ComputerBoard
+    prototype: ComputerShuttleCargo
+  - type: StealTarget
+    stealGroup: CargoShuttleConsoleCircuitboard
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: SurveillanceCameraMonitorCircuitboard
+  name: "плата комп'ютера камер спостереження"
+  description: "Друкована плата комп'ютера камер спостереження."
+  components:
+  - type: Sprite
+    state: cpu_security
+  - type: ComputerBoard
+    prototype: ComputerSurveillanceCameraMonitor
+  - type: Tag
+    tags:
+    - SurveillanceCameraMonitorCircuitboard
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: SurveillanceWirelessCameraMonitorCircuitboard
+  name: "плата комп'ютера бездротових камер спостереження"
+  description: "Друкована плата комп'ютера бездротових камер спостереження."
+  components:
+  - type: Sprite
+    state: cpu_service
+  - type: ComputerBoard
+    prototype: ComputerSurveillanceWirelessCameraMonitor
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: XenoborgCameraMonitorCircuitboard
+  name: xenoborg camera monitor board
+  description: A computer printed circuit board for a xenoborg camera monitor.
+  components:
+  - type: Sprite
+    state: cpu_science
+  - type: ComputerBoard
+    prototype: ComputerSurveillanceWirelessXenoborgCameraMonitor
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: ComputerTelevisionCircuitboard
+  name: плата телевізора
+  description: Друкована плата телевізора.
+  components:
+    - type: ComputerBoard
+      prototype: ComputerTelevision
+    - type: Tag
+      tags:
+        - ComputerTelevisionCircuitboard
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: ResearchComputerCircuitboard
+  name: "плата комп'ютера ДіР"
+  description: "Друкована плата комп'ютера ДіР, вони ж відділ Дослідження та Розробки, вони ж R&D"
+  components:
+    - type: Sprite
+      state: cpu_science
+    - type: ComputerBoard
+      prototype: ComputerResearchAndDevelopment
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: AnalysisComputerCircuitboard
+  name: "плата комп'ютерного аналізатора артефактів"
+  description: "Друкована плата комп'ютерного аналізатора артефактів."
+  components:
+    - type: Sprite
+      state: cpu_science
+    - type: ComputerBoard
+      prototype: ComputerAnalysisConsole
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: TechDiskComputerCircuitboard
+  name: плата консолі дисків технологій
+  description: Друкована плата консолі дисків технологій.
+  components:
+  - type: Sprite
+    state: cpu_science
+  - type: ComputerBoard
+    prototype: ComputerTechnologyDiskTerminal
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: CrewMonitoringComputerCircuitboard
+  name: "плата комп'ютера моніторингу екіпажу"
+  description: "Друкована плата комп'ютера моніторингу екіпажу."
+  components:
+  - type: Sprite
+    state: cpu_medical
+  - type: ComputerBoard
+    prototype: ComputerCrewMonitoring
+
+- type: entity
+  parent: [BaseComputerCircuitboard, BaseCommandContraband]
+  id: IDComputerCircuitboard
+  name: "плата комп'ютера керування доступом ID-картки"
+  description: "Друкована плата комп'ютера керування доступом ID-картки."
+  components:
+    - type: Sprite
+      state: cpu_command
+    - type: ComputerBoard
+      prototype: ComputerId
+    - type: StaticPrice
+      price: 750
+    - type: Tag
+      tags:
+      - HighRiskItem
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: BodyScannerComputerCircuitboard
+  name: "плата комп'ютера сканування тіла"
+  description: "Друкована плата комп'ютера сканування тіла."
+  components:
+    - type: Sprite
+      state: cpu_medical
+    - type: ComputerBoard
+      prototype: computerBodyScanner
+
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseCommandContraband ]
+  id: CommsComputerCircuitboard
+  name: "плата комп'ютера сповіщень"
+  description: "Друкована плата комп'ютера сповіщень."
+  components:
+    - type: Sprite
+      state: cpu_command
+    - type: ComputerBoard
+      prototype: ComputerComms
+
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseSyndicateContraband ]
+  id: SyndicateCommsComputerCircuitboard
+  name: "синдкатська плата комп'ютера сповіщень"
+  description: "Друкована синдкатська плата комп'ютера сповіщень."
+  components:
+  - type: Sprite
+    state: cpu_syndicate
+  - type: ComputerBoard
+    prototype: SyndicateComputerComms
+
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseSyndicateContraband ]
+  id: WizardCommsComputerCircuitboard
+  name: wizard communications computer board
+  description: A computer printed circuit board for a wizard communications console.
+  components:
+  - type: Sprite
+    state: cpu_wizard
+  - type: ComputerBoard
+    prototype: WizardComputerComms
+
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseCentcommContraband ]
+  id: CentcommCommsComputerCircuitboard
+  name: central command communications computer board
+  description: A computer printed circuit board for a central command communications console.
+  components:
+  - type: Sprite
+    state: cpu_centcomm
+  - type: ComputerBoard
+    prototype: CentcommComputerComms
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: RadarConsoleCircuitboard
+  name: "плата комп'ютера масового сканування"
+  components:
+  - type: Sprite
+    state: cpu_supply
+  - type: ComputerBoard
+    prototype: ComputerRadar
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: SolarControlComputerCircuitboard
+  name: "плата комп'ютера керування сонячними панелями"
+  description: "Друкована плата комп'ютера керування сонячними панелями."
+  components:
+    - type: Sprite
+      state: cpu_engineering
+    - type: ComputerBoard
+      prototype: ComputerSolarControl
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: SpaceVillainArcadeComputerCircuitboard
+  name: плата аркадного автомату "космічні поганці"
+  description: Друкована плата аркадного автомату "космічні поганці".
+  components:
+    - type: ComputerBoard
+      prototype: SpaceVillainArcade
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: BlockGameArcadeComputerCircuitboard
+  name: плата аркадного автомату "нанатетріс"
+  description: Друкована плата аркадного автомату "нанатетріс".
+  components:
+    - type: ComputerBoard
+      prototype: BlockGameArcade
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: ParticleAcceleratorComputerCircuitboard
+  name: "плата комп'ютера керування ПЧ"
+  description: "Друкована плата комп'ютера керування прискорювача часток."
+  components:
+    - type: Sprite
+      state: cpu_engineering
+    - type: ComputerBoard
+      prototype: ParticleAcceleratorControlBoxUnfinished
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: ShuttleConsoleCircuitboard
+  name: плата консолі шатлу
+  description: Друкована плата консолі шатлу.
+  components:
+  - type: Sprite
+    state: cpu_supply
+  - type: ComputerBoard
+    prototype: ComputerShuttle
+
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseSyndicateContraband ]
+  id: SyndicateShuttleConsoleCircuitboard
+  name: синдикатська плата консолі шатлу
+  description: Друкована синдикатська плата консолі шатлу.
+  components:
+  - type: Sprite
+    state: cpu_syndicate
+  - type: ComputerBoard
+    prototype: ComputerShuttleSyndie
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: CloningConsoleComputerCircuitboard
+  name: "плата комп'ютера клонувального обладнання"
+  description: "Друкована плата комп'ютера клонувального обладнання"
+  components:
+    - type: Sprite
+      state: cpu_medical
+    - type: ComputerBoard
+      prototype: ComputerCloningConsole
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: ComputerIFFCircuitboard
+  name: "плата комп'ютера IFF"
+  description: "Друкована плата комп'ютера IFF."
+  components:
+    - type: Sprite
+      state: cpu_command
+    - type: ComputerBoard
+      prototype: ComputerIFF
+
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseSyndicateContraband ]
+  id: ComputerIFFSyndicateCircuitboard
+  name: "сидникатська плата комп'ютера IFF"
+  description: "Друкована сидникатська плата комп'ютера IFF."
+  components:
+  - type: Sprite
+    state: cpu_syndicate
+  - type: ComputerBoard
+    prototype: ComputerIFFSyndicate
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: ComputerMassMediaCircuitboard
+  name: плата консолі для мас-медія
+  description: Напишіть своє повідомлення світові!
+  components:
+    - type: Sprite
+      state: cpu_service
+    - type: StaticPrice
+      price: 150
+    - type: ComputerBoard
+      prototype: ComputerMassMedia
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: SensorConsoleCircuitboard
+  name: плата консолі моніторингу екіпажу
+  description: Друкована плата консолі моніторингу екіпажу.
+  components:
+    - type: Sprite
+      state: cpu_engineering
+    - type: ComputerBoard
+      prototype: ComputerSensorMonitoring
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: RoboticsConsoleCircuitboard
+  name: плата консолі контролю боргів
+  description: Друкована плата консолі контролю боргів.
+  components:
+    - type: Sprite
+      state: cpu_science
+    - type: ComputerBoard
+      prototype: ComputerRoboticsControl
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: ComputerXenoborgsControlCircuitboard
+  name: xenoborg control console board
+  description: A computer printed circuit board for a xenoborg control console.
+  components:
+    - type: Sprite
+      state: cpu_science
+    - type: ComputerBoard
+      prototype: ComputerXenoborgsControl
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: StationAiUploadCircuitboard
+  name: плата консолі завантаження ШІ
+  description: Друкована плата консолі завантаження ШІ.
+  components:
+    - type: Sprite
+      state: cpu_science
+    - type: ComputerBoard
+      prototype: StationAiUploadComputer
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: StationAiFixerCircuitboard
+  name: плата консолі відновлення ШІ
+  description: Друкована плата для консолі відновлення ШІ.
+  components:
+    - type: Sprite
+      state: cpu_science
+    - type: ComputerBoard
+      prototype: StationAiFixerComputer

@@ -1,0 +1,109 @@
+- type: entity
+  parent: BoxCardboard
+  name: коробка мавп'ячих кубів
+  id: MonkeyCubeBox
+  description: Мавп'ячі куби бренду Сухоприятель. Просто додайте води!
+  components:
+  - type: StorageFill
+    contents:
+      - id: MonkeyCubeWrapped
+        amount: 8
+  - type: Sprite
+    sprite: Objects/Misc/monkeycube.rsi
+    state: box
+
+- type: entity
+  parent: BaseItem
+  abstract: true
+  suffix: Wrapped
+  id: BaseWrappedCube
+  components:
+  - type: Item
+    size: Tiny
+  - type: SpawnItemsOnUse
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+  - type: Sprite
+    sprite: Objects/Misc/monkeycube.rsi
+
+- type: entity
+  parent: BaseWrappedCube
+  name: monkey cube
+  id: MonkeyCubeWrapped
+  description: Unwrap this to get a monkey cube.
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: MonkeyCube
+  - type: Sprite
+    state: wrapper
+  - type: Tag
+    tags:
+    - MonkeyCube
+
+- type: entity
+  parent: MonkeyCubeBox
+  name: коробка кобольдових кубів
+  id: KoboldCubeBox
+  description: Згущені кобольди в кубі. Просто додайте води!
+  components:
+  - type: StorageFill
+    contents:
+      - id: KoboldCubeWrapped
+        amount: 8
+  - type: Sprite
+    sprite: Objects/Misc/monkeycube.rsi
+    state: box_kobold
+
+- type: entity
+  parent: MonkeyCubeBox
+  name: коробка різноманітних кубів
+  id: VariantCubeBox
+  description: І кобольдові куби, і мавп'ячі куби. Просто додайте води!
+  components:
+  - type: StorageFill
+    contents:
+      - id: KoboldCubeWrapped
+        amount: 4
+      - id: MonkeyCubeWrapped
+        amount: 4
+  - type: Sprite
+    sprite: Objects/Misc/monkeycube.rsi
+    state: box_variant
+
+- type: entity
+  parent: BaseWrappedCube
+  name: кобольдовий куб
+  id: KoboldCubeWrapped
+  description: Розгорніть це, щоб отримати кобольдовий куб.
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: KoboldCube
+  - type: Sprite
+    state: wrapper_kobold
+
+- type: entity
+  parent: MonkeyCubeBox
+  name: коробка мавп'ячих кубів
+  suffix: Синдикат
+  id: SyndicateSpongeBox
+  description: Мавп'ячі куби бренду Сухоприятель. Просто додайте води!
+  components:
+  - type: StorageFill
+    contents:
+      - id: SyndicateSpongeWrapped
+        amount: 6
+  - type: Sprite
+    sprite: Objects/Misc/monkeycube.rsi
+    state: box
+
+- type: entity
+  parent: MonkeyCubeWrapped
+  name: мавп'ячий куб
+  suffix: Wrapped, Syndicate
+  id: SyndicateSpongeWrapped
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: SyndicateSponge

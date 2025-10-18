@@ -1,0 +1,82 @@
+- type: entity
+  parent: [ClothingHeadBaseButcherable, BaseFoldable]
+  id: ClothingHeadBandBase
+  abstract: true
+  components:
+  - type: Foldable
+    folded: true
+  - type: Mask
+    isToggled: true
+    enabled: false
+    disableOnFolded: true
+  - type: IngestionBlocker
+    enabled: false
+  - type: IdentityBlocker
+    enabled: false
+    coverage: MOUTH
+  - type: Sprite # needed for vendor inventory icons
+    layers:
+    - state: icon
+      map: ["foldedLayer"]
+      visible: true
+    - state: icon_mask
+      map: [ "unfoldedLayer" ]
+      visible: false
+  - type: HideLayerClothing # needed since head bandana inherits from mask bandana
+    slots: []
+  - type: Tag
+    tags:
+    - Bandana
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadBandBase, ClothingMaskBandBlack]
+  id: ClothingHeadBandBlack
+  name: чорна бандана
+
+- type: entity
+  parent: [ClothingHeadBandBase, ClothingMaskBandBlue]
+  id: ClothingHeadBandBlue
+  name: синя бандана
+
+- type: entity
+  parent: [ClothingHeadBandBase, ClothingMaskBandBotany]
+  id: ClothingHeadBandBotany
+  name: бандана ботаніка
+
+- type: entity
+  parent: [ClothingHeadBandBase, ClothingMaskBandGold]
+  id: ClothingHeadBandGold
+  name: жовта бандана
+
+- type: entity
+  parent: [ClothingHeadBandBase, ClothingMaskBandGreen]
+  id: ClothingHeadBandGreen
+  name: зелена бандана
+
+- type: entity
+  parent: [ClothingHeadBandBase, ClothingMaskBandGrey]
+  id: ClothingHeadBandGrey
+  name: сіра бандана
+
+- type: entity
+  parent: [ClothingHeadBandBase, ClothingMaskBandRed]
+  id: ClothingHeadBandRed
+  name: червона бандана
+
+- type: entity
+  parent: [ClothingHeadBandBase, ClothingMaskBandSkull]
+  id: ClothingHeadBandSkull
+  name: бандана з черепом
+
+- type: entity
+  parent: [ClothingHeadBandBase, ClothingMaskBandMerc]
+  id: ClothingHeadBandMerc
+  name: військова бандана
+
+- type: entity
+  parent: [ClothingHeadBandBase, ClothingMaskBandBrown]
+  id: ClothingHeadBandBrown
+  name: коричнева бандана

@@ -1,0 +1,45 @@
+- type: entity
+  id: DiseaseDiagnoser
+  parent: [ BaseMachinePowered, SmallConstructibleMachine ]
+  name: діагностувач захворювань Дельта Екстрім
+  description: Машина, що аналізує зразки хвороб.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/diagnoser.rsi
+    layers:
+    - state: icon
+      map: ["enum.DiseaseMachineVisualLayers.IsRunning"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.DiseaseMachineVisualLayers.IsOn"]
+  - type: Appearance
+  - type: Machine
+    board: DiagnoserMachineCircuitboard
+
+- type: entity
+  name: звіт діагностувача хвороб
+  parent: Paper
+  id: DiagnosisReportPaper
+  description: Моторошна медична довідка.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper_receipt
+    - state: paper_receipt_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundImagePath: "/Textures/Interface/Paper/paper_background_perforated.svg.96dpi.png"
+    headerImagePath: "/Textures/Interface/Paper/paper_heading_virus.svg.96dpi.png"
+    headerMargin: 0.0, 0.0, 0.0, 6.0
+    backgroundImageTile: true
+    backgroundPatchMargin: 0.0, 6.0, 0.0, 6.0
+    contentMargin: 12.0, 0.0, 12.0, 0.0
+    # This is a narrow piece of paper
+    maxWritableArea: 128.0, 0.0

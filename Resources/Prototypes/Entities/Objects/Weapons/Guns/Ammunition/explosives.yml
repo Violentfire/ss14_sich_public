@@ -1,0 +1,212 @@
+# Rockets
+
+- type: entity
+  id: CartridgeRocket
+  name: ПГ-7ВЛ
+  parent: [BaseItem, BaseMajorContraband]
+  description: Ракета 1,5 призначена для РПГ-7. Має трубчасту форму.
+  components:
+  - type: Tag
+    tags:
+      - CartridgeRocket
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    proto: BulletRocket
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    state: rpg
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  id: CartridgeRocketSlow
+  name: ПГ-7ВЛ "Ракета-Равлик"
+  parent: [BaseItem, BaseMajorContraband]
+  description: Ракета 1,5 призначена для РПГ-7. Має трубчасту форму. Вона занадто повільна..
+  components:
+    - type: Tag
+      tags:
+        - CartridgeRocket
+    - type: Item
+      size: Small
+    - type: CartridgeAmmo
+      proto: BulletWeakRocket
+      deleteOnSpawn: true
+    - type: Sprite
+      sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+      state: frag
+    - type: StaticPrice
+      price: 20
+
+# Grenades
+
+- type: entity
+  id: BaseGrenade
+  name: звичайна граната
+  parent: [BaseItem, BaseMajorContraband]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - Grenade
+  - type: Item
+    size: Small
+  - type: Sprite
+
+- type: entity
+  id: GrenadeBaton
+  name: кінетична граната
+  parent: BaseGrenade
+  components:
+  - type: CartridgeAmmo
+    proto: BulletGrenadeBaton
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    layers:
+    - state: baton
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: baton
+    suffix: false
+
+- type: entity
+  id: GrenadeBlast
+  name: вибухова граната
+  parent: BaseGrenade
+  components:
+  - type: CartridgeAmmo
+    proto: BulletGrenadeBlast
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    layers:
+    - state: blast
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: blast
+    suffix: false
+
+- type: entity
+  id: GrenadeFlash
+  name: спалахова граната
+  parent: BaseGrenade
+  components:
+  - type: CartridgeAmmo
+    proto: BulletGrenadeFlash
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    layers:
+    - state: flash
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: flash
+    suffix: false
+
+- type: entity
+  id: GrenadeFrag
+  name: осколкова граната
+  parent: BaseGrenade
+  components:
+  - type: CartridgeAmmo
+    proto: BulletGrenadeFrag
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    layers:
+    - state: frag
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: frag
+    suffix: false
+
+- type: entity
+  parent: BaseGrenade
+  id: GrenadeCleanade
+  name: cleanade grenade round
+  components:
+  - type: CartridgeAmmo
+    proto: BulletGrenadeCleanade
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    layers:
+    - state: cleanade
+      map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: frag
+    suffix: false
+
+- type: entity
+  id: GrenadeEMP
+  name: ЕМІ граната
+  parent: BaseGrenade
+  components:
+  - type: CartridgeAmmo
+    proto: BulletGrenadeEMP
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    layers:
+    - state: emp
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: frag
+    suffix: false
+
+# Cannon Balls
+
+- type: entity
+  id: BaseCannonBall
+  name: звичайне гарматне ядро
+  parent: [BaseItem, BaseMajorContraband]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - CannonBall
+  - type: Item
+    size: Small
+  - type: Sprite
+
+- type: entity
+  id: CannonBall
+  name: гарматне ядро
+  suffix: Pirate
+  parent: BaseCannonBall
+  components:
+  - type: CartridgeAmmo
+    proto: BulletCannonBall
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    state: ball
+
+- type: entity
+  id: CannonBallGrapeshot
+  name: виноградне ядро
+  suffix: Pirate
+  parent: BaseCannonBall
+  components:
+  - type: CartridgeAmmo
+    proto: PelletGrapeshotSpread
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    state: grapeshot
+
+- type: entity
+  id: CannonBallGlassshot
+  name: скляне ядро
+  suffix: Pirate
+  parent: BaseCannonBall
+  components:
+  - type: CartridgeAmmo
+    proto: PelletGlassSpread
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    state: glassshot

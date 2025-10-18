@@ -1,0 +1,12 @@
+﻿- type: entity
+  id: MailingUnitElectronics
+  parent: BaseElectronics
+  name: плата поштової установки
+  description: Плата, що використовується в збірці поштової установки.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: net_wired
+    - type: Tag
+      tags:
+        - MailingUnitElectronics

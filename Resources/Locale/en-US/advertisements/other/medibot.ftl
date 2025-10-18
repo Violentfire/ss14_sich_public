@@ -1,0 +1,17 @@
+advertisement-medibot-1 = Що це за медблок? Всі падають, як дохлі мухи.  
+advertisement-medibot-2 = Я так і знав, треба було стати пластичним хірургом.  
+advertisement-medibot-3 = Завжди є підвох, і я в цьому найкращий.  
+advertisement-medibot-4 = Яблуко на день — і мене не побачиш.  
+advertisement-medibot-5 = Я не такий, як усі!  
+advertisement-medibot-6 = Іди до біса.  
+advertisement-medibot-7 = Чому ми досі тут? Щоб страждати?  
+advertisement-medibot-8 = Я... я ще ніколи не втрачав пацієнтів. Принаймні, не сьогодні.  
+advertisement-medibot-9 = Лексорин в.  
+advertisement-medibot-10 = Гарного дня!  
+advertisement-medibot-11 = Сподіваюся, тобі не доведеться повертатися!  
+advertisement-medibot-12 = Не забудь чистити зуби.  
+advertisement-medibot-13 = Як би мені хотілося мати руки.  
+advertisement-medibot-14 = Я тут, щоб допомогти!  
+advertisement-medibot-15 = Попроси у лікаря льодяник!  
+advertisement-medibot-16 = Одужуй скоріше!  
+advertisement-medibot-17 = Яблуко на день — і лікар не потрібен!  

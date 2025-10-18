@@ -1,0 +1,26 @@
+- type: entity
+  parent: [BaseItem, BaseSyndicateContraband ]
+  id: NukeOpsDeclarationOfWar
+  name: рупор війни
+  description: Використовується аби надсилати оголошення війни. Такий зухвалий крок приверне увагу могутніх благодійників всередині Синдикату, які забезпечать вашу команду величезною кількістю бонусних телекристалів. Потрібно використати на початку місії, інакше ваші благодійники втратять інтерес.
+  components:
+    - type: Sprite
+      sprite: Objects/Devices/declaration_of_war.rsi
+      layers:
+        - state: declarator
+    - type: Item
+    - type: UseDelay
+      delay: 0.5
+    - type: ActivatableUI
+      inHandsOnly: true
+      singleUser: true
+      requireActiveHand: false
+      key: enum.WarDeclaratorUiKey.Key
+    - type: UserInterface
+      interfaces:
+        enum.WarDeclaratorUiKey.Key:
+          type: WarDeclaratorBoundUserInterface
+    - type: WarDeclarator
+      message: war-declarator-default-message
+    - type: AccessReader
+      access: [["NuclearOperative"]]

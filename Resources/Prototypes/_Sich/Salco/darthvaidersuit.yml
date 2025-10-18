@@ -1,0 +1,246 @@
+- type: entity
+  parent: [ClothingOuterEVASuitBase, BaseRestrictedContraband, ClothingOuterStorageBase]
+  categories: [HideSpawnMenu]
+  id: DarthVaderSuit
+  name: костюм Дарта Вейдера
+  description: Поруч і з ним чутно Імперський Марш
+  components:
+  - type: Sprite
+    sprite: _Sich/Salco/DarthVader/darthvadersuit.rsi
+  - type: Clothing
+    sprite: _Sich/Salco/DarthVader/darthvadersuit.rsi
+    equipDelay: 2
+    unequipDelay: 2
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.2
+        Slash: 0.4
+        Piercing: 0.2
+        Caustic: 0.1
+        Heat: 0.2
+        shock: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: HeldSpeedModifier
+  - type: Storage
+    grid:
+    - 2,0,3,4
+    - 6,0,7,4
+    - 0,8,0,9
+    - 2,8,2,9
+    - 4,8,4,9
+    - 6,8,9,9
+    - 7,12,7,13
+  - type: StorageFill
+    contents:
+      - id: MedkitCombatFilled
+      - id: MedkitCombatFilled
+
+
+- type: entity
+  parent: ClothingHeadEVAHelmetBase
+  categories: [HideSpawnMenu]
+  id: DarthVaderHemlet
+  name: шолом Дарта Вейдера
+  description: Поруч і з ним чутно Імперський Марш
+  components:
+  - type: Sprite
+    sprite: _Sich/Salco/DarthVader/darthvaderhemlet.rsi
+  - type: Clothing
+    sprite: _Sich/Salco/DarthVader/darthvaderhemlet.rsi
+    equipDelay: 1
+    unequipDelay: 1
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        shock: 0.9
+  - type: UserInterface
+    interfaces:
+      enum.SharedGasTankUiKey.Key:
+        type: GasTankBoundUserInterface
+  - type: GasTank
+    outputPressure: 21.3
+    air:
+      # 4 minutes
+      volume: 10
+      moles:
+        - 1000 # oxygen
+      temperature: 293.15
+
+- type: entity
+  parent: ClothingNeckBase
+  id: DarthVaderHemletCloak
+  categories: [HideSpawnMenu]
+  name: плащ Дарта Вейдера 
+  description: Поруч і з ним чутно Імперський Марш
+  components:
+  - type: Sprite
+    sprite: _Sich/Salco/DarthVader/darthvadercloak.rsi
+  - type: StealTarget
+    stealGroup: HeadCloak
+
+- type: entity
+  parent: ClothingShoesBase
+  id: darthVaderBoots
+  categories: [HideSpawnMenu]
+  name: чоботи Дарта Вейдера
+  description: Поруч і з ними чутно Імперський Марш
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/cowboybootsblack.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/cowboybootsblack.rsi
+  - type: NoSlip
+
+
+
+# implanter
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: COTelekinesisImplant
+  name: Telekinesis implant
+  description: This implant gives you extraordinary powers!
+  categories: [HideSpawnMenu]
+  components:
+    - type: SubdermalImplant
+      permanent: true
+      implantAction: ActionRetractableTelekinesis
+    - type: TriggerOnActivateImplant
+    - type: Tag
+      tags:
+        - SubdermalImplant
+        - HideContextMenu
+
+- type: entity
+  id: COTelekinesisImplanter
+  name: Telekinesis implanter
+  parent: BaseImplantOnlyImplanter
+  components:
+    - type: Implanter
+      implant: COTelekinesisImplant
+
+# action
+
+- type: entity
+  parent: BaseAction
+  id: ActionRetractableTelekinesis
+  name: Сила
+  description: Використай свою силу, щоб душити та кидати ворогів
+  components:
+  - type: Action
+    useDelay: 2
+    raiseOnAction: true
+    itemIconStyle: BigAction
+    icon: 
+      sprite: Objects/Magic/cotelekinesis.rsi
+      state: icon
+    iconOn:
+      sprite: Objects/Magic/cotelekinesis.rsi
+      state: icon-on
+  - type: InstantAction
+    event: !type:OnRetractableItemActionEvent
+  - type: RetractableItemAction
+    spawnedPrototype: COTelekinesisAbilityPower
+
+- type: Tag
+  id: ExtraordTelekinesis
+
+# tether gun
+
+- type: entity
+  name: telekinesis ability
+  suffix: DO NOT MAP
+  parent: BaseItem
+  categories: [HideSpawnMenu]
+  id: COTelekinesisAbilityPower
+  description: Manipulates gravity around objects to fling them at high velocities.
+  components:
+    - type: Item
+      storedRotation: -90
+    - type: ItemToggle
+      onUse: false
+    - type: TetherForseCombine
+      canTetherAlive: true
+      canUnanchor: true
+      maxForce: 1000
+      massLimit: 1000
+      frequency: 6
+      dampingRatio: 40
+      throwForce: 30
+      throwDistance: 200
+      lineColor: "#FF5555"
+      damage:
+        types:
+          Asphyxiation: 0.1
+          Blunt: 0.025
+    - type: Sprite
+      sprite: Objects/Magic/cotelekinesis.rsi
+      layers:
+        - state: icon
+    - type: Appearance
+
+- type: entity
+  name: енергетичний меч Дарта Вейдера
+  parent: [BaseMeleeWeaponEnergy, BaseSyndicateContraband]
+  id: EnergySwordDarthVader
+  categories: [HideSpawnMenu]
+  description: Тримаючі його в руках ви відчуваєте всю його силу
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/e_sword.rsi
+    layers:
+    - state: e_sword
+    - state: e_sword_blade
+      color: "#FF0000"
+      visible: false
+      shader: unshaded
+      map: [ "blade" ]
+  - type: Item
+    sprite: Objects/Weapons/Melee/e_sword-inhands.rsi
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+      types:
+        Slash: 20
+        Heat: 20
+        Structural: 30
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    angle: 70
+  - type: EnergySword
+    activatedColor: "#FF0000"
+    colorOptions: 
+      - "#FF0000"
+  - type: Reflect
+    reflectProb: 0.9
+    spread: 60
+  - type: DisarmMalus
+    malus: 0
+
+- type: startingGear
+  id: DarthVader
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorBlack
+    shoes: darthVaderBoots
+    gloves: ClothingHandsGlovesCombat
+    head: DarthVaderHemlet
+    neck: DarthVaderHemletCloak
+    outerClothing: DarthVaderSuit
+    eyes: ClothingEyesGlassesSunglasses
+  inhand:
+  - COTelekinesisImplanter
+  - EnergySwordDarthVader

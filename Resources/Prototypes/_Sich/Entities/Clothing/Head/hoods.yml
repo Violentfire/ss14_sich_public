@@ -1,0 +1,26 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHoodMansusRobe
+  noSpawn: true
+  name: таємничий капюшон
+  description: Дивного вигляду капюшон, яка тримає в собі таємничу силу...
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/Head/Hoods/mansus_robe.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Head/Hoods/mansus_robe.rsi
+  - type: Tag
+    tags:
+    - HidesHair
+    - WhitelistChameleon
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        

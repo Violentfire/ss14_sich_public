@@ -1,0 +1,33 @@
+- type: entity
+  parent: ParticleAcceleratorFinishedPart
+  id: ParticleAcceleratorPowerBox
+  name: блок живлення ПЧ
+  description: Формально відома як ЕМ-лінза, що фокусує частинки. Він використовує електромагнітні хвилі для фокусування альфа-частинок.
+  components:
+  - type: Sprite
+    sprite: Structures/Power/Generation/PA/power_box.rsi
+  - type: ParticleAcceleratorPowerBox
+  - type: PowerConsumer
+    voltage: Medium
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      input:
+        !type:CableDeviceNode
+        nodeGroupID: MVPower
+  - type: Construction
+    graph: ParticleAcceleratorPowerBox
+  - type: MultipartMachinePart
+
+- type: entity
+  parent: ParticleAcceleratorUnfinishedBase
+  id: ParticleAcceleratorPowerBoxUnfinished
+  name: блок живлення ПЧ
+  suffix: Unfinished
+  description: Формально відома як ЕМ-лінза, що фокусує частинки. Він використовує електромагнітні хвилі для фокусування альфа-частинок. Виглядає незавершеним.
+  components:
+  - type: Sprite
+    sprite: Structures/Power/Generation/PA/power_box.rsi
+  - type: Construction
+    graph: ParticleAcceleratorPowerBox
+  - type: MultipartMachinePart

@@ -1,0 +1,17 @@
+- type: entity
+  parent: BaseItem
+  id: AmeJar
+  name: паливна балон для АМД
+  description: Герметична банка, що містить антиматерію. Потрібна для використання в антиматеріальному двигуні.
+  components:
+  - type: Item
+    size: Normal
+    sprite: Objects/Power/AME/ame_jar.rsi
+  - type: Sprite
+    sprite: Objects/Power/AME/ame_jar.rsi
+    state: jar
+  - type: AmeFuelContainer
+  - type: StaticPrice
+    price: 500
+  - type: GuideHelp
+    guides: [ AME, Power ]

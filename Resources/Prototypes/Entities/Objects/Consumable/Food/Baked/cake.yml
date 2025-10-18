@@ -1,0 +1,1331 @@
+# When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_baked_whole.yml & food_baked_single.yml
+# Base
+
+- type: entity
+  parent: FoodInjectableBase
+  id: FoodCakeBase
+  abstract: true
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/cake.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 55 # flavored cakes have less room for spiking
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 40
+        - ReagentId: Vitamin
+          Quantity: 10
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - Cake
+  - type: SecretStash
+    maxItemSize: "Normal"
+    secretStashName: secret-stash-cake
+    damageEatenItemInside:
+      types:
+        Slash: 7.5
+  - type: ToolOpenable
+    openToolQualityNeeded: Slicing
+    closeToolQualityNeeded: Slicing
+    verbOnly: true
+  - type: ContainerContainer
+    containers:
+      stash: !type:ContainerSlot {}
+
+- type: entity
+  parent: FoodCakeBase
+  id: FoodCakeSliceBase
+  abstract: true
+  description: Just a slice of cake, it is enough for everyone.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: Food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 12
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Vitamin
+          Quantity: 2
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - Cake
+    - Slice
+
+# Custom Cake Example
+
+- type: entity
+  name: чорничний торт
+  parent: FoodCakeBase
+  id: FoodCakeBlueberry
+  description: Забарвлює зуби.
+  components:
+  - type: Sprite
+    layers:
+    - state: plain
+    - state: alpha-filling
+      color: blue
+  - type: SliceableFood
+    slice: FoodCakeBlueberrySlice
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-inhand-left
+      - state: alpha-filling-inhand-left
+        color: blue
+      right:
+      - state: plain-inhand-right
+      - state: alpha-filling-inhand-right
+        color: blue
+
+- type: entity
+  name: чорничний шматочок
+  parent: FoodCakeSliceBase
+  id: FoodCakeBlueberrySlice
+  description: Забарвлює зуби.
+  components:
+  - type: Sprite
+    layers:
+    - state: plain-slice
+    - state: alpha-slice-filling
+      color: blue
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+    - Slice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-slice-inhand-left
+      - state: alpha-slice-filling-inhand-left
+        color: blue
+      right:
+      - state: plain-slice-inhand-right
+      - state: alpha-slice-filling-inhand-right
+        color: blue
+
+# Cake
+
+- type: entity
+  name: торт
+  parent: FoodCakeBase
+  id: FoodCakePlain
+  description: Звичайний торт, а не брехня.
+  components:
+  - type: Sprite
+    state: plain
+  - type: SliceableFood
+    slice: FoodCakePlainSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 55
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Vitamin
+          Quantity: 5
+  - type: Item
+    heldPrefix: plain
+
+# Added in type lines above
+
+- type: entity
+  name: шматочок торту
+  parent: FoodCakeSliceBase
+  id: FoodCakePlainSlice
+  components:
+  - type: Sprite
+    state: plain-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Vitamin
+          Quantity: 1
+  - type: Item
+    heldPrefix: plain-slice
+# Tastes like sweetness, cake.
+
+- type: entity
+  name: "моркв'яний торт"
+  parent: FoodCakeBase
+  id: FoodCakeCarrot
+  description: Улюблений десерт одного васкальського кролика.
+  components:
+  - type: Sprite
+    state: carrot
+  - type: SliceableFood
+    slice: FoodCakeCarrotSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: JuiceCarrot
+          Quantity: 15
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Cake
+    - Vegetable
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-inhand-left
+        color: "#f8e0af"
+      - state: alpha-filling-inhand-left
+        color: "#ffbd2f"
+      right:
+      - state: plain-inhand-right
+        color: "#f8e0af"
+      - state: alpha-filling-inhand-right
+        color: "#ffbd2f"
+
+- type: entity
+  name: "шматочок моркв'яного торту"
+  parent: FoodCakeSliceBase
+  id: FoodCakeCarrotSlice
+  description: Carrotty slice of carrot cake. Carrots are good for your eyes!
+  components:
+  - type: Sprite
+    state: carrot-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: JuiceCarrot
+          Quantity: 3
+        - ReagentId: Sugar
+          Quantity: 1
+        - ReagentId: Vitamin
+          Quantity: 1
+  - type: Tag
+    tags:
+    - Cake
+    - Vegetable
+    - Slice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-slice-inhand-left
+        color: "#f8e0af"
+      - state: alpha-slice-filling-inhand-left
+        color: "#ffbd2f"
+      right:
+      - state: plain-slice-inhand-right
+        color: "#f8e0af"
+      - state: alpha-slice-filling-inhand-right
+        color: "#ffbd2f"
+
+# Tastes like sweetness, cake, carrot.
+
+- type: entity
+  name: мозковий торт
+  parent: FoodCakeBase
+  id: FoodCakeBrain
+  description: Хрусткий торт, схожий на торт.
+  components:
+  - type: Sprite
+    state: brain
+  - type: SliceableFood
+    slice: FoodCakeBrainSlice
+  - type: Tag
+    tags:
+    - Cake
+    - Meat
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: alpha-inhand-left
+        color: "#ff5b7a"
+      - state: alpha-filling-inhand-left
+        color: "#ff5b7a"
+      right:
+      - state: alpha-inhand-right
+        color: "#ff5b7a"
+      - state: alpha-filling-inhand-right
+        color: "#ff5b7a"
+
+- type: entity
+  name: шматочок мозкового торту
+  parent: FoodCakeSliceBase
+  id: FoodCakeBrainSlice
+  description: Дозвольте розповісти вам дещо про пріони. ВОНИ ДУЖЕ СМАЧНІ.
+  components:
+  - type: Sprite
+    state: brain-slice
+  - type: Tag
+    tags:
+    - Cake
+    - Meat
+    - Slice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: alpha-slice-inhand-left
+        color: "#ff5b7a"
+      - state: alpha-slice-filling-inhand-left
+        color: "#ff5b7a"
+      right:
+      - state: alpha-slice-inhand-right
+        color: "#ff5b7a"
+      - state: alpha-slice-filling-inhand-right
+        color: "#ff5b7a"
+# Tastes like sweetness, cake, brains.
+
+- type: entity
+  name: сирник
+  parent: FoodCakeBase
+  id: FoodCakeCheese
+  description: НЕБЕЗПЕЧНО сирний.
+  components:
+  - type: Sprite
+    state: cheese
+  - type: SliceableFood
+    slice: FoodCakeCheeseSlice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-inhand-left
+      - state: alpha-filling-inhand-left
+        color: "#ffffff"
+      right:
+      - state: plain-inhand-right
+      - state: alpha-filling-inhand-right
+        color: "#ffffff"
+
+- type: entity
+  name: шматочок сирнику
+  parent: FoodCakeSliceBase
+  id: FoodCakeCheeseSlice
+  description: Шматочок чистої сирофікації.
+  components:
+  - type: Sprite
+    state: cheese-slice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-slice-inhand-left
+      - state: alpha-filling-inhand-left
+        color: "#ffffff"
+      right:
+      - state: plain-inhand-right
+      - state: alpha-slice-filling-inhand-right
+        color: "#ffffff"
+# Tastes like sweetness, cream cheese.
+
+- type: entity
+  name: апельсиновий торт
+  parent: FoodCakeBase
+  id: FoodCakeOrange
+  description: торт з додаванням апельсину.
+  components:
+  - type: Sprite
+    layers:
+    - state: plain
+    - state: alpha-filling
+      color: "#ff9900"
+  - type: SliceableFood
+    slice: FoodCakeOrangeSlice
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-inhand-left
+      - state: alpha-filling-inhand-left
+        color: "#ff9900"
+      right:
+      - state: plain-inhand-right
+      - state: alpha-filling-inhand-right
+        color: "#ff9900"
+
+- type: entity
+  name: шматочок апельсинового торту
+  parent: FoodCakeSliceBase
+  id: FoodCakeOrangeSlice
+  components:
+  - type: Sprite
+    layers:
+    - state: plain-slice
+    - state: alpha-slice-filling
+      color: "#ff9900"
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+    - Slice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-slice-inhand-left
+      - state: alpha-slice-filling-inhand-left
+        color: "#ff9900"
+      right:
+      - state: plain-slice-inhand-right
+      - state: alpha-slice-filling-inhand-right
+        color: "#ff9900"
+# Tastes like sweetness, cake, oranges.
+
+- type: entity
+  name: лаймовий торт
+  parent: FoodCakeBase
+  id: FoodCakeLime
+  description: торт з додаванням лайму.
+  components:
+  - type: Sprite
+    layers:
+    - state: plain
+    - state: alpha-filling
+      color: "#00ff00"
+  - type: SliceableFood
+    slice: FoodCakeLimeSlice
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-inhand-left
+      - state: alpha-filling-inhand-left
+        color: "#00ff00"
+      right:
+      - state: plain-inhand-right
+      - state: alpha-filling-inhand-right
+        color: "#00ff00"
+
+- type: entity
+  name: шматочок лаймового торту
+  parent: FoodCakeSliceBase
+  id: FoodCakeLimeSlice
+  components:
+  - type: Sprite
+    layers:
+    - state: plain-slice
+    - state: alpha-slice-filling
+      color: "#00ff00"
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+    - Slice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-slice-inhand-left
+      - state: alpha-slice-filling-inhand-left
+        color: "#00ff00"
+      right:
+      - state: plain-slice-inhand-right
+      - state: alpha-slice-filling-inhand-right
+        color: "#00ff00"
+# Tastes like sweetness, cake, limes.
+
+- type: entity
+  name: лимонний торт
+  parent: FoodCakeBase
+  id: FoodCakeLemon
+  description: торт з додаванням лимону.
+  components:
+  - type: Sprite
+    layers:
+    - state: plain
+    - state: alpha-filling
+      color: "#ffff00"
+  - type: SliceableFood
+    slice: FoodCakeLemonSlice
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-inhand-left
+      - state: alpha-filling-inhand-left
+        color: "#ffff00"
+      right:
+      - state: plain-inhand-right
+      - state: alpha-filling-inhand-right
+        color: "#ffff00"
+
+- type: entity
+  name: шматочок лимонного торту
+  parent: FoodCakeSliceBase
+  id: FoodCakeLemonSlice
+  components:
+  - type: Sprite
+    layers:
+    - state: plain-slice
+    - state: alpha-slice-filling
+      color: "#ffff00"
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+    - Slice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-slice-inhand-left
+      - state: alpha-slice-filling-inhand-left
+        color: "#ffff00"
+      right:
+      - state: plain-slice-inhand-right
+      - state: alpha-slice-filling-inhand-right
+        color: "#ffff00"
+# Tastes like sweetness, cake, lemons.
+
+- type: entity
+  name: місячний торт
+  parent: FoodCakeBase
+  id: FoodCakeLemoon
+  description: торт відтворює Місяць, супутник Землі.
+  components:
+  - type: Sprite
+    state: lemoon
+  - type: FlavorProfile
+    flavors:
+      - lemoon
+      - berry
+  - type: SliceableFood
+    slice: FoodCakeLemoonSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 70
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 40
+        - ReagentId: Vitamin
+          Quantity: 20
+        - ReagentId: Milk
+          Quantity: 10
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+  - type: Item
+    heldPrefix: lemoon
+
+- type: entity
+  name: уламок місячного торту
+  parent: FoodCakeSliceBase
+  id: FoodCakeLemoonSlice
+  description: Уламок Місяця, пахне мов молоко.
+  components:
+  - type: Sprite
+    state: lemoon-slice
+  - type: FlavorProfile
+    flavors:
+      - lemoon
+      - berry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Vitamin
+          Quantity: 4
+        - ReagentId: Milk
+          Quantity: 2
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+    - Slice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: alpha-slice-inhand-left
+        color: "#fffead"
+      - state: alpha-slice-filling-inhand-left
+        color: "#fffead"
+      right:
+      - state: alpha-slice-inhand-right
+        color: "#fffead"
+      - state: alpha-slice-filling-inhand-right
+        color: "#fffead"
+
+- type: entity
+  name: шоколадний торт
+  parent: FoodCakeBase
+  id: FoodCakeChocolate
+  description: торт з шоколадом.
+  components:
+  - type: Sprite
+    layers:
+    - state: alpha
+      color: "#ba672e"
+  - type: SliceableFood
+    slice: FoodCakeChocolateSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 55
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 40
+        - ReagentId: Theobromine
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 5
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: alpha-inhand-left
+        color: "#ba672e"
+      right:
+      - state: alpha-inhand-right
+        color: "#ba672e"
+
+- type: entity
+  name: шматочок шоколадного торту
+  parent: FoodCakeSliceBase
+  id: FoodCakeChocolateSlice
+  components:
+  - type: Sprite
+    layers:
+    - state: alpha-slice
+      color: "#ba672e"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Theobromine
+          Quantity: 1
+        - ReagentId: Vitamin
+          Quantity: 2
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: alpha-slice-inhand-left
+        color: "#ba672e"
+      right:
+      - state: alpha-slice-inhand-right
+        color: "#ba672e"
+# Tastes like sweetness, cake, chocolate.
+
+- type: entity
+  name: яблучний торт
+  parent: FoodCakeBase
+  id: FoodCakeApple
+  description: Торт з яблуком у центрі.
+  components:
+  - type: Sprite
+    layers:
+    - state: plain
+    - state: alpha-filling
+      color: "#ff4300"
+  - type: SliceableFood
+    slice: FoodCakeAppleSlice
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-inhand-left
+      - state: alpha-filling-inhand-left
+        color: "#ff4300"
+      right:
+      - state: plain-inhand-right
+      - state: alpha-filling-inhand-right
+        color: "#ff4300"
+
+- type: entity
+  name: шматочок яблучного торту
+  parent: FoodCakeSliceBase
+  id: FoodCakeAppleSlice
+  description: Шматочок райського пирога.
+  components:
+  - type: Sprite
+    layers:
+    - state: plain-slice
+    - state: alpha-slice-filling
+      color: "#ff4300"
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+    - Slice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-slice-inhand-left
+      - state: alpha-slice-filling-inhand-left
+        color: "#ff4300"
+      right:
+      - state: plain-slice-inhand-right
+      - state: alpha-slice-filling-inhand-right
+        color: "#ff4300"
+
+# Tastes like sweetness, cake, slime.
+
+- type: entity
+  name: слаймовий торт
+  parent: FoodCakeBase
+  id: FoodCakeSlime
+  description: Торт зі слизу. Напевно, не під напругою.
+  components:
+  - type: Sprite
+    state: slime
+  - type: SliceableFood
+    slice: FoodCakeSlimeSlice
+  - type: Tag
+    tags:
+    - Cake
+    - Meat
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: alpha-inhand-left
+        color: "#00ffff"
+      - state: alpha-filling-inhand-left
+        color: "#00ffff"
+      right:
+      - state: alpha-inhand-right
+        color: "#00ffff"
+      - state: alpha-filling-inhand-right
+        color: "#00ffff"
+
+- type: entity
+  name: шматочок слаймового торту
+  parent: FoodCakeSliceBase
+  id: FoodCakeSlimeSlice
+  description: Шматочок слаймового торту, ніжний мов желе.
+  components:
+  - type: Sprite
+    state: slime-slice
+  - type: Tag
+    tags:
+    - Cake
+    - Meat
+    - Slice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: alpha-slice-inhand-left
+        color: "#00ffff"
+      - state: alpha-slice-filling-inhand-left
+        color: "#00ffff"
+      right:
+      - state: alpha-slice-inhand-right
+        color: "#00ffff"
+      - state: alpha-slice-filling-inhand-right
+        color: "#00ffff"
+# Tastes like sweetness, cake, slime.
+
+- type: entity
+  name: гарбузово-пряний торт
+  parent: FoodCakeBase
+  id: FoodCakePumpkin
+  description: Порожнистий торт зі справжнім гарбузом.
+  components:
+  - type: Sprite
+    state: pumpkinspice
+  - type: SliceableFood
+    slice: FoodCakePumpkinSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 60
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 35
+        - ReagentId: Vitamin
+          Quantity: 15
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-inhand-left
+      - state: alpha-filling-inhand-left
+        color: "#ffffff"
+      right:
+      - state: plain-inhand-right
+      - state: alpha-filling-inhand-right
+        color: "#ffffff"
+
+- type: entity
+  name: шматочок гарбузово-пряного торту
+  parent: FoodCakeSliceBase
+  id: FoodCakePumpkinSlice
+  description: Пряний шматочок гарбузової смакоти.
+  components:
+  - type: Sprite
+    state: pumpkinspice-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 7
+        - ReagentId: Vitamin
+          Quantity: 3
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+    - Slice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-slice-inhand-left
+      - state: alpha-slice-filling-inhand-left
+        color: "#ffffff"
+      right:
+      - state: plain-slice-inhand-right
+      - state: alpha-slice-filling-inhand-right
+        color: "#ffffff"
+# Tastes like sweetness, cake, pumpkin.
+
+- type: entity
+  name: різдвяний торт
+  parent: FoodCakeBase
+  id: FoodCakeChristmas
+  description: Торт, який традиційно готують до різдва.
+  components:
+  - type: Sprite
+    state: christmas
+  - type: SliceableFood
+    slice: FoodCakeChristmasSlice
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: alpha-inhand-left
+        color: "#ab5012"
+      right:
+      - state: alpha-inhand-right
+        color: "#ab5012"
+
+- type: entity
+  name: шматочок різдвяного торту
+  parent: FoodCakeSliceBase
+  id: FoodCakeChristmasSlice
+  components:
+  - type: Sprite
+    state: christmas-slice
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+    - Slice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: alpha-slice-inhand-left
+        color: "#ab5012"
+      right:
+      - state: alpha-slice-inhand-right
+        color: "#ab5012"
+# Tastes like sweetness, cake, christmas.
+
+- type: entity
+  name: торт до іменин
+  parent: FoodCakeBase
+  id: FoodCakeBirthday
+  description: З Днем Народження, маленький клуня...
+  components:
+  - type: Sprite
+    state: birthday
+  - type: SliceableFood
+    slice: FoodCakeBirthdaySlice
+  - type: Item
+    heldPrefix: birthday
+
+- type: entity
+  name: шматочок торту до іменин
+  parent: FoodCakeSliceBase
+  id: FoodCakeBirthdaySlice
+  description: Шматочок твого дня народження.
+  components:
+  - type: Sprite
+    state: birthday-slice
+  - type: Item
+    heldPrefix: birthday-slice
+# Tastes like sweetness, cake, christmas.
+
+- type: entity
+  name: ванільний торт
+  parent: FoodCakeBase
+  id: FoodCakeVanilla
+  description: "Ванільний торт з ванільною глазур'ю."
+  components:
+  - type: Sprite
+    state: vanilla
+  - type: SliceableFood
+    slice: FoodCakeVanillaSlice
+  - type: SolutionContainerManager #TODO Sprinkles
+    solutions:
+      food:
+        maxVol: 55
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 25
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Sugar
+          Quantity: 15
+  - type: Item
+    heldPrefix: vanilla
+
+- type: entity
+  name: шматочок ванільного торту
+  parent: FoodCakeSliceBase
+  id: FoodCakeVanillaSlice
+  description: "Ванільний торт з ванільною глазур'ю."
+  components:
+  - type: Sprite
+    state: vanilla-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Vitamin
+          Quantity: 2
+        - ReagentId: Sugar
+          Quantity: 5
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-slice-inhand-left
+      - state: alpha-slice-filling-inhand-left
+      right:
+      - state: plain-slice-inhand-right
+      - state: alpha-slice-filling-inhand-right
+# Tastes like sweetness, cake, vanilla.
+
+- type: entity
+  name: клоунський торт
+  parent: FoodCakeBase
+  id: FoodCakeClown
+  description: Кумедний торт з обличчям клоуна.
+  components:
+  - type: Sprite
+    state: clown
+  - type: SliceableFood
+    slice: FoodCakeClownSlice
+  - type: SolutionContainerManager #TODO Sprinkles
+    solutions:
+      food:
+        maxVol: 55
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 30
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Sugar
+          Quantity: 15
+  - type: Item
+    heldPrefix: clown
+
+- type: entity
+  name: шматочок клоунського торту
+  parent: FoodCakeSliceBase
+  id: FoodCakeClownSlice
+  description: Нарізка невдалих жартів і безглуздого реквізиту.
+  components:
+  - type: Sprite
+    state: clown-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Vitamin
+          Quantity: 1
+        - ReagentId: Sugar
+          Quantity: 5
+  - type: Item
+    heldPrefix: clown-slice
+# Tastes like sweetness, cake, clown.
+
+- type: entity
+  name: торт космонавта
+  parent: FoodCakeBase
+  id: FoodCakeSpaceman
+  description: "Торт з глазур'ю у вигляді труби космонавта."
+  components:
+  - type: Sprite
+    state: trumpet
+  - type: SliceableFood
+    slice: FoodCakeSpacemanSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 55
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 30
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: PolypyryliumOligomers
+          Quantity: 15
+  - type: Item
+    heldPrefix: trumpet
+
+- type: entity
+  name: шматочок торту космонавта
+  parent: FoodCakeSliceBase
+  id: FoodCakeSpacemanSlice
+  description: "Торт з глазур'ю у вигляді труби космонавта."
+  components:
+  - type: Sprite
+    state: trumpet-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Vitamin
+          Quantity: 1
+        - ReagentId: PolypyryliumOligomers
+          Quantity: 3
+  - type: Item
+    heldPrefix: trumpet-slice
+# Tastes like sweetness, cake, jam.
+
+- type: entity
+  name: кітістечко
+  id: MobCatCake
+  parent: EdibleBase
+  description: "Це тістечко. Це кіт. Це... Кітістечко?.."
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+  - type: InjectableSolution
+    solution: food
+  - type: RefillableSolution
+    solution: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Vitamin
+          Quantity: 5
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: Mobs/Pets/cat.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: cak
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: RotationVisuals
+    defaultRotation: 0
+    horizontalRotation: 0
+  - type: Item
+    size: Ginormous
+    heldPrefix: cak
+  - type: Clothing
+    quickEquip: false
+    sprite: Mobs/Pets/cat.rsi
+    equippedPrefix: cak
+    slots:
+    - HEAD
+  - type: GhostRole
+    prob: 1
+    name: ghost-role-information-Cak-name
+    allowMovement: true
+    description: ghost-role-information-Cak-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+  - type: GhostTakeoverAvailable
+  - type: OwOAccent
+  - type: Speech
+    speechSounds: Cat
+    speechVerb: SmallMob
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3
+    baseSprintSpeed : 5
+  - type: Tag
+    tags:
+    - VimPilot
+    - DoorBumpOpener
+    - Cake
+  - type: CanEscapeInventory
+    baseResistTime: 2
+  - type: Puller
+    needsHands: false
+  - type: Examiner
+  - type: DoAfter
+  - type: CombatMode
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Animals/cat_hiss.ogg
+    hidden: true
+    damage:
+      groups:
+        Brute: 1
+
+# Suppermatter
+# I canft figure out where to put this. It kind of acts like a cake I guess?
+
+- type: entity
+  name: суперматерія
+  parent: FoodCakeBase
+  id: FoodCakeSuppermatter
+  description: Надзвичайно щільна і потужна їжа.
+  components:
+  - type: Sprite
+    state: suppermatter
+  - type: SliceableFood
+    slice: FoodCakeSuppermatterSlice
+    count: 8
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 125 # SUPER dense cake
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 80
+        - ReagentId: Sugar
+          Quantity: 30
+  - type: Food
+    transferAmount: 12
+  - type: Item
+    size: Normal
+    heldPrefix: suppermatter
+  - type: PointLight
+    color: "#FFFF00"
+    radius: 2
+    energy: 1.4
+
+- type: entity
+  name: уламок суперматерії
+  parent: FoodCakeSliceBase
+  id: FoodCakeSuppermatterSlice
+  description: Єдина порція енергії.
+  components:
+  - type: Sprite
+    state: suppermatter-shard
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Sugar
+          Quantity: 5
+  - type: Food
+    transferAmount: 3
+  - type: PointLight
+    color: "#FFFF00"
+    radius: 1.4
+    energy: 1.4
+  - type: Tag
+    tags:
+    - Slice
+  - type: FoodSequenceElement
+    entries:
+      Taco: Suppermatter
+      Burger: SuppermatterBurger
+  - type: Item
+    heldPrefix: suppermatter-shard
+
+- type: entity
+  name: cotton cake
+  parent: FoodCakeBase
+  id: FoodCakeCotton
+  description: A cake with a fiber frosting and a wad of cotton on top.
+  components:
+  - type: Sprite
+    state: cotton
+  - type: SliceableFood
+    slice: FoodCakeCottonSlice
+  - type: Tag
+    tags:
+    - Cake
+    - ClothMade
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 55
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 30
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Fiber
+          Quantity: 10
+  - type: Item
+    heldPrefix: cotton
+
+- type: entity
+  name: slice of cotton cake
+  parent: FoodCakeSliceBase
+  id: FoodCakeCottonSlice
+  description: A slice of cotton cake. You can just lick the frosting, it's fine.
+  components:
+  - type: Sprite
+    state: cotton-slice
+  - type: Tag
+    tags:
+    - Cake
+    - ClothMade
+    - Slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Vitamin
+          Quantity: 1
+        - ReagentId: Fiber
+          Quantity: 2
+  - type: Item
+    heldPrefix: cotton-slice
+
+# Motivating
+
+- type: entity
+  name: berry delight
+  parent: FoodCakeBase
+  id: FoodCakeBerryDelight
+  description: This is a cake that is approaching.
+  components:
+  - type: Sprite
+    state: berry_delight
+  - type: FlavorProfile
+    flavors:
+      - sweet
+      - berry
+      - motivating
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 55
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 40
+        - ReagentId: Vitamin
+          Quantity: 10
+        - ReagentId: Milk
+          Quantity: 10
+  - type: SliceableFood
+    slice: FoodCakeBerryDelightSlice
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-inhand-left
+      - state: alpha-filling-inhand-left
+        color: red
+      right:
+      - state: plain-inhand-right
+      - state: alpha-filling-inhand-right
+        color: red
+
+- type: entity
+  name: berry delight slice
+  parent: FoodCakeSliceBase
+  id: FoodCakeBerryDelightSlice
+  description: Put a fork in, your hunger in isolation.
+  components:
+  - type: Sprite
+    state: berry_delight_slice
+  - type: FlavorProfile
+    flavors:
+      - sweet
+      - berry
+      - motivating
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 12
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Vitamin
+          Quantity: 2
+        - ReagentId: Milk
+          Quantity: 2
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+    - Slice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: alpha-slice-inhand-left
+        color: white
+      - state: alpha-slice-filling-inhand-left
+        color: red
+      right:
+      - state: alpha-slice-inhand-right
+        color: white
+      - state: alpha-slice-filling-inhand-right
+        color: red

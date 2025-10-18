@@ -1,0 +1,17 @@
+﻿advertisement-discount-1 = Знижка Миколі, він мужик!
+advertisement-discount-2 = Немає нічого кращого в цьому світі, ніж шматочок таємниці.
+advertisement-discount-3 = Не слухайте ті інші машини, купуйте мій товар!
+advertisement-discount-4 = Кількість над якістю!
+advertisement-discount-5 = Не слухайте їнших яйцеголових автоматів, купуйте зараз!
+advertisement-discount-6 = Знижка від Миколи: Ми молодці! Ні, не можу сказати це з серйозним обличчям.
+advertisement-discount-7 = Знижка від Миколи: Тільки найякісніша продукція
+advertisement-discount-8 = Discount Dan(tm) не несе відповідальності за будь-які збитки, спричинені неправильним використанням його продукції.
+advertisement-discount-9 = Ми пропонуємо широкий вибір недорогих снеків!
+thankyou-discount-1 = Дякуємо за використ-*БЗЗЗЗ!
+thankyou-discount-2 = Пам'ятайте: відшкодування не повертається!
+thankyou-discount-3 = Тепер це ваша проблема!
+thankyou-discount-4 = Ми юридично зобов’язані нагадати вам не їсти це.
+thankyou-discount-5 = Будь ласка, не судіться з нами!
+thankyou-discount-6 = Ми клянемося, що це виглядало так, коли ми його заповнювали!
+thankyou-discount-7 = Ну що ж, удачі із цим.
+thankyou-discount-8 = Насолоджуйтесь, е-е... "закускою".

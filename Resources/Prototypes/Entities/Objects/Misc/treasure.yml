@@ -1,0 +1,191 @@
+- type: entity
+  parent: BaseItem
+  id: TreasureDatadiskEncrypted
+  name: зашифрований диск
+  description: Старий диск з даними. Хтось кмітливіший за вас міг би розшифрувати його та дізнатися щось цікаве. Все, що ви можете зробити, це продати його.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: datadisk_base
+      color: "#868686"
+    - state: datadisk_label
+    - state: datadisk_encrypted
+  - type: PointLight
+    radius: 1.5
+    energy: 0.5
+    castShadows: false
+    color: "#0000ff"
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseItem
+  id: TreasureHardDiskDrive
+  name: дисковод
+  description: Дисковод, розроблений для старих технологій Землі, приблизно 1980. Ймовірно, є якийсь колекціонер, який захоче його отримати.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: harddisk
+      map: [ "base" ]
+  - type: Item
+    storedRotation: -90
+  - type: RandomSprite
+    available:
+    - base:
+        harddisk: ""
+        harddisk_mini: ""
+        harddisk_micro: ""
+  - type: StaticPrice
+    price: 275
+
+- type: entity
+  parent: BaseItem
+  id: TreasureFlopDiskDrive
+  name: дисковод для дискет
+  description: Пристрій для зчитування інформації з дискет. Шкода, що єдине, що зараз зберігається на них, - це операції з ядерними бомбами.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: flopdrive
+  - type: Item
+    storedRotation: -90
+  - type: StaticPrice
+    price: 350
+
+- type: entity
+  parent: BaseItem
+  id: TreasureCDDrive
+  name: дисковод для компакт-дисків
+  description: Пристрій для читання даних із компакт-дисків. Зараз це не найкорисніше, якщо тільки ви не плануєте кудись летіти.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: cddrive
+  - type: Item
+    storedRotation: -90
+  - type: StaticPrice
+    price: 300
+
+- type: entity
+  parent: BaseItem
+  id: TreasureCPUSupercharged
+  name: суперзаряджений процесор
+  description: Якась суперінопланетна космічна технологія. Шкода, що сьогодні всі комп’ютери вже оснащені процесорами.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: cpu_super
+  - type: Item
+    size: Tiny
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  parent: BaseItem
+  id: TreasureSampleTube
+  name: пробірка для зразка
+  description: Скляна трубка з якоюсь гузкою в ній. Виглядає схильною до трощення.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/sample_tubes.rsi
+    layers:
+    - state: blank
+      map: [ "base" ]
+  - type: RandomSprite
+    available:
+    - base:
+        blank: ""
+        power: ""
+        reinforcer: ""
+        energy: ""
+        synchronizer: ""
+        stabilizer: ""
+  - type: StaticPrice
+    price: 120
+
+- type: entityTable
+  id: TreasureCoinPile
+  table: !type:GroupSelector
+    children:
+    - id: TreasureCoinIron
+      weight: 24
+    - id: TreasureCoinSilver
+      weight: 40
+    - id: TreasureCoinGold
+      weight: 24
+    - id: TreasureCoinAdamantine
+      weight: 11
+    - id: TreasureCoinDiamond
+      weight: 1
+
+- type: entityTable
+  id: TreasureCoinPileRare
+  table: !type:GroupSelector
+    children:
+    - id: TreasureCoinIron
+      weight: 10
+    - id: TreasureCoinSilver
+      weight: 25
+    - id: TreasureCoinGold
+      weight: 40
+    - id: TreasureCoinAdamantine
+      weight: 20
+    - id: TreasureCoinDiamond
+      weight: 5
+
+- type: entity
+  parent: BaseItem
+  id: TreasureCoinIron
+  name: монета
+  description: Плоский шматок металу. Якби він все ще був в обігу, інфляція зробила б її нічого не вартою. Оскільки це не так, цього достатньо, щоб зберігати її в книзі.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/coins.rsi
+    state: coin_iron
+  - type: Item
+    size: Tiny
+  - type: StaticPrice
+    price: 75
+
+- type: entity
+  parent: TreasureCoinIron
+  id: TreasureCoinSilver
+  components:
+  - type: Sprite
+    state: coin_silver
+  - type: StaticPrice
+    price: 125
+
+- type: entity
+  parent: TreasureCoinIron
+  id: TreasureCoinGold
+  components:
+  - type: Sprite
+    state: coin_gold
+  - type: StaticPrice
+    price: 175
+
+- type: entity
+  parent: TreasureCoinIron
+  id: TreasureCoinAdamantine
+  components:
+  - type: Sprite
+    state: coin_adamantine
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  parent: TreasureCoinIron
+  id: TreasureCoinDiamond
+  components:
+  - type: Sprite
+    state: coin_diamond
+  - type: StaticPrice
+    price: 500
+

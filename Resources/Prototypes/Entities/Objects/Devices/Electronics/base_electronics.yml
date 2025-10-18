@@ -1,0 +1,18 @@
+﻿- type: entity
+  id: BaseElectronics
+  parent: BaseItem
+  name: базова електроніка
+  abstract: true
+  suffix: Електроніка
+  components:
+  - type: Item
+    storedRotation: -90
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: generic
+  - type: PhysicalComposition
+    materialComposition:
+      Glass: 200
+    chemicalComposition:
+      Silicon: 20
+  - type: Circuitboard

@@ -1,0 +1,1252 @@
+- type: entity
+  parent: BaseSign
+  id: PosterBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Structures/Wallmounts/posters.rsi
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Card
+  - type: Destructible
+    thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/poster_broken.ogg
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/poster_broken.ogg
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PosterBroken:
+            min: 1
+            max: 1
+        offset: 0
+
+- type: entity
+  parent: BaseSign
+  id: PosterBroken
+  name: "Порваний пострер"
+  description: "Неможливо розібрати, що зображено на постері. Він знищений."
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: Structures/Wallmounts/posters.rsi
+    state: poster_broken
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/poster_broken.ogg
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+# Contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandGodJachur
+  name: "God Jachur"
+  description: "Це лого офіційний знак релігії унатхів, на цьому символі зображено меч який відрубає хвіст Великому ящіру що символізує створення всесвіту ."
+  components:
+  - type: Sprite
+    state: poster1000_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandFreeTonto
+  name: "Звільніть Тонто"
+  description: "Фрагмент збереженого обривку від значно більшого прапора, кольори злилися та вигасли від старіння."
+  components:
+  - type: Sprite
+    state: poster1_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandAtmosiaDeclarationIndependence
+  name: "Декларація незалежності Атмосії."
+  description: "Релікт невдалого повстанння."
+  components:
+  - type: Sprite
+    state: poster2_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandFunPolice
+  name: "Поліція 'розваг'"
+  description: "Плакат, який засуджує силові структури станції."
+  components:
+  - type: Sprite
+    state: poster3_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandRealExomorph
+  name: "Real! Exomorph"
+  description: "A conspiratorial poster about dangerous alien lifeforms."
+  components:
+  - type: Sprite
+    state: poster4_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandSyndicateRecruitment
+  name: "Рекрутинг в Синдикат."
+  description: "Дослідіть галактику! Руйнуйте корумповані мегакорпорації! Приєднуйтесь сьогодні!"
+  components:
+  - type: Sprite
+    state: poster5_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandClown
+  name: "Клоун"
+  description: "Хонк."
+  components:
+  - type: Sprite
+    state: poster6_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandSmoke
+  name: "Кури"
+  description: "Плакат, рекламуючий конкуруючий корпоративний бренд цигарок."
+  components:
+  - type: Sprite
+    state: poster7_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandGreyTide
+  name: "Сіре єднання"
+  description: "Плакат, що втілює дух бунту та співпраці пасажирів."
+  components:
+  - type: Sprite
+    state: poster8_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandMissingGloves
+  name: "Втрачені Рукавички"
+  description: "Цей плакат асоціюється з суспільним обуренням після фінансових скорочень Нанотрейзен у закупівлях ізольованих рукавичок."
+  components:
+  - type: Sprite
+    state: poster9_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandHackingGuide
+  name: "Посібник з взлому"
+  description: "Плакат, на якому розглядаються внутрішні механізми стандартного аерозамку Нанотрейзен. На жаль, здається застарілим."
+  components:
+  - type: Sprite
+    state: poster10_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandRIPBadger
+  name: "RIP Барсук"
+  description: "Цей плакат з претензією нагадує про геноцид Нанотрейзену на космічній станції, заповненій барсуками."
+  components:
+  - type: Sprite
+    state: poster11_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandAmbrosiaVulgaris
+  name: "Амброзія Вульгаріс"
+  description: "Цей плакат виглядає дуже психоделічно, чувак."
+  components:
+  - type: Sprite
+    state: poster12_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandDonutCorp
+  name: "Корпорація 'Донат'"
+  description: "Цей плакат є несанкціонованою рекламою для Корпорації 'Донат'."
+  components:
+  - type: Sprite
+    state: poster13_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandEAT
+  name: "ЇЖ!"
+  description: "Цей плакат пропагує нестримне обїдання."
+  components:
+  - type: Sprite
+    state: poster14_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandTools
+  name: "Інструменти"
+  description: "Цей плакат схожий на рекламу інструментів, але по факту це підсвідомий удар по інструментах у Центральному Командуванні."
+  components:
+  - type: Sprite
+    state: poster15_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandPower
+  name: "Сила"
+  description: "Плакат, що розміщує центр влади поза сферою впливу Нанотрейзен."
+  components:
+  - type: Sprite
+    state: poster16_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandSpaceCube
+  name: "Космічний Куб"
+  description: "Незнаючі про Гармонійне 6-гранне Космічне Тіло Природи, Космонавти тупі, Освічені Сингулярні Глупці та Злі."
+  components:
+  - type: Sprite
+    state: poster17_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandCommunistState
+  name: "Прапор УПА"
+  description: "Червоно-чорний прапор УПА. Символом визвольного руху. Чорний - означає українську землю, а червоний пролиту кров бійців."
+  components:
+  - type: Sprite
+    state: poster18_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandLamarr
+  name: "Ламарр"
+  description: "На цьому плакаті зображено Ламарра. Ймовірно, створеного директором досліджень зрадником."
+  components:
+  - type: Sprite
+    state: poster19_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandBorgFancy
+  name: "Робо стиль"
+  description: "Бути елегантним може будь-який борг, лише потрібен костюм."
+  components:
+  - type: Sprite
+    state: poster20_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandBorgFancyv2
+  name: "Робо стиль МК2"
+  description: "Боргова Елегантність, Тепер приймаємо лише найвишуканіших."
+  components:
+  - type: Sprite
+    state: poster21_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandKosmicheskayaStantsiya
+  name: "Kosmicheskaya Stantsiya 13 НЕ ІСНУЄ"
+  description: "Плакат, який насміхається з заперечення Центрального Командування щодо існування покинутої станції поблизу Космічної Станції 13."
+  components:
+  - type: Sprite
+    state: poster22_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandRebelsUnite
+  name: "Об'єднуйтесь, Повстанці!"
+  description: "Плакат закликає глядача приєднатися до повстання проти Нанотрейзен."
+  components:
+  - type: Sprite
+    state: poster23_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandC20r
+  name: "C-20r"
+  description: "Плакат, що рекламує C-20r."
+  components:
+  - type: Sprite
+    state: poster24_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandHaveaPuff
+  name: "Курни"
+  description: "Кого хвилює цей рак легень, коли ти під кайфом!"
+  components:
+  - type: Sprite
+    state: poster25_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandRevolver
+  name: "Револьвер"
+  description: "Тому що сім пострілів - це все, що тобі потрібно."
+  components:
+  - type: Sprite
+    state: poster26_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandDDayPromo
+  name: "Промо 'День Д'"
+  description: "Рекламний плакат для якогось реперa."
+  components:
+  - type: Sprite
+    state: poster27_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandSyndicatePistol
+  name: "Пістолет Синдикату"
+  description: "Плакат, що рекламує синдикатські пістолети як \"круті, що пиздець!\". Він вкритий вигаслими символами банд."
+  components:
+  - type: Sprite
+    state: poster28_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandEnergySwords
+  name: "Енергетичні мечі"
+  description: "Усі кольори кривавого веселого вбивства."
+  components:
+  - type: Sprite
+    state: poster29_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandRedRum
+  name: "Червона Вбивця"
+  description: "Погляд на цей плакат заохочує до вбивства."
+  components:
+  - type: Sprite
+    state: poster30_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandCC64KAd
+  name: "Реклама CC 64K"
+  description: "Останній портативний комп'ютер від Комрад Комп'ютінг, із цілими 64 КБ оперативної пам'яті!"
+  components:
+  - type: Sprite
+    state: poster31_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandPunchShit
+  name: "Бий гівно"
+  description: "Бий різні речі без причини, як справжній чоловік!"
+  components:
+  - type: Sprite
+    state: poster32_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandTheGriffin
+  name: "Грифон"
+  description: "Грифон наказує тобі бути Настільки злим, наскільки можливо. Ти готовий?"
+  components:
+  - type: Sprite
+    state: poster33_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandFreeDrone
+  name: "Вільний Дрон"
+  description: "Цей плакат вшановує мужність відступницького дрона, колись вигнаного, а потім остаточно знищеного Центральним Командуванням."
+  components:
+  - type: Sprite
+    state: poster35_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandRouny
+  name: "Have You Seen Him?"
+  description: "An old poster for a missing alien. Where did he run off to?"
+  components:
+  - type: Sprite
+    state: poster36_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandRobustSoftdrinks
+  name: "Міцні газовані напої"
+  description: "Міцні газовані напої: міцніші, ніж удар по голові ящиком з інструментами!"
+  components:
+  - type: Sprite
+    state: poster37_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandShamblersJuice
+  name: "Шамблерський Сік"
+  description: "~змішай мені трошки того Шамблерського Соку!~"
+  components:
+  - type: Sprite
+    state: poster38_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandPwrGame
+  name: "Гра Pwr"
+  description: "Та СИЛА, яку геймери ПРАГНУТЬ! У партнерстві з 'Салатом Влада'"
+  components:
+  - type: Sprite
+    state: poster39_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandSunkist
+  name: "Зоре-Кіст"
+  description: "Пий зірки!"
+  components:
+  - type: Sprite
+    state: poster40_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandSpaceCola
+  name: "Космічна Кола"
+  description: "Твоя улюблена кола, у космосі."
+  components:
+  - type: Sprite
+    state: poster41_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandSpaceUp
+  name: "Space-Up!"
+  description: "Висмоктані у космос за допомогою СМАКУ!"
+  components:
+  - type: Sprite
+    state: poster42_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandKudzu
+  name: "Кудза"
+  description: "Плакат, який рекламує фільм про рослини. Наскільки небезпечні вони можуть бути?"
+  components:
+  - type: Sprite
+    state: poster43_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandMaskedMen
+  name: "Чуваки в масках"
+  description: "Плакат, що рекламує фільм про якихось чоловіків в масках."
+  components:
+  - type: Sprite
+    state: poster44_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandUnreadableAnnouncement
+  name: "Нерозбірливе Оголошення"
+  description: "Плакат, що оголошує щось від когось, дивно, адже схоже, що вони забули зробити його читабельним."
+  components:
+  - type: Sprite
+    state: poster45_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandFreeSyndicateEncryptionKey
+  name: "Безкоштовний Ключ Шифру Синдикату"
+  description: "Плакат про зрадників, які благають більшого."
+  components:
+  - type: Sprite
+    state: poster46_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandBountyHunters
+  name: "Мисливці за Головами"
+  description: "Плакат, що рекламує послуги мисливців за головами. \"Я чув у тебе є проблемка.\""
+  components:
+  - type: Sprite
+    state: poster47_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandTheBigGasTruth
+  name: "Велика Правда Газового Гіганта"
+  description: "Не вірте усьому, що ви бачите на плакаті, патріоти. Всі ці лускаті ящікри щірки З Ценкому не хочуть відповісти на ЦЕ ПРОСТЕ ПИТАННЯ: ЗВІДКИ ВИ БЕРЕТЕ ГАЗ, ЦЕНТКОМ!?"
+  components:
+  - type: Sprite
+    state: poster48_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandWehWatches
+  name: "Weh Дивиться"
+  description: "Плакат із зображенням милого зеленого ящірки."
+  components:
+  - type: Sprite
+    state: poster50_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandVoteWeh
+  name: "Голосуйте за Weh"
+  description: "Стильний, елегантний і добре ілюстрований плакат для П\"Weh\"красного нового прогресивного кандидата, який приходить цього виборчого сезону."
+  components:
+  - type: Sprite
+    state: poster51_contraband
+
+# These 3 originally from VEEGEE
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandBeachStarYamamoto
+  name: "Пляжна Зірка Ямамото!"
+  description: "Постер на стіну із зображенням старого аніме про плавання з дівчатами у відвертих купальниках. Чим більше ви дивитесь, тим більше відчуваєте себе задротом."
+  components:
+  - type: Sprite
+    state: poster52_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandHighEffectEngineering
+  name: "Інженерія Високого Ефекту"
+  description: "Є 3 відломки і сингулярність. Відломки співають. Інженери плачуть."
+  components:
+  - type: Sprite
+    state: poster53_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandNuclearDeviceInformational
+  name: "Інформаційний Плакат про Ядерний Пристрій"
+  description: "На цьому плакаті зображено зображення старомодного ядерного вибухового пристрою, а також корисну інформацію щодо того, що робити, якщо його активовано. Рекомендується лягати на підлогу, молитись на пухнастиків та плакати."
+  components:
+  - type: Sprite
+    state: poster54_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandRise
+  name: "Вставай"
+  description: "Плакат із зображенням чоловіка у сірій футболці, який тримає лом з написом 'Вставай' під ним."
+  components:
+  - type: Sprite
+    state: poster55_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandRevolt
+  name: "Повстання"
+  description: "Пропаганда революціонерів, виготовлена Синдикатом."
+  components:
+  - type: Sprite
+    state: poster56_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandMoth
+  name: " Моль Синдикату - Ядерна Операція"
+  description: "Плакат, замовлений Синдикатом, що використовує Моль Синдикату™, щоб повідомити глядача, що треба тримати ядерний аутентифікаційний диск незахищеним. \"Мир ніколи не був варіантом!\" Жоден порядний працівник не слухав би цього абсурду."
+  components:
+    - type: Sprite
+      state: poster57_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandCybersun600
+  name: "Cybersun: 100 Років Плідної праці"
+  description: "Мистецький плакат, присвячений 100 рокам безперервної діяльності Cybersun Industries."
+  components:
+    - type: Sprite
+      state: poster58_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandDonk
+  name: "DONK CO. БРЕНД ПРОДУКТІВ ДЛЯ МІКРОХВИЛЬОВКИ"
+  description: "DONK CO. БРЕНД ПРОДУКТІВ ДЛЯ МІКРОХВИЛЬВКИ: ВИРОБЛЕНО ГОЛОДНИМИ СТУДЕНТАМИ, ДЛЯ ГОЛОДНИХ СТУДЕНТІВ."
+  components:
+    - type: Sprite
+      state: poster59_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandEnlistGorlex
+  name: "Записуйтесь"
+  description: "Запишіться сьогодні в Мародери Горлаксу! Побачте галактику, вбивайте корпоратів, отримуйте гроші!"
+  components:
+    - type: Sprite
+      state: poster60_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandInterdyne
+  name: "Interdyne Pharmaceutics: Для Здоров'я Людства."
+  description: "Оголошення для клінік GeneClean від Interdyne Pharmaceutics. 'Станьте володарем свого власного тіла!'"
+  components:
+    - type: Sprite
+      state: poster61_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandWaffleCorp
+  name: "Make Mine a Waffle Corp: Відмінні Гвинтівки, Економні Ціни"
+  description: "Старе оголошення про гвинтівки від Waffle Corp. 'Краща зброя, нижчі ціни!'"
+  components:
+    - type: Sprite
+      state: poster62_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandMissingSpacepen
+  name: "Missing Spacepen"
+  description: "This poster depicts something you will never find."
+  components:
+    - type: Sprite
+      state: poster63_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandExoAcid
+  name: "Exomorph Warning: Acid Spit!"
+  description: "This poster warns you about an exomorph's acidic spit. Not that such exomorphs are real... Right?"
+  components:
+  - type: Sprite
+    state: poster64_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandExoRun
+  name: "Exomorph Warning: Run Away!"
+  description: "This poster warns you about an athletic exomorph capable of dragging away anyone who gets caught; so don't get caught!"
+  components:
+  - type: Sprite
+    state: poster65_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandExoChomp
+  name: "Exomorph Warning: Dangerous Bites!"
+  description: "This poster warns you about the lethal bites exomorphs can have. Don't become an alien snack!"
+  components:
+  - type: Sprite
+    state: poster66_contraband
+
+# Legit
+- type: entity
+  parent: PosterBase
+  id: PosterLegitHereForYourSafety
+  name: "Тут для вашої Безпеки"
+  description: "Плакат, який прославляє силові структури станції."
+  components:
+  - type: Sprite
+    state: poster1_legit
+ 
+- type: entity
+  parent: PosterBase
+  id: PosterCatLegit
+  name: "Носи вуха як Голова Лікарів"
+  description: "Вуха тебе прикрашають"
+  components:
+  - type: Sprite
+    state: catposter_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitNanotrasenLogo
+  name: "Логотип Nanotrasen"
+  description: "Плакат із зображенням логотипу Nanotrasen."
+  components:
+  - type: Sprite
+    state: poster2_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitCleanliness
+  name: "Чистота"
+  description: "Плакат, що попереджає про небезпеки поганої гігієни."
+  components:
+  - type: Sprite
+    state: poster3_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitHelpOthers
+  name: "Допомагайте іншим"
+  description: "Плакат, що закликає вас допомагати іншим членам екіпажу."
+  components:
+  - type: Sprite
+    state: poster4_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitBuild
+  name: "Будуйте"
+  description: "Плакат, який прославляє інженерний відділ."
+  components:
+  - type: Sprite
+    state: poster5_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitBlessThisSpess
+  name: "Благословіть це місце"
+  description: "Плакат, що благословляє цю область."
+  components:
+  - type: Sprite
+    state: poster6_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitScience
+  name: "Наука"
+  description: "Плакат із зображенням атома."
+  components:
+  - type: Sprite
+    state: poster7_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitIan
+  name: "Іан"
+  description: "Гав-гав."
+  components:
+  - type: Sprite
+    state: poster8_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitObey
+  name: "Підкорюйся"
+  description: "Плакат, який вказує глядачеві слухатися влади."
+  components:
+  - type: Sprite
+    state: poster9_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitWalk
+  name: "ЙДИ"
+  description: "Плакат, що вказує глядачеві йти замість бігу."
+  components:
+  - type: Sprite
+    state: poster10_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitStateLaws
+  name: "Закони"
+  description: "Плакат, який вказує кіборгам виконувати свої закони."
+  components:
+  - type: Sprite
+    state: poster11_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitLoveIan
+  name: "Любіть Іана"
+  description: "Іан - це любов, Іан - це життя."
+  components:
+  - type: Sprite
+    state: poster12_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitSpaceCops
+  name: "Космічні Поліцейські"
+  description: "Плакат, що рекламує телевізійний шоу 'Космічні Поліцейські'."
+  components:
+  - type: Sprite
+    state: poster13_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitUeNo
+  name: "上の"
+  description: "Ця річ повністю написана японською."
+  components:
+  - type: Sprite
+    state: poster14_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitGetYourLEGS
+  name: "Отримай свою НОГУ"
+  description: "НОГУ: Новаторство, Організація, Героїзм, Упевненість!"
+  components:
+  - type: Sprite
+    state: poster15_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitDoNotQuestion
+  name: "Не питайся"
+  description: "Плакат, що вказує глядачеві не запитувати про те, що вони не повинні знати."
+  components:
+  - type: Sprite
+    state: poster16_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitWorkForAFuture
+  name: "Працюй для майбутнього."
+  description: "Плакат, який заохочує тебе працювати на своє майбутнє."
+  components:
+  - type: Sprite
+    state: poster17_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitSoftCapPopArt
+  name: "Софткеп у стилі поп-арт."
+  description: " Репринт якогось дешевого поп-арту."
+  components:
+  - type: Sprite
+    state: poster18_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitSafetyInternals
+  name: "Безпека: Захисні маски"
+  description: "Плакат, який вказує глядачеві надягати захистні маски в середовищах, де немає кисню або повітря стало токсичним."
+  components:
+  - type: Sprite
+    state: poster19_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitSafetyEyeProtection
+  name: "Безпека: Захист очей"
+  description: "Плакат, який вказує глядачеві надягати захист для очей при роботі з хімічними речовинами, димом або яскравим світлом."
+  components:
+  - type: Sprite
+    state: poster20_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitSafetyReport
+  name: "Безпека: Звітуй"
+  description: "Плакат, який вказує глядачеві повідомляти про підозрілу діяльність силам безпеки."
+  components:
+  - type: Sprite
+    state: poster21_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitReportCrimes
+  name: "Повідомляйте про Злочини"
+  description: "Плакат, який заохочує швидке повідомлення про злочини або седитивну поведінку службі безпеки станції."
+  components:
+  - type: Sprite
+    state: poster22_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitIonRifle
+  name: "Іонна Гвинтівка"
+  description: "Плакат із зображенням іонної гвинтівки."
+  components:
+  - type: Sprite
+    state: poster23_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitFoamForceAd
+  name: "Реклама Foam Force"
+  description: "Пінна сила: запінь ти, забо запіннять тебе!"
+  components:
+  - type: Sprite
+    state: poster24_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitCohibaRobustoAd
+  name: "Реклама Cohiba Robusto"
+  description: "Cohiba Robusto, елегантна сигара."
+  components:
+  - type: Sprite
+    state: poster25_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegit50thAnniversaryVintageReprint
+  name: "Перевидання Ювілейного Плаката"
+  description: "Репринт плаката з якогось року, присвяченого скількисьтам-річчя виробництва Nanoposters, дочірньої компанії Nanotrasen."
+  components:
+  - type: Sprite
+    state: poster26_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitFruitBowl
+  name: "Фруктова Миска"
+  description: " Проста, але вражаюча."
+  components:
+  - type: Sprite
+    state: poster27_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitPDAAd
+  name: "Реклама КПК"
+  description: "Плакат, який рекламує останній КПК від постачальників Nanotrasen."
+  components:
+  - type: Sprite
+    state: poster28_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitEnlist
+  name: "Запишіться"
+  description: "Запишіться в резерв загонів смерті Nanotrasen вже сьогодні!"
+  components:
+  - type: Sprite
+    state: poster29_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitNanomichiAd
+  name: "Реклама Nanomichi"
+  description: " Плакат, який рекламує аудіокасети бренду Nanomichi."
+  components:
+  - type: Sprite
+    state: poster30_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegit12Gauge
+  name: "12 калібр"
+  description: "Плакат, який хвалить перевагу гільз 12-го калібру для дробовиків."
+  components:
+  - type: Sprite
+    state: poster31_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitHighClassMartini
+  name: "Мартіні Високого Класу"
+  description: "Я казав тобі трясти, не змішувати."
+  components:
+  - type: Sprite
+    state: poster32_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitTheOwl
+  name: "Сова"
+  description: "Сова робила б все можливе, щоб захистити станцію. А ти?"
+  components:
+  - type: Sprite
+    state: poster33_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitNoERP
+  name: "NO ERP"
+  description: "Цей плакат нагадує екіпажу, що еротика та порнографія заборонені на станціях Nanotrasen."
+  components:
+  - type: Sprite
+    state: poster34_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitCarbonDioxide
+  name: "Діоксид вуглецю"
+  description: "Цей інформаційний плакат навчає глядача, що таке діоксид вуглецю."
+  components:
+  - type: Sprite
+    state: poster35_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitDickGumshue
+  name: "Дік Гамшу"
+  description: "Плакат, що рекламує пригоди Діка Гамшу, мишачого детектива. Заохочує екіпаж принести могутність правосуддя на дротових саботажників."
+  components:
+  - type: Sprite
+    state: poster36_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitThereIsNoGasGiant
+  name: "Немає Газового Гіганта"
+  description: "Nanotrasen розповсюджує плакати, подібні до цього, на всі станції, нагадуючи їм, що чутки про газового гіганта є хибними."
+  components:
+  - type: Sprite
+    state: poster37_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitJustAWeekAway
+  name: "Ще лише тиждень..."
+  description: Плакат, що рекламує довго затримуваний проект, він все ще вказує на те, що це "ще лише тиждень..."
+  components:
+  - type: Sprite
+    state: poster38_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitSecWatch
+  name: "Охорона Спостерігає за Тобою"
+  description: "Плакат, що нагадує вам, що служба безпеки стежить за кожним вашим рухом."
+  components:
+  - type: Sprite
+    state: poster39_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitAnatomyPoster
+  name: "Анатомія космонавта"
+  description: "Плакат, на якому показано всі частини та дрібниці, які складають з вас... вас!"
+  components:
+  - type: Sprite
+    state: poster40_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitMime
+  name: "Мім постмодерн"
+  description: "Постмодерна інтерпретація міма, чудово!"
+  components:
+  - type: Sprite
+    state: poster41_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitCarpMount
+  name: "Прикріплений до стіни карась"
+  description: "Carpe diem!"
+  components:
+  - type: Sprite
+    state: poster42_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitSafetyMothDelam
+  name: "Безпечний Міль - Заходи безпеки при дезламінації"
+  description: "Цей інформаційний плакат використовує Безпечний Міль™, щоб повідомити глядача, що потрібно ховатися в шафах, коли Кришталь Суперматеріалу дезламінується, щоб уникнути галюцинацій. Евакуація може бути кращою стратегією."
+  components:
+    - type: Sprite
+      state: poster43_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitSafetyMothEpi
+  name: "Безпечний Міль - Епінефрин"
+  description: "Цей інформаційний плакат використовує Безпечний Міль™, щоб повідомити глядача про те, що потрібно допомагати пораненим/померлим членам екіпажу з їхніми ін'єкторами епінеприну.  \"Запобігайте гнилі органів цим одним простим трюком!\""
+  components:
+    - type: Sprite
+      state: poster44_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitSafetyMothPiping
+  name: "Безпечний Міль - Трубопровід"
+  description: "Цей інформаційний плакат використовує Безпечний Міль™ для повідомлення технікам атмосфери про правильні типи трубопроводів для використання. \"Труби, а не насоси! Правильне розміщення труб запобігає поганій продуктивності!\""
+  components:
+    - type: Sprite
+      state: poster45_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitSafetyMothMeth
+  name: "Безпечний Міль - Метамфетамін"
+  description: "Цей інформаційний плакат використовує Безпечний Міль™, щоб повідомити глядача, що слід звернутися за затвердженням Головного Лікаря перед варінням метамфетаміну.  \"Залишайтесь близько до цільової температури і ніколи не перевищуйте її!\" ...Ви взагалі не повинні це робити."
+  components:
+    - type: Sprite
+      state: poster46_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitSafetyMothHardhat
+  name: "Безпечний Міль - Каски"
+  description: "Цей інформаційний плакат використовує Безпечний Міль™, щоб повідомити глядача, що варто носити каски в областях обережного використання. \"Це як лампа для вашої голови!\""
+  components:
+    - type: Sprite
+      state: poster47_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitVacation
+  name: "Nanotrasen Корпоративні Бонуси: Відпустка"
+  description: "Цей інформаційний плакат надає інформацію про деякі призи, доступні за програмою корпоративних бонусів NT, включаючи двотижневу відпустку для двох на курортному світі Idyllus."
+  components:
+    - type: Sprite
+      state: poster48_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitPeriodicTable
+  name: "Періодична таблиця хімічних елементів"
+  description: "Періодична таблиця хімічних елементів від водню до оганесона, і все, що знаходиться між ними."
+  components:
+    - type: Sprite
+      state: poster49_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitRenault
+  name: "Renault Постер"
+  description: "Яп..."
+  components:
+    - type: Sprite
+      state: poster50_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitNTTGC
+  name: "Карти тактичної гри Nanotrasen"
+  description: "Оголошення про картки TCG від Nanotrasen: КУПУЙТЕ БІЛЬШЕ КАРТОК."
+  components:
+    - type: Sprite
+      state: poster51_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitSafetyMothSSD
+  name: "Safety Moth - Space Sleep Disorder"
+  description: "This informational poster uses Safety Moth™ to tell the viewer about Space Sleep Disorder (SSD), a condition where the person stops reacting to things. \"Treat SSD crew with care! They might wake up at any time!\""
+  components:
+  - type: Sprite
+    state: poster52_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitOppenhopper
+  name: "Oppenhopper"
+  description: "A poster for a long-forgotten movie. It follows a group of tenacious greenhorns from the Grasshopper Sector as they defend against onslaughts of the infamous Nuclear Operatives. The tagline reads: \"Nuke Ops will continue until robustness improves.\""
+  components:
+  - type: Sprite
+    state: poster53_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitTyrone
+  name: "Tyrone's Guide to Space"
+  description: "A poster advertising online schooling about space. The classes listed seem to cover things from the basic usage of station equipment to complicated subjects like creating pipebombs or covering entire hallways in spacelube. A disclaimer reads \"It's never THAT bad, and at the end you might even get a tortilla.\""
+  components:
+  - type: Sprite
+    state: poster54_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitHelio
+  name: Helio Logistics ad
+  description: "A poster advertising Helio Logistics and their adorable mascot. The slogan reads 'Come rain or shine, we deliver on time.'"
+  components:
+  - type: Sprite
+    state: poster55_legit
+
+#maps
+
+- type: entity
+  parent: PosterBase
+  id: PosterMapBagel
+  name: "Карта станції Багель"
+  description: "Карта станції Багель"
+  components:
+  - type: Sprite
+    state: bagelmap
+
+- type: entity
+  parent: PosterBase
+  id: PosterMapDelta
+  name: "Карта станції Дельта"
+  description: "Карта станції Дельта"
+  components:
+  - type: Sprite
+    state: deltamap
+
+- type: entity
+  parent: PosterBase
+  id: PosterMapMarathon
+  name: "Карта станції Марафон"
+  description: "Карта станції Марафон"
+  components:
+  - type: Sprite
+    state: marathonmap
+
+- type: entity
+  parent: PosterBase
+  id: PosterMapMoose
+  name: "Карта станції Мус"
+  description: "Карта станції Мус"
+  components:
+  - type: Sprite
+    state: moosemap
+
+- type: entity
+  parent: PosterBase
+  id: PosterMapPacked
+  name: "Карта станції Пакед"
+  description: "Карта станції Пакед"
+  components:
+  - type: Sprite
+    state: packedmap
+
+- type: entity
+  parent: PosterBase
+  id: PosterMapPillar
+  name: "Карта станції Пілар"
+  description: "Карта станції Пілар"
+  components:
+  - type: Sprite
+    state: pillarmap
+
+- type: entity
+  parent: PosterBase
+  id: PosterMapSaltern
+  name: "Карта станції Салтерн"
+  description: "Карта станції Солтрен"
+  components:
+  - type: Sprite
+    state: salternmap
+
+- type: entity
+  parent: PosterBase
+  id: PosterMapSplit
+  name: "Карта станції Спліт"
+  description: "Карта станції Спліт"
+  components:
+  - type: Sprite
+    state: splitmap
+
+- type: entity
+  parent: PosterBase
+  id: PosterMapLighthouse
+  name: "Карта станції Лайтхаус"
+  description: "Карта станції Лайтхаус"
+  components:
+  - type: Sprite
+    state: lighthousemap
+
+- type: entity
+  parent: PosterBase
+  id: PosterMapWaystation
+  name: "Карта станції Вейстейшен"
+  description: "Карта Вейстейшена... почекайте, чи це не виглядає, ніби вона перевернута вверх дном?"
+  components:
+  - type: Sprite
+    state: waystationmap
+
+- type: entity
+  parent: PosterBase
+  id: PosterMapOrigin
+  name: "Карта станції Оріджин"
+  description: "Карта станції Оріджин"
+  components:
+  - type: Sprite
+    state: originmap

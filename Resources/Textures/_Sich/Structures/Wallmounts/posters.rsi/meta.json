@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Sich",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "sich_poster_book_unath"
+    },
+    {
+      "name": "sich_poster_drg"
+    },
+    {
+      "name": "sich_poster_dse"
+    },
+    {
+      "name": "sich_poster_free_slime2"
+    },
+    {
+      "name": "sich_poster_slime_free"
+    },
+    {
+      "name": "sich_poster_map_space"
+    },
+    {
+      "name": "sich_poster_map_space2"
+    },
+    {
+      "name": "sich_poster_solar_federation"
+    },
+    {
+      "name": "sich_poster_reinyn"
+    },
+    {
+      "name": "sich_poster_settler"
+    },
+    {
+      "name": "poster_sich_passenger"
+    },
+    {
+      "name": "poster_sich_space_marine"
+    },
+    {
+      "name": "sich_plastic_poster"
+    },
+    {
+      "name": "sich_poster_blood_knife"
+    },
+    {
+      "name": "poster_sich_day_pay"
+    },
+    {
+      "name": "poster_sich_Far_Cray"
+    },
+    {
+      "name": "poster_sich_gladiator"
+    },
+    {
+      "name": "poster_sich_halloween"
+    },
+    {
+      "name": "poster_sich_jail"
+    },
+    {
+      "name": "poster_sich_rimworld"
+    },
+    {
+      "name": "poster_sich_sky_punk"
+    },
+    {
+      "name": "poster_sich_sos_fall"
+    },
+    {
+      "name": "poster_sich_Stalker"
+    },
+    {
+      "name": "poster_sich_war_clown"
+    },
+    {
+      "name": "poster_sich_war_mime"
+    }
+  ]
+}

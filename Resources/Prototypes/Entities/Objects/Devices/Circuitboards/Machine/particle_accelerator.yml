@@ -1,0 +1,89 @@
+﻿- type: entity
+  id: MachineParticleAcceleratorEndCapCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата заглушки ПЧ
+  description: Друкована плата заглушки прискорувача часток.
+  components:
+    - type: Sprite
+      state: engineering
+    - type: MachineBoard
+      prototype: ParticleAcceleratorEndCapUnfinished
+      stackRequirements:
+        Glass: 15
+        Steel: 15
+
+- type: entity
+  id: MachineParticleAcceleratorFuelChamberCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата паливної камери ПЧ
+  description: Друкована плата паливної камери прискорювача часток.
+  components:
+    - type: Sprite
+      state: engineering
+    - type: MachineBoard
+      prototype: ParticleAcceleratorFuelChamberUnfinished
+      componentRequirements:
+        AmeFuelContainer:
+          amount: 1
+          defaultPrototype: AmeJar
+      stackRequirements:
+        Glass: 10
+        Steel: 10
+
+- type: entity
+  id: MachineParticleAcceleratorPowerBoxCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата блоку живлення ПЧ
+  description: Друкована плата блоку живлення прискорювача часток.
+  components:
+    - type: Sprite
+      state: engineering
+    - type: MachineBoard
+      prototype: ParticleAcceleratorPowerBoxUnfinished
+      stackRequirements:
+        Glass: 5
+        Steel: 5
+
+# Emitter
+
+- type: entity
+  id: MachineParticleAcceleratorEmitterStarboardCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата випромінювача утримання космоборту ПЧ
+  description: Друкована плата лівого випромінювача прискорювача часток.
+  components:
+    - type: Sprite
+      state: engineering
+    - type: MachineBoard
+      prototype: ParticleAcceleratorEmitterStarboardUnfinished
+      stackRequirements:
+        Glass: 5
+        Steel: 5
+
+- type: entity
+  id: MachineParticleAcceleratorEmitterForeCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата випромінювача зовнішнього утримання ПЧ
+  description: Друкована плата центрального випромінювача прискорювача часток.
+  components:
+    - type: Sprite
+      state: engineering
+    - type: MachineBoard
+      prototype: ParticleAcceleratorEmitterForeUnfinished
+      stackRequirements:
+        Glass: 5
+        Steel: 5
+
+- type: entity
+  id: MachineParticleAcceleratorEmitterPortCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата випромінювача утримання порту ПЧ
+  description: Друкована плата правого випромінювача прискорювача часток.
+  components:
+    - type: Sprite
+      state: engineering
+    - type: MachineBoard
+      prototype: ParticleAcceleratorEmitterPortUnfinished
+      stackRequirements:
+        Glass: 5
+        Steel: 5

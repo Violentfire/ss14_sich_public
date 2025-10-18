@@ -1,0 +1,121 @@
+- type: entity
+  abstract: true
+  parent: [DrinkBaseMaterialStrongMetal, DrinkBase, DrinkBaseOpenable, DrinkVisualsOpenable]
+  id: FlaskBase
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/flask.rsi
+  - type: FitsInDispenser
+    solution: drink
+  - type: Openable
+    sound:
+      collection: flaskOpenSounds
+    closeable: true
+    closeSound:
+      collection: flaskCloseSounds
+
+# Flasks
+
+- type: entity
+  parent: [DrinkBaseMaterialStrongMetal, DrinkBase]
+  id: DrinkFlaskOld
+  name: old flask
+  description: A decrepit old flask, its lid seems to be missing.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/flask_old.rsi
+  - type: FitsInDispenser
+    solution: drink
+
+- type: entity
+  parent: FlaskBase
+  id: DrinkShinyFlask
+  name:  блискуча фляга
+  description: Блискуча металева фляга. На ній, схоже, викарбуваний грецький символ.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/shinyflask.rsi
+
+- type: entity
+  parent: FlaskBase
+  id: DrinkMREFlask
+  suffix: Full
+  name: фляга MRE
+  description: Стара військова фляга, наповнена найкращим вмістом для солдатів.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/mreflask.rsi
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water
+          Quantity: 50
+  - type: TrashOnSolutionEmpty
+    solution: drink
+
+- type: entity
+  parent: FlaskBase
+  id: DrinkDetFlask
+  name: фляга інспектора
+  description: Металева фляга зі шкіряним ремінцем та золотим значком, що належить інспектору.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/detflask.rsi
+
+- type: entity
+  parent: FlaskBase
+  id: DrinkHosFlask
+  name: фляга ГСБ
+  description: Металева фляга, призначена для працьовитого ГСБ.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/hosflask.rsi
+
+- type: entity
+  parent: FlaskBase
+  id: DrinkFlask
+  name: фляга капітана
+  description: Металева фляга, що належить капітану.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/flask.rsi
+
+- type: entity
+  parent: FlaskBase
+  id: DrinkFlaskBar
+  name: барна фляга
+  description: Металева фляга, яку бармен часто видає напрокат. Не забудьте її повернути!
+  components:
+    - type: Sprite
+      sprite: Objects/Consumable/Drinks/barflask.rsi
+
+- type: entity
+  parent: FlaskBase
+  id: DrinkLithiumFlask
+  name: літієва фляга
+  description: Фляга з символом атома літію на ній.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/lithiumflask.rsi
+
+- type: entity
+  parent: FlaskBase
+  id: DrinkVacuumFlask
+  name: вакуумна фляга
+  description: Зберігаємо ваші напої ідеальної температури з 1892 року.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/vacuumflask.rsi
+  - type: Tool
+    qualities:
+    - Rolling # Perfectly cylindrical flask
+    speedModifier: 0.75

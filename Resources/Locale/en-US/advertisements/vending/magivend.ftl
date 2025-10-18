@@ -1,0 +1,11 @@
+advertisement-magivend-1 = Слінги зачаровують правильно з MagiVend!
+advertisement-magivend-2 = Будь власним Гудіні! Використовуйте MagiVend!
+advertisement-magivend-3 = Трах-тібідох тібідох!
+advertisement-magivend-4 = Абракадабра!
+advertisement-magivend-5 = Пффф
+advertisement-magivend-6 = ХОНК!
+advertisement-magivend-7 = Бип!
+advertisement-magivend-8 = Знищити станцію!
+advertisement-magivend-9 = Просторово-часова згинаюча техніка!
+advertisement-magivend-10 = 1001 псих!
+advertisement-magivend-11 = НАРСІ, ЯВИВСЯ!!!

@@ -1,0 +1,52 @@
+- type: entity
+  parent: ReagentDispenserBase
+  id: SodaDispenserEmpty
+  name: дозатор газованки
+  description: Дозатор для напоїв з асортиментом газованої води та деяких інших поширених безалкогольних напоїв. Має один слот для наповнення ємностей.
+  suffix: Empty
+  components:
+  - type: Rotatable
+  - type: Sprite
+    sprite: Structures/smalldispensers.rsi
+    drawdepth: SmallObjects
+    state: soda
+  - type: Storage
+    openOnActivate: false
+    whitelist:
+      tags:
+      - DrinkBottle
+  - type: Transform
+    noRot: false
+  - type: Machine
+    board: SodaDispenserMachineCircuitboard
+  - type: GuideHelp
+    guides:
+    - Bartender
+    - Drinks
+
+- type: entity
+  parent: SodaDispenserEmpty
+  id: SodaDispenser
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: DrinkCoconutWaterJug
+    - id: DrinkCoffeeJug
+    - id: DrinkColaBottleFull
+    - id: DrinkCreamCartonXL
+    - id: DrinkDrGibbJug
+    - id: DrinkEnergyDrinkJug
+    - id: DrinkGreenTeaJug
+    - id: DrinkIceJug
+    - id: DrinkJuiceLimeCartonXL
+    - id: DrinkJuiceOrangeCartonXL
+    - id: DrinkLemonLimeJug
+    - id: DrinkRootBeerJug
+    - id: DrinkSodaWaterBottleFull
+    - id: DrinkSpaceMountainWindBottleFull
+    - id: DrinkSpaceUpBottleFull
+    - id: DrinkSugarJug
+    - id: DrinkTeaJug
+    - id: DrinkTonicWaterBottleFull
+    - id: DrinkWaterMelonJuiceJug

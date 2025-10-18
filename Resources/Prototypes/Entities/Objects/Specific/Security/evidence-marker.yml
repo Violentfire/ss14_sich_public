@@ -1,0 +1,100 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: EvidenceMarker
+  name: маркер доказу
+  description: Пронумерований жовтий маркер. Гарно підходить для нумерації доказів на місці злочину.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Detective/evidence_marker.rsi
+  - type: Item
+    sprite: Objects/Specific/Detective/evidence_marker.rsi
+    size: Tiny
+
+- type: entity
+  parent: EvidenceMarker
+  id: EvidenceMarkerOne
+  components:
+  - type: Sprite
+    state: one
+
+- type: entity
+  parent: EvidenceMarker
+  id: EvidenceMarkerTwo
+  components:
+  - type: Sprite
+    state: two
+
+- type: entity
+  parent: EvidenceMarker
+  id: EvidenceMarkerThree
+  components:
+  - type: Sprite
+    state: three
+
+- type: entity
+  parent: EvidenceMarker
+  id: EvidenceMarkerFour
+  components:
+  - type: Sprite
+    state: four
+
+- type: entity
+  parent: EvidenceMarker
+  id: EvidenceMarkerFive
+  components:
+  - type: Sprite
+    state: five
+
+- type: entity
+  parent: EvidenceMarker
+  id: EvidenceMarkerSix
+  components:
+  - type: Sprite
+    state: six
+
+- type: entity
+  parent: EvidenceMarker
+  id: EvidenceMarkerSeven
+  components:
+  - type: Sprite
+    state: seven
+
+- type: entity
+  parent: EvidenceMarker
+  id: EvidenceMarkerEight
+  components:
+  - type: Sprite
+    state: eight
+
+- type: entity
+  parent: EvidenceMarker
+  id: EvidenceMarkerNine
+  components:
+  - type: Sprite
+    state: nine
+
+- type: entity
+  name: коробка з маркерами доказів
+  parent: BoxCardboard
+  id: BoxEvidenceMarkers
+  description: Коробка пронумерованих жовтих маркер. Гарно підходять для нумерації доказів на місці злочину.
+  components:
+    - type: Item
+      shape:
+      - 0,0,1,1
+    - type: StorageFill
+      contents:
+        - id: EvidenceMarkerOne
+        - id: EvidenceMarkerTwo
+        - id: EvidenceMarkerThree
+        - id: EvidenceMarkerFour
+        - id: EvidenceMarkerFive
+        - id: EvidenceMarkerSix
+        - id: EvidenceMarkerSeven
+        - id: EvidenceMarkerEight
+        - id: EvidenceMarkerNine
+    - type: Sprite
+      layers:
+        - state: box_security
+        - state: evidence_markers

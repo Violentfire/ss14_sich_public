@@ -1,0 +1,88 @@
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomServiceCorpse
+  suffix: Мертвий, Сервісник
+  components:
+  - type: Loadout
+    prototypes:
+      - HoPGear
+      - ClownGear
+      - MimeGear
+      - JanitorGear
+      - ServiceWorkerGear
+      - MusicianGear
+      - BotanistGear
+      - ChefGear
+      - ChaplainGear
+      - PassengerGear
+
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomEngineerCorpse
+  suffix: Мертвий, Інжинер
+  components:
+  - type: Loadout
+    prototypes:
+    - TechnicalAssistantGear
+    - AtmosphericTechnicianGear
+    - StationEngineerGear
+
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomCargoCorpse
+  suffix: Мертвий, Вантажник
+  components:
+  - type: Loadout
+    prototypes:
+    - CargoTechGear
+    - SalvageSpecialistGear
+
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomMedicCorpse
+  suffix: Мертвий, Медик
+  components:
+  - type: Loadout
+    prototypes:
+    - MedicalInternGear
+    - PsychologistGear
+    - ChemistGear
+    - DoctorGear
+
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomScienceCorpse
+  suffix: Мертвий, Науковець
+  components:
+  - type: Loadout
+    prototypes:
+    - ResearchAssistantGear
+    - ScientistGear
+
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomSecurityCorpse
+  suffix: Мертвий, Служба Безпеки
+  components:
+  - type: Loadout
+    prototypes:
+    - SecurityCadetGear
+    - SecurityOfficerGear
+    - DetectiveGear
+    - WardenGear
+
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomCommandCorpse
+  suffix: Мертвий, Командування
+  components:
+  - type: Loadout
+    prototypes:
+    - HoPGear
+    - CentcomGear
+    - CaptainGear
+    - HoSGear
+    - ResearchDirectorGear
+    - CMOGear
+    - ChiefEngineerGear
+    - QuartermasterGear

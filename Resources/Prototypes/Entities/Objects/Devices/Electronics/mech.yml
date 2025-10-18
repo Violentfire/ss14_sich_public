@@ -1,0 +1,123 @@
+# Ripley
+
+- type: entity
+  id: RipleyCentralElectronics
+  parent: BaseElectronics
+  name: центральний модуль керування ріплі
+  description: Електричний центр керування для меха ріплі.
+  components:
+    - type: Item
+      storedRotation: 0
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: mainboard
+    - type: Tag
+      tags:
+      - RipleyCentralControlModule
+    - type: GuideHelp
+      guides:
+      - Robotics
+
+- type: entity
+  id: RipleyPeripheralsElectronics
+  parent: BaseElectronics
+  name: модуль керування периферійними пристроями ріплі
+  description: Контролер електричної переферії для меха ріплі.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: id_mod
+    - type: Tag
+      tags:
+      - RipleyPeripheralsControlModule
+    - type: GuideHelp
+      guides:
+      - Robotics
+
+# H.O.N.K.
+
+- type: entity
+  id: HonkerCentralElectronics
+  parent: BaseElectronics
+  name: центральний модуль керування Х.О.Н.К.
+  description: Електричний центр керування для меха Х.О.Н.К.
+  components:
+    - type: Item
+      storedRotation: 0
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: mainboard
+    - type: Tag
+      tags:
+      - HonkerCentralControlModule
+    - type: GuideHelp
+      guides:
+      - Robotics
+
+- type: entity
+  id: HonkerPeripheralsElectronics
+  parent: BaseElectronics
+  name: модуль керування периферійними пристроями Х.О.Н.К.
+  description: Контролер електричної переферії для меха Х.О.Н.К.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: id_mod
+    - type: Tag
+      tags:
+      - HonkerPeripheralsControlModule
+    - type: GuideHelp
+      guides:
+      - Robotics
+
+- type: entity
+  id: HonkerTargetingElectronics
+  parent: BaseElectronics
+  name: модуль керування та наведення зброї Х.О.Н.К.
+  description: Електричне керування прицілюванням для меха Х.О.Н.К.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: id_mod
+    - type: Tag
+      tags:
+      - HonkerTargetingControlModule
+    - type: GuideHelp
+      guides:
+      - Robotics
+
+# HAMTR
+
+- type: entity
+  id: HamtrCentralElectronics
+  parent: BaseElectronics
+  name: центральний модуль керування сталевого гризуна
+  description: Електричний центр керування для сталевого гризуна.
+  components:
+    - type: Item
+      storedRotation: 0
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: mainboard
+    - type: Tag
+      tags:
+      - HamtrCentralControlModule
+    - type: GuideHelp
+      guides:
+      - Robotics
+
+- type: entity
+  id: HamtrPeripheralsElectronics
+  parent: BaseElectronics
+  name: модуль керування периферійними пристроями сталевого гризуна
+  description: Контролер електричної переферії для сталевого гризуна.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: id_mod
+    - type: Tag
+      tags:
+      - HamtrPeripheralsControlModule
+    - type: GuideHelp
+      guides:
+      - Robotics

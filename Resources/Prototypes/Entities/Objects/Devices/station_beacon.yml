@@ -1,0 +1,890 @@
+- type: entity
+  parent: BaseItem
+  id: DefaultStationBeacon
+  name: станційний маяк
+  description: Невеликий пристрій, який передає інформацію на мапи станцій. Може бути налаштований.
+  placement:
+    mode: SnapgridCenter
+  suffix: Загальний
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/station_beacon.rsi
+    drawdepth: BelowFloor
+    layers:
+    - state: blink
+      map: ["base"]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.NavMapBeaconVisuals.Enabled:
+        base:
+          True: {state: blink}
+          False: {state: icon}
+  - type: ConfigurableNavMapBeacon
+  - type: NavMapBeacon
+    defaultText: station-beacon-general
+    color: "#D4D4D496"
+  - type: WarpPoint
+  - type: ActivatableUI
+    key: enum.NavMapBeaconUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.NavMapBeaconUiKey.Key:
+        type: NavMapBeaconBoundUserInterface
+  - type: Item
+    size: Small
+  - type: Visibility
+    layer: 1
+  - type: SubFloorHide
+  - type: Anchorable
+  - type: Construction
+    graph: StationBeaconPart
+    node: complete
+  - type: CollideOnAnchor
+  - type: Physics
+    canCollide: false
+    bodyType: static
+  - type: Transform
+    anchored: true
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger: # for nukes
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+            params:
+              volume: -8
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetSteel1:
+              min: 1
+              max: 1
+          offset: 0
+        - !type:DoActsBehavior
+          acts: ["Breakage"]
+  - type: StaticPrice
+    price: 25
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconUnanchored
+  suffix: Загальний, не прикручений
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/station_beacon.rsi
+    layers:
+    - state: icon
+      map: ["base"]
+  - type: Physics
+    canCollide: true
+    bodyType: dynamic
+  - type: Transform
+    anchored: false
+
+- type: entity
+  parent: BaseItem
+  id: StationBeaconPart
+  name: флетпак станційного маяка
+  description: Флетпак для конструювання станційного маяка. Використайте мультитул.
+  components:
+  - type: Item
+    size: Small
+    sprite: Objects/Devices/station_beacon.rsi
+  - type: Sprite
+    sprite: Objects/Devices/station_beacon.rsi
+    state: assembly
+  - type: Construction
+    graph: StationBeaconPart
+    node: start
+    defaultTarget: complete
+
+# Prototypes for various default beacon configurations.
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconCommand
+  suffix: Командування
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-command
+    color: "#FFFF00"
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: DefaultStationBeaconBridge
+  suffix: Місток
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-bridge
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: DefaultStationBeaconVault
+  suffix: Сховище
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-vault
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: DefaultStationBeaconGateway
+  suffix: Ґейтвей
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-gateway
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: DefaultStationBeaconCaptainsQuarters
+  suffix: Каюта Капітана
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-captain
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: DefaultStationBeaconHOPOffice
+  suffix: Кабінет ГП
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-hop
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconSecurity
+  suffix: Служба Безпеки
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-security
+    color: "#DE3A3A"
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconBrig
+  suffix: Бріг
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-brig
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconBrigMed
+  suffix: Brig Med
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-brig-med
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconWardensOffice
+  suffix: Кабінет Наглядача
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-warden
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconHOSRoom
+  suffix: Кімната ГСБ
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-hos
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconArmory
+  suffix: Зброярня
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-armory
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconPermaBrig
+  suffix: Перма-бріг
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-perma-brig
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconDetectiveRoom
+  suffix: Кімната Детектива
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-detective
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconCourtroom
+  suffix: Зала суду
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-courtroom
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconLawOffice
+  suffix: Офіс адвоката
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-law
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconSecurityCheckpoint
+  suffix: Пункт СБ
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-security-checkpoint
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconMedical
+  suffix: Медичний
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-medical
+    color: "#52B4E9"
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconMedbay
+  suffix: Мед. Відділ
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-medbay
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconChemistry
+  suffix: Хімічний
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-chemistry
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconCryonics
+  suffix: Кріокапсули
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-cryonics
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconCMORoom
+  suffix: Кімната ГЛ
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-cmo
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconMorgue
+  suffix: Морг
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-morgue
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconSurgery
+  suffix: Хірургія
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-surgery
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconPsychology
+  suffix: Psychology
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-psychology
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconClinic
+  suffix: Clinic
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-clinic
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconScience
+  suffix: Науковий
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-science
+    color: "#D381C9"
+
+- type: entity
+  parent: DefaultStationBeaconScience
+  id: DefaultStationBeaconRND
+  suffix: Дослідження та Розробка
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-research-and-development
+
+- type: entity
+  parent: DefaultStationBeaconScience
+  id: DefaultStationBeaconServerRoom
+  suffix: Серверна НВ
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-research-server
+
+- type: entity
+  parent: DefaultStationBeaconScience
+  id: DefaultStationBeaconRDRoom
+  suffix: Кімната ДНВ
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-research-director
+
+- type: entity
+  parent: DefaultStationBeaconScience
+  id: DefaultStationBeaconRobotics
+  suffix: Робототехніка
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-robotics
+
+- type: entity
+  parent: DefaultStationBeaconScience
+  id: DefaultStationBeaconArtifactLab
+  suffix: Ксеноархеологія
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-artifact-lab
+
+- type: entity
+  parent: DefaultStationBeaconScience
+  id: DefaultStationBeaconAnomalyGenerator
+  suffix: Генератор Аномалій
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-anomaly-gen
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconSupply
+  suffix: Карго
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-supply
+    color: "#A46106"
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: DefaultStationBeaconCargoReception
+  suffix: Стійка Карго
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-cargo
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: DefaultStationBeaconCargoBay
+  suffix: Склад Карго
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-cargo-bay
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: DefaultStationBeaconQMRoom
+  suffix: Кімната Квартирмейстра
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-qm
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: DefaultStationBeaconSalvage
+  suffix: Шахтарі
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-salvage
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEngineering
+  suffix: Інженерний
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-engineering
+    color: "#EFB341"
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconCERoom
+  suffix: Кімната ГІ
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-ce
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconAME
+  suffix: АМД
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-ame
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSolars
+  suffix: СОЛАРИ
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-solars
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSolarsN
+  suffix: Solars, North
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-solars-N
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSolarsNE
+  suffix: Solars, Northeast
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-solars-NE
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSolarsE
+  suffix: Solars, East
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-solars-E
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSolarsSE
+  suffix: Solars, Southeast
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-solars-SE
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSolarsS
+  suffix: Solars, South
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-solars-S
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSolarsSW
+  suffix: Solars, Southwest
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-solars-SW
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSolarsW
+  suffix: Solars, West
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-solars-W
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSolarsNW
+  suffix: Solars, Northwest
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-solars-NW
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconGravGen
+  suffix: Гравітаційний генератор
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-gravgen
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconAnchor
+  suffix: Anchor
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-anchor
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSingularity
+  suffix: Прискорювач Часток
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-pa
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconPowerBank
+  suffix: НМА
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-smes
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconTelecoms
+  suffix: Телекоми
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-telecoms
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconAtmospherics
+  suffix: Атмос
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-atmos
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconTEG
+  suffix: ТЕГ
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-teg
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconTechVault
+  suffix: Технічне сховище
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-tech-vault
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconService
+  suffix: Сервіс
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-service
+    color: "#9FED58"
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: DefaultStationBeaconKitchen
+  suffix: Кухня
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-kitchen
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: DefaultStationBeaconBar
+  suffix: Бар
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-bar
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: DefaultStationBeaconBotany
+  suffix: Ботаніка
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-botany
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: DefaultStationBeaconJanitorsCloset
+  suffix: Комора Прибиральника
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-janitor
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconAI
+  suffix: ШІ
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-ai
+    color: "#5ed7aa"
+
+- type: entity
+  parent: DefaultStationBeaconAI
+  id: DefaultStationBeaconAISatellite
+  suffix: Острівець ШІ
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-ai-sat
+
+- type: entity
+  parent: DefaultStationBeaconAI
+  id: DefaultStationBeaconAICore
+  suffix: Ядро ШІ
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-ai-core
+
+- type: entity
+  parent: DefaultStationBeaconAI
+  id: DefaultStationBeaconAIUpload
+  suffix: AI Upload
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-ai-upload
+
+- type: entity
+  parent: DefaultStationBeaconAI
+  id: DefaultStationBeaconAIPower
+  suffix: AI Power
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-ai-power
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconArrivals
+  suffix: Прибуття
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-arrivals
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEvac
+  suffix: Евак
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-evac
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconDockingArm
+  suffix: Docking Arm
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-docking-arm
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEVAStorage
+  suffix: Склад ЄВИ
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-eva-storage
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconChapel
+  suffix: Церква
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-chapel
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconLibrary
+  suffix: Бібліотека
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-library
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconReporter
+  suffix: Reporter
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-reporter
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconTheater
+  suffix: Театр
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-theater
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconDorms
+  suffix: Гуртожиток
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-dorms
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconToolRoom
+  suffix: Кімната Інструментів
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-tools
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconDisposals
+  suffix: Смітник
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-disposals
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconCryosleep
+  suffix: Кріопкапсули
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-cryosleep
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEscapePod
+  suffix: Рятівна капсула
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-escape-pod
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEscapePodN
+  suffix: Escape Pod, North
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-escape-pod-N
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEscapePodNE
+  suffix: Escape Pod, Northeast
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-escape-pod-NE
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEscapePodE
+  suffix: Escape Pod, East
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-escape-pod-E
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEscapePodSE
+  suffix: Escape Pod, Southeast
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-escape-pod-SE
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEscapePodS
+  suffix: Escape Pod, South
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-escape-pod-S
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEscapePodSW
+  suffix: Escape Pod, Southwest
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-escape-pod-SW
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEscapePodW
+  suffix: Escape Pod, West
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-escape-pod-W
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconEscapePodNW
+  suffix: Escape Pod, Northwest
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-escape-pod-NW
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconVox
+  suffix: Vox
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-vox
+
+# Ghost Only Beacons
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconGhost
+  suffix: Boo
+  components:
+  - type: Tag
+    tags:
+    - GhostOnlyWarp
+  - type: WarpPoint
+    blacklist:
+      tags:
+      - GhostOnlyWarp
+
+# CentComm Beacons
+- type: entity
+  parent: DefaultStationBeaconGhost
+  id: DefaultStationBeaconCentComm
+  suffix: CentComm
+  components:
+  - type: NavMapBeacon
+    text: CentComm
+
+- type: entity
+  parent: DefaultStationBeaconGhost
+  id: DefaultStationBeaconCentCommAfterhours
+  suffix: CentComm Afterhours
+  components:
+  - type: NavMapBeacon
+    text: Afterhours
+
+- type: entity
+  parent: DefaultStationBeaconGhost
+  id: DefaultStationBeaconCentCommThunderdome
+  suffix: CentComm Thunder Dome
+  components:
+  - type: NavMapBeacon
+    text: Thunderdome
+
+- type: entity
+  parent: DefaultStationBeaconGhost
+  id: DefaultStationBeaconCentCommERT
+  suffix: CentComm ERT
+  components:
+  - type: NavMapBeacon
+    text: ERT

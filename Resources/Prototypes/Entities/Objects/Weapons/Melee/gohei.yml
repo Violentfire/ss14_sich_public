@@ -1,0 +1,17 @@
+﻿- type: entity
+  name: ґохей
+  parent: BaseItem
+  id: Gohei
+  description: Дерев'яна паличка з білими стрічками на кінці. Спочатку використовувалась монашками для очищення речей. Зараз використовується віабушниками станції.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/gohei.rsi
+    state: gohei
+  - type: MeleeWeapon
+    wideAnimationRotation: -150
+    damage:
+      types:
+        Holy: 4
+  - type: Item
+    size: Small
+    sprite: Objects/Weapons/Melee/gohei.rsi

@@ -1,0 +1,14 @@
+- type: entity
+  parent: BaseItem
+  id: ProximitySensor
+  name: сенсор наближення
+  description: Відчуває речі в безпосередній близькості.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/proximity_sensor.rsi
+    state: icon
+  - type: Tag
+    tags:
+      - ProximitySensor
+  - type: StaticPrice
+    price: 40

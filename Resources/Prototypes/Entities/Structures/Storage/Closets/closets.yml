@@ -1,0 +1,221 @@
+﻿# Tool closet
+- type: entity
+  id: ClosetTool
+  name: шафа для інструментів 
+  parent: ClosetSteelBase
+  description: Це сховище для інструментів 
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: eng
+    stateDoorOpen: eng_open
+    stateDoorClosed: eng_tool_door
+
+# Radiation suit closet
+- type: entity
+  id: ClosetRadiationSuit
+  name: шафа з антирадіаційним костюмом
+  parent: ClosetSteelBase
+  description: "Вочевидь, комфортніше ніж радіація"
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: eng
+    stateDoorOpen: eng_open
+    stateDoorClosed: eng_rad_door
+
+# Emergency closet
+- type: entity
+  id: ClosetEmergency
+  name: аварійна шафа
+  parent: ClosetSteelBase
+  description: Це сховище з аварійним костюмом, дихальною маскою, й балоном з киснем.
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: emergency
+    stateDoorOpen: emergency_open
+    stateDoorClosed: emergency_door
+
+# Emergency N2 closet
+- type: entity
+  id: ClosetEmergencyN2
+  name: emergency nitrogen closet
+  parent: ClosetSteelBase
+  description: It's full of life-saving equipment. Assuming, that is, that you breathe nitrogen.
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: n2
+    stateDoorOpen: n2_open
+    stateDoorClosed: n2_door
+
+# Fire safety closet
+- type: entity
+  id: ClosetFire
+  name: Протипожежна шафа
+  parent: ClosetSteelBase
+  description: Це сховище для вогнеборців.
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: fire
+    stateDoorOpen: fire_open
+    stateDoorClosed: fire_door
+
+# EOD closet
+- type: entity
+  id: ClosetBomb
+  name: шафа сапера
+  parent: ClosetSteelBase
+  description: Це сховище для проти вибухового костюму
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: bomb
+    stateDoorOpen: bomb_open
+    stateDoorClosed: bomb_door
+
+# Janitorial bomb suit closet
+- type: entity
+  id: ClosetJanitorBomb
+  name: шафа прибиральника з ПВ костюмом
+  parent: ClosetSteelBase
+  description: Це шафа прибиральника з проти вибуховим костюмом
+  categories: [ DoNotMap ]
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: janitor_bomb
+    stateDoorOpen: janitor_bomb_open
+    stateDoorClosed: janitor_bomb_door
+
+# Biohazard
+
+# Base level 3 bio hazard closet
+- type: entity
+  id: ClosetL3
+  parent: ClosetSteelBase
+  name: шафа 3-тього рівня біологічної небезпеки
+  description: Це сховище речей при біологічній небезпеці 3 рівня
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: bio
+    stateDoorOpen: bio_open
+    stateDoorClosed: bio_door
+
+# Science Variant
+- type: entity
+  id: ClosetL3Science
+  parent: ClosetL3
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: bio_sci
+    stateDoorOpen: bio_sci_open
+    stateDoorClosed: bio_sci_door
+
+# Virology variant
+- type: entity
+  id: ClosetL3Virology
+  parent: ClosetL3
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: bio_viro
+    stateDoorOpen: bio_viro_open
+    stateDoorClosed: bio_viro_door
+
+# Security variant
+- type: entity
+  id: ClosetL3Security
+  parent: ClosetL3
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: bio_sec
+    stateDoorOpen: bio_sec_open
+    stateDoorClosed: bio_sec_door
+
+# Janitor variant
+- type: entity
+  id: ClosetL3Janitor
+  parent: ClosetL3
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: bio_jan
+    stateDoorOpen: bio_jan_open
+    stateDoorClosed: bio_jan_door
+
+# Maintenance closet
+- type: entity
+  id: ClosetMaintenance
+  name: технічна шафа
+  parent: ClosetSteelBase
+  description: Це сховище для речей.
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateDoorOpen: generic_open
+    stateDoorClosed: generic_door
+
+# Syndicate
+- type: entity
+  id: LockerSyndicate
+  name: шафа для зброї
+  parent: ClosetSteelBase
+  description: Це сховище для речей.
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: syndicate
+    stateDoorOpen: syndicate_open
+    stateDoorClosed: syndicate_door
+
+# Bluespace closet
+- type: entity
+  id: ClosetBluespace
+  name: підозріла шафа
+  suffix: Bluespace
+  parent: ClosetMaintenance
+  description: Це сховище для речей... п-..правда?
+  components:
+    - type: ArrivalsBlacklist
+    - type: BluespaceLocker
+      pickLinksFromSameMap: true
+      minBluespaceLinks: 1
+      behaviorProperties:
+        bluespaceEffectOnTeleportSource: true
+      autoLinksBidirectional: true
+      autoLinksUseProperties: true
+      autoLinkProperties:
+        bluespaceEffectOnTeleportSource: true
+
+# Unstable bluespace closet
+- type: entity
+  id: ClosetBluespaceUnstable
+  name: підозріла шафа
+  suffix: Bluespace unstable
+  parent: ClosetMaintenance
+  description: Це сховище для речей... п-..правда?
+  components:
+    - type: ArrivalsBlacklist
+    - type: BluespaceLocker
+      pickLinksFromSameMap: true
+      minBluespaceLinks: 1
+      behaviorProperties:
+        clearLinksDebluespaces: true
+        transportEntities: false
+        bluespaceEffectOnTeleportSource: true
+        clearLinksEvery: 2
+      autoLinksBidirectional: true
+      autoLinksUseProperties: true
+      usesSinceLinkClear: -1 # hacky
+      autoLinkProperties:
+        invalidateOneWayLinks: true
+        transportEntities: false
+        bluespaceEffectOnTeleportSource: true
+        destroyAfterUses: 2
+        destroyType: DeleteComponent

@@ -1,0 +1,18 @@
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelMerc
+  name: торба найманця
+  description: Велика торба що зачасту використовується найманцями та ПВК.
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/Back/Duffels/merc.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+- type: entity
+  parent: ClothingBackpackDuffelMerc
+  id: ClothingBackpackDuffelMercBundle
+  abstract: true
+  components:
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag

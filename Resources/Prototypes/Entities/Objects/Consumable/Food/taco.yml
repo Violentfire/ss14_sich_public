@@ -1,0 +1,218 @@
+# When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_single.yml
+
+- type: entity
+  parent: FoodMealBase
+  id: FoodTacoShell
+  name: оболонка для тако
+  description: Оболонка для тако, яку легко тримати, але вона падає на бік, тому її кладуть.
+  components:
+  - type: Item
+    storedOffset: 0,-3
+  - type: Edible
+    transferAmount: 3
+  - type: Sprite
+    sprite: Objects/Consumable/Food/taco_sequence.rsi
+    layers:
+    - state: tacoshell_back
+    - map: ["foodSequenceLayers"]
+    - state: tacoshell_forward
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        canReact: false # Dont want cause reactions inside tacos after merging ingredients
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6.66
+  - type: FoodSequenceStartPoint
+    key: Taco
+    maxLayers: 3
+    startPosition: -0.15, 0
+    offset: 0.15, 0
+    minLayerOffset: 0, 0
+    maxLayerOffset: 0, 0.05
+    nameGeneration: food-sequence-taco-gen
+    contentSeparator: ", "
+  - type: Appearance
+
+# Old tacos
+
+- type: entity
+  abstract: true
+  parent: FoodInjectableBase
+  id: FoodTacoBase
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - cheesy
+  - type: Edible
+    transferAmount: 3
+  - type: Sprite
+    sprite: Objects/Consumable/Food/taco.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Item
+    sprite: Objects/Consumable/Food/taco.rsi
+    shape:
+    - 0,0,1,0
+    storedOffset: 0,1
+  - type: Tag
+    tags:
+      - Meat
+
+- type: entity
+  name: тако з яловичиною
+  parent: FoodTacoBase
+  id: FoodTacoBeef
+  description: Дуже простий і звичний тако з яловичиною, тепер з сиром!
+  components:
+  - type: Sprite
+    state: beeftaco
+
+- type: entity
+  name: тако з куркою
+  parent: FoodTacoBase
+  id: FoodTacoChicken
+  description: Дуже простий і звичайний курячий тако, тепер з сиром!
+  components:
+  - type: Sprite
+    state: chickentaco
+
+- type: entity
+  name: тако з рибою
+  parent: FoodTacoBase
+  id: FoodTacoFish
+  description: Звучить трохи бридко, але насправді це не так вже й погано.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - onion
+      - fishy
+  - type: Sprite
+    state: fishtaco
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 6
+
+- type: entity
+  name: тако з щурятиною
+  parent: FoodTacoBase
+  id: FoodTacoRat
+  description: Так, це виглядає приблизно так...
+  components:
+  - type: Sprite
+    state: rattaco
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Vitamin
+          Quantity: 4
+
+- type: entity
+  name: тако з яловичиною найвищого ґатунку
+  parent: FoodTacoBase
+  id: FoodTacoBeefSupreme
+  description: Це як звичайний тако з яловичиною, але з сюрпризом!
+  components:
+  - type: Sprite
+    state: beeftacosupreme
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 22
+        - ReagentId: Vitamin
+          Quantity: 6
+
+- type: entity
+  name: тако з курятиною найвищого ґатунку
+  parent: FoodTacoBase
+  id: FoodTacoChickenSupreme
+  description: Це як звичайний курячий тако, але з сюрпризом!
+  components:
+  - type: Sprite
+    state: chickentacosupreme
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 22
+        - ReagentId: Vitamin
+          Quantity: 6
+
+- type: entity
+  parent: FoodTacoBase
+  id: FoodTacoDragon
+  name: драко
+  description: Драконове тако, яке технічно також є рибним тако.
+  components:
+  - type: Item
+    storedOffset: 0,3
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - spicy
+  - type: Sprite
+    state: dragontaco
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 32
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 14
+        - ReagentId: Vitamin
+          Quantity: 4
+        - ReagentId: Ichor
+          Quantity: 4
+        - ReagentId: CapsaicinOil
+          Quantity: 6
+
+- type: entity
+  name: м'яке тако
+  parent: FoodMealBase
+  id: FoodMealSoftTaco
+  description: Скуштуй!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+      - tomato
+      - meaty
+      - onion
+  - type: Sprite
+    state: softtaco
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 18
+  - type: Tag
+    tags:
+      - Meat

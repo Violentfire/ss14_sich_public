@@ -1,0 +1,59 @@
+- type: entity
+  parent: BaseItem
+  id: BlankHandyFlag
+  name: порожній ручний прапорець
+  description: "Якийсь шматок білої тканини, намотаний на палицю."
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/Handy_Flags/blank_handy_flag.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Misc/Handy_Flags/blank_handy_flag.rsi
+
+- type: entity
+  parent: BaseItem
+  id: NTHandyFlag
+  name: ручний прапорець Нанотрейзен
+  description: "Слава НТ! Зачекайте, вони справді зробили ручний прапорець для корпорації?"
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/Handy_Flags/NT_handy_flag.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Misc/Handy_Flags/NT_handy_flag.rsi
+
+- type: entity
+  parent: [BaseItem, BaseSyndicateContraband]
+  id: SyndieHandyFlag
+  name: ручний прапорець синдикату
+  description: "Для справжніх бунтівних патріотів. Смерть НТ!"
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/Handy_Flags/syndie_handy_flag.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Misc/Handy_Flags/syndie_handy_flag.rsi
+
+- type: entity
+  parent: BaseItem
+  id: LGBTQHandyFlag
+  name: ручний прапорець ЛГБТК
+  description: "ручний прапорець «Будь геєм, чини злочини»."
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/Handy_Flags/lgbtq_handy_flag.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Misc/Handy_Flags/lgbtq_handy_flag.rsi
+
+- type: entity
+  parent: BaseItem
+  id: PirateHandyFlag
+  name: ручний прапорець піратів
+  description: "Тримаючи його в руках, покажіть цим коропам, що ви не жартуєте."
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/Handy_Flags/pirate_handy_flag.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Misc/Handy_Flags/pirate_handy_flag.rsi

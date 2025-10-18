@@ -1,0 +1,600 @@
+- type: entity
+  id: Windoor
+  parent: BaseWindoor
+  name: віконні двері
+  description: Це вікно і розсувні двері. Ого!
+
+- type: entity
+  id: WindoorSecure
+  parent: BaseSecureWindoor
+  name: захищені віконні двері
+  description: Це міцне вікно і розсувні двері. Ого!
+
+- type: entity
+  id: WindoorClockwork
+  parent: BaseClockworkWindoor
+  name: годинникові віконні двері
+  description: Це міцне вікно і розсувні двері. Ого!
+
+- type: entity
+  id: WindoorPlasma
+  parent: BasePlasmaWindoor
+  name: плазмові віконні двері
+  description: Це рожеве вікно і розсувні двері. Дивовижно!
+
+- type: entity
+  id: WindoorSecurePlasma
+  parent: BaseSecurePlasmaWindoor
+  name: захищені плазмові віконні двері
+  description: Це міцне фіолетове вікно і розсувні двері. Приголомшливо!
+
+- type: entity
+  id: WindoorUranium
+  parent: BaseUraniumWindoor
+  name: уранові віконні двері
+  description: Це вікно і розсувні двері. А? О, і воно зелене!
+
+- type: entity
+  id: WindoorSecureUranium
+  parent: BaseSecureUraniumWindoor
+  name: захищені уранові віконні двері
+  description: Це міцне вікно та розсувні двері. Він такий неоново-зелений, що на смак може навіть нагадувати лайм!
+
+# TODO remove these with parameterized prototypes/whatever we end up doing
+# Windoors (alphabetical)
+
+- type: entity
+  parent: WindoorServiceLocked
+  id: WindoorBarLocked
+  suffix: Бар, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBar ]
+
+- type: entity
+  parent: WindoorServiceLocked
+  id: WindoorBarKitchenLocked
+  suffix: Бар/Кухня, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBarKitchen ]
+
+- type: entity
+  parent: Windoor
+  id: WindoorCargoLocked
+  suffix: Карго, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCargo ]
+  - type: Wires
+    layoutId: AirlockCargo
+
+- type: entity
+  parent: Windoor
+  id: WindoorChapelLocked
+  suffix: Каплиця, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChapel ]
+
+- type: entity
+  parent: WindoorServiceLocked
+  id: WindoorHydroponicsLocked
+  suffix: Гідропоніка, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsHydroponics ]
+
+- type: entity
+  parent: WindoorServiceLocked
+  id: WindoorJanitorLocked
+  suffix: Прибиральник, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsJanitor ]
+
+- type: entity
+  parent: WindoorPlasma
+  id: PlasmaWindoorJanitorLocked
+  suffix: Прибиральник, Заблоковано, Плазма
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsJanitor ]
+  - type: Wires
+    layoutId: AirlockService
+
+- type: entity
+  parent: WindoorServiceLocked
+  id: WindoorKitchenLocked
+  suffix: Прибиральник, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsKitchen ]
+
+- type: entity
+  parent: WindoorServiceLocked
+  id: WindoorKitchenHydroponicsLocked
+  suffix: Кухня/Гідропоніка, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsKitchenHydroponics ]
+
+- type: entity
+  parent: Windoor
+  id: WindoorServiceLocked
+  suffix: Сервіс, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsService ]
+  - type: Wires
+    layoutId: AirlockService
+
+- type: entity
+  parent: WindoorServiceLocked
+  id: WindoorTheatreLocked
+  suffix: Театр, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsTheatre ]
+
+# Secure
+
+- type: entity
+  parent: WindoorSecure
+  id: WindoorSecureArmoryLocked
+  suffix: Зброярня, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsArmory ]
+  - type: Wires
+    layoutId: AirlockArmory
+
+- type: entity
+  parent: WindoorSecurePlasma
+  id: PlasmaWindoorSecureArmoryLocked
+  suffix: Зброярня, Заблоковано, Плазма
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsArmory ]
+  - type: Wires
+    layoutId: AirlockArmory
+
+- type: entity
+  parent: WindoorSecureEngineeringLocked
+  id: WindoorSecureAtmosphericsLocked
+  suffix: Атмосферність, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsAtmospherics ]
+
+- type: entity
+  parent: PlasmaWindoorSecureEngineeringLocked
+  id: PlasmaWindoorSecureAtmosphericsLocked
+  suffix: Атмосферність, Заблоковано, Плазма
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsAtmospherics ]
+
+- type: entity
+  parent: WindoorSecureServiceLocked
+  id: WindoorSecureBarLocked
+  suffix: Бар, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBar ]
+
+- type: entity
+  parent: WindoorSecureSecurityLocked
+  id: WindoorSecureBrigLocked
+  suffix: Бріг, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBrig ]
+
+- type: entity
+  parent: WindoorSecure
+  id: WindoorSecureCargoLocked
+  suffix: Карго, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCargo ]
+  - type: Wires
+    layoutId: AirlockCargo
+
+- type: entity
+  parent: WindoorSecure
+  id: WindoorSecureChapelLocked
+  suffix: Каплиця, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChapel ]
+
+- type: entity
+  parent: WindoorSecureMedicalLocked
+  id: WindoorSecureChemistryLocked
+  suffix: Хімія, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChemistry ]
+
+- type: entity
+  parent: WindoorSecurePlasma
+  id: PlasmaWindoorSecureChemistryLocked
+  suffix: Хімія, Заблоковано, Плазма
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChemistry ]
+  - type: Wires
+    layoutId: AirlockMedical
+
+- type: entity
+  parent: WindoorSecureCommandLocked
+  id: WindoorSecureCentralCommandLocked
+  suffix: Центральне Командування, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCentralCommand ]
+
+- type: entity
+  parent: PlasmaWindoorSecureCommandLocked
+  id: PlasmaWindoorSecureCentralCommandLocked
+  suffix: Центральне Командування, Заблоковано, Плазма
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCentralCommand ]
+
+- type: entity
+  parent: WindoorSecureUranium
+  id: UraniumWindoorSecureCentralCommandLocked
+  suffix: Центральне Командування, Заблоковано, Ураніум
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCentralCommand ]
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: WindoorSecure
+  id: WindoorSecureCommandLocked
+  suffix: Командування, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCommand ]
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: WindoorSecurePlasma
+  id: PlasmaWindoorSecureCommandLocked
+  suffix: Командування, Заблоковано, Плазма
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCommand ]
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: WindoorSecureSecurityLocked
+  id: WindoorSecureDetectiveLocked
+  suffix: Детектив, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsDetective ]
+
+- type: entity
+  parent: WindoorSecure
+  id: WindoorSecureEngineeringLocked
+  suffix: Інженерія, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEngineering ]
+  - type: Wires
+    layoutId: AirlockEngineering
+
+- type: entity
+  parent: WindoorSecurePlasma
+  id: PlasmaWindoorSecureEngineeringLocked
+  suffix: Інженерний, Заблоковано, Plasma
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEngineering ]
+  - type: Wires
+    layoutId: AirlockEngineering
+
+- type: entity
+  parent: WindoorSecureUranium
+  id: UraniumWindoorSecureEngineeringLocked
+  suffix: Інженерний, Заблоковано, Ураніум
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEngineering ]
+  - type: Wires
+    layoutId: AirlockEngineering
+
+- type: entity
+  parent: WindoorSecure
+  id: WindoorSecureExternalLocked
+  suffix: Зовнішні, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]
+  - type: Wires
+    layoutId: AirlockExternal
+
+- type: entity
+  parent: WindoorSecureServiceLocked
+  id: WindoorSecureJanitorLocked
+  suffix: Прибиральник, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsJanitor ]
+
+- type: entity
+  parent: WindoorSecurePlasma
+  id: PlasmaWindoorSecureJanitorLocked
+  suffix: Прибиральник, Заблоковано, Плазма
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsJanitor ]
+  - type: Wires
+    layoutId: AirlockService
+
+- type: entity
+  parent: WindoorSecureServiceLocked
+  id: WindoorSecureKitchenLocked
+  suffix: Кухня, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsKitchen ]
+
+- type: entity
+  parent: WindoorSecureSecurityLocked
+  id: WindoorSecureSecurityLawyerLocked
+  suffix: Служба безпеки/Адвокат, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurityLawyer ]
+
+- type: entity
+  parent: WindoorSecure
+  id: WindoorSecureMedicalLocked
+  suffix: Медичний, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMedical ]
+  - type: Wires
+    layoutId: AirlockMedical
+
+- type: entity
+  parent: WindoorSecureCommandLocked
+  id: WindoorSecureResearchDirectorLocked
+  suffix: ResearchDirector, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsResearchDirector ]
+
+- type: entity
+  parent: WindoorSecureCargoLocked
+  id: WindoorSecureSalvageLocked
+  suffix: Порятунок, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSalvage ]
+
+- type: entity
+  parent: WindoorSecure
+  id: WindoorSecureSecurityLocked
+  suffix: Служба безпеки, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurity ]
+  - type: Wires
+    layoutId: AirlockSecurity
+
+- type: entity
+  parent: WindoorSecurePlasma
+  id: PlasmaWindoorSecureSecurityLocked
+  suffix: Служба безпеки, Заблоковано, Плазма
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurity ]
+  - type: Wires
+    layoutId: AirlockSecurity
+
+- type: entity
+  parent: WindoorSecure
+  id: WindoorSecureScienceLocked
+  suffix: Науковий, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsResearch ]
+  - type: Wires
+    layoutId: AirlockScience
+
+- type: entity
+  parent: WindoorSecurePlasma
+  id: PlasmaWindoorSecureScienceLocked
+  suffix: Науковий, Заблоковано, Плазма
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsResearch ]
+  - type: Wires
+    layoutId: AirlockScience
+
+- type: entity
+  parent: WindoorSecure
+  id: WindoorSecureServiceLocked
+  suffix: Сервіс, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsService ]
+  - type: Wires
+    layoutId: AirlockService
+
+- type: entity
+  parent: WindoorSecureCommandLocked
+  id: WindoorSecureHeadOfPersonnelLocked
+  suffix: Голова персоналу, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsHeadOfPersonnel ]
+
+# Syndicate
+
+- type: entity
+  parent: Windoor
+  id: WindoorSyndicateLocked
+  suffix: Syndicate, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSyndicateAgent ]
+
+- type: entity
+  parent: WindoorSecure
+  id: WindoorSecureSyndicateLocked
+  suffix: Syndicate, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSyndicateAgent ]
+
+- type: entity
+  parent: WindoorPlasma
+  id: PlasmaWindoorSyndicateLocked
+  suffix: Syndicate, Locked, Plasma
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSyndicateAgent ]
+
+- type: entity
+  parent: WindoorSecurePlasma
+  id: PlasmaWindoorSecureSyndicateLocked
+  suffix: Syndicate, Locked, Plasma
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSyndicateAgent ]
+
+- type: entity
+  parent: WindoorUranium
+  id: UraniumWindoorSyndicateLocked
+  suffix: Syndicate, Locked, Uranium
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSyndicateAgent ]
+
+- type: entity
+  parent: WindoorSecureUranium
+  id: UraniumWindoorSecureSyndicateLocked
+  suffix: Syndicate, Locked, Uranium
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSyndicateAgent ]
+
+- type: entity
+  parent: Windoor
+  id: WindoorNukeopLocked
+  suffix: Nukeop, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]
+
+- type: entity
+  parent: WindoorSecure
+  id: WindoorSecureNukeopLocked
+  suffix: Nukeop, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]
+
+- type: entity
+  parent: WindoorPlasma
+  id: PlasmaWindoorNukeopLocked
+  suffix: Nukeop, Locked, Plasma
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]
+
+- type: entity
+  parent: WindoorSecurePlasma
+  id: PlasmaWindoorSecureNukeopLocked
+  suffix: Nukeop, Locked, Plasma
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]
+
+- type: entity
+  parent: WindoorUranium
+  id: UraniumWindoorNukeopLocked
+  suffix: Nukeop, Locked, Uranium
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]
+
+- type: entity
+  parent: WindoorSecureUranium
+  id: UraniumWindoorSecureNukeopLocked
+  suffix: Nukeop, Locked, Uranium
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]

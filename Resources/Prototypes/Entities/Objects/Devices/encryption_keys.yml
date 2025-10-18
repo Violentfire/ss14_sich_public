@@ -1,0 +1,288 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: EncryptionKey
+  name: ключ шифрування
+  description: Маленький шифрувальний чіп для гарнітури.
+  components:
+  - type: EncryptionKey
+  - type: Item
+    sprite: Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: Objects/Devices/encryption_keys.rsi
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyCommon
+  name: загальний ключ шифрування
+  description: Ключ шифрування який може бути використаний будь-ким.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Common
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: common_label
+  - type: Tag
+    tags:
+    - EncryptionCommon
+
+- type: entity
+  parent: [ EncryptionKey, BaseCargoContraband ]
+  id: EncryptionKeyCargo
+  name: ключ шифрування карго
+  description: Ключ шифрування, яким користуються співробітники карго.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Supply
+    defaultChannel: Supply
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: cargo_label
+  - type: Tag
+    tags:
+    - EncryptionCargo
+
+- type: entity
+  parent: [ EncryptionKey, BaseCentcommContraband ]
+  id: EncryptionKeyCentCom
+  name: ключ шифрування центрального командування
+  description: Ключ шифрування босів капітана.
+  components:
+  - type: EncryptionKey
+    channels:
+    - CentCom
+    defaultChannel: CentCom
+  - type: Sprite
+    layers:
+    - state: crypt_blue
+    - state: nano_label
+
+- type: entity
+  parent: [ EncryptionKey, BaseCentcommCommandContraband ]
+  id: EncryptionKeyStationMaster
+  name: ключ шифрування майстра станції
+  description: Ключ шифрування боса станції.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Common
+    - Command
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
+    defaultChannel: Command
+  - type: Sprite
+    layers:
+    - state: crypt_gold
+    - state: cap_label
+
+- type: entity
+  parent: [ EncryptionKey, BaseCommandContraband ]
+  id: EncryptionKeyCommand
+  name: ключ шифрування командування
+  description: Ключ шифрування босів екіпажу.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Command
+    defaultChannel: Command
+  - type: Sprite
+    layers:
+    - state: crypt_silver
+    - state: com_label
+  - type: Tag
+    tags:
+    - EncryptionCommand
+
+- type: entity
+  parent: [ EncryptionKey, BaseEngineeringContraband ]
+  id: EncryptionKeyEngineering
+  name: ключ шифрування інженерів
+  description: Ключ шифрування інженерного відділу.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Engineering
+    defaultChannel: Engineering
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: eng_label
+  - type: Tag
+    tags:
+    - EncryptionEngineering
+
+- type: entity
+  parent: [ EncryptionKey, BaseMedicalContraband ]
+  id: EncryptionKeyMedical
+  name: ключ шифрування медичного
+  description: Ключ шифрування рятівників ваших життів.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Medical
+    defaultChannel: Medical
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: med_label
+  - type: Tag
+    tags:
+    - EncryptionMedical
+
+- type: entity
+  parent: [ EncryptionKey, BaseMedicalScienceContraband ]
+  id: EncryptionKeyMedicalScience
+  name: ключ шифрування медично-науковий
+  description: Ключ шифрування, яким користується той, хто ще не вирішив, на чий бік стати.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Medical
+    - Science
+    defaultChannel: Science
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: medsci_label
+
+- type: entity
+  parent: [ EncryptionKey, BaseScienceContraband ]
+  id: EncryptionKeyScience
+  name: ключ шифрування наукового
+  description: Ключ шифрування, яким користуються вчені. Можливо, він плазмостійкий?
+  components:
+  - type: EncryptionKey
+    channels:
+    - Science
+    defaultChannel: Science
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: sci_label
+  - type: Tag
+    tags:
+    - EncryptionScience
+
+- type: entity
+  parent: [ EncryptionKey, BaseScienceContraband ]
+  id: EncryptionKeyRobo
+  name: ключ шифрування робототехніка
+  description: Ключ шифрування, який використовують робототехніки. Можливо, на ньому є LAH-6000?
+  components:
+  - type: EncryptionKey
+    channels:
+    - Science
+    defaultChannel: Science
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: robotics_label
+
+- type: entity
+  parent: [ EncryptionKey, BaseSecurityLawyerContraband ]
+  id: EncryptionKeySecurity
+  name: ключ шифрування служби безпеки
+  description: Ключ шифрування клубу побити клуню.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Security
+    defaultChannel: Security
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: sec_label
+  - type: Tag
+    tags:
+    - EncryptionSecurity
+
+- type: entity
+  parent: [ EncryptionKey, BaseCivilianContraband ]
+  id: EncryptionKeyService
+  name: ключ шифрування сервісу
+  description: Ключ шифрування, що використовується обслуговуючим персоналом, завдання якого полягає в тому, щоб станція була ситою, щасливою та чистою.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Service
+    defaultChannel: Service
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: service_label
+  - type: Tag
+    tags:
+    - EncryptionService
+
+- type: entity
+  parent: [ EncryptionKey, BaseSyndicateContraband ]
+  id: EncryptionKeySyndie
+  name: криваво-червоний ключ шифрування
+  description: Ключ шифрування, яким користується... зачекайте... Хто власник цього чіпа??
+  components:
+  - type: EncryptionKey
+    channels:
+    - Syndicate
+    defaultChannel: Syndicate
+  - type: Sprite
+    layers:
+    - state: crypt_red
+    - state: synd_label
+  - type: StaticPrice
+    price: 500 # 1000 for 2
+
+- type: entity
+  parent: [ EncryptionKey, BaseSiliconScienceContraband ]
+  id: EncryptionKeyBinary
+  name: бінарний ключ шифрування
+  description: Ключ шифрування що використовується силіконами.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Binary
+    defaultChannel: Binary
+  - type: Sprite
+    layers:
+    - state: crypt_silver
+    - state: ai_label
+
+- type: entity
+  parent: [ EncryptionKey, BaseSyndicateContraband ]
+  id: EncryptionKeyBinarySyndicate
+  name: ключ шифрування перекладу бінарного коду
+  description: Ключ шифрування синдикату, який перекладає двійкові сигнали, що використовуються силіконами.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Binary
+    defaultChannel: Binary
+  - type: Sprite
+    layers:
+    - state: crypt_red
+    - state: ai_label
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyFreelance
+  name: ключ шифрування позаштатників
+  description: Ключ шифрування позаштатників, які можуть мати, а можуть і не мати приналежності. Схоже, він зношений.
+  components:
+    - type: EncryptionKey
+      channels:
+        - Freelance
+      defaultChannel: Freelance
+    - type: Sprite
+      layers:
+        - state: crypt_rusted
+        - state: pirate_label

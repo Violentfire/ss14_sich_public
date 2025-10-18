@@ -1,0 +1,7 @@
+[submodule "RobustToolbox"]
+	path = RobustToolbox
+	url = https://github.com/space-wizards/RobustToolbox.git
+	branch = master
+[submodule "Resources/Maps/sich_ss14_maps"]
+	path = Resources/Maps/sich_ss14_maps
+	url = https://github.com/qrwas/sich_ss14_maps

@@ -1,0 +1,85 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatFrog
+  name: жабопелюх
+  description: Капелюх, прямо як жаба, але капелюх!
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/Head/Hats/frog.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Head/Hats/frog.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatShroom
+  name: грибопелюх
+  description: Капелюх, прямо як гриб, але капелюх!
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/Head/Hats/shroom.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Head/Hats/shroom.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWitchSich
+  name: капелюх відьми
+  description: Розкішний капелюх! Можливо, він належав дуже впливовій відьмі колись..
+  components:
+  - type: WizardClothes #Yes this will count
+  - type: Sprite
+    sprite: _Sich/Clothing/Head/Hats/witchhatSich.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Head/Hats/witchhatSich.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.089"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - WhitelistChameleon
+    - ClothMade
+    - Recyclable
+  #- type: HideLayerClothing
+    #slots:
+    #- Hair
+    
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCrab
+  name: крабопелюх
+  description: Капелюх, прямо як краб, але капелюх!
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/Head/Hats/crab.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Head/Hats/crab.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+

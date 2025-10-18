@@ -1,0 +1,211 @@
+- type: entity
+  name: ліжко
+  id: Bed
+  parent: BaseStructure
+  description: На ньому можна лежати, спати або прив'язатися. Відпочинок тут забезпечує надзвичайно повільне загоєння.
+  components:
+  - type: HealOnBuckle
+    damage:
+      types:
+        Poison: -0.1
+        Blunt: -0.1
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.05"
+        density: 190
+        mask:
+        - TableMask
+  - type: Sprite
+    sprite: Structures/Furniture/furniture.rsi
+    state: bed
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: -90
+  # Construction has to be before PlaceableSurface or you'll place things onto the entity instead of deconstructing it.
+  - type: Construction
+    graph: bed
+    node: bed
+  # So that you can put bedsheets on beds again. Would be cool to have a tag
+  # for this so that only bedsheets can be placed.
+  - type: PlaceableSurface
+    placeCentered: true
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 2
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Anchorable
+  - type: Pullable
+
+
+- type: entity
+  parent: Bed
+  id: MedicalBed
+  name: лікарняне ліжко
+  description: Лікарняне ліжко для одужання пацієнтів. Відпочинок тут забезпечує досить повільне одужання.
+  components:
+  - type: Sprite
+    state: bed-MED
+  - type: HealOnBuckle
+    damage:
+      types:
+        Poison: -0.2
+        Cold: -0.4
+        Blunt: -0.2
+  - type: Construction
+    graph: bed
+    node: medicalbed
+  - type: GuideHelp
+    guides:
+    - MedicalDoctor
+
+- type: entity
+  parent: Bed
+  id: DogBed
+  name: собаче ліжко
+  description: Зручний на вигляд лежак для собак. Ви навіть можете прив'язати свого улюбленця на випадок, якщо гравітація вимкнеться.
+  components:
+  - type: Sprite
+    state: dogbed
+  - type: Strap
+    position: Stand
+    rotation: 0
+  - type: Construction
+    graph: bed
+    node: dogbed
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 1
+            max: 5
+
+- type: entity
+  parent: Bed
+  id: Mattress
+  name: матрац
+  description: Гадаю, краще спати на ньому, ніж на підлозі.
+  components:
+  - type: Sprite
+    state: mattress
+  - type: Damageable
+    damageModifierSet: Inflatable
+
+- type: entity
+  parent: Bed
+  id: WebBed
+  name: ліжко з павутини
+  description: Ти обплутався павутинням.
+  components:
+  - type: Damageable
+    damageModifierSet: Web
+  - type: Sprite
+    sprite: Structures/Web/bed.rsi
+    state: icon
+  - type: Destructible
+    thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWebSilk:
+            min: 1
+            max: 1
+  - type: Construction
+    graph: WebStructures
+    node: bed
+
+- type: entity
+  parent: Bed
+  id: PsychBed
+  name: ліжко психолога
+  description: М'яке ліжко для психологічної допомоги пацієнтам.
+  components:
+  - type: Sprite
+    state: psychbed
+  - type: HealOnBuckle
+    damage:
+      types:
+        Cold: -0.5
+  - type: Destructible
+    thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 2
+            max: 2

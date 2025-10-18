@@ -1,0 +1,35 @@
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesBlindfold
+  name: пов'язка на очі
+  description: Сліпий веде сліпого.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Misc/blindfold.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Misc/blindfold.rsi
+    equipDelay: 3
+    unequipDelay: 3
+  - type: Blindfold
+  - type: Construction
+    graph: Blindfold
+    node: blindfold
+  - type: FlashImmunity
+
+- type: entity
+  parent: ClothingHeadEyeBaseFlippable
+  id: ClothingEyesEyepatch
+  name: пов'язка на око
+  description: Ярр.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Misc/eyepatch.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Misc/eyepatch.rsi
+  - type: EyeProtection
+    protectionTime: 5
+
+- type: entity
+  parent: [ClothingEyesEyepatch, ClothingHeadEyeBaseFlipped]
+  id: ClothingEyesEyepatchFlipped
+  suffix: перевернуто

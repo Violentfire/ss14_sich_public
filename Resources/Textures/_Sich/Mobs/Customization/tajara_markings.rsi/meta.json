@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "https://github.com/Skyrat-SS13/Skyrat-tg/tree/40e3cdbb15b8bc0d5ef2fb46133adf805bda5297",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "belly_mark",
+      "directions": 4
+    },
+	{
+      "name": "belly_mark_2",
+      "directions": 4
+    },
+	{
+      "name": "chest_mark",
+      "directions": 4
+    },
+	{
+      "name": "l_arm_fur",
+      "directions": 4
+    },
+	{
+      "name": "l_hand_fur",
+      "directions": 4
+    },
+	{
+      "name": "r_arm_fur",
+      "directions": 4
+    },
+	{
+      "name": "r_hand_fur",
+      "directions": 4
+    },
+	{
+      "name": "l_leg_fur",
+      "directions": 4
+    },
+	{
+      "name": "l_foot_fur",
+      "directions": 4
+    },
+	{
+      "name": "r_leg_fur",
+      "directions": 4
+    },
+	{
+      "name": "r_foot_fur",
+      "directions": 4
+    },
+	{
+      "name": "snout_shade",
+      "directions": 4
+    },
+	{
+      "name": "chest_half",
+      "directions": 4
+    },
+	{
+      "name": "l_arm_half",
+      "directions": 4
+    },
+	{
+      "name": "l_hand_half",
+      "directions": 4
+    },
+	{
+      "name": "r_arm_half",
+      "directions": 4
+    },
+	{
+      "name": "r_hand_half",
+      "directions": 4
+    },
+	{
+      "name": "l_leg_half",
+      "directions": 4
+    },
+	{
+      "name": "l_foot_half",
+      "directions": 4
+    },
+	{
+      "name": "r_leg_half",
+      "directions": 4
+    },
+	{
+      "name": "r_foot_half",
+      "directions": 4
+    },
+	{
+      "name": "ears_cat_outer",
+      "directions": 4
+    },
+    {
+      "name": "tail_cat",
+      "directions": 4
+    }
+  ]
+}

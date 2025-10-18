@@ -1,0 +1,14 @@
+advertisement-goodcleanfun-1 = Втеча у світ фентезі!
+advertisement-goodcleanfun-2 = Підживлюйте свою азартну залежність!
+advertisement-goodcleanfun-3 = Руйнуйте свою дружбу!
+advertisement-goodcleanfun-4 = Сьогодні твій день!
+advertisement-goodcleanfun-5 = Краще за плойку!
+advertisement-goodcleanfun-6 = Параноїдальні комп'ютери!
+advertisement-goodcleanfun-7 = Зовсім не сатанинське!
+advertisement-goodcleanfun-8 = Веселі часи назавжди!
+advertisement-goodcleanfun-9 = Крипти і Карпи!
+advertisement-goodcleanfun-10 = Грай з друзями!
+thankyou-goodcleanfun-1 = Весело провести час!
+thankyou-goodcleanfun-2 = Тепер ви граєтесь із силою!
+thankyou-goodcleanfun-3 = Почніть гру!
+thankyou-goodcleanfun-4 = Почніть створювати аркуші свого персонажа!

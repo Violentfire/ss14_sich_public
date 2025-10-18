@@ -1,0 +1,154 @@
+﻿- type: entity
+  parent: WeaponWandBase
+  id: WeaponWandPolymorphBase
+  abstract: true
+  components:
+  - type: Sprite
+    layers:
+    - state: poly
+    - state: poly-effect
+      map: ["effect"]
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/Magic/staff_animation.ogg
+  - type: BasicEntityAmmoProvider
+    proto: ProjectilePolyboltCarp
+    capacity: 5
+
+- type: entity
+  name: магічний посох трансформації в коропа
+  parent: WeaponWandPolymorphBase
+  id: WeaponWandPolymorphCarp
+  description: Для тих випадків, коли філе коропа потрібно швидко, а клоун виглядає досить соковитим..
+  components:
+  - type: BasicEntityAmmoProvider
+    proto: ProjectilePolyboltCarp
+    capacity: 5
+    count: 5
+
+- type: entity
+  name: магічний посох трансформації в макаку
+  parent: WeaponWandPolymorphBase
+  id: WeaponWandPolymorphMonkey
+  description: Для тих випадків, коли тобі треба друг макака.
+  components:
+  - type: BasicEntityAmmoProvider
+    proto: ProjectilePolyboltMonkey
+    capacity: 5
+    count: 5
+
+- type: entity
+  name: магічний посох вогняного шару
+  parent: WeaponWandBase
+  id: WeaponWandFireball
+  description: Великі шари вогню!
+  components:
+  - type: Sprite
+    layers:
+    - state: fire
+    - state: fire-effect
+      map: ["effect"]
+  - type: Gun
+    fireRate: 0.25
+    soundGunshot:
+      path: /Audio/Magic/fireball.ogg
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileFireball
+    capacity: 5
+    count: 5
+
+- type: entity
+  name: паличка шафки
+  description: Тримайте ботаніків на відстані!
+  parent: WeaponWandBase
+  id: WeaponWandLocker
+  components:
+  - type: Sprite
+    layers:
+    - state: locker
+      map: ["base"]
+    - state: locker-effect
+      map: ["effect"]
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/Magic/staff_animation.ogg
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileLocker
+    capacity: 5
+    count: 5
+  - type: Item
+    size: Normal
+    inhandVisuals:
+      left:
+      - state: locker-inhand-left
+      right:
+      - state: locker-inhand-right
+  - type: GenericVisualizer
+    visuals:
+      enum.AmmoVisuals.HasAmmo:
+        effect:
+          True: { visible: False }
+          False: { visible: True }
+        base:
+          True: { visible: True }
+          False: { visible: False }
+
+- type: entity
+  name:  магічний посох моментальної смерті
+  parent: WeaponWandBase
+  id: WeaponWandDeath
+  description: Лише найкращі та найрозумніші з дослідницької команди Space Wizards працювали разом, щоб створити цю красу. Бамс й ворога нема!
+  components:
+  - type: Sprite
+    layers:
+    - state: death
+    - state: death-effect
+      map: ["effect"]
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg # PUNCH
+  - type: BasicEntityAmmoProvider
+    proto: BulletInstakillMagic
+    capacity: 3
+    count: 3
+
+- type: entity
+  name: магічний посох входу
+  parent: WeaponWandBase
+  id: WeaponWandPolymorphDoor
+  description: Для випадків, коли тобі треба кудись увійти або вийти.
+  components:
+  - type: Sprite
+    layers:
+    - state: door
+    - state: door-effect
+      map: ["effect"]
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/Magic/staff_door.ogg
+  - type: BasicEntityAmmoProvider
+    proto: ProjectilePolyboltDoor
+    capacity: 10
+    count: 10
+
+- type: entity
+  name: магічний посох клунізації
+  parent: WeaponWandPolymorphBase
+  id: WeaponWandCluwne
+  description: Погірште їхнє становище, перетворивши їх на клуню! Садист бляха, куди вже гірше?!
+  components:
+  - type: BasicEntityAmmoProvider
+    proto: ProjectilePolyboltCluwne
+    capacity: 3
+    count: 3
+
+- type: entity
+  parent: WeaponWandPolymorphBase
+  id: WeaponWandPolymorphBread
+  name: магічний посох хлібізації
+  description: Перетвори всіх своїх друзів на хліб! Вашого голову! Ваших ворогів! Власну собаку! Зробіть усе (фурі) хлібом!!!
+  components:
+  - type: BasicEntityAmmoProvider
+    proto: ProjectilePolyboltBread
+    capacity: 10
+    count: 10

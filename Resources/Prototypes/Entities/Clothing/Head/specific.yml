@@ -1,0 +1,47 @@
+﻿- type: entity
+  parent: [ClothingHeadBase, BaseChameleon]
+  id: ClothingHeadHatChameleon
+  name: берет
+  description: Берет, улюблений головний убір артистів та мімів.
+  suffix: Хамелеон
+  components:
+    - type: Tag
+      tags: [] # ignore "WhitelistChameleon" tag
+    - type: Sprite
+      sprite: Clothing/Head/Hats/beret.rsi
+    - type: Clothing
+      sprite: Clothing/Head/Hats/beret.rsi
+    - type: ChameleonClothing
+      slot: [HEAD]
+      default: ClothingHeadHatBeret
+
+- type: entity
+  parent: ClothingHeadHatFedoraBrown
+  id: ClothingHeadHatDetGadget
+  name: руш-руш капелюх
+  description: Інноваційний капелюх із вбудованим набором інструментів. Автоматично зберігає та витягує елементи одразу після введення фрази!
+  components:
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
+  - type: TriggerOnVoice
+    keyPhrase: "go go gadget"
+    listenRange: 0
+  - type: ActiveListener
+    range: 0
+  - type: StorageVoiceControl
+    allowedSlots:
+    - HEAD
+  - type: Storage
+    showVerb: false
+    grid:
+    - 0,0,3,2
+    maxItemSize: Small
+    blacklist:
+      tags:
+      - HighRiskItem # no hiding objectives or trolling nukies
+      - FakeNukeDisk # no disk checking
+      - QuantumSpinInverter # avoid the morbillionth QSI bug
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: [ ]

@@ -1,0 +1,102 @@
+- type: entity
+  name: аптечка першої допомоги
+  description: Це аптечка для невідкладної допомоги для тих, хто серйозно поранився.
+  parent: BaseStorageItem
+  id: Medkit
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: firstaid
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,3,1
+  - type: Item
+    size: Large
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    heldPrefix: firstaid
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 150
+  - type: Tag
+    tags:
+    - Medkit
+
+- type: entity
+  name: аптечка від опіків
+  description: "Спеціальний набір для допомоги при хімічних опіках."
+  parent: Medkit
+  id: MedkitBurn
+  components:
+  - type: Sprite
+    state: burnkit
+  - type: Item
+    heldPrefix: burnkit
+
+- type: entity
+  name: аптечка проти отруєння 
+  description: "Використовує компоненти що знешкоджують токсини в крові."
+  parent: Medkit
+  id: MedkitToxin
+  components:
+  - type: Sprite
+    state: toxinkit
+  - type: Item
+    heldPrefix: toxinkit
+
+- type: entity
+  name: аптечка проти нехватки кисню
+  description: "Коробка, повна кисневих смаколиків."
+  parent: Medkit
+  id: MedkitO2
+  components:
+  - type: Sprite
+    state: o2kit
+  - type: Item
+    heldPrefix: o2kit
+
+- type: entity
+  name: аптечки проти тупих травм
+  description: "Набір першої допомоги при пораненнях тупими предметами."
+  parent: Medkit
+  id: MedkitBrute
+  components:
+  - type: Sprite
+    state: brutekit
+  - type: Item
+    heldPrefix: brutekit
+
+- type: entity
+  name: просунута аптечка
+  description: "Удосконалений набір першої допомоги для лікування запущених ран."
+  parent: Medkit
+  id: MedkitAdvanced
+  components:
+  - type: Sprite
+    state: advkit
+  - type: Item
+    heldPrefix: advkit
+
+- type: entity
+  name: протирадіаційна аптечка
+  description: Вам би це не знадобилося, не забули би ви пляшку горілки "Козаки" з собою.
+  parent: Medkit
+  id: MedkitRadiation
+  components:
+  - type: Sprite
+    state: radkit
+  - type: Item
+    heldPrefix: radkit
+
+- type: entity
+  name: бойова аптечка
+  description: "Від великих поранень нанесених великими стволами."
+  parent: Medkit
+  id: MedkitCombat
+  components:
+  - type: Sprite
+    state: blackkit
+  - type: Item
+    heldPrefix: blackkit
+    size: Normal
+

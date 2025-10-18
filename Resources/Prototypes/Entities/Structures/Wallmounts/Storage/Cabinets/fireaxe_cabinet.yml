@@ -1,0 +1,70 @@
+- type: entity
+  parent: BaseWallmountCabinetGlass
+  id: FireAxeCabinet
+  name: шафа для пожежної сокири
+  description: Тут є невелика етикетка з написом «Тільки для екстреного використання», а також  інформація про безпечне використання сокири. Нібито.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200 #20ish crowbar hits
+      behaviors:
+      - !type:EmptyAllContainersBehaviour
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+  - type: Sprite
+    sprite: Structures/Wallmounts/fireaxe_cabinet.rsi
+    layers:
+    - state: cabinet
+    - state: fireaxe
+      map: ["enum.ItemCabinetVisuals.Layer"]
+      visible: true
+    - state: glass
+      map: ["enum.OpenableVisuals.Layer"]
+  - type: ItemSlots
+    slots:
+      ItemCabinet:
+        ejectOnInteract: true
+        whitelist:
+          tags:
+          - FireAxe
+  - type: Lock
+  - type: AccessReader
+    access: [["Atmospherics"], ["Command"]]
+
+- type: entity
+  parent: FireAxeCabinet
+  id: FireAxeCabinetOpen
+  suffix: Відчинений
+  components:
+  - type: Openable
+    opened: true
+  - type: Lock
+    locked: false
+
+- type: entity
+  parent: FireAxeCabinet
+  id: FireAxeCabinetFilled
+  suffix: Заповнений
+  components:
+  - type: ContainerFill
+    containers:
+      ItemCabinet:
+      - FireAxe
+
+- type: entity
+  parent: [FireAxeCabinetFilled, FireAxeCabinetOpen]
+  id: FireAxeCabinetFilledOpen
+  suffix: Заповнений, Відчинений

@@ -1,0 +1,14 @@
+- type: entity
+  parent: BaseItem
+  id: BrbSign
+  name: знак "на перекурі"
+  description: Добрий день. Дайте пачку дзиґарів і хмільне міцне літрове.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/brbsign.rsi
+    state: icon
+  - type: Clothing
+    sprite: Objects/Misc/brbsign.rsi
+    quickEquip: false
+    slots:
+    - Neck

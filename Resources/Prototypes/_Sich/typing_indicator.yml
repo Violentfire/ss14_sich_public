@@ -1,0 +1,6 @@
+- type: typingIndicator
+  id: avali
+  spritePath: /Textures/_Sich/Effects/speech.rsi
+  typingState: avali0
+  idleState: idle
+  offset: -0.12, 0.1

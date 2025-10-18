@@ -1,0 +1,276 @@
+# Does not inherit from simplemob
+- type: entity
+  abstract: true
+  name: ЗахисникБазовий
+  id: MobGuardianBase
+  description: захисник
+  save: false
+  components:
+    - type: LagCompensation
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: ghost-role-information-guardian-name
+      description: ghost-role-information-guardian-description
+      rules: ghost-role-information-familiar-rules
+      mindRoles:
+      - MindRoleGhostRoleFamiliar
+      raffle:
+        settings: default
+    - type: GhostTakeoverAvailable
+    - type: Input
+      context: "human"
+    - type: MobMover
+    - type: InputMover
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 4
+      baseSprintSpeed: 5.5
+    - type: DamageOnHighSpeedImpact
+      damage:
+        types:
+          Blunt: 5
+      soundHit:
+        collection: MetalThud
+    - type: RandomSprite
+      available:
+        - enum.DamageStateVisualLayers.Base:
+            magic_base: ""
+          enum.DamageStateVisualLayers.BaseUnshaded:
+            magic_flare: Sixteen
+        - enum.DamageStateVisualLayers.Base:
+            miner_base: ""
+          enum.DamageStateVisualLayers.BaseUnshaded:
+            miner_flare: Sixteen
+        - enum.DamageStateVisualLayers.Base:
+            tech_base: ""
+          enum.DamageStateVisualLayers.BaseUnshaded:
+            tech_flare: Sixteen
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: Mobs/Aliens/Guardians/guardians.rsi
+      layers:
+        - state: tech_base
+          map: [ "enum.DamageStateVisualLayers.Base" ]
+        - state: tech_flare
+          map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+          color: "#40a7d7"
+          shader: unshaded
+      noRot: true
+    - type: Clickable
+    - type: InteractionOutline
+    - type: Physics
+      bodyType: KinematicController
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.35
+          density: 25
+          mask:
+            - FlyingMobMask
+          layer:
+            - Opaque
+    - type: Damageable
+      damageContainer: Biological
+    - type: MobState
+      allowedStates:
+        - Alive
+    - type: CombatMode
+    - type: Internals
+    - type: Examiner
+    - type: Speech
+      speechVerb: Robotic
+    - type: TypingIndicator
+      proto: guardian
+    - type: Pullable
+    - type: MeleeWeapon
+      hidden: false
+      altDisarm: false
+      animation: WeaponArcFist
+      attackRate: 1.8
+      autoAttack: true
+      soundHit:
+        collection: Punch
+      damage:
+        types:
+          Blunt: 20
+          Structural: 20
+    - type: MeleeSpeech
+    - type: UserInterface
+      interfaces:
+        enum.MeleeSpeechUiKey.Key:
+          type: MeleeSpeechBoundUserInterface
+    - type: Actions
+    - type: Guardian
+    - type: InteractionPopup
+      interactSuccessString: petting-success-holo
+      interactFailureString: petting-failure-holo
+      successChance: 0.7
+    - type: Tag
+      tags:
+        - CannotSuicide
+
+# From the uplink injector
+- type: entity
+  name: Голопаразит
+  id: MobHoloparasiteGuardian
+  parent: MobGuardianBase
+  description: Заворожуючий вихор жорстких світлових візерунків виплітає дивовижний, але напрочуд знайомий образ. Він стоїть гордо, підлаштовуючись під життя свого власника, щоб підтримувати себе.
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: ghost-role-information-holoparasite-name
+      description: ghost-role-information-holoparasite-description
+      rules: ghost-role-information-familiar-rules
+      raffle:
+        settings: default
+    - type: GhostTakeoverAvailable
+    - type: NameIdentifier
+      group: Holoparasite
+    - type: TypingIndicator
+      proto: holo
+    - type: Sprite
+      layers:
+        - state: tech_base
+          map: [ "enum.DamageStateVisualLayers.Base" ]
+        - state: tech_flare
+          map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+          color: "#40a7d7"
+          shader: unshaded
+    - type: HTN
+      rootTask:
+        task: SimpleHumanoidHostileCompound
+
+# From Wizard deck of cards
+- type: entity
+  name: Іфрит
+  parent: MobGuardianBase
+  id: MobIfritGuardian
+  description: Зіпсований джинн, вирваний з фітри, щоб служити дріб'язковим потребам чарівника. Він стоїть злий, підлаштовуючись під життя свого господаря, щоб підтримувати себе.
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: ghost-role-information-ifrit-name
+      description: ghost-role-information-ifrit-description
+      rules: ghost-role-information-familiar-rules
+      raffle:
+        settings: default
+    - type: GhostTakeoverAvailable
+    - type: RandomSprite
+      available:
+        - enum.DamageStateVisualLayers.BaseUnshaded:
+            magic_flare: Sixteen
+    - type: Sprite
+      layers:
+        - state: magic_base
+          map: [ "enum.DamageStateVisualLayers.Base" ]
+        - state: magic_flare
+          map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+          color: "#40a7d7"
+          shader: unshaded
+
+- type: entity
+  name: ГолоКлоун
+  id: MobHoloClownGuardian
+  parent: [MobGuardianBase, InventoryBase]
+  description: Заворожуючий вихор жорстких світлових візерунків плете блакитний клоун сумнівного походження.
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: ghost-role-information-holoclown-name
+      description: ghost-role-information-holoclown-description
+      rules: ghost-role-information-familiar-rules
+      raffle:
+        settings: default
+    - type: GhostTakeoverAvailable
+    - type: NameIdentifier
+      group: Holoparasite
+    - type: FootstepModifier
+      footstepSoundCollection:
+        collection: FootstepClown
+    - type: Speech
+      speechVerb: Cluwne
+    - type: TypingIndicator
+      proto: holo
+    - type: RandomSprite
+      available:
+        - enum.DamageStateVisualLayers.Base:
+            holoclown_base: ""
+          enum.DamageStateVisualLayers.BaseUnshaded:
+            holoclown_flare: Sixteen
+        - enum.DamageStateVisualLayers.Base:
+            holoclown_base: ""
+          enum.DamageStateVisualLayers.BaseUnshaded:
+            holoclown_flare: Sixteen
+        - enum.DamageStateVisualLayers.Base:
+            holoclown_base: ""
+          enum.DamageStateVisualLayers.BaseUnshaded:
+            holoclown_flare: Sixteen
+    - type: Sprite
+      layers:
+        - state: holoclown_base
+          map: [ "enum.DamageStateVisualLayers.Base" ]
+        - state: holoclown_flare
+          map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+          color: "#8adaff"
+          shader: unshaded
+    - type: Body
+      prototype: Primate
+    - type: Tag
+      tags:
+        - CannotSuicide
+        - FootstepSound
+    - type: Inventory
+      templateId: holoclown
+    - type: Hands
+    - type: ComplexInteraction
+    - type: Clumsy
+      gunShootFailDamage:
+        types:
+          Blunt: 5
+          Piercing: 4
+        groups:
+          Burn: 3
+      catchingFailDamage:
+        types:
+          Blunt: 1
+    - type: MeleeWeapon
+      angle: 30
+      animation: WeaponArcFist
+      attackRate: 1.8
+      soundHit:
+        collection: BikeHorn
+      damage:
+        types:
+          Blunt: 5
+    - type: Loadout
+      prototypes: [ HoloClownGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - NamesClown
+    - type: NpcFactionMember
+      factions:
+        - Syndicate
+    - type: HTN
+      rootTask:
+        task: SimpleHumanoidHostileCompound
+
+- type: entity
+  parent: BaseMentalAction
+  id: ActionToggleGuardian
+  name: Викликати «Захисника»
+  description: Або проявляє охоронця, або відкликає його назад у своє тіло.
+  components:
+  - type: Action
+    icon: Interface/Actions/manifest.png
+    useDelay: 2
+  - type: InstantAction
+    event: !type:GuardianToggleActionEvent

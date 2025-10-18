@@ -1,0 +1,83 @@
+- type: entity
+  name: бейсбольна бита
+  parent: [BaseItem, BaseMinorContraband]
+  id: BaseBallBat
+  description: Міцна бейсбольна бита.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/baseball_bat.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 10
+        Structural: 5
+    soundHit:
+      collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 5
+        Structural: 10
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,0,3
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/baseball_bat.rsi
+  - type: Tool
+    qualities:
+    - Rolling
+    speedModifier: 0.75 # a bit unwieldly but does the job
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+  - type: Construction
+    graph: WoodenBat
+    node: bat
+  - type: UseDelay
+    delay: 1
+  - type: PhysicalComposition
+    materialComposition:
+      Wood: 250
+  - type: Tag
+    tags:
+    - BaseballBat
+
+- type: entity
+  name: незакінчена бейсбольна бита
+  parent: BaseItem
+  id: IncompleteBaseBallBat
+  description: Кілька дерев’яних дошок склеєні разом.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/incomplete_bat.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,0,3
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/incomplete_bat.rsi
+    sprite: Objects/Weapons/Melee/incomplete_bat.rsi
+  - type: Construction
+    graph: WoodenBat
+    node: incompleteBat
+
+- type: entity
+  name: палиця відкидання
+  parent: BaseBallBat
+  id: WeaponMeleeKnockbackStick
+  description: А потім у нього почалася кровотеча.
+  categories: [ DoNotMap ]
+  components:
+  - type: MeleeThrowOnHit
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 1

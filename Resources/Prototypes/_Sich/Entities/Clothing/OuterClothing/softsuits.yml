@@ -1,0 +1,16 @@
+#Contractor EVA
+- type: entity
+  parent: ClothingOuterEVASuitBase
+  id: ClothingOuterEVAsuitContractor
+  name: ЕВА костюм контрактора
+  description: "Дизайн розроблений таємничою та мутною організацією GoldenEye."
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/OuterClothing/Suits/eva_contractor.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/OuterClothing/Suits/eva_contractor.rsi
+  - type: Tag
+    tags:
+    - SuitEVA
+    - WhitelistChameleon
+

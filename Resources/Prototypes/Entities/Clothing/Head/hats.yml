@@ -1,0 +1,1541 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeaverHat
+  name: циліндр
+  description: "\"Панове?\""
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beaver_hat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beaver_hat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeret
+  name: берет
+  description: Берет, улюблений головний убір артистів.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretFrench
+  name: французький берет
+  description: Це французький берет є другим по популярності беретом серед мімів, одразу після червоного берета. "Vive la France"
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_french.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_french.rsi
+  - type: AddAccentClothing
+    accent: FrenchAccent
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretSecurity
+  name: офіцерський берет
+  description: Стильний варіант берету для силовиків.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_security.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_security.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - PetWearable
+    - CorgiWearable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSecurityTrooper
+  name: кашкет солдата
+  description: Капелюх для солдатів Нанотрасену, що йде в комплекті з футляром, але ви його загубили.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/security_trooper_hat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/security_trooper_hat.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCasa
+  name: каса
+  description: Також відомий як "рисовий капелюх". Має конусоподібну форму.
+  components:
+    - type: Sprite
+      sprite: Clothing/Head/Hats/casa.rsi
+    - type: Clothing
+      sprite: Clothing/Head/Hats/casa.rsi
+    - type: Tag
+      tags:
+      - PetWearable
+      - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretRND
+  name: науковий берет
+  description: Берет для справжніх науковців. 
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_rnd.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_rnd.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretEngineering
+  name: інженерний берет
+  description: Берет із вишитою на ньому емблемою інженерії. Для тих хто ставить стиль вище норм безпеки.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_engineering.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_engineering.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretQM
+  name: берет квартирмейстера
+  description: Берет із вишитою на ньому емблемою карго. Для тих працівників карго, що ставлять стиль вище норм безпеки.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_qm.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_qm.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretHoS
+  name: берет голови охорони
+  description: Чорний берет із вишитою на ньому емблемою командирського звання. Для тих хто ставить стиль вище норм безпеки.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_hos.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_hos.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretWarden
+  name: берет наглядача
+  description: Синій берет із вишитою на ньому емблемою наглядача. Для тих хто ставить стиль вище норм безпеки.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_warden.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_warden.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretSeniorPhysician
+  name: берет старшого лікаря
+  description: Пофарбовані у кольори меду, та хім. Лабораторії. Тільки досвідчені лікарі гідні носити цей берет!
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_physician.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_physician.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretBrigmedic
+  name: берет брігмедика
+  description: Білий берет, виглядає як кремовий пиріг на голові. Призначений для янгола хранителя СБ.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_brigmedic.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_brigmedic.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: [ ClothingHeadBase ]
+  id: ClothingHeadHatBeretMerc
+  name: військовий берет
+  description: Берет оливкового кольору, на емблемі зображено шакала на камені.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_merc.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_merc.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretCommand
+  name: command beret
+  description: A beret with the Nanotrasen logo. It has an aura of authority.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_command.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_command.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBowlerHat
+  name: капелюх казанок
+  description: Стильний капелюх у формі козанку.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/bowler_hat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/bowler_hat.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: [ClothingHeadBase, BaseCommandContraband]
+  id: ClothingHeadHatCaptain
+  name: капітанська кепка
+  description: "Як ж добре бути королем."
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/captain.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/captain.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCardborg
+  name: картонна голова робота
+  description: Голова зроблена з кортону. Має прорізи для очей та рота. 
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/cardborg_h.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/cardborg_h.rsi
+  - type: TypingIndicatorClothing
+    proto: robot
+  - type: IdentityBlocker
+  - type: IngestionBlocker
+
+- type: entity
+  parent: [ ClothingHeadBase, BaseCentcommContraband ]
+  id: ClothingHeadHatCentcom
+  name: фірмова кепка ЦК
+  description: "Як ж добре бути імператором."
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/centcom.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/centcom.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatChef
+  name: капелюх шефа
+  description: "Такі капелюхи використовують шеф-кухарі, щоб волосся не потрапляло у їжу. Але судячи з якості їжи, це не дуже допомагає."
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/chefhat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/chefhat.rsi
+  - type: Storage
+    grid:
+    - 0,0,0,0
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: PilotedClothing
+    pilotWhitelist:
+      tags:
+        - ChefPilot
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatFedoraBrown
+  name: коричнева федора
+  description: Це коричнева федора. Так, з наголосом на О.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/brownfedora.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/brownfedora.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatFedoraGrey
+  name: сіра федора
+  description: Це сіра федора. Так, з наголосом на О.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/greyfedora.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/greyfedora.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatFez
+  name: фес
+  description: Це червоний фес.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/fez.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/fez.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: [ClothingHeadBase, BaseCommandContraband]
+  id: ClothingHeadHatHopcap
+  name: кепка голови персоналу
+  description: Крутий та стильний головний убір голови персоналу.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/hopcap.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/hopcap.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadBase, BaseCommandContraband]
+  id: ClothingHeadHatHoshat
+  name: кепка голови охорони
+  description: Міцна стандартна кепка голови охорони. Щоб показати офіцерам, хто тут головний.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/hoshat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/hoshat.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatOutlawHat
+  name: капелюх лиходія
+  description: Капелюх, який змушує тебе виглядати так, ніби ти носиш з собою пістолет із зарубками, одна з яких під номером один, а ще дев'ятнадцять – після неї.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/outlawhat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/outlawhat.rsi
+  - type: StaticPrice
+    price: 500
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWitch1
+  name: капелюх відьми
+  description: Це капелюх відьми. Його власнику, певно, не сподобаються жарти про багаття.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/witchhat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/witchhat.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatPaper
+  name: паперовий капелюх
+  description: Орігамі не буде для тебе проблемою, якщо ти зміг зробити цей капелюх. Напевно.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/paper.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/paper.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatPirate
+  name: піратська трікорна
+  description: "Йо-хо-хо та пляшка рому!"
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/pirate.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/pirate.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatPlaguedoctor
+  name: капелюх чумного лікаря
+  description: Колись це вдягали чумні лікарі.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/plaguedoctor.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/plaguedoctor.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+    - Recyclable
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      HeadTop : HEAD
+      HeadSide : HEAD
+
+- type: entity
+  parent: ClothingHeadHatWizardBase
+  id: ClothingHeadHatRedwizard
+  name: червоний чаклунський капелюх
+  description: Дивний на вигляд червоний капелюх, що безсумнівно належить справжньому чарівнику.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/redwizard.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/redwizard.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadBase, BaseFoldable]
+  id: ClothingHeadHatSantahat
+  name: шапка Санти
+  description: Святкова шапка Санти Клауса. Тепер з відкидною бородою!
+  components:
+  - type: Clothing
+    sprite: Clothing/Head/Hats/santahat.rsi
+  - type: Appearance
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      HeadTop : HEAD
+      HeadSide : HEAD
+    slots: []
+  - type: Foldable
+    canFoldInsideContainer: true
+  - type: FoldableClothing
+    foldedEquippedPrefix: nobeard
+    foldedHeldPrefix: nobeard
+  - type: Sprite
+    sprite: Clothing/Head/Hats/santahat.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-nobeard
+      map: [ "foldedLayer" ]
+      visible: true
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSombrero
+  name: сомбреро
+  description: "Perfectly for Space Mexico, si?"
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/sombrero.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/sombrero.rsi
+  - type: AddAccentClothing
+    accent: SpanishAccent
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSurgcapBlue
+  name: хірургійна шапочка
+  description: Синя шапочка, яку хірурги носять під час операцій. Вона запобігає тому, щоб їхнє волосся лоскотало ваші внутрішні органи.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/surgcap_blue.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/surgcap_blue.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      HeadTop : HEAD
+      HeadSide : HEAD
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSurgcapGreen
+  name: хірургійна шапочка
+  description: Зелена шапочка, яку хірурги носять під час операцій. Вона запобігає тому, щоб їхнє волосся лоскотало ваші внутрішні органи.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/surgcap_green.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/surgcap_green.rsi
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      HeadTop : HEAD
+      HeadSide : HEAD
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSurgcapPurple
+  name: хірургійна шапочка
+  description: Фіолетова шапочка, яку хірурги носять під час операцій. Вона запобігає тому, щоб їхнє волосся лоскотало ваші внутрішні органи.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/surgcap_purple.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/surgcap_purple.rsi
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      HeadTop : HEAD
+      HeadSide : HEAD
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatTophat
+  name: циліндр
+  description: Стильний чорний циліндр.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/tophat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/tophat.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadBase, BaseFoldable]
+  id: ClothingHeadHatUshanka
+  name: шапка лєгітімнава
+  description: Вкрадена на донецькому базарі.
+  components:
+  - type: Clothing
+    sprite: Clothing/Head/Hats/ushanka.rsi
+  - type: Appearance
+  - type: AddAccentClothing
+    accent: RussianAccent
+  - type: Foldable
+    canFoldInsideContainer: true
+  - type: FoldableClothing
+    foldedEquippedPrefix: up
+    foldedHeldPrefix: up
+  - type: Sprite
+    sprite: Clothing/Head/Hats/ushanka.rsi
+    layers:
+    - state: icon
+      map: [ "unfoldedLayer" ]
+    - state: icon-up
+      map: ["foldedLayer"]
+      visible: false
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCanadaBeanie
+  name: beanie
+  description: Red, white and snug. It radiates a homely feeling, if your home happens to be chilly and filled with coffeehouses.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beanie.rsi
+    layers:
+    - state: body-icon
+    - state: cuffcrown-icon
+      color: "#a60b0b"
+    - state: pompom-icon
+      color: "#a60b0b"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: body-inhand-left
+      - state: cuffcrown-inhand-left
+        color: "#a60b0b"
+      - state: pompom-inhand-left
+        color: "#a60b0b"
+      right:
+      - state: body-inhand-right
+      - state: cuffcrown-inhand-right
+        color: "#a60b0b"
+      - state: pompom-inhand-right
+        color: "#a60b0b"
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beanie.rsi
+    clothingVisuals:
+      head:
+      - state: body-equipped-HELMET
+      - state: cuffcrown-equipped-HELMET
+        color: "#a60b0b"
+      - state: pompom-equipped-HELMET
+        color: "#a60b0b"
+
+- type: entity
+  parent: ClothingHeadHatWizardBase
+  id: ClothingHeadHatVioletwizard
+  name: фіолетовий чаклунський капелюх
+  description: Дивний на вигляд фіолетовий капелюх, що безсумнівно належить справжньому чарівнику.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/violetwizard.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/violetwizard.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWarden
+  name: кепка наглядача
+  description: Поліцейський головний убір. Він підкреслює, що ви Є ЗАКОН.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/warden.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/warden.rsi
+  - type: StealTarget
+    stealGroup: ClothingHeadHatWarden
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWitch
+  name: капелюх відьми
+  description: Це капелюх відьми. Його власнику, певно, не сподобаються жарти про багаття.
+  components:
+  - type: WizardClothes #Yes this will count
+  - type: Sprite
+    sprite: Clothing/Head/Hats/witch.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/witch.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - WhitelistChameleon
+    - ClothMade
+    - Recyclable
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWizardFake
+  name: фальшивий чаклунський капелюх
+  description: На ньому написано "ЧАКЛУН" блискітками. У комплекті йде стильна борода.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/wizard_fake.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/wizard_fake.rsi
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      HeadTop : HEAD
+      HeadSide : HEAD
+
+- type: entity
+  abstract: true
+  parent: [ ClothingHeadBase, BaseMagicalContraband ]
+  id: ClothingHeadHatWizardBase
+  components:
+  - type: WizardClothes
+
+- type: entity
+  parent: ClothingHeadHatWizardBase
+  id: ClothingHeadHatWizard
+  name: синій чаклунський капелюх
+  description: Дивний на вигляд синій капелюх, що безсумнівно належить справжньому чарівнику.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/wizardhat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/wizardhat.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatXmasCrown
+  name: різдвяна корона
+  description: 'З різдвом!'
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/xmascrown.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/xmascrown.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatTrucker
+  name: водійська кепка
+  description: Раніше це була кепка Чака, тепер, вона твоя.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/truckershat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/truckershat.rsi
+
+- type: entity
+  parent: [ ClothingHeadBase, BaseSyndicateContraband ]
+  id: ClothingHeadPyjamaSyndicateBlack
+  name: чорна піжамна шапка Синдикату
+  description: Щоб твоя зрадницька голова не мерзла.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/pyjamasyndicateblack.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/pyjamasyndicateblack.rsi
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      HeadTop : HEAD
+      HeadSide : HEAD
+
+- type: entity
+  parent: [ ClothingHeadBase, BaseSyndicateContraband ]
+  id: ClothingHeadPyjamaSyndicatePink
+  name: рожева піжамна шапка Синдикату
+  description: Щоб твоя зрадницька голова не мерзла.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/pyjamasyndicatepink.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/pyjamasyndicatepink.rsi
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      HeadTop : HEAD
+      HeadSide : HEAD
+
+- type: entity
+  parent: [ ClothingHeadBase, BaseSyndicateContraband ]
+  id: ClothingHeadPyjamaSyndicateRed
+  name: червона піжамна шапка Синдикату
+  description: Щоб твоя зрадницька голова не мерзла.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/pyjamasyndicatered.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/pyjamasyndicatered.rsi
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      HeadTop : HEAD
+      HeadSide : HEAD
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadPaperSack
+  name: паперовий пакет
+  description: Паперовий пакет з вирізами для очей, зробленими на швидку руку. Ідеально підходить для того, щоб сховати своє обличчя або недоліки.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/papersack.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/papersack.rsi
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      HeadTop : HEAD
+      HeadSide : HEAD
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadPaperSackSmile
+  name: посміхаючийся паперовий пакет
+  description: Паперовий пакет з грубими вирізами для очей і малюнком підозрілої усмішки спереду. Зовсім не страшно.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/papersacksmile.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/papersacksmile.rsi
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      HeadTop : HEAD
+      HeadSide : HEAD
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadFishCap
+  name: рибацька кепка
+  description: Жінки тремтять від мене. Риби трепетно ховаються. Чоловіки не наважуються дивитися в мій бік. Коли я йду, навіть звірі мовчать. Я самотній на цій безлюдній Землі.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/fishcap.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/fishcap.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadWehcellentCap
+  name: wehcellent cap
+  description: "\"It was a net hat! Tiders wear them all the time! It's got airholes in the back to keep a cross-breeze going and everything!\""
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/wehcellentcap.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/wehcellentcap.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadNurseHat
+  name: шапка медсестри
+  description: Якимось чином я відчуваю, що не повинен покидати це місце.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/nursehat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/nursehat.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadRastaHat
+  name: раста шапка
+  description: Зовсім поряд з пляжем, чувак.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/rasta.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/rasta.rsi
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      HeadTop : HEAD
+      HeadSide : HEAD
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadSafari
+  name: сафарі капелюх
+  description: Захищає ваші очі від сонця. Робить з вас мішень для місцевих жителів.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/safarihat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/safarihat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatJester
+  name: капелюх блазня
+  description: Капелюх з дзвіночками, щоб додати трохи веселості костюму.
+  components:
+    - type: Sprite
+      sprite: Clothing/Head/Hats/jester.rsi
+    - type: Clothing
+      sprite: Clothing/Head/Hats/jester.rsi
+
+- type: entity
+  parent: ClothingHeadHatJester
+  id: ClothingHeadHatJesterAlt
+  components:
+    - type: Sprite
+      sprite: Clothing/Head/Hats/jester2.rsi
+    - type: Clothing
+      sprite: Clothing/Head/Hats/jester2.rsi
+    - type: HideLayerClothing
+      layers:
+        Hair: HEAD
+        HeadTop : HEAD
+        HeadSide : HEAD
+
+- type: entity
+  parent: [ClothingHeadBase, BaseCommandContraband]
+  id: ClothingHeadHatBeretCmo
+  name: берет головного лікаря
+  description: Бірюзовий берет з хрестом спереду. Погляд на це заспокоює і дає зрозуміти, що ви невдовзі одужаєте.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_cmo.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_cmo.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatPirateTricord
+  name: піратська трікорна
+  description: 'Йо-хо-хо та пляшка рому!'
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/piratetricord.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/piratetricord.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWatermelon
+  name: шолом з кавуна
+  description: Недбало розрізана половинка кавуна, випотрошена зсередини, яку можна носити як шолом. Він може пом'якшити удар по голові.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/melon.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/melon.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHolyWatermelon
+  name: watermelon halo
+  description: Holy moly.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/holyhatmelon.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/holyhatmelon.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.95
+
+- type: entity
+  parent: [ClothingHeadBase, BaseSyndicateContraband]
+  id: ClothingHeadHatSyndie
+  name: синдикатівська кепка
+  description: Капелюх-сувенір від "Синді Катя", їх виробництво вже припинено.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/syndiecap.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/syndiecap.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSyndieMAA
+  name: кепка спеціаліста по зброї
+  description: Ця кепка виглядає страхітливо. Сумніваюся, що вам сподобається спілкуватися з його власником.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/syndiecap_maa.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/syndiecap_maa.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatTacticalMaidHeadband
+  name: тактична пов'язка покоївки
+  description: "Червона пов'язка - не уявляйте себе Рембо і не беріть в руки кілька автоматів"
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/tacticalmaidheadband.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/tacticalmaidheadband.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHetmanHat
+  name: шапка гетьмана
+  description: З Запорізької Січі з любов’ю.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/hetman_hat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/hetman_hat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatMagician
+  name: циліндр фокусника
+  description: "Що ж всередині?"
+  components:
+  - type: Icon
+    sprite: Clothing/Head/Hats/magician.rsi
+    state: "icon"
+  - type: Sprite
+    state: "icon"
+    sprite: Clothing/Head/Hats/magician.rsi
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.12"
+    sprite: Clothing/Head/Hats/magician.rsi
+  - type: Item
+    size: Small
+    sprite: Clothing/Head/Hats/magician.rsi
+    storedRotation: 0
+  - type: Storage
+    grid:
+    - 0,0,0,0
+  - type: UserInterface
+    interfaces:
+        enum.StorageUiKey.Key:
+          type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCapcap
+  name: кепська кепка кепа
+  description: Грандіозна, стильна кепка кепк... Капека... Пек... Кепак... Головного коротше.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/capcap.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/capcap.rsi
+  - type: Item
+    sprite: Clothing/Head/Hats/capcap.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+    - HamsterWearable
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-inanimate
+    weight: 0.0002 # 5,000 times less likely than 1 regular animal
+  - type: BlockMovement
+
+- type: entity
+  parent: [ ClothingHeadBase, BaseCentcommContraband ]
+  id: ClothingHeadHatCentcomcap
+  name: кепка центрального командування
+  description: Екстравагантна, модна кепка важливих персон центрального командування.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/comcap.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/comcap.rsi
+  - type: Item
+    sprite: Clothing/Head/Hats/comcap.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatGladiator
+  name: шолом гладіатора
+  description: Захищає голову від різьких поривів вітру та іграшкових списів.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/gladiator.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/gladiator.rsi
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      HeadTop : HEAD
+      HeadSide : HEAD
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatPartyRed
+  name: червоний капелюх для вечірки
+  description: Давайте розважатись!
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/party_red.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/party_red.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - WhitelistChameleon
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadHatPartyRed
+  id: ClothingHeadHatPartyYellow
+  name: жовтий капелюх для вечірки
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/party_yellow.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/party_yellow.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - WhitelistChameleon
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadHatPartyRed
+  id: ClothingHeadHatPartyGreen
+  name: зелений капелюх для вечірки
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/party_green.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/party_green.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - WhitelistChameleon
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadHatPartyRed
+  id: ClothingHeadHatPartyBlue
+  name: синій капелюх для вечірки
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/party_blue.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/party_blue.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - WhitelistChameleon
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadHatPartyRed
+  id: ClothingHeadHatPartyWaterCup
+  name: капелюх для вечірки з одноразового стаканчику
+  description: На перший погляд виглядає досить зручним, але це не так.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/party_water_cup.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/party_water_cup.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - WhitelistChameleon
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatGreyFlatcap
+  name: сірий картуз
+  description: Модно як для робочого класу, так і для старого Дженкінса.
+  components:
+  - type: Tag
+    tags:
+    - BrimFlatcapGrey
+  - type: Sprite
+    sprite: Clothing/Head/Hats/greyflatcap.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/greyflatcap.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBrownFlatcap
+  name: коричневий картуз
+  description: "Дурний клоун! Ви змусили мене виглядати погано!"
+  components:
+  - type: Tag
+    tags:
+    - BrimFlatcapBrown
+  - type: Sprite
+    sprite: Clothing/Head/Hats/brownflatcap.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/brownflatcap.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCowboyBrown
+  name: коричневий капелюх ковбоя
+  description: 'На цій станції замало місця для нас обох.'
+  components:
+    - type: Sprite
+      sprite: Clothing/Head/Hats/cowboyhatbrown.rsi
+    - type: Clothing
+      sprite: Clothing/Head/Hats/cowboyhatbrown.rsi
+    - type: AddAccentClothing
+      accent: ReplacementAccent
+      replacement: cowboy
+    - type: Tag
+      tags:
+      - PetWearable
+      - CorgiWearable
+      - WhitelistChameleon
+      - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadHatCowboyBrown
+  id: ClothingHeadHatCowboyBlack
+  name: чорний капелюх ковбоя
+  components:
+    - type: Sprite
+      sprite: Clothing/Head/Hats/cowboyhatblack.rsi
+    - type: Clothing
+      sprite: Clothing/Head/Hats/cowboyhatblack.rsi
+    - type: Tag
+      tags:
+      - PetWearable
+      - CorgiWearable
+      - WhitelistChameleon
+      - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadHatCowboyBrown
+  id: ClothingHeadHatCowboyGrey
+  name: сірий капелюх ковбоя
+  components:
+    - type: Sprite
+      sprite: Clothing/Head/Hats/cowboyhatgrey.rsi
+    - type: Clothing
+      sprite: Clothing/Head/Hats/cowboyhatgrey.rsi
+    - type: Tag
+      tags:
+      - PetWearable
+      - CorgiWearable
+      - WhitelistChameleon
+      - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadHatCowboyBrown
+  id: ClothingHeadHatCowboyRed
+  name: червоний капелюх ковбоя
+  components:
+    - type: Sprite
+      sprite: Clothing/Head/Hats/cowboyhatred.rsi
+    - type: Clothing
+      sprite: Clothing/Head/Hats/cowboyhatred.rsi
+    - type: Tag
+      tags:
+      - PetWearable
+      - CorgiWearable
+      - WhitelistChameleon
+      - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadHatCowboyBrown
+  id: ClothingHeadHatCowboyWhite
+  name: білий капелюх ковбоя
+  components:
+    - type: Sprite
+      sprite: Clothing/Head/Hats/cowboyhatwhite.rsi
+    - type: Clothing
+      sprite: Clothing/Head/Hats/cowboyhatwhite.rsi
+    - type: Tag
+      tags:
+      - PetWearable
+      - CorgiWearable
+      - WhitelistChameleon
+      - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadHatCowboyBrown
+  id: ClothingHeadHatCowboyBountyHunter
+  name: капелюх мисливця за головами
+  components:
+    - type: Sprite
+      sprite: Clothing/Head/Hats/cowboyhatbountyhunter.rsi
+    - type: Clothing
+      sprite: Clothing/Head/Hats/cowboyhatbountyhunter.rsi
+    - type: Tag
+      tags:
+      - PetWearable
+      - CorgiWearable
+      - WhitelistChameleon
+      - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatStrawHat
+  name: солом'яний капелюх
+  description: Шикарний головний убір для спекотних днів на дачі! Рекомендую тримати подалі від вогню.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/straw_hat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/straw_hat.rsi
+  - type: Construction
+    graph: StrawHat
+    node: strawhat
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - HamsterWearable
+  - type: Flammable
+    fireSpread: true
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    damage:
+      types:
+        Heat: 1
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Appearance
+  - type: FireVisuals
+    sprite: Effects/fire.rsi
+    normalState: fire
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+            Ash:
+              min: 1
+              max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretMedic
+  name: берет лікаря
+  description: Білий берет який спонукає бути чистим.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_medic.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_medic.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSolidHeadband
+  name: solid headband
+  description: "\"You'll feel like you're Invisible while wearing this! (DISCLAIMER: DOES NOT ACTUALLY MAKE THE WEARER INVISIBLE)\""
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/solidheadband.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/solidheadband.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadPropellerHat
+  name: propeller hat
+  description: You're the bestest boy.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/propellerhat.rsi
+    layers:
+    - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: Clothing
+    equippedPrefix: off
+    sprite: Clothing/Head/Hats/propellerhat.rsi
+  - type: ToggleableVisuals
+    spriteLayer: enum.ToggleableVisuals.Layer
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: {state: icon-on}
+          False: {state: icon}
+  - type: ItemToggle
+    predictable: true
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable

@@ -1,0 +1,69 @@
+- type: entity
+  name: інжектор голопаразиту
+  id: HoloparasiteInjector
+  parent: [BaseItem, BaseSyndicateContraband]
+  description: Складний витвір ручної техніки, що дозволяє користувачеві приймати у себе охоронця-голопаразита.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/hypospray.rsi
+    state: combat_hypo
+  - type: GuardianCreator
+    guardianProto: MobHoloparasiteGuardian
+
+- type: entity
+  name: інжектор голоклоуна
+  parent: HoloparasiteInjector
+  id: HoloClownInjector
+  description: Складний витвір мистецтва з ручної техніки, що дозволяє користувачеві приймати охоронця-голоклоуна.
+  components:
+  - type: GuardianCreator
+    guardianProto: MobHoloClownGuardian
+
+- type: entity
+  name: чарівна лампа
+  id: MagicalLamp
+  parent: BaseItem
+  description: Федерація чарівників мусила якось скоротити витрати після скандалу з товарами для джинів.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/Lights/lamp.rsi
+    layers:
+      - state: lamp
+  - type: GuardianCreator
+    guardianProto: MobIfritGuardian
+
+- type: entity
+  name: коробка голопаразита
+  parent: [BoxCardboard, BaseSyndicateContraband]
+  id: BoxHoloparasite
+  description: Коробка з інжектором голопаразита, а також аксесуаром.
+  components:
+  - type: StorageFill
+    contents:
+      - id: HoloparasiteInjector
+      - id: HoloparasiteInfo
+      - id: ClothingHeadHatBizarreSoft
+  - type: Sprite
+    layers:
+      - state: box
+      - state: holo
+
+- type: entity
+  name: коробка голоклоуна
+  parent: [BoxCardboard, BaseSyndicateContraband]
+  id: BoxHoloclown
+  description: Коробка з інжектором голоклоуна, а також аксесуаром.
+  components:
+  - type: StorageFill
+    contents:
+      - id: HoloClownInjector
+      - id: ToyFigurineHoloClown
+      - id: ToyHammer
+  - type: Sprite
+    layers:
+      - state: box_hug
+      - state: holo
+  - type: Tag
+    tags:
+    - BoxCardboard
+    - BoxHug

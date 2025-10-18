@@ -1,0 +1,65 @@
+- type: entity
+  parent: [ GrenadeBase, BaseMinorContraband ]
+  id: PipeBomb
+  name: саморобна бомба
+  description: Саморобна вибухівка з труб та дроту.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Bombs/pipebomb.rsi
+    layers:
+    - state: base
+      map: ["enum.TriggerVisualLayers.Base"]
+    - state: wires
+  - type: TriggerOnActivate # todo: make it activate through welder/lighter/fire instead
+  - type: TimerTrigger
+    delay: 5
+    examinable: false
+    initialBeepDelay: 0
+    beepSound: /Audio/Effects/lightburn.ogg
+  - type: RandomTimerTrigger
+    min: 1
+    max: 10
+  - type: ExplodeOnTrigger
+    keysIn:
+    - timer
+  - type: Explosive # Weak explosion in a very small radius. Doesn't break underplating.
+    explosionType: Default
+    totalIntensity: 50
+    intensitySlope: 5
+    maxIntensity: 6
+    canCreateVacuum: false
+  - type: Appearance
+  - type: TimerTriggerVisuals
+  - type: Construction
+    graph: PipeBomb
+    node: pipebomb
+
+- type: entity
+  parent: [ BaseItem, BaseMinorContraband ]
+  id: PipeBombGunpowder
+  name: саморобна бомба
+  description: Саморобна вибухівка з труб. У цій немає пороху.
+  suffix: Gunpowder
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Bombs/pipebomb.rsi
+    state: base
+  - type: Construction
+    graph: PipeBomb
+    node: gunpowder
+    defaultTarget: pipebomb
+
+- type: entity
+  parent: [ BaseItem, BaseMinorContraband ]
+  id: PipeBombCable
+  name: саморобна бомба
+  description: Саморобна вибухівка з труб та дроту. Ця не має кабелю.
+  suffix: Cable
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Bombs/pipebomb.rsi
+    state: base
+  - type: Construction
+    graph: PipeBomb
+    node: cable
+    defaultTarget: pipebomb

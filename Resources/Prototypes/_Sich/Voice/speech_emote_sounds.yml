@@ -1,0 +1,218 @@
+# having to explicitly variantize things so you DON'T get variations on beep and whirr is fucking bad
+# TODO complain to upstream
+- type: emoteSounds
+  id: UnisexTajara
+  sounds:
+    Scream:
+      path: /Audio/_Sich/Voice/Tajaran/cat_scream2.ogg
+      params:
+        variation: 0.125
+    Laugh:
+      path: /Audio/Animals/lizard_happy.ogg
+      params:
+        variation: 0.125
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+        
+- type: emoteSounds
+  id: MaleTajara
+  sounds:
+    Scream:
+      path: /Audio/_Sich/Voice/Tajaran/cat_scream2.ogg
+      params:
+        variation: 0.125
+    Laugh:
+      collection: MaleLaugh
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+        
+- type: emoteSounds
+  id: FemaleTajara
+  sounds:
+    Scream:
+      path: /Audio/_Sich/Voice/Tajaran/cat_scream2.ogg
+      params:
+        variation: 0.125
+    Laugh:
+      path: /Audio/_Sich/Voice/Tajaran/cat_laugh.ogg
+      params:
+        variation: 0.125
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    Sneeze:
+      collection: FemaleSneezes
+    Cough:
+      collection: FemaleCoughs
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: CluwneHorn
+    Sigh:
+      collection: FemaleSigh
+    Crying:
+      collection: FemaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+        
+        
+- type: emoteSounds
+  id: UnisexIPC
+  sounds:
+    Scream:
+      path: /Audio/Effects/beep1.ogg
+      params:
+        variation: 0.125
+    Laugh:
+      path: /Audio/Effects/sparks1.ogg
+      params:
+        variation: 0.125
+    Ping:
+      path: /Audio/Effects/beep1.ogg
+      params:
+        variation: 0.125
+    Beep:
+      collection: Beep
+    Whirr:
+      collection: IPCWhirrs
+    Honk:
+      collection: Honk
+      params:
+        variation: 0.125
+
+# these should be parentable but apparently not???
+
+- type: emoteSounds
+  id: MaleIPC
+  sounds:
+    Scream:
+      path: /Audio/Effects/beep1.ogg
+      params:
+        variation: 0.125
+    Laugh:
+      path: /Audio/Effects/sparks1.ogg
+      params:
+        variation: 0.125
+    Ping:
+      path: /Audio/Effects/beep1.ogg
+      params:
+        variation: 0.125
+    Beep:
+      path: /Audio/_Sich/Voice/IPC/beep_500.ogg
+    Whirr:
+      collection: IPCWhirrs
+    Honk:
+      collection: BikeHorn
+      params:
+        variation: 0.125
+
+- type: emoteSounds
+  id: FemaleIPC
+  sounds:
+    Scream:
+      path: /Audio/Effects/beep1.ogg
+      params:
+        variation: 0.125
+    Laugh:
+      path: /Audio/Effects/sparks1.ogg
+      params:
+        variation: 0.125
+    Ping:
+      path: /Audio/Effects/beep1.ogg
+      params:
+        variation: 0.125
+    Beep:
+      path: /Audio/_Sich/Voice/IPC/beep_2000.ogg
+    Whirr:
+      collection: IPCWhirrs
+    Honk:
+      collection: BikeHorn
+      params:
+        variation: 0.125
+
+
+#Avali Sounds
+- type: emoteSounds
+  id: MaleAvali
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: AvaliScreams
+    Laugh:
+      collection: AvaliLaugh
+    Cough:
+      collection: AvaliCoughs
+    Crying:
+      collection: AvaliCry
+    Whistle:
+      collection: AvaliWhistle
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
+
+- type: emoteSounds
+  id: FemaleAvali
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: AvaliScreams
+    Laugh:
+      collection: AvaliLaugh
+    Cough:
+      collection: AvaliCoughs
+    Crying:
+      collection: AvaliCry
+    Whistle:
+      collection: AvaliWhistle
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp

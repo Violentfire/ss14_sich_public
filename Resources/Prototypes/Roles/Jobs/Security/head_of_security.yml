@@ -1,0 +1,77 @@
+- type: job
+  id: HeadOfSecurity
+  name: job-name-hos
+  description: job-description-hos
+  playTimeTracker: JobHeadOfSecurity
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobWarden
+      time: 1h
+    - !type:RoleTimeRequirement
+      role: JobDetective
+      time: 1h # knowing how to use the tools is important
+    - !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 5h
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 10h
+    - !type:AgeRequirement
+      requiredAge: 25
+    - !type:SpeciesRequirement
+      inverted: true
+      species:
+      - Vox
+      - Diona
+      - SlimePerson
+      - Tajara
+    - !type:TraitsRequirement
+      inverted: true
+      traits:
+      - Blindness
+      - Narcolepsy
+      - Muted
+      - Pacifist
+  weight: 10
+  startingGear: HoSGear
+  icon: "JobIconHeadOfSecurity"
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  access:
+  - HeadOfSecurity
+  - Command
+  - Brig
+  - Security
+  - Armory
+  - Maintenance
+  - Service
+  - External
+  - Detective
+  - Cryogenics
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: startingGear
+  id: HoSGear
+  equipment:
+    eyes: ClothingEyesGlassesSecurity
+    id: HoSPDA
+    gloves: ClothingHandsGlovesCombat
+    ears: ClothingHeadsetAltSecurity
+    pocket1: WeaponPistolMk58
+  storage:
+    back:
+    - Flash
+    - MagazinePistol
+
+- type: chameleonOutfit
+  id: HeadOfSecurityChameleonOutfit
+  job: HeadOfSecurity
+  hasMindShield: true
+  equipment:
+    mask: ClothingMaskGasSecurity
+    neck: ClothingNeckCloakHos

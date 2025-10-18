@@ -1,0 +1,5 @@
+- type: soundCollection
+  id: AvaliScreams
+  files:
+    - /Audio/_Sich/Voice/Avali/avali_scream1.ogg
+    - /Audio/_Sich/Voice/Avali/avali_scream2.ogg

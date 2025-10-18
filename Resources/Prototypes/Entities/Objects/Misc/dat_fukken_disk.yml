@@ -1,0 +1,44 @@
+- type: entity
+  name: диск ядерної автентифікації
+  parent: [BaseItem, BaseGrandTheftContraband]
+  id: NukeDisk
+  description: Ядерний авторизаційний диск, здатний активувати ядерну бомбу, якщо його використати разом із кодом. Записка від Нанотрейзен - «ЦЕ ВАША НАЙВАЖЛИВІША ВЛАСНІСТЬ, ЗБЕРЕЖІТЬ ЦЕЙ БІСІВ ДИСК!»
+  components:
+  - type: NukeDisk
+  - type: SpecialRespawn
+    prototype: NukeDisk
+  - type: Sprite
+    sprite: Objects/Misc/nukedisk.rsi
+    state: icon
+  - type: StaticPrice
+    price: 2000
+  - type: CargoSellBlacklist
+  - type: ArrivalsBlacklist
+  - type: WarpPoint
+    follow: true
+    location: nuke disk
+    blacklist:
+      tags:
+      - GhostOnlyWarp
+  - type: Tag
+    tags:
+    - HighRiskItem
+    - GhostOnlyWarp
+  - type: StealTarget
+    stealGroup: NukeDisk
+
+- type: entity
+  name: диск ядерної автентифікації
+  parent: [BaseItem, BaseGrandTheftContraband]
+  id: NukeDiskFake
+  suffix: Несправжній
+  description: Ядерний авторизаційний диск, здатний активувати ядерну бомбу, якщо його використати разом із кодом. Записка від Нанотрейзен - «ЦЕ ВАША НАЙВАЖЛИВІША ВЛАСНІСТЬ, ЗБЕРЕЖІТЬ ЦЕЙ БІСІВ ДИСК!»
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/nukedisk.rsi
+    state: icon
+  - type: StaticPrice
+    price: 1 # it's worth even less than normal items. Perfection.
+  - type: Tag
+    tags:
+    - FakeNukeDisk

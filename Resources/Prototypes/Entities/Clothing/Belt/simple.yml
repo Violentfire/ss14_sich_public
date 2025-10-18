@@ -1,0 +1,44 @@
+# For cosmetic belts parenting off ClothingBeltBase
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltChampion
+  name: Чемпіонський пояс
+  description: Доводить всьому світу, що ти найсильніший!
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/champion.rsi
+  - type: Clothing
+    sprite: Clothing/Belt/champion.rsi
+    quickEquip: true
+  - type: Tag
+    tags:
+    - Kangaroo # Kangaroo wearable. Dare to challenge the champ?
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltSuspendersRed
+  name: червоні підтяжки
+  description: Щоб підтримувати штани.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/suspenders_red.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/suspenders_red.rsi
+    quickEquip: true
+  - type: Tag
+    tags:
+    - MimeBelt
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingBeltSuspendersRed
+  id: ClothingBeltSuspendersBlack
+  name: чорні підтяжки
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/suspenders_black.rsi
+  - type: Clothing
+    sprite: Clothing/Belt/suspenders_black.rsi

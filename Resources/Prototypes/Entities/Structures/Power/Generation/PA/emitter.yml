@@ -1,0 +1,82 @@
+- type: entity
+  parent: ParticleAcceleratorFinishedPart
+  id: ParticleAcceleratorEmitterPort
+  name: випромінювач утримання порту ПЧ
+  description: Це випромінює альфа-частинки, вам не варто стояти поруч з цим кінцем.
+  components:
+  - type: Sprite
+    sprite: Structures/Power/Generation/PA/emitter_port.rsi
+  - type: ParticleAcceleratorEmitter
+    emitterType: Port
+  - type: Construction
+    graph: ParticleAcceleratorEmitterPort
+  - type: MultipartMachinePart
+
+- type: entity
+  parent: ParticleAcceleratorFinishedPart
+  id: ParticleAcceleratorEmitterFore
+  name: випромінювач зовнішнього утримання ПЧ
+  description: Це випромінює альфа-частинки, вам не варто стояти поруч з цим кінцем.
+  components:
+  - type: Sprite
+    sprite: Structures/Power/Generation/PA/emitter_fore.rsi
+  - type: ParticleAcceleratorEmitter
+    emitterType: Fore
+  - type: Construction
+    graph: ParticleAcceleratorEmitterFore
+  - type: MultipartMachinePart
+
+- type: entity
+  parent: ParticleAcceleratorFinishedPart
+  id: ParticleAcceleratorEmitterStarboard
+  name: випромінювач утримання космоборту ПЧ
+  description: Це випромінює альфа-частинки, вам не варто стояти поруч з цим кінцем.
+  components:
+  - type: Sprite
+    sprite: Structures/Power/Generation/PA/emitter_starboard.rsi
+  - type: ParticleAcceleratorEmitter
+    emitterType: Starboard
+  - type: Construction
+    graph: ParticleAcceleratorEmitterStarboard
+  - type: MultipartMachinePart
+
+# Unfinished
+
+- type: entity
+  parent: ParticleAcceleratorUnfinishedBase
+  id: ParticleAcceleratorEmitterPortUnfinished
+  name: випромінювач утримання порту ПЧ
+  suffix: Unfinished, Port
+  description: Це випромінює альфа-частинки, вам не варто стояти поруч з цим кінцем. Виглядає незавершеним.
+  components:
+  - type: Sprite
+    sprite: Structures/Power/Generation/PA/emitter_port.rsi
+  - type: Construction
+    graph: ParticleAcceleratorEmitterPort
+  - type: MultipartMachinePart
+
+- type: entity
+  parent: ParticleAcceleratorUnfinishedBase
+  id: ParticleAcceleratorEmitterForeUnfinished
+  name: випромінювач зовнішнього утримання ПЧ
+  suffix: Unfinished, Fore
+  description: Це випромінює альфа-частинки, вам не варто стояти поруч з цим кінцем. Виглядає незавершеним.
+  components:
+  - type: Sprite
+    sprite: Structures/Power/Generation/PA/emitter_fore.rsi
+  - type: Construction
+    graph: ParticleAcceleratorEmitterFore
+  - type: MultipartMachinePart
+
+- type: entity
+  parent: ParticleAcceleratorUnfinishedBase
+  id: ParticleAcceleratorEmitterStarboardUnfinished
+  name: випромінювач утримання космоборту ПЧ
+  suffix: Unfinished, Starboard
+  description: Це випромінює альфа-частинки, вам не варто стояти поруч з цим кінцем. Виглядає незавершеним.
+  components:
+  - type: Sprite
+    sprite: Structures/Power/Generation/PA/emitter_starboard.rsi
+  - type: Construction
+    graph: ParticleAcceleratorEmitterStarboard
+  - type: MultipartMachinePart

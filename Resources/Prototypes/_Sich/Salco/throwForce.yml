@@ -1,0 +1,82 @@
+- type: entity
+  parent: BaseItem
+  id: ThrowForce
+  name: Відкидання
+  description: Відкидування.
+  components:
+    - type: Item
+      storedRotation: -90
+    - type: MeleeWeapon
+      wideAnimationRotation: 0
+      angle: 120
+      range: 4
+      damage:
+        types:
+          Structural: 0
+    - type: MeleeThrowOnHit
+      speed: 20
+      lifetime: 1
+      unanchorOnHit: true
+    - type: Tag
+      tags:
+        - SalcoThrowForce
+    - type: Sprite
+      sprite: Objects/Magic/cotelekinesis.rsi
+      layers:
+        - state: icon
+    - type: Appearance
+    - type: Unremoveable
+
+
+# implanter
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: SalcoThrowForceImplant
+  name: Імплант сили відкидання.
+  description: This implant gives you extraordinary powers!
+  categories: [HideSpawnMenu]
+  components:
+    - type: SubdermalImplant
+      permanent: true
+      implantAction: SalcoActionThrowForce
+    - type: TriggerOnActivateImplant
+    - type: Tag
+      tags:
+        - SubdermalImplant
+        - HideContextMenu
+    # - type: SpawnItemAbility
+    #   prototypeId: ThrowForce
+    #   abilityActionTag: SalcoThrowForce
+    #   actionProto: SalcoActionThrowForce
+
+- type: entity
+  id: SalcoThrowForceImplanter
+  name: Імплант сили відкидання.
+  parent: BaseImplantOnlyImplanter
+  components:
+    - type: Implanter
+      implant: SalcoThrowForceImplant
+
+# action
+
+- type: entity
+  parent: BaseAction
+  id: SalcoActionThrowForce
+  name: Відкидання
+  description: Використай свою силу для відкидання!
+  categories: [HideSpawnMenu]
+  components:
+    - type: InstantAction
+      useDelay: 1
+      icon: { sprite: Objects/Magic/cotelekinesis.rsi, state: icon }
+      iconOn: { sprite: Objects/Magic/cotelekinesis.rsi, state: icon-on }
+      itemIconStyle: NoItem
+      event: !type:ToggleActionEvent # tags
+    - type: Tag
+      tags:
+      - SalcoThrowForce
+
+
+- type: Tag
+  id: SalcoThrowForce

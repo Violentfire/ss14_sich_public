@@ -1,0 +1,285 @@
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesChef
+  name: взуття кухаря
+  description: Міцне взуття, яке зводить до мінімуму травми від падаючих предметів або ножів.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Specific/chef.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Specific/chef.rsi
+
+# stuff common to all clown & jester shoes
+- type: entity
+  abstract: true
+  parent: [ClothingShoesBaseButcherable, ClothingSlotBase]
+  id: ClothingShoesClownBase
+  components:
+  - type: ItemSlots
+    slots:
+      item:
+        name: clothing-boots-sidearm
+        whitelist:
+          tags:
+          - Knife
+          - ToySidearm
+        blacklist:
+          components:
+          - Sharp
+
+- type: entity
+  parent: ClothingShoesClownBase
+  id: ClothingShoesClown
+  name: черевики клоуна
+  description: "Клоунські черевики стандартного розміру, для справжнього жартівника. Тільки не клоунам здається що вони до біса велечезні!"
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Specific/clown.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Specific/clown.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepClown
+      params:
+        variation: 0.17
+  # for H.O.N.K. construction
+  - type: Tag
+    tags:
+    - ClownShoes
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingShoesClown
+  id: ClothingShoesClownBanana
+  name: бананові черевики клоуна
+  description: "Коли гумор і взуття поєднуються у новий рівень абсурду."
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Specific/clown_banana.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Specific/clown_banana.rsi
+  #- type: FootstepModifier You can add a sound effect when you make one that doesn't sound like a dog dying. -emo
+  #  footstepSoundCollection:
+  #    collection: FootstepSlip
+  #    params:
+  #      volume: -10
+  #      variation: 0.10
+  - type: Construction
+    graph: BananaClownShoes
+    node: shoes
+  - type: Skates
+    minimumSpeed: 20
+    acceleration: 5
+
+- type: entity
+  parent: ClothingShoesClownBase
+  id: ClothingShoesBling
+  name: блискучі черевики клоуна
+  description: Зроблені з супер-секретного виду бананіуму та відполіровані шкіркою банану, що літала у космосі! Вражай - поки не вразять тебе!
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Specific/bling.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Specific/bling.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepClown
+      params:
+        variation: 0.17
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 2
+    color: "#FFD800"
+    netsync: false
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesCult
+  name: окультні чоботи
+  description: Пара чобіт, які носять послідовники Нар'Сі.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Specific/cult.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Specific/cult.rsi
+
+- type: entity
+  parent: [ ClothingShoesBase, BaseJanitorContraband ]
+  id: ClothingShoesGaloshes
+  name: резинові чоботи
+  description: Спеціалізовані протиковзкі гумові чоботи, призначені для зменшення нещасних випадків на робочому місці прибиральника; справжнє багатство для тідера.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Specific/galoshes.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Specific/galoshes.rsi
+  - type: NoSlip
+  - type: SlowedOverSlippery
+    slowdownModifier: 0.7
+  - type: SpeedModifierContactCapClothing
+    maxContactSprintSlowdown: 0.7
+    maxContactWalkSlowdown: 0.7
+
+- type: entity
+  parent: [ClothingShoesBaseButcherable, BaseHighlyIllegalContraband]
+  id: ClothingShoesSpaceNinja
+  name: чоботи космічного ніндзя
+  description: Ці наночоботи допоможуть тихо рухатися та залишатися на будь-якій поверхні завдяки магнітним присоскам.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Specific/spaceninja.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Specific/spaceninja.rsi
+  - type: NoSlip
+  - type: Magboots # always have gravity because le suction cups
+  - type: ClothingSpeedModifier
+    # ninja are masters of sneaking around relatively quickly, won't break cloak
+    walkModifier: 1.3
+    sprintModifier: 1.3
+  - type: FootstepModifier
+    footstepSoundCollection: null
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesSwat
+  name: чоботи КОРД
+  description: Коли настав час ввалитися в двері з ноги і зробити "БАМ!", ці чоботи вже на тобі. Гарячіші за твій підхід до штурму!
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Specific/swat.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Specific/swat.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesWizard
+  name: сандалі чаклуна
+  description: Ці сандалі наділені магічною силою. Одягни їх, щоб відчути справжню магію під ногами.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Specific/wizard.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Specific/wizard.rsi
+
+- type: entity
+  parent: [ClothingShoesBase, BaseChameleon]
+  id: ClothingShoesChameleon
+  name: чорне взуття
+  suffix: Хамелеон
+  description: Стильне чорне взуття.
+  components:
+    - type: Tag
+      tags: [] # ignore "WhitelistChameleon" tag
+    - type: Sprite
+      sprite: Clothing/Shoes/color.rsi
+      layers:
+      - state: icon
+        color: "#3f3f3f"
+      - state: soles-icon
+    - type: Clothing
+      sprite: Clothing/Shoes/color.rsi
+      clothingVisuals:
+        shoes:
+        - state: equipped-FEET
+          color: "#1d1d1d"
+        - state: soles-equipped-FEET
+    - type: Item
+      inhandVisuals:
+        left:
+        - state: inhand-left
+          color: "#3f3f3f"
+        - state: soles-inhand-left
+        right:
+        - state: inhand-right
+          color: "#3f3f3f"
+        - state: soles-inhand-right
+    - type: ChameleonClothing
+      slot: [FEET]
+      default: ClothingShoesColorBlack
+
+- type: entity
+  parent: ClothingShoesChameleon
+  id: ClothingShoesChameleonNoSlips
+  name: чорне взуття #actual name and description in uplink_catalog.yml
+  suffix: Непідковзні, Хамелеон
+  description: Стильне чорне взуття.
+  components:
+  - type: NoSlip
+
+- type: entity
+  parent: ClothingShoesClown
+  id: ClothingShoesJester
+  name: взуття блазня
+  description: Взуття блазня з доданою сучасною скрипучою функцією. Тепер весело і технологічно!
+  components:
+    - type: Sprite
+      sprite: Clothing/Shoes/Specific/jester.rsi
+    - type: Clothing
+      sprite: Clothing/Shoes/Specific/jester.rsi
+    - type: FootstepModifier
+      footstepSoundCollection:
+        collection: FootstepJester
+        params:
+          variation: 0.07
+
+- type: entity
+  parent: ClothingShoesClown
+  id: ClothingShoesCluwne
+  name: черевики клуні
+  suffix: Незнімне
+  description: "Проклята пара клунського взуття."
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Specific/cluwne.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Specific/cluwne.rsi
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingShoesClown
+  id: ClothingShoesClownLarge
+  name: гіганські черевики клоуна
+  description: "Хочеш бути найбільшим клоуном серед клоунів? Ці капці — твій квиток на вершину циркової ієрархії!"
+  components:
+  - type: Sprite
+    state: "icon"
+    sprite: Clothing/Shoes/Specific/large_clown.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Specific/large_clown.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        offset: "0, -0.02"
+  - type: Item
+    size: Small
+    sprite: Clothing/Shoes/Specific/large_clown.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesSkates
+  name: ролики
+  description: "Ти не просто йдеш — ти летиш! Надягай ролики та будь швидший за власні проблеми!"
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Specific/skates.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Specific/skates.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        offset: "0, -0.04"
+  - type: Item
+    sprite: Clothing/Shoes/Specific/skates.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 1.1
+    sprintModifier: 1.1
+  - type: Skates
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepSkates
+      params:
+        variation: 0.08

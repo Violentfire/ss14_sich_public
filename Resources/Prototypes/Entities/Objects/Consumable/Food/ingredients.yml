@@ -1,0 +1,981 @@
+# Lots of misc stuff in here, hard to parent it.
+# ^ Yeah, this stuff should probably get split into different files but not my fight today.
+
+# Powder (For when you throw stuff like flour and it explodes)
+
+# Reagent Containers
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: ReagentContainerBase
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/ingredients.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+  - type: SolutionTransfer
+    # This is potentially badly-handled due to 'drink opening',
+    #  but it lets the flour be tampered with, refilled, etc.
+  - type: DrawableSolution
+    solution: food
+  - type: RefillableSolution
+    solution: food
+  - type: DrainableSolution
+    solution: food
+  - type: Edible
+    edible: Food # usually contains powders like flour or condiments like ketchup
+    solution: food
+    utensil: Spoon
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Spillable
+    solution: food
+  - type: TrashOnSolutionEmpty
+    solution: food
+  - type: Tag
+    tags:
+      - Ingredient
+
+- type: entity
+  abstract: true
+  parent: ReagentContainerBase
+  id: ReagentPacketBase
+  components:
+  - type: Openable
+    sound:
+      collection: packetOpenSounds
+  # packet can be broken open
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: desecration
+      - !type:SpillBehavior
+        solution: food
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  # packet contents can be splashed when open
+  - type: MeleeWeapon
+    soundNoDamage:
+      path: "/Audio/Effects/Fluids/splat.ogg"
+    damage:
+      types:
+        Blunt: 0
+
+- type: entity
+  abstract: true
+  id: ItemHeftyBase
+  components:
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 1
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 1
+
+- type: entity
+  parent: [ReagentPacketBase, ItemHeftyBase]
+  id: ReagentContainerFlour
+  name: мішок борошна
+  description: Великий мішок борошна. Те що треба для випічки!
+  components:
+  - type: Sprite
+    state: flour-big
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: Flour
+          Quantity: 50
+
+- type: entity
+  parent: [ReagentPacketBase, ItemHeftyBase]
+  id: ReagentContainerFlourSmall
+  name: пакет борошна
+  description: Пакет борошна. Те що треба для випічки!
+  components:
+  - type: Sprite
+    state: flour-small
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Flour
+          Quantity: 20
+
+- type: entity
+  parent: ReagentPacketBase
+  id: ReagentContainerCornmeal
+  name: мішок кукурудзяного борошна
+  description: Великий мішок кукурудзяного борошна. Згодиться для приготування їжі.
+  components:
+  - type: Sprite
+    state: cornmeal-big
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Cornmeal
+          Quantity: 50
+
+- type: entity
+  parent: ReagentPacketBase
+  id: ReagentContainerCornmealSmall
+  name: пакет кукурудзяного борошна
+  description: Пачка кукурудзяного борошна. Згодиться для приготування їжі.
+  components:
+  - type: Sprite
+    state: cornmeal
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Cornmeal
+          Quantity: 20
+
+- type: entity
+  parent: ReagentPacketBase
+  id: ReagentContainerRice
+  name: мішок рису
+  description: Великий мішок рису. Гарний для приготування їжі! Хааааяяяяя!
+  components:
+  - type: Sprite
+    state: rice-big
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Rice
+          Quantity: 50
+
+- type: entity
+  parent: ReagentPacketBase
+  id: ReagentContainerRiceSmall
+  name: пакет рису
+  description: Пачка рису. Чудово підходить для приготування їжі!
+  components:
+  - type: Sprite
+    state: rice-small
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Rice
+          Quantity: 20
+
+- type: entity
+  parent: ReagentPacketBase
+  id: ReagentContainerSugar
+  name: мішок цукру
+  description: Великий мішок смачного космічного цукру.
+  components:
+  - type: Sprite
+    state: sugar-big
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 50
+
+- type: entity
+  parent: ReagentPacketBase
+  id: ReagentContainerSugarSmall
+  name: пакет цукру
+  description: Пачка смачного космічного цукру.
+  components:
+  - type: Sprite
+    state: sugar-small
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 20
+
+# Misc
+
+- type: entity
+  parent: ReagentPacketBase
+  id: ReagentContainerOliveoil
+  name: оливкова олія
+  description: Олійкова олива. З космічних оливок, мабуть.
+  components:
+  - type: Sprite
+    state: oliveoil
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: OilOlive
+          Quantity: 20
+  - type: Edible
+    edible: Drink # slurping sounds!
+
+- type: entity
+  parent: ReagentPacketBase
+  id: ReagentContainerMayo
+  name: майонез
+  description: Пляшка майонезу.
+  components:
+  - type: Sprite
+    state: mayo
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50 # you always need more mayo
+        reagents:
+        - ReagentId: Mayo
+          Quantity: 50
+  - type: Tag
+    tags:
+      - Mayo
+
+# - type: entity
+#   parent: ReagentPacketBase
+#   id: ReagentContainerAllspice
+#   name: all-spice
+#   description:
+#   components:
+#   - type: Sprite
+#     state: spice
+#   - type: SolutionContainerManager
+#     maxVol: 10
+#     contents:
+#       reagents:
+#       - ReagentId: Allspice
+#         Quantity: 10
+
+# Baking
+
+- type: entity
+  abstract: true
+  parent: FoodBase
+  id: FoodBakingBase
+  description: Used in various recipes.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/ingredients.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+  - type: Tag
+    tags:
+      - Ingredient
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodDough
+  name: тісто
+  description: Шматок тіста.
+  components:
+  - type: Item
+    size: Normal
+  - type: FlavorProfile
+    flavors:
+      - dough
+  - type: Sprite
+    state: dough
+  - type: SliceableFood
+    count: 3
+    slice: FoodDoughSlice
+  - type: Construction
+    graph: Pizza
+    node: start
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodDoughSlice
+  name: шматочок тіста
+  description: Шматочок тіста. Можна приготувати булочку.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - dough
+  - type: Sprite
+    state: dough-slice
+  - type: Tag
+    tags:
+    - Slice
+  - type: Construction
+    graph: DoughRope
+    node: start
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodDoughRope
+  name: мотузка з тіста
+  description: Тонка локшина з тіста. Можна зліпити бублик.
+  components:
+  - type: Item
+    storedRotation: -45
+  - type: FlavorProfile
+    flavors:
+      - dough
+  - type: Sprite
+    state: dough-rope
+  - type: Construction
+    graph: DoughRope
+    node: rolled
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodDoughCornmeal
+  name: кукурудзяне тісто
+  description: Шматок кукурудзяного тіста.
+  components:
+  - type: Item
+    size: Normal
+  - type: FlavorProfile
+    flavors:
+      - chalky
+      - dough
+  - type: Sprite
+    state: cornmealdough
+  - type: SliceableFood
+    count: 3
+    slice: FoodDoughCornmealSlice
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodDoughCornmealSlice
+  name: шматочок кукурудзяного тіста
+  description: Шматочок тіста з кукурудзяного борошна.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - chalky
+      - dough
+  - type: Sprite
+    state: cornmealdough-slice
+  - type: Tag
+    tags:
+    - Slice
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodDoughTortilla
+  name: тісто для тортильї
+  description: Шматок тіста для тортильї.
+  components:
+  - type: Item
+    size: Normal
+  - type: FlavorProfile
+    flavors:
+      - chalky
+      - dough
+  - type: Sprite
+    state: tortilladough
+  - type: SliceableFood
+    count: 3
+    slice: FoodDoughTortillaSlice
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodDoughTortillaSlice
+  name: шматочок тіста тортильї
+  description:  Шматочок тіста для тортильї.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - chalky
+      - dough
+  - type: Sprite
+    state: tortilladough-slice
+  - type: Construction
+    graph: Tortilla
+    node: start
+  - type: Tag
+    tags:
+    - Slice
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodDoughTortillaFlat
+  name: розкатане тісто для тортильї
+  description: Розкатаний шматочок тіста для тортильї, приготуйте так, щоб вийшла оболонка для тако.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - chalky
+      - dough
+  - type: Sprite
+    state: tortilladough-flat
+  - type: Construction
+    graph: Tortilla
+    node: flat
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodDoughCotton
+  name: бавовняне тісто
+  description: Шматок бавовняного тіста.
+  components:
+  - type: Item
+    size: Normal
+  - type: FlavorProfile
+    flavors:
+    - dough
+    - cotton
+  - type: Sprite
+    state: cotton-dough
+  - type: SliceableFood
+    count: 3
+    slice: FoodDoughCottonSlice
+  - type: Construction
+    graph: CottonPizza
+    node: start
+  - type: Tag
+    tags:
+    - Ingredient
+    - ClothMade
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Fiber
+          Quantity: 10
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodDoughCottonSlice
+  name: шматочок бавовняного тіста
+  description: Шматочок бавовняного тіста.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+    - dough
+    - cotton
+  - type: Sprite
+    state: cotton-dough-slice
+  - type: Tag
+    tags:
+    - Slice
+    - ClothMade
+  - type: Construction
+    graph: DoughRopeCotton
+    node: start
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1.5
+        - ReagentId: Fiber
+          Quantity: 3.5
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodDoughCottonRope
+  name: мотузка з бавовняного тіста
+  description: Тонка локшина з бавовняного тіста. Можна приготувати бавовняний бублик.
+  components:
+  - type: Item
+    storedRotation: -45
+  - type: FlavorProfile
+    flavors:
+    - dough
+    - cotton
+  - type: Sprite
+    state: cotton-dough-rope
+  - type: Construction
+    graph: DoughRopeCotton
+    node: rolled
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1.5
+        - ReagentId: Fiber
+          Quantity: 3.5
+  - type: Tag
+    tags:
+     - ClothMade
+     - Ingredient
+
+- type: entity
+  name: сира кондитерська основа
+  parent: FoodBakingBase
+  id: FoodDoughPastryBaseRaw
+  description: Перед вживанням необхідно приготувати.
+  components:
+  - type: Sprite
+    state: dough-pastry
+
+- type: entity
+  name: кондитерська основа
+  parent: FoodBakingBase
+  id: FoodDoughPastryBase
+  description: Основа для будь-якої поважаючої себе випічки.
+  components:
+  - type: Sprite
+    state: dough-pastry-baked
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodDoughPie
+  name: тісто для пирога
+  description: Приготуйте його, щоб вийшов пиріг.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    state: dough-pie
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodDoughFlat
+  name: пласке тісто
+  description: Розкатане тісто.
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,1
+  - type: Sprite
+    state: dough-flat
+  - type: Construction
+    graph: Pizza
+    node: flat
+  - type: SliceableFood
+    count: 3
+    slice: FoodCroissantRaw
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodDoughCottonFlat
+  name: розкатанне бавовняне тісто
+  description: Розкатане тісто з бавовняної тканини.
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,1
+  - type: Sprite
+    state: cotton-dough-flat
+  - type: Construction
+    graph: CottonPizza
+    node: flat
+  - type: SliceableFood
+    count: 3
+    slice: FoodCroissantRawCotton
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodDoughPizzaBaked
+  name: коржик для піци
+  description: Додайте інгредієнти для приготування піци.
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,1
+  - type: Sprite
+    state: pizzabread
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodCakeBatter
+  name: тісто для торта
+  description: Випікаємо, щоб вийшов торт.
+  components:
+  - type: Item
+    size: Normal
+  - type: FlavorProfile
+    flavors:
+      - sweetdough
+  - type: Sprite
+    state: cakebatter
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodButter
+  name: шматочок вершкового масла
+  description: Паличка смачної, золотистої, жирної смакоти.
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,0
+  - type: Sprite
+    state: butter
+  - type: Slippery
+  - type: StepTrigger
+    intersectRatio: 0.2
+  - type: CollisionWake
+    enabled: false
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.2,0.3,0.2"
+        layer:
+        - SlipLayer
+        hard: false
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.2,0.3,0.2"
+        density: 10
+        mask:
+        - ItemMask
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+        - ReagentId: Butter
+          Quantity: 15
+  - type: SliceableFood
+    count: 3
+    slice: FoodButterSlice
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodButterSlice
+  name: шматочок масла
+  description: Шматочок смачної, золотистої, жирної смакоти.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    state: butter-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Butter
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Slice
+
+- type: entity
+  name: шматок конопляного масла
+  parent: FoodButter
+  id: FoodCannabisButter
+  description: Додайте його до вашої улюбленої випічки, щоб завжди мати під рукою.
+  components:
+  - type: Sprite
+    state: butter
+    color: "#82C36E"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 100
+        reagents:
+        - ReagentId: Butter
+          Quantity: 10
+        - ReagentId: THC
+          Quantity: 82
+  - type: Extractable
+    grindableSolutionName: food
+
+- type: entity
+  name: колесо сиру
+  parent: FoodBakingBase
+  id: FoodCheese
+  description: Велике колесо смачного Чеддеру.
+  components:
+  - type: Item
+    size: Normal
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+  - type: Sprite
+    state: cheesewheel
+  - type: SliceableFood
+    count: 4
+    slice: FoodCheeseSlice
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodCheeseSlice
+  name: клин сиру
+  description: Скибочка смачного Чеддеру. Сирне колесо, з якого його відрізали, не могло далеко покотитися.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+  - type: Sprite
+    state: cheesewedge
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3.75
+  - type: Tag
+    tags:
+    - Slice
+  - type: FoodSequenceElement
+    entries:
+      Taco: CheeseTaco
+      Burger: CheeseBurger
+  - type: Item
+    size: Tiny
+    storedOffset: 0,-3
+    inhandVisuals:
+      left:
+      - state: cheesewedge-inhand-left
+      right:
+      - state: cheesewedge-inhand-right
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodChevre
+  name: шматок шевру
+  description: М'яке поліно вершкового шевру.
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,0
+    storedOffset: 0,-2
+  - type: FlavorProfile
+    flavors:
+      - nutty
+      - creamy
+  - type: Sprite
+    state: chevrelog
+  - type: SliceableFood
+    count: 3
+    slice: FoodChevreSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Vitamin
+          Quantity: 0.6
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodChevreSlice
+  name: шматочок шевру
+  description: Невеликий диск вершкового шевру. Ідеальна прикраса для французьких гарнірів.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - nutty
+      - creamy
+  - type: Sprite
+    state: chevredisk
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 2
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1
+        - ReagentId: Vitamin
+          Quantity: 0.2
+  - type: Tag
+    tags:
+    - Slice
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodTofu
+  name: тофу
+  description: Суцільний білий блок з тонким ароматом.
+  components:
+  - type: Item
+    size: Normal
+  - type: FlavorProfile
+    flavors:
+      - tofu
+  - type: Sprite
+    state: tofu
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+        - ReagentId: Protein
+          Quantity: 9
+        - ReagentId: Nutriment
+          Quantity: 6
+  - type: SliceableFood
+    count: 3
+    slice: FoodTofuSlice
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodTofuSlice
+  name: шматочок тофу
+  description: Шматочок тофу. Інгредієнт різних вегетаріанських страв.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - tofu
+  - type: Sprite
+    state: tofu-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Protein
+          Quantity: 3
+        - ReagentId: Nutriment
+          Quantity: 2
+  - type: Tag
+    tags:
+    - Slice
+
+- type: entity
+  name: обгоріле місиво
+  parent: FoodBakingBase
+  id: FoodBadRecipe
+  description: За це когось треба звільнити з посади кухаря.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - terrible
+  - type: Sprite
+    state: badrecipe
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: GastroToxin
+          Quantity: 3
+  - type: Tag
+    tags:
+    - Trash
+
+- type: entity
+  name: какао-боби
+  parent: FoodProduceBase
+  id: FoodCocoaBeans
+  description: Шоколаду ніколи не буває забагато!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chocolate
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cocoa.rsi
+    state: produce-beans
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 1
+        - ReagentId: CocoaPowder
+          Quantity: 2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CocoaPowder
+        Quantity: 2
+  - type: Tag
+    tags:
+      - Ingredient
+
+- type: entity
+  parent: FoodBakingBase
+  id: FoodCroissantRaw
+  name: сирий круасан
+  description: асляниста, пластівчаста смакота, що чекає на вас.
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+    storedOffset: -2,-4
+  - type: FlavorProfile
+    flavors:
+      - dough
+  - type: Sprite
+    state: croissant-raw
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 4
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+
+- type: entity
+  parent: FoodCroissantRaw
+  id: FoodCroissantRawCotton
+  name: сирий бавовняний круасан
+  description: Масляниста, пластівчаста, волокниста смакота, що чекає на вас.
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+    storedOffset: -2,-4
+  - type: FlavorProfile
+    flavors:
+    - dough
+    - cotton
+  - type: Sprite
+    state: croissant-raw-cotton

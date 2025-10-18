@@ -1,0 +1,16 @@
+﻿- type: entity
+  parent: [ClothingHeadsetGrey, BaseChameleon]
+  id: ClothingHeadsetChameleon
+  name: гарнітура пасажира
+  description: Оновлений модульний інтерком, який одягається на голову. Приймає ключі шифрування.
+  suffix: Хамелеон
+  components:
+    - type: Tag
+      tags: [] # ignore "WhitelistChameleon" tag
+    - type: Sprite
+      sprite: Clothing/Ears/Headsets/base.rsi
+    - type: Clothing
+      sprite: Clothing/Ears/Headsets/base.rsi
+    - type: ChameleonClothing
+      slot: [ears]
+      default: ClothingHeadsetGrey

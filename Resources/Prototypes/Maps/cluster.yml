@@ -1,0 +1,104 @@
+- type: gameMap
+  id: Cluster
+  mapName: 'Кластер'
+  mapPath: /Maps/sich_ss14_maps/cluster.yml
+  minPlayers: 10
+  maxPlayers: 35
+  stations:
+    Cluster:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Cluster Station {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        #Інше блять
+        - type: GridSpawn
+          groups:
+            #Торговий пост
+            trade: !type:GridSpawnGroup
+              addComponents:
+                - type: ProtectedGrid
+                - type: TradeStation
+              paths:
+                - /Maps/Shuttles/trading_outpost.yml
+            # Уламочки
+            ruins: !type:GridSpawnGroup
+              hide: true
+              nameGrid: true
+              minCount: 2
+              maxCount: 2
+              stationGrid: false
+              paths:
+              - /Maps/Ruins/abandoned_outpost.yml
+              - /Maps/Ruins/chunked_tcomms.yml
+              - /Maps/Ruins/biodome_satellite.yml
+              - /Maps/Ruins/djstation.yml
+              - /Maps/Ruins/empty_flagship.yml
+              - /Maps/Ruins/old_ai_sat.yml
+              - /Maps/Ruins/syndicate_dropship.yml
+              - /Maps/Ruins/whiteship_ancient.yml
+              - /Maps/Ruins/whiteship_bluespacejumper.yml
+            # ВГРоїд (та далека шняга, яка виглядає, як експедиція)
+            vgroid: !type:DungeonSpawnGroup
+              minimumDistance: 250
+              maximumDistance: 300
+              nameDataset: NamesBorer
+              stationGrid: false
+              addComponents:
+              - type: Gravity
+                enabled: false
+                inherent: true
+              protos:
+              - VGRoid
+
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            #Командування
+            Captain: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            HeadOfSecurity: [ 1, 1 ]
+            ChiefEngineer: [ 1, 1 ]
+            ChiefMedicalOfficer: [ 1, 1 ]
+            ResearchDirector: [ 1, 1 ] 
+            Quartermaster: [ 1, 1 ]            
+            #Безпека
+            Warden: [ 1, 1 ]
+            Detective: [ 1, 1 ]
+            SecurityOfficer: [ 3, 3 ]
+            SecurityCadet: [ 2, 2 ]
+            #Інженерний
+            AtmosphericTechnician: [ 2, 2 ]
+            StationEngineer: [ 3, 3 ]
+            TechnicalAssistant: [ 2, 2 ]
+            #Медичний
+            Chemist: [ 1, 2 ]
+            Paramedic: [ 1, 1 ]
+            MedicalDoctor: [ 3, 3 ]
+            MedicalIntern: [ 2, 2 ]
+            #Науковий     
+            Scientist: [ 3, 3 ]
+            ResearchAssistant: [ 2, 2 ] 
+            #Карго
+            SalvageSpecialist: [ 2, 2 ]
+            CargoTechnician: [ 3, 3 ]
+            #Сервіс
+            Bartender: [ 1, 2 ]
+            Botanist: [ 2, 2 ]
+            Chef: [ 1, 1 ]
+            ServiceWorker: [ 2, 2 ]
+            Janitor: [ 1, 2 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            Lawyer: [ 1, 1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            #Силікони
+            StationAi: [ 1, 1 ]
+            Borg: [ 2, 3 ]
+            #Цивільні
+            Passenger: [ -1, -1 ]

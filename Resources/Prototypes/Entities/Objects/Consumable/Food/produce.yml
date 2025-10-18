@@ -1,0 +1,2838 @@
+# When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_produce.yml
+# For produce that can't be immediately eaten
+
+- type: entity
+  parent: BaseItem
+  id: ProduceBase
+  abstract: true
+  components:
+  - type: SolutionContainerManager
+  - type: Sprite
+    state: produce
+  - type: Produce
+  - type: PotencyVisuals
+  - type: Appearance
+  - type: Extractable
+    grindableSolutionName: food
+
+- type: entity
+  parent: ProduceBase
+  id: ProduceBaseRuminant
+  abstract: true
+  components:
+  # let cows eat raw produce like wheat and oats
+  - type: Edible
+    requiresSpecialDigestion: true
+  - type: Tag
+    tags:
+    - Ruminant
+
+# For produce that can be immediately eaten
+
+- type: entity
+  parent: FoodInjectableBase
+  id: FoodProduceBase
+  abstract: true
+  components:
+  - type: SolutionContainerManager
+  - type: Sprite
+    state: produce
+  - type: Produce
+  - type: PotencyVisuals
+  - type: Appearance
+  - type: Extractable
+    grindableSolutionName: food
+
+# Subclasses
+
+- type: entity
+  name: бушель пшениці
+  description: Зітхання... пшениця... а-зерно?
+  id: WheatBushel
+  parent: ProduceBaseRuminant
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/wheat.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Flour
+          Quantity: 10
+  - type: Produce
+    seedId: wheat
+  - type: Tag
+    tags:
+    - Wheat
+    - Ruminant
+
+- type: entity
+  name: бушель м'ясної крупи
+  description: Кілька залитих кров'ю пшеничних стебел. Чи можна це подрібнити на м'ясо?
+  id: MeatwheatBushel
+  parent: ProduceBaseRuminant
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/meatwheat.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 10
+  - type: SpawnItemsOnUse
+    items:
+      - id: FoodMeatWheat
+    sound:
+      path: /Audio/Voice/Slime/slime_squish.ogg
+  - type: Produce
+    seedId: meatwheat
+
+- type: entity
+  name: бушель вівса
+  description: Їжте овес, робіть присідання.
+  id: OatBushel
+  parent: ProduceBaseRuminant
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/oat.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Oats
+          Quantity: 10
+  - type: Produce
+    seedId: oat
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: MilkOat
+        Quantity: 5
+
+- type: entity
+  name: цукрова тростина
+  description: До болю солодко.
+  id: Sugarcane
+  parent: ProduceBaseRuminant
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/sugarcane.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 10
+  - type: Produce
+    seedId: sugarcane
+
+- type: entity
+  name: рулон целюлози
+  description: Навіщо взагалі потрібно вирощувати папір?
+  id: Papercane
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/papercane.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: SolutionContainerManager
+  - type: Produce
+    seedId: papercane
+  - type: Log
+    spawnedPrototype: SheetPaper1
+    spawnCount: 2
+
+- type: entity
+  parent: FoodProduceBase
+  id: FoodLaughinPeaPod
+  name: сміхо-горох
+  description: Улюблена рослина клоуна.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - peas
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 13
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Laughter
+          Quantity: 5
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: LaughinSyrup
+        Quantity: 5
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/laughin_pea.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: laughinPea
+  - type: Tag
+    tags:
+    - Vegetable
+    - Ruminant
+
+- type: entity
+  name: охапка дрів
+  description: Це краще, ніж погано, це добре!
+  id: Log
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/towercap.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: SolutionContainerManager
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 10
+  - type: Produce
+    seedId: towercap
+  - type: Log
+
+- type: entity
+  name: стальна охапка дрів
+  description: Сталь не росте на деревах, звісно ж вона росте на грибах!
+  id: SteelLog
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/steelcap.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: SolutionContainerManager
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 12
+  - type: Produce
+    seedId: steelcap
+  - type: Log
+    spawnedPrototype: SheetSteel1
+    spawnCount: 1
+
+- type: entity
+  name: кропива
+  description: Скупий маленький засранець.
+  id: Nettle
+  parent: ProduceBaseRuminant
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/nettle.rsi
+  - type: Item
+    size: Small
+    sprite: Objects/Specific/Hydroponics/nettle.rsi
+    heldPrefix: produce
+  - type: MeleeWeapon
+    damage:
+      types:
+        Heat: 10
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Histamine
+          Quantity: 3
+  - type: Produce
+    seedId: nettle
+  - type: MeleeChemicalInjector
+    transferAmount: 3 #TODO someone you would need 2 nettles and about 6-7 hits, the DOT is likely to crit them if they are running away with almost no health
+    solution: food
+    pierceArmor: false
+  - type: Extractable
+    grindableSolutionName: food
+
+- type: entity
+  name: глуха кропива
+  description: Ця кропива жадає крові.
+  id: DeathNettle
+  parent: [ProduceBase, BaseMajorContraband]
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/death_nettle.rsi
+  - type: Item
+    size: Small
+    sprite: Objects/Specific/Hydroponics/death_nettle.rsi
+    heldPrefix: produce
+  - type: MeleeWeapon
+    damage:
+      types:
+        Heat: 8
+        Caustic: 8
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: SulfuricAcid
+          Quantity: 15
+        - ReagentId: FluorosulfuricAcid
+          Quantity: 15
+  - type: Produce
+    seedId: deathNettle
+  - type: MeleeChemicalInjector
+    transferAmount: 5
+    solution: food
+    pierceArmor: true
+  - type: Extractable
+    grindableSolutionName: food
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 4
+        Caustic: 4
+    throw: true
+    throwSpeed: 3
+    interactTimer: 2 # Stop the player from spam clicking the entity
+    ignoreResistances: false
+    popupText: powered-light-component-burn-hand
+    interactSound: /Audio/Effects/lightburn.ogg
+    stunChance: 0.10
+    stunSeconds: 1.5
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Voice/Diona/diona_salute.ogg
+          params:
+            volume: -5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DamageOnHit
+    damage:
+      types:
+        Blunt: 5 # The nettle will "wilt" after 5 hits.
+
+- type: entity
+  name: банан
+  parent: FoodProduceBase
+  id: FoodBanana
+  description: Багатий на калій.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - banana
+  - type: Edible
+    trash:
+    - TrashBananaPeel
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Vitamin
+          Quantity: 2
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/banana.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: banana
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceBanana
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+    - Banana
+  - type: FoodSequenceElement
+    entries:
+      Burger: Banana
+      Taco: Banana
+
+- type: entity
+  name: міман
+  parent: FoodProduceBase
+  id: FoodMimana
+  description: Улюблений плід міма.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - banana
+      - nothing
+  - type: Edible
+    trash:
+    - TrashMimanaPeel
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        reagents:
+        - ReagentId: MuteToxin
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 2
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/mimana.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: mimana
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceBanana
+        Quantity: 10
+      - ReagentId: Nothing
+        Quantity: 5
+  - type: Tag
+    tags:
+    - Fruit
+  - type: FoodSequenceElement
+    entries:
+      Burger: Mimana
+      Taco: Mimana
+
+- type: entity
+  name: бананова шкірка
+  parent: BaseItem
+  id: TrashBananaPeel
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/banana.rsi
+    state: peel
+  - type: Item
+    sprite: Objects/Specific/Hydroponics/banana.rsi
+    heldPrefix: peel
+  - type: Slippery
+  - type: StepTrigger
+    intersectRatio: 0.2
+  - type: CollisionWake
+    enabled: false
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        layer:
+        - SlipLayer
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 30
+        mask:
+        - ItemMask
+  - type: Tag
+    tags:
+    - Recyclable
+    - Trash
+    - BananaPeel
+    - Ruminant
+
+    - WhitelistChameleon
+    - HamsterWearable
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 4
+        reagents:
+        - ReagentId: PulpedBananaPeel
+          Quantity: 4
+  - type: Extractable
+    grindableSolutionName: food
+  - type: SpaceGarbage
+  - type: Edible
+    requiresSpecialDigestion: true
+  - type: Clothing
+    sprite: Objects/Specific/Hydroponics/banana.rsi
+    equippedPrefix: peel
+    slots:
+    - HEAD
+    quickEquip: false
+
+- type: entity
+  name: запечена бананова шкірка
+  parent: TrashBananaPeel
+  id: TrashBakedBananaPeel
+  components:
+  - type: Clothing
+    sprite: Objects/Specific/Hydroponics/banana.rsi
+    equippedPrefix: baked-peel
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/banana.rsi
+    state: baked-peel
+  - type: Item
+    sprite: Objects/Specific/Hydroponics/banana.rsi
+    heldPrefix: baked-peel
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: PulpedBananaPeel
+          Quantity: 1
+        - ReagentId: Bananadine
+          Quantity: 1
+        - ReagentId: Carbon
+          Quantity: 2
+
+- type: entity
+  name: міманова шкірка
+  parent: TrashBananaPeel
+  id: TrashMimanaPeel
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/mimana.rsi
+    state: peel
+  - type: Item
+    sprite: Objects/Specific/Hydroponics/mimana.rsi
+    heldPrefix: peel
+  - type: Clothing
+    sprite: Objects/Specific/Hydroponics/mimana.rsi
+    equippedPrefix: peel
+  - type: Slippery
+    slipSound:
+      path: /Audio/Effects/slip.ogg
+      params:
+        volume: -100
+
+- type: entity
+  name: бананіумна шкірка
+  parent: TrashBananaPeel
+  id: TrashBananiumPeel
+  components:
+  - type: Sprite
+    sprite: Objects/Materials/materials.rsi
+    state: peel
+  - type: Item
+    sprite: Objects/Materials/materials.rsi
+    heldPrefix: peel
+  - type: Slippery
+  - type: Clothing
+    sprite: Objects/Materials/materials.rsi
+    equippedPrefix: peel
+
+- type: entity
+  name: морква
+  parent: FoodProduceBase
+  id: FoodCarrot
+  description: Корисна для ваших очей!(Насправді, ні, не корисно)
+  components:
+  - type: FlavorProfile
+    flavors:
+      - carrot
+  - type: Tag
+    tags:
+    - Carrot
+    - Vegetable
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 12
+        reagents:
+        - ReagentId: JuiceCarrot
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+        - ReagentId: Oculine
+          Quantity: 3
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/carrot.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: carrots
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceCarrot
+        Quantity: 10
+      - ReagentId: Oculine
+        Quantity: 2
+  - type: FoodSequenceElement
+    entries:
+      Burger: CarrotBurger
+      Taco: Carrot
+
+- type: entity
+  name: капуста
+  parent: FoodProduceBase
+  id: FoodCabbage
+  description: МОЯ КАПУСТА!!!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cabbage
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cabbage.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: cabbage
+  - type: Tag
+    tags:
+    - Vegetable
+  - type: FoodSequenceElement
+    entries:
+      Burger: CabbageBurger
+      Taco: Cabbage
+
+- type: entity
+  name: часник
+  parent: FoodProduceBase
+  id: FoodGarlic
+  description: Смачно, але з потенційно нестерпним запахом.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - garlic
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 4
+        - ReagentId: Allicin
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/garlic.rsi
+  - type: Produce
+    seedId: garlic
+  - type: Tag
+    tags:
+    - Vegetable
+  - type: FoodSequenceElement
+    entries:
+      Burger: GarlicBurger
+      Taco: Garlic
+
+- type: entity
+  name: лимон
+  parent: FoodProduceBase
+  id: FoodLemon
+  description: Коли життя дарує вам лимони, будьте вдячні, що це не лайми.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sour
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 9
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/lemon.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: lemon
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceLemon
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Lemon
+    - Fruit
+  - type: FoodSequenceElement
+    entries:
+      Burger: Lemon
+      Taco: Lemon
+
+- type: entity
+  name: лимісяць
+  parent: FoodProduceBase
+  id: FoodLemoon
+  description: Люди кажуть, що Місяць зроблений з сиру, але насправді він зроблений з молока і лавра!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - lemoon
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Vitamin
+          Quantity: 4
+        - ReagentId: Milk
+          Quantity: 16
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/lemoon.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: lemoon
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Sake #the best drink while watching moon
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+  - type: FoodSequenceElement
+    entries:
+      Burger: Lemoon
+      Taco: Lemoon
+
+- type: entity
+  name: лайм
+  parent: FoodLemon
+  id: FoodLime
+  description: Лікує космічну цингу, дозволяє діяти як космічний пірат.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sour
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/lime.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: lime
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceLime
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Lime
+    - Fruit
+  - type: FoodSequenceElement
+    entries:
+      Burger: Lime
+      Taco: Lime
+
+- type: entity
+  name: апельсин
+  parent: FoodLemon
+  id: FoodOrange
+  description: Корисний, дуже помаранчевий.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - orange
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/orange.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: orange
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceOrange
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+  - type: FoodSequenceElement
+    entries:
+      Burger: Orange
+      Taco: Orange
+
+- type: entity
+  name: екстравимірний апельсин
+  parent: FoodProduceBase
+  id: FoodExtradimensionalOrange
+  description: Ви ледве можете зрозуміти, що це таке.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - truenature
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: Haloperidol
+          Quantity: 5
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/extradimensional_orange.rsi
+    scale: 0.5,0.5
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: extradimensionalOrange
+  - type: PotencyVisuals
+    minimumScale: 0.5 # reduce this in size because the sprite is way too big
+    maximumScale: 1
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceOrange
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+  - type: FoodSequenceElement
+    entries:
+      Burger: ExtradimensionalOrangeBurger
+      Taco: ExtradimensionalOrange
+
+- type: entity
+  name: ананас
+  parent: FoodProduceBase
+  id: FoodPineapple
+  description: Мммм, тропічний...
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pineapple
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 16
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 2
+        - ReagentId: Water
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/pineapple.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: pineapple
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuicePineapple
+        Quantity: 10
+  - type: SliceableFood
+    count: 5
+    slice: FoodPineappleSlice
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: картопля
+  parent: FoodProduceBase
+  id: FoodPotato
+  description: Космічні ірландці померли з голоду після того, як загинув урожай картоплі. На жаль, вони не могли ловити космічних коропів, бо це була королева космосу. Якщо розповісти про це будь-якому космічному члену ІРА, він збожеволіє від гніву.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - potatoes
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/potato.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: potato
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuicePotato
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Potato
+    - Vegetable
+  - type: FoodSequenceElement
+    entries:
+      Burger: Potato
+      Taco: Potato
+
+
+- type: entity
+  name: томат
+  parent: [FoodProduceBase, ItemHeftyBase]
+  id: FoodTomato
+  description: Я кажу то-ма-ти, ти кажеш по-ма-до-ри.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - tomato
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 7
+        - ReagentId: Vitamin
+          Quantity: 3
+        - ReagentId: Water
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/tomato.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: tomato
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceTomato
+        Quantity: 10
+  - type: Damageable
+    damageContainer: Biological
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 0.1
+    damage:
+      types:
+        Blunt: 1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: desecration
+      - !type:SpillBehavior
+        solution: food
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - Fruit
+    - Vegetable
+  - type: FoodSequenceElement
+    entries:
+      Skewer: TomatoSkewer
+      Burger: Tomato
+      Taco: Tomato
+
+- type: entity
+  name: синій томат
+  parent: FoodTomato
+  id: FoodBlueTomato
+  description: Цей синій.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 24
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: SpaceLube
+          Quantity: 15
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/blue_tomato.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: blueTomato
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: SpaceLube
+        Quantity: 10
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: desecration
+      - !type:SpillBehavior
+        solution: food
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - Fruit
+    - Vegetable
+  - type: FoodSequenceElement
+    entries:
+      Burger: BlueTomato
+      Taco: BlueTomato
+
+- type: entity
+  name: кривавий томат
+  parent: FoodTomato
+  id: FoodBloodTomato
+  description: Зажди, це не кетчуп...
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: Blood
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/blood_tomato.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: bloodTomato
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 10
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: desecration
+      - !type:SpillBehavior
+        solution: food
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - Fruit # Fuck you they're a fruit
+    - Vegetable
+  - type: FoodSequenceElement
+    entries:
+      Skewer: TomatoSkewer
+      Burger: BloodTomato
+      Taco: BloodTomato
+
+- type: entity
+  name: баклажан
+  parent: FoodProduceBase
+  id: FoodEggplant
+  description: Баклажан? Синенькі? А може вірменський огірок?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - eggplant
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/eggplant.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: eggplant
+  - type: Tag
+    tags:
+    - Fruit
+    - Vegetable
+
+- type: entity
+  name: яблуко
+  parent: FoodProduceBase
+  id: FoodApple
+  description: Маленький шматочок Едему.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - apple
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/apple.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: apple
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceApple
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+  - type: FoodSequenceElement
+    entries:
+      Burger: Apple
+      Taco: Apple
+
+- type: entity
+  name: золоте яблуко
+  parent: FoodProduceBase
+  id: FoodGoldenApple
+  description: Воно повинен мати форму куба, чи не так?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - apple
+      - metallic
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 4
+        - ReagentId: DoctorsDelight
+          Quantity: 13
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/golden_apple.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: goldenApple
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceApple
+        Quantity: 10
+      - ReagentId: Gold
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+  - type: FoodSequenceElement
+    entries:
+      Burger: GoldenApple
+      Taco: GoldenApple
+
+- type: entity
+  name: какао-боб
+  parent: FoodProduceBase
+  id: FoodCocoaPod
+  description: Шоколаду ніколи не буває забагато!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chocolate
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 1
+        - ReagentId: CocoaPowder
+          Quantity: 1
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cocoa.rsi
+  - type: Produce
+    seedId: cocoa
+  - type: SpawnItemsOnUse
+    items:
+      - id: FoodCocoaBeans
+    sound:
+      path: /Audio/Effects/packetrip.ogg
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: качан кукурудзи
+  parent: FoodProduceBase
+  id: FoodCorn
+  description: Потрібно трохи масла! І приготувати...
+  components:
+  - type: FlavorProfile
+    flavors:
+      - corn
+  - type: Edible
+    trash:
+    - FoodCornTrash
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Cornmeal
+          Quantity: 15
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Corn
+    - Vegetable
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/corn.rsi
+  - type: Produce
+    seedId: corn
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: Cornoil
+        Quantity: 3
+      - ReagentId: Enzyme
+        Quantity: 2
+  - type: FoodSequenceElement
+    entries:
+      Burger: Corn
+      Taco: Corn
+      Skewer: CornSkewer
+
+- type: entity
+  name: кукурудзяний початок
+  parent: BaseItem
+  id: FoodCornTrash
+  description: Не залишилося жодної зернини.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/corn.rsi
+    state: cob
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+      - Trash
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Cornmeal
+          Quantity: 10
+
+- type: entity
+  name: цибуля
+  parent: FoodProduceBase
+  id: FoodOnion
+  description: Нема над чим плакати.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - onion
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 4
+        - ReagentId: Allicin
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/onion.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: onion
+  - type: SliceableFood
+    count: 5
+    slice: FoodOnionSlice
+  - type: Tag
+    tags:
+    - Vegetable
+
+- type: entity
+  name: кримська цибуля
+  parent: FoodProduceBase
+  id: FoodOnionRed
+  description: Росте усюди, не зважаючи на назву.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - onion
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 4
+        - ReagentId: Allicin
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/onion_red.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: onionred
+  - type: SliceableFood
+    count: 5
+    slice: FoodOnionRedSlice
+  - type: Tag
+    tags:
+    - Vegetable
+
+- type: entity
+  name: лисички
+  parent: FoodProduceBase
+  id: FoodMushroom
+  description: "Cantharellus Cibarius: «Ці веселі жовті маленькі грибочки виглядають дуже апетитно!»"
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/chanterelle.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: chanterelle
+  - type: Tag
+    tags:
+    - Vegetable
+    - Mushroom
+
+# Slices
+
+- type: entity
+  parent: FoodInjectableBase
+  id: ProduceSliceBase
+  abstract: true
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 3
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+  - type: Sprite
+    state: slice
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Tag
+    tags:
+    - Slice
+
+- type: entity
+  name: шматочок ананасу
+  parent: ProduceSliceBase
+  id: FoodPineappleSlice
+  description: Ммм, тропічно.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pineapple
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/pineapple.rsi
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuicePineapple
+        Quantity: 2
+  - type: Tag
+    tags:
+    - Fruit
+    - Slice
+  - type: FoodSequenceElement
+    entries:
+      Burger: PineappleSliceBurger
+      Taco: PineappleSlice
+
+- type: entity
+  name: шматочок цибулі
+  parent: ProduceSliceBase
+  id: FoodOnionSlice
+  description: Нема над чим плакати.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - onion
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/onion.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Allicin
+          Quantity: 1
+        - ReagentId: Vitamin
+          Quantity: 1
+  - type: Tag
+    tags:
+    - Vegetable
+    - Slice
+  - type: FoodSequenceElement
+    entries:
+      Burger: OnionSliceBurger
+      Taco: OnionSlice
+
+- type: entity
+  name: шматочок кримської цибулі
+  parent: ProduceSliceBase
+  id: FoodOnionRedSlice
+  description: Росте будь де, незважаючи на назву.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - onion
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/onion_red.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Allicin
+          Quantity: 1
+        - ReagentId: Vitamin
+          Quantity: 1
+  - type: Tag
+    tags:
+    - Vegetable
+    - Slice
+  - type: FoodSequenceElement
+    entries:
+      Burger: OnionRedSliceBurger
+      Taco: OnionRedSlice
+
+- type: entity
+  name: перець чилі
+  parent: FoodProduceBase
+  id: FoodChiliPepper
+  description: Гострий, краще не торкатися очей.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - spicy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+          - ReagentId: Nutriment
+            Quantity: 4
+          - ReagentId: CapsaicinOil
+            Quantity: 10
+          - ReagentId: Vitamin
+            Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/chili.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: chili
+  - type: Tag
+    tags:
+    - Vegetable
+  - type: FoodSequenceElement
+    entries:
+      Taco: ChiliPepper
+      Burger: ChiliPepper
+      Skewer: ChiliPepperSkewer
+
+- type: entity
+  name: начилі перець
+  parent: FoodProduceBase
+  id: FoodChillyPepper
+  description: Крижано гарячий.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - spicy
+      - cold
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+          - ReagentId: Nutriment
+            Quantity: 4
+          - ReagentId: FrostOil
+            Quantity: 10
+          - ReagentId: Vitamin
+            Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/chilly.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: chilly
+  - type: FoodSequenceElement
+    entries:
+      Taco: ChillyPepper
+      Burger: ChillyPepper
+      Skewer: ChillyPepperSkewer
+
+- type: entity
+  name: алое
+  parent: FoodProduceBase
+  id: FoodAloe
+  description: Ароматна рослина із заспокійливими властивостями.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - medicine
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20 ##I'm pretty sure this has to match the total of 100 potency yields
+        reagents:
+        - ReagentId: Aloe
+          Quantity: 10
+        - ReagentId: Dermaline
+          Quantity: 10
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/aloe.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: aloe
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Tag
+    tags:
+    - Vegetable
+  - type: FoodSequenceElement
+    entries:
+      Taco: Aloe
+      Burger: Aloe
+
+- type: entity
+  name: мак
+  parent: FoodProduceBase
+  id: FoodPoppy
+  description: Квітка, екстракти якої часто використовують у виробництві ліків.
+  components:
+  - type: Clothing
+    slots:
+    - HEAD
+    quickEquip: false
+  - type: FlavorProfile
+    flavors:
+      - medicine
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 22
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Bicaridine
+          Quantity: 20
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/poppy.rsi
+  - type: Produce
+    seedId: poppy
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Tag
+    tags:
+    - Flower # TODO add "RedFlower" or "Poppy" tag, when other color flowers will be
+  - type: FoodSequenceElement
+    entries:
+      Taco: Poppy
+      Burger: Poppy
+
+- type: entity
+  name: лілія
+  parent: FoodPoppy
+  id: FoodLily
+  description: Гарна помаранчева квітка.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - medicine
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 22
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Bicaridine
+          Quantity: 20
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/lily.rsi
+  - type: Produce
+    seedId: lily
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Tag
+    tags:
+    - Flower
+  - type: FoodSequenceElement
+    entries:
+      Taco: Lily
+      Burger: Lily
+
+- type: entity
+  name: лінчжі
+  parent: FoodProduceBase
+  id: FoodLingzhi
+  description: Потужний лікарський гриб. Не переборщіть.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - mushroom
+      - medicine
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Ultravasculine
+          Quantity: 20
+        - ReagentId: Epinephrine
+          Quantity: 20
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/lingzhi.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: lingzhi
+  - type: Extractable
+    grindableSolutionName: food
+  - type: FoodSequenceElement
+    entries:
+      Taco: Lingzhi
+      Burger: Lingzhi
+  - type: Tag
+    tags:
+    - Mushroom
+
+- type: entity
+  name: амброзія звичайна
+  parent: FoodProduceBase
+  id: FoodAmbrosiaVulgaris
+  description: Лікарська рослина. Може змусити вас почуватися трохи веселіше.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - leafy
+      - medicine
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: Bicaridine
+          Quantity: 5
+        - ReagentId: Kelotane
+          Quantity: 5
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 2
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/ambrosia_vulgaris.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: ambrosiaVulgaris
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Clothing
+    sprite: Objects/Specific/Hydroponics/ambrosia_vulgaris.rsi
+    slots:
+    - HEAD
+  - type: Tag
+    tags:
+    - Ambrosia
+  - type: FoodSequenceElement
+    entries:
+      Taco: AmbrosiaVulgaris
+      Burger: AmbrosiaVulgarisBurger
+
+- type: entity
+  name: амброзія божа
+  parent: FoodProduceBase
+  id: FoodAmbrosiaDeus
+  description: Надзвичайно потужна лікарська рослина. Може мати деякі побічні ефекти.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - leafy
+      - medicine
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Omnizine
+          Quantity: 3
+        - ReagentId: SpaceDrugs
+          Quantity: 5
+        - ReagentId: Nutriment
+          Quantity: 2
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/ambrosia_deus.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: ambrosiaDeus
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Clothing
+    sprite: Objects/Specific/Hydroponics/ambrosia_deus.rsi
+    slots:
+    - HEAD
+  - type: Tag
+    tags:
+    - Ambrosia
+  - type: FoodSequenceElement
+    entries:
+      Taco: AmbrosiaDeus
+      Burger: AmbrosiaDeusBurger
+
+- type: entity
+  name: розторопша
+  parent: FoodProduceBase
+  id: FoodGalaxythistle
+  description: Лікарська рослина, яку використовують через її антитоксин.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - medicine
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Stellibinin
+          Quantity: 25
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/galaxythistle.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: galaxythistle
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Tag
+    tags:
+    - Galaxythistle
+    - Fruit # Probably?
+  - type: FoodSequenceElement
+    entries:
+      Taco: Galaxythistle
+      Burger: GalaxythistleBurger
+
+- type: entity
+  name: красталючник
+  parent: FoodProduceBase
+  id: FoodGlasstle
+  description: Тендітна кришталева рослина з безліччю колючих шипів.
+  components:
+  - type: Item
+    size: Small
+    sprite: Objects/Specific/Hydroponics/glasstle.rsi
+    heldPrefix: produce
+  - type: FlavorProfile
+    flavors:
+      - sharp
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Razorium
+          Quantity: 15
+        - ReagentId: Desoxyephedrine
+          Quantity: 10
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/glasstle.rsi
+  - type: Produce
+    seedId: glasstle
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: ToolRefinable
+    refineResult:
+    - id: SheetGlass1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+          params:
+            volume: -4
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DamageOnHit
+    damage:
+      types:
+        Blunt: 10
+  - type: MeleeWeapon
+    wideAnimationRotation: 60
+    damage:
+      types:
+        Slash: 15
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Tag
+    tags:
+    - Galaxythistle
+  - type: FoodSequenceElement
+    entries:
+      Taco: Glasstle
+      Burger: GlasstleBurger
+
+- type: entity
+  name: мухомор
+  parent: FoodProduceBase
+  id: FoodFlyAmanita
+  description: Апетитний на вигляд гриб, як у мультфільмах.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - mushroom
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Amatoxin
+          Quantity: 10
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/fly_amanita.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: flyAmanita
+  - type: Extractable
+    grindableSolutionName: food
+  - type: BadFood
+  - type: FoodSequenceElement
+    entries:
+      Taco: FlyAmanita
+      Burger: FlyAmanita
+  - type: Tag
+    tags:
+    - Mushroom
+
+- type: entity
+  name: ґатфрукт
+  parent: [ FoodProduceBase, BaseSyndicateContraband ]
+  id: FoodGatfruit
+  description: "Смачний плід у формі пістолета з товстою дерев'яною плодоніжкою."
+  components:
+  - type: FlavorProfile
+    flavors:
+      - gunpowder
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Sulfur
+          Quantity: 5
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/gatfruit.rsi
+  - type: Produce
+    seedId: gatfruit
+  - type: Edible
+    trash:
+    - WeaponRevolverPython
+  - type: Tag
+    tags:
+    - Fruit # It's in the name
+  - type: FoodSequenceElement
+    entries:
+      Taco: Gatfruit
+      Burger: GatfruitBurger
+
+- type: entity
+  name: капфрукт
+  parent: FoodProduceBase
+  id: FoodRealCapfruit
+  description: "М'який, але гладкий плід у формі пістолета."
+  components:
+  - type: FlavorProfile
+    flavors:
+      - plastic
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Sulfur
+          Quantity: 5
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/capfruit.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: realCapfruit
+  - type: Edible
+    trash:
+    - RevolverCapGun
+  - type: Tag
+    tags:
+    - Fruit
+  - type: FoodSequenceElement
+    entries:
+      Taco: Capfruit
+      Burger: CapfruitBurger
+
+- type: entity
+  name: капфрут
+  parent: FoodRealCapfruit
+  id: FoodFakeCapfruit
+  suffix: Fake
+  components:
+  - type: Produce
+    seedId: fakeCapfruit
+  - type: Edible
+    trash:
+    - RevolverCapGunFake
+
+- type: entity
+  name: бушель рису
+  description: Можна перемолоти на рис, ідеально підходить для пудингу або саке.
+  id: RiceBushel
+  parent: ProduceBaseRuminant
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/rice.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Rice
+          Quantity: 10
+  - type: Produce
+    seedId: rice
+
+- type: entity
+  name: соєві боби
+  description: Для тих, хто не може дивитися на старе добре м'ясо.
+  id: FoodSoybeans
+  parent: ProduceBaseRuminant
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/soybeans.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 4
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+  - type: Produce
+    seedId: soybeans
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: MilkSoy
+        Quantity: 5
+  - type: Tag
+    tags:
+    - Vegetable
+  - type: FoodSequenceElement
+    entries:
+      Taco: Soybeans
+      Burger: SoybeansBurger
+
+- type: entity
+  name: сурма космонавта
+  description: "Яскрава квітка, що ледь відчутно пахне свіжоскошеною травою. Якщо доторкнутися до квітки, то через деякий час після контакту на шкірі з'являється пляма, проте на більшість інших поверхонь це явище не впливає."
+  id: FoodSpacemansTrumpet
+  parent: FoodProduceBase
+  components:
+  - type: FlavorProfile
+    flavors:
+      - violets
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/spacemans_trumpet.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 4
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1
+        - ReagentId: PolypyryliumOligomers
+          Quantity: 3
+  - type: Produce
+    seedId: spacemansTrumpet
+  - type: Tag
+    tags:
+    - Flower
+  - type: Instrument #hehe trumpet
+    program: 56
+  - type: FoodSequenceElement
+    entries:
+      Taco: SpacemansTrumpet
+      Burger: SpacemansTrumpetBurger
+
+- type: entity
+  name: коропо-боби
+  description: Ця квасоля здається трохи рибною.
+  id: FoodKoibean
+  parent: ProduceBaseRuminant
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/koibean.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: CarpoToxin
+          Quantity: 2
+  - type: Produce
+    seedId: koibean
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CarpoToxin
+        Quantity: 2
+  - type: Tag
+    tags:
+    - Vegetable
+  - type: FoodSequenceElement
+    entries:
+      Taco: Koibean
+      Burger: KoibeanBurger
+
+- type: entity
+  name: кавун
+  parent: [FoodProduceBase, ItemHeftyBase]
+  id: FoodWatermelon
+  description: "Круглий зелений об'єкт, який можна потужно нарізати і базовано з'їсти."
+  components:
+  - type: Item
+    size: Small
+    heldPrefix: produce
+  - type: FlavorProfile
+    flavors:
+      - watermelon
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Water
+          Quantity: 10
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/watermelon.rsi
+  - type: Produce
+    seedId: watermelon
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceWatermelon
+        Quantity: 20
+  - type: Damageable
+    damageContainer: Biological
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 0.1
+    damage:
+      types:
+        Blunt: 1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: desecration
+      - !type:SpillBehavior
+        solution: food
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: SliceableFood
+    count: 5
+    slice: FoodWatermelonSlice
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: ClothingHeadHatWatermelon
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: шматочок кавуна
+  parent: ProduceSliceBase
+  id: FoodWatermelonSlice
+  description: Соковита зелена і червона скибочка.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - watermelon
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/watermelon.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 1
+        - ReagentId: Water
+          Quantity: 2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceWatermelon
+        Quantity: 4
+  - type: Tag
+    tags:
+    - Fruit
+    - Slice
+  - type: FoodSequenceElement
+    entries:
+      Burger: WatermelonSliceBurger
+      Taco: WatermelonSlice
+      Skewer: WatermelonSliceSkewer
+
+- type: entity
+  name: святодиня
+  parent: [FoodProduceBase, ItemHeftyBase]
+  id: FoodHolymelon
+  description: Вода в цій дині була благословенна якимось божеством, яке особливо любить кавуни.
+  components:
+  - type: Item
+    size: Small
+    heldPrefix: produce
+  - type: FlavorProfile
+    flavors:
+      - holy
+      - watermelon
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Holywater
+          Quantity: 10
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/holymelon.rsi
+  - type: Produce
+    seedId: watermelon
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Wine
+        Quantity: 20
+  - type: Damageable
+    damageContainer: Biological
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 0.1
+    damage:
+      types:
+        Blunt: 1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: desecration
+      - !type:SpillBehavior
+        solution: food
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: SliceableFood
+    count: 5
+    slice: FoodHolymelonSlice
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: ClothingHeadHatHolyWatermelon
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: шматочок святодині
+  parent: ProduceSliceBase
+  id: FoodHolymelonSlice
+  description: Соковита золотисто-червона скибочка.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - holy
+      - watermelon
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/holymelon.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 1
+        - ReagentId: Holywater
+          Quantity: 2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Wine
+        Quantity: 4
+  - type: Tag
+    tags:
+    - Fruit
+    - Slice
+  - type: FoodSequenceElement
+    entries:
+      Burger: HolymelonSliceBurger
+      Taco: HolymelonSlice
+      Skewer: HolymelonSliceSkewer
+
+- type: entity
+  name: виноград
+  parent: FoodProduceBase
+  id: FoodGrape
+  description: Їжа імператорів, мешканців Космічної Франції (зазвичай у вигляді вина). Одного дня його можуть використати у виробництві вина для бармена, якщо воно у нього колись закінчиться.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - grape
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 9
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/grape.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: grape
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceGrape
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: ягоди
+  parent: FoodProduceBase
+  id: FoodBerries
+  description: Жменя різних видів ягід.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - berry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 11
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/berries.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: berries
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceBerry
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+  - type: FoodSequenceElement
+    entries:
+      Taco: Berries
+      Burger: BerriesBurger
+
+- type: entity
+  name: банго
+  parent: FoodProduceBase
+  id: FoodBungo
+  description: Скромний плід банго.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bungo
+  - type: Edible
+    trash:
+    - FoodBungoPit
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Enzyme
+          Quantity: 10
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/bungo.rsi
+  - type: Produce
+    seedId: bungo
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceBungo
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+  - type: FoodSequenceElement
+    entries:
+      Taco: Bungo
+      Burger: Bungo
+
+- type: entity
+  name: кісточка банго
+  parent: FoodInjectableBase
+  id: FoodBungoPit
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/bungo.rsi
+    state: pit
+  - type: Tag
+    tags:
+    - Recyclable
+    - Trash
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Bungotoxin
+          Quantity: 5
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Seed
+    seedId: bungo
+  - type: SpaceGarbage
+  - type: BadFood
+
+- type: entity
+  parent: FoodProduceBase
+  id: FoodPeaPod
+  name: стручок гороху
+  description: Улюблені качині ласощі!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - peas
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Vitamin
+          Quantity: 2
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/pea.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: pea
+  - type: Tag
+    tags:
+    - Vegetable
+  - type: FoodSequenceElement
+    entries:
+      Taco: Pea
+      Burger: Pea
+
+- type: entity
+  parent: FoodProduceBase
+  id: FoodWorldPeas
+  name: кластер мирового гороху
+  description: Подейкують, що він приносить мир тому, хто його споживає.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - numbingtranquility
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Happiness
+          Quantity: 3
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Pax
+          Quantity: 2
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/world_pea.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: worldPea
+  - type: Tag
+    tags:
+    - Vegetable
+  - type: FoodSequenceElement
+    entries:
+      Taco: WorldPea
+      Burger: WorldPeaBurger
+
+- type: entity
+  name: гарбуз
+  parent: FoodProduceBase
+  id: FoodPumpkin
+  description: Велика, помаранчева... ягода. Серйозно.
+  components:
+  - type: Item
+    size: Small
+    heldPrefix: produce
+  - type: FlavorProfile
+    flavors:
+      - pumpkin
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: PumpkinFlesh
+          Quantity: 20
+        - ReagentId: Vitamin
+          Quantity: 5
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/pumpkin.rsi
+  - type: Produce
+    seedId: pumpkin
+  - type: Damageable
+    damageContainer: Biological
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 16
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: desecration
+      - !type:SpillBehavior
+        solution: food
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: CarvedPumpkin
+    - id: PumpkinSeeds
+  - type: Tag
+    tags:
+    - Fruit
+    - Vegetable
+
+- type: entity
+  name: синій гарбуз
+  parent: FoodProduceBase
+  id: FoodBluePumpkin
+  description: Велика, синя... ягода. Серйозно.
+  components:
+  - type: Item
+    size: Small
+    heldPrefix: produce
+  - type: FlavorProfile
+    flavors:
+      - bluepumpkin
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Ammonia
+          Quantity: 10
+        - ReagentId: Chlorine
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 10
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceBluePumpkin
+        Quantity: 10
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/blue_pumpkin.rsi
+  - type: Produce
+    seedId: bluePumpkin
+  - type: Damageable
+    damageContainer: Biological
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 16
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: desecration
+      - !type:SpillBehavior
+        solution: food
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: гілка бавовни
+  description: Улюблена закуска ніан, і така ж пухнаста, як і вони.
+  id: CottonBol
+  parent: FoodProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cotton.rsi
+  - type: FlavorProfile
+    flavors:
+      - cotton
+  - type: Edible
+    requiresSpecialDigestion: true
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+  - type: Log
+    spawnedPrototype: MaterialCotton1
+    spawnCount: 2
+  - type: Produce
+    seedId: cotton
+  - type: Tag
+    tags:
+    - ClothMade
+    - CottonBoll
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: CottonBol
+
+- type: entity
+  name: гілка вогнебавовни 
+  description: Це, ймовірно, запалить вас.
+  id: PyrottonBol
+  parent: FoodProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/pyrotton.rsi
+  - type: FlavorProfile
+    flavors:
+      - pyrotton
+  - type: Edible
+    requiresSpecialDigestion: true
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 5
+        - ReagentId: Phlogiston
+          Quantity: 5
+  - type: Log
+    spawnedPrototype: MaterialPyrotton1
+    spawnCount: 2
+  - type: Produce
+    seedId: pyrotton
+  - type: Tag
+    tags:
+    - ClothMade
+    - CottonBoll
+  - type: Extractable
+    grindableSolutionName: food
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: PyrottonBol
+
+- type: entity
+  name: вишня
+  parent: FoodProduceBase
+  id: FoodCherry
+  description: Соковита червона вишня з кісточкою всередині.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cherry
+  - type: Edible
+    trash:
+    - TrashCherryPit
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Vitamin
+          Quantity: 3
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cherry.rsi
+  - type: Produce
+    seedId: cherry
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceCherry
+        Quantity: 5
+  - type: Tag
+    tags:
+    - Fruit
+  - type: FoodSequenceElement
+    entries:
+      Taco: Cherry
+      Burger: Cherry
+
+- type: entity
+  name: вишнева кісточка
+  parent: FoodInjectableBase
+  id: TrashCherryPit
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cherry.rsi
+    state: pit
+  - type: Item
+    sprite: Objects/Specific/Hydroponics/cherry.rsi
+    heldPrefix: pit
+    size: Tiny
+  - type: Tag
+    tags:
+    - Recyclable
+    - Trash
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 1
+        reagents:
+        - ReagentId: Toxin
+          Quantity: 1
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Seed
+    seedId: cherry
+  - type: SpaceGarbage
+  - type: BadFood
+
+- type: entity
+  name: аномальна ягода
+  description: Дивний синій плід. Щось у ньому не так.
+  parent: FoodProduceBase
+  id: FoodAnomalyBerry
+  components:
+  - type: FlavorProfile
+    flavors:
+      - strange
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/anomaly_berry.rsi
+    state: produce
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: anomalyBerry
+  - type: Edible
+    trash:
+    - EffectAnomalyFloraBulb # Random loot
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 2
+        - ReagentId: Artifexium
+          Quantity: 1
+  - type: Tag
+    tags:
+    - Fruit
+  - type: FoodSequenceElement
+    entries:
+      Taco: AnomalyBerry
+      Burger: AnomalyBerryBurger
+
+- type: entity
+  name: bloonion bulb
+  description: A strange floating bulb.. Nothing worth crying over.
+  parent: BaseStructureDynamic
+  id: FoodBloonion
+  components:
+  - type: Appearance
+  - type: Sprite
+    drawdepth: Items
+    noRot: true
+    sprite: Objects/Specific/Hydroponics/bloonion.rsi
+    state: produce
+  - type: Item
+    size: Small
+    sprite: Objects/Specific/Hydroponics/bloonion.rsi
+    heldPrefix: produce
+  - type: Produce
+    seedId: bloonion
+  - type: Tag
+    tags:
+    - Vegetable
+  - type: PotencyVisuals
+  - type: FlavorProfile
+    flavors:
+    - onion
+    - strange
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        canReact: false
+        reagents:
+        - ReagentId: Potassium
+          Quantity: 1
+        - ReagentId: Phosphorus
+          Quantity: 1
+        - ReagentId: Sugar
+          Quantity: 1
+        - ReagentId: Allicin
+          Quantity: 4
+  - type: Extractable
+    grindableSolutionName: food
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 0.001
+    intensitySlope: 1
+    totalIntensity: 0.1
+  - type: Damageable
+    damageContainer: Biological
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:SpillBehavior
+        solution: food
+      - !type:TriggerBehavior
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: InteractionOutline
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.20
+          position: 0, 0.35
+        density: 80
+        mask:
+        - MobMask
+        layer:
+        - MobLayer

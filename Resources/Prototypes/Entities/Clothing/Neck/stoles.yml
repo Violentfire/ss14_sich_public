@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckStoleChaplain
+  name: палантин священника
+  description: Палантин елегантного дизайну з яскравим золотим хрестом на обох кінцях.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Stoles/chaplain.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Stoles/chaplain.rsi

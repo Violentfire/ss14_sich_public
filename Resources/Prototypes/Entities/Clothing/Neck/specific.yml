@@ -1,0 +1,16 @@
+- type: entity
+  parent: [ClothingNeckBase, BaseChameleon]
+  id: ClothingNeckChameleon
+  name: червоний смугастий шалик
+  description: Стильний червоний шарф в смужку. Ідеальний зимовий аксесуар для тих, хто відчуває себе модним, а також для тих, хто просто не може впоратися з холодним вітром на шиї.
+  suffix: Хамелеон
+  components:
+    - type: Tag
+      tags: [] # ignore "WhitelistChameleon" tag
+    - type: Sprite
+      sprite: Clothing/Neck/Scarfs/red.rsi
+    - type: Clothing
+      sprite: Clothing/Neck/Scarfs/red.rsi
+    - type: ChameleonClothing
+      slot: [NECK]
+      default: ClothingNeckScarfStripedRed

@@ -1,0 +1,12 @@
+- type: entity
+  parent: ActionMarineBase
+  id: CMActionToggleScope
+  name: Перемкнути Оптику
+  description: Зазирніть в середину або назовні задопомгою своєї оптики.
+  components:
+  - type: InstantAction
+    icon:
+      sprite: SkypunkTextures/Actions/scope_actions.rsi
+      state: sniperscope
+    event: !type:ToggleActionEvent
+    useDelay: 0.25

@@ -1,0 +1,152 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHardhatBase
+  abstract: true
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - state: light-icon
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Clothing
+    equippedPrefix: off
+  - type: PointLight
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 7
+    netsync: false
+  - type: Appearance
+  - type: HandheldLight
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+    - !type:FadeBehaviour
+      id: radiating
+      interpolate: Linear
+      maxDuration: 2.0
+      startValue: 3.0
+      endValue: 2.0
+      isLooped: true
+      reverseWhenFinished: true
+    - !type:PulseBehaviour
+      id: blinking
+      interpolate: Nearest
+      maxDuration: 1.0
+      startValue: 0.1
+      endValue: 2.0
+      isLooped: true
+  - type: ToggleableVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+      right:
+      - state: on-inhand-right
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+  - type: ItemTogglePointLight
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: Item
+    heldPrefix: off
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadHatHardhatBase
+  id: ClothingHeadHatHardhatBlue
+  name: синя каска
+  description: Синя каска, призначена для захисту голови в небезпечних умовах. Оснащена вбудованим ліхтарем.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardhats/blue.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardhats/blue.rsi
+
+- type: entity
+  parent: ClothingHeadHatHardhatBase
+  id: ClothingHeadHatHardhatOrange
+  name: помаранчева каска
+  description: Помаранчева каска, призначена для захисту голови в небезпечних умовах. Оснащена вбудованим ліхтарем.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardhats/orange.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardhats/orange.rsi
+
+- type: entity
+  parent: ClothingHeadHatHardhatBase
+  id: ClothingHeadHatHardhatRed
+  name: червона каска
+  description: Червона каска, призначена для захисту голови в небезпечних умовах. Оснащена вбудованим ліхтарем.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardhats/red.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardhats/red.rsi
+
+- type: entity
+  parent: ClothingHeadHatHardhatBase
+  id: ClothingHeadHatHardhatWhite
+  name: біла каска
+  description: Біла каска, призначена для захисту голови в небезпечних умовах. Оснащена вбудованим ліхтарем.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardhats/white.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardhats/white.rsi
+
+- type: entity
+  parent: ClothingHeadHatHardhatBase
+  id: ClothingHeadHatHardhatYellow
+  name: жовта каска
+  description: Жовта каска, призначена для захисту голови в небезпечних умовах. Оснащена вбудованим ліхтарем.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardhats/yellow.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardhats/yellow.rsi
+
+- type: entity
+  parent: ClothingHeadHatHardhatBase
+  id: ClothingHeadHatHardhatYellowDark
+  name: темно-жовта каска
+  description: Темно-жовта каска, призначена для захисту голови в небезпечних умовах. Оснащена вбудованим ліхтарем.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardhats/dark_yellow.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardhats/dark_yellow.rsi
+
+- type: entity
+  parent: ClothingHeadHatHardhatBase
+  id: ClothingHeadHatHardhatArmored
+  name: броньована каска
+  description: Броньована каска, що поєднує захист і практичність — ідеальний вибір для інженера на передовій.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardhats/armored.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardhats/armored.rsi
+  - type: Armor #Copied from the sec helmet, as it's hard to give these sane values without locational damage existing.
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.9
+        Heat: 0.8

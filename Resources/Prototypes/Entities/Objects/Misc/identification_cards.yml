@@ -1,0 +1,915 @@
+- type: entity
+  parent: Clothing
+  id: IDCardStandard
+  name: ідентифікаційна картка
+  description: Картка, необхідна для доступу до різних зон на борту станції.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/id_cards.rsi
+  - type: Clothing
+    slots:
+    - idcard
+    sprite: Objects/Misc/id_cards.rsi
+  - type: Item
+    size: Small
+    heldPrefix: default
+    storedRotation: -90
+  - type: Access
+  - type: IdCard
+  - type: StationRecordKeyStorage
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+    - WhitelistChameleonIdCard
+  - type: StealTarget
+    stealGroup: IDCard
+
+#IDs with layers
+
+- type: entity
+  parent: IDCardStandard
+  id: PassengerIDCard
+  name: ID картка пасажира
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idpassenger
+  - type: PresetIdCard
+    job: Passenger
+
+- type: entity
+  parent: PassengerIDCard
+  id: TechnicalAssistantIDCard
+  name: ID картка технічного асистента
+  components:
+  - type: PresetIdCard
+    job: TechnicalAssistant
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idintern-tech
+
+- type: entity
+  parent: PassengerIDCard
+  id: MedicalInternIDCard
+  name: ID картка інтерна
+  components:
+  - type: PresetIdCard
+    job: MedicalIntern
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idintern-med
+
+- type: entity
+  parent: PassengerIDCard
+  id: ResearchAssistantIDCard
+  name: ID картка лаборанта
+  components:
+  - type: PresetIdCard
+    job: ResearchAssistant
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idintern-sci
+
+- type: entity
+  parent: PassengerIDCard
+  id: SecurityCadetIDCard
+  name: ID картка кадета
+  components:
+  - type: PresetIdCard
+    job: SecurityCadet
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idintern-cadet
+
+- type: entity
+  parent: PassengerIDCard
+  id: ServiceWorkerIDCard
+  name: ID картка сервісного працівника
+  components:
+  - type: PresetIdCard
+    job: ServiceWorker
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idintern-service
+
+- type: entity
+  parent: [IDCardStandard, BaseGrandTheftContraband]
+  id: CaptainIDCard
+  name: ID картка капітана
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: idcaptain
+  - type: Item
+    heldPrefix: gold
+  - type: PresetIdCard
+    job: Captain
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+    - WhitelistChameleonIdCard
+    - HighRiskItem
+  - type: StealTarget
+    stealGroup: CaptainIDCard
+
+- type: entity
+  parent: IDCardStandard
+  id: SecurityIDCard
+  name: ID картка охорони
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idsecurityofficer
+  - type: PresetIdCard
+    job: SecurityOfficer
+
+- type: entity
+  parent: IDCardStandard
+  id: WardenIDCard
+  name: ID картка наглядача
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idwarden
+    - type: PresetIdCard
+      job: Warden
+
+- type: entity
+  parent: IDCardStandard
+  id: EngineeringIDCard
+  name: ID картка інженера
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idstationengineer
+  - type: PresetIdCard
+    job: StationEngineer
+
+- type: entity
+  parent: IDCardStandard
+  id: MedicalIDCard
+  name: ID картка лікаря
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idmedicaldoctor
+  - type: PresetIdCard
+    job: MedicalDoctor
+
+- type: entity
+  parent: IDCardStandard
+  id: ParamedicIDCard
+  name: ID картка парамедика
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idparamedic
+  - type: PresetIdCard
+    job: Paramedic
+
+- type: entity
+  parent: IDCardStandard
+  id: ChemistIDCard
+  name: ID картка хіміка
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idchemist
+  - type: PresetIdCard
+    job: Chemist
+
+- type: entity
+  parent: IDCardStandard
+  id: CargoIDCard
+  name: ID картка вантажника
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcargotechnician
+  - type: PresetIdCard
+    job: CargoTechnician
+
+- type: entity
+  parent: IDCardStandard
+  id: SalvageIDCard
+  name: ID картка шахтаря
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idshaftminer
+  - type: PresetIdCard
+    job: SalvageSpecialist
+
+- type: entity
+  parent: IDCardStandard
+  id: QuartermasterIDCard
+  name: ID картка квартирмейстера
+  components:
+    - type: Sprite
+      layers:
+        - state: silver
+        - state: idquartermaster
+    - type: Item
+      heldPrefix: silver
+    - type: PresetIdCard
+      job: Quartermaster
+
+- type: entity
+  parent: IDCardStandard
+  id: ResearchIDCard
+  name: ID картка вченого
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idscientist
+  - type: PresetIdCard
+    job: Scientist
+
+- type: entity
+  parent: IDCardStandard
+  id: ClownIDCard
+  name: ID картка клоуна
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idclown
+  - type: PresetIdCard
+    job: Clown
+
+- type: entity
+  parent: IDCardStandard
+  id: MimeIDCard
+  name: ID картка міма
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idmime
+  - type: PresetIdCard
+    job: Mime
+
+- type: entity
+  parent: IDCardStandard
+  id: ChaplainIDCard
+  name: ID картка священика
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idchaplain
+    - type: PresetIdCard
+      job: Chaplain
+
+- type: entity
+  parent: IDCardStandard
+  id: JanitorIDCard
+  name: ID картка прибиральника
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idjanitor
+  - type: PresetIdCard
+    job: Janitor
+
+- type: entity
+  parent: IDCardStandard
+  id: BartenderIDCard
+  name: ID картка бармена
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idbartender
+  - type: PresetIdCard
+    job: Bartender
+
+- type: entity
+  parent: IDCardStandard
+  id: PunPunIDCard
+  name: ID картка Пун Пуна
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idbartender
+    - type: PresetIdCard
+      job: Bartender
+      name: Pun Pun
+    - type: Tag #  Ignore Chameleon tags
+      tags:
+      - DoorBumpOpener
+
+- type: entity
+  parent: IDCardStandard
+  id: ChefIDCard
+  name: ID картка шеф-кухаря
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcook
+  - type: PresetIdCard
+    job: Chef
+
+- type: entity
+  parent: IDCardStandard
+  id: BotanistIDCard
+  name: ID картка ботаніка
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idbotanist
+    - type: PresetIdCard
+      job: Botanist
+
+- type: entity
+  parent: IDCardStandard
+  id: LibrarianIDCard
+  name: ID картка бібліотекаря
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idcurator
+    - type: PresetIdCard
+      job: Librarian
+
+- type: entity
+  parent: IDCardStandard
+  id: LawyerIDCard
+  name: ID картка адвоката
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idlawyer
+    - type: PresetIdCard
+      job: Lawyer
+
+- type: entity
+  parent: IDCardStandard
+  id: HoPIDCard
+  name: ID картка голови персоналу
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: idheadofpersonnel
+  - type: Item
+    heldPrefix: silver
+  - type: PresetIdCard
+    job: HeadOfPersonnel
+
+- type: entity
+  parent: IDCardStandard
+  id: CEIDCard
+  name: ID картка головного інженера
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: idchiefengineer
+  - type: Item
+    heldPrefix: silver
+  - type: PresetIdCard
+    job: ChiefEngineer
+
+- type: entity
+  parent: IDCardStandard
+  id: CMOIDCard
+  name: ID картка головного лікаря
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: idchiefmedicalofficer
+  - type: Item
+    heldPrefix: silver
+  - type: PresetIdCard
+    job: ChiefMedicalOfficer
+
+- type: entity
+  parent: IDCardStandard
+  id: RDIDCard
+  name: ID картка директора наукового відділу
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: idresearchdirector
+  - type: Item
+    heldPrefix: silver
+  - type: PresetIdCard
+    job: ResearchDirector
+
+- type: entity
+  parent: IDCardStandard
+  id: HoSIDCard
+  name: ID картка голови безпеки
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: idheadofsecurity
+  - type: Item
+    heldPrefix: silver
+  - type: PresetIdCard
+    job: HeadOfSecurity
+
+- type: entity
+  parent: IDCardStandard
+  id: VisitorIDCard
+  name: visitor ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idvisitor
+  - type: IdCard
+    jobTitle: job-title-visitor
+    jobIcon: JobIconVisitor
+  - type: PresetIdCard
+    job: Visitor
+
+- type: entity
+  parent: IDCardStandard
+  id: BrigmedicIDCard
+  name: ID картка бріг медика
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idbrigmedic
+
+- type: entity
+  parent: IDCardStandard
+  id: CentcomIDCard
+  name: ID картка командуючого офіцера
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandOfficial
+
+- type: entity
+  parent: IDCardStandard
+  id: ERTLeaderIDCard
+  name: ID картка капітана ГШР
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: ert_commander
+  - type: PresetIdCard
+    job: ERTLeader
+  - type: Item
+    heldPrefix: gold
+
+- type: entity
+  parent: IDCardStandard
+  id: ERTChaplainIDCard
+  name: ID картка священика ГШР
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: ert_chaplain # we have the sprite for the id but dont have chaplain ERT equipment for now.
+  - type: PresetIdCard
+    job: ERTChaplain
+  - type: Item
+    heldPrefix: blue
+
+- type: entity
+  parent: IDCardStandard
+  id: ERTEngineerIDCard
+  name: ID картка інженера ГШР
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: ert_engineer
+  - type: PresetIdCard
+    job: ERTEngineer
+
+- type: entity
+  parent: IDCardStandard
+  id: ERTJanitorIDCard
+  name: ID картка прибиральника ГШР
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: ert_janitor
+  - type: PresetIdCard
+    job: ERTJanitor
+
+- type: entity
+  parent: IDCardStandard
+  id: ERTMedicIDCard
+  name: ID картка медика ГШР
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: ert_medic
+  - type: PresetIdCard
+    job: ERTMedical
+
+- type: entity
+  parent: IDCardStandard
+  id: ERTSecurityIDCard
+  name: ID картка офіцера ГШР
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: ert_security
+  - type: PresetIdCard
+    job: ERTSecurity
+
+- type: entity
+  parent: IDCardStandard
+  id: MusicianIDCard
+  name: ID картка музиканта
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idmusician
+    - type: PresetIdCard
+      job: Musician
+
+- type: entity
+  parent: IDCardStandard
+  id: CentcomIDCardDeathsquad
+  name: ID картка загіну смерті
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: DeathSquad
+
+- type: entity
+  name: ID картка пасажира
+  parent: [IDCardStandard, BaseChameleon]
+  id: AgentIDCard
+  suffix: Агент
+  components:
+  - type: PresetIdCard
+    job: Passenger
+  - type: Access
+    tags:
+    - Maintenance
+    - SyndicateAgent
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idpassenger
+  - type: AgentIDCard
+  - type: UIRequiresLock
+  - type: ActivatableUI
+    key: enum.AgentIDCardUiKey.Key
+    verbText: agent-id-open-ui-verb
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+  - type: ChameleonClothing
+    slot: [idcard]
+    default: PassengerIDCard
+    requireTag: WhitelistChameleonIdCard
+  - type: UserInterface
+    interfaces:
+      enum.AgentIDCardUiKey.Key:
+        type: AgentIDCardBoundUserInterface
+      enum.ChameleonUiKey.Key:
+        type: ChameleonBoundUserInterface
+
+- type: entity
+  name: ID картка пасажира
+  parent: AgentIDCard
+  id: NukieAgentIDCard
+  suffix: Ядерник
+  components:
+  - type: Access
+    tags:
+    - Maintenance
+    - SyndicateAgent
+    - NuclearOperative
+
+- type: entity
+  parent: IDCardStandard
+  id: AtmosIDCard
+  name: ID картка атмосферного інженера
+  components:
+  - type: Sprite
+    layers:
+    - state: orange
+    - state: idatmospherictechnician
+  - type: PresetIdCard
+    job: AtmosphericTechnician
+
+- type: entity
+  parent: [ IDCardStandard, BaseSyndicateContraband ]
+  id: SyndicateIDCard
+  name: ID картка синдикату
+  components:
+  - type: Sprite
+    layers:
+    - state: black
+    - state: syndi
+  - type: Access
+    tags:
+    - NuclearOperative
+    - SyndicateAgent
+
+- type: entity
+  parent: [ SyndicateIDCard, BaseSyndicateContraband ]
+  id: SyndiOperativeIDCard
+  name: syndicate operative ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: black
+    - state: syndi_operative
+  - type: AgentIDCard
+
+- type: entity
+  parent: [ SyndiOperativeIDCard, BaseSyndicateContraband ]
+  id: SyndiCorpsmanIDCard
+  name: syndicate corpsman ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: black
+    - state: syndi_corpsman
+
+- type: entity
+  parent: [ SyndiOperativeIDCard, BaseSyndicateContraband ]
+  id: SyndiCommanderIDCard
+  name: syndicate commander ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: black
+    - state: syndi_commander
+
+- type: entity
+  parent: [ IDCardStandard, BaseMajorContraband ]
+  id: PirateIDCard
+  name: ID картка пірата
+  components:
+  - type: Sprite
+    layers:
+    - state: pirate
+  - type: Access
+    tags:
+    - NuclearOperative
+    - SyndicateAgent
+
+- type: entity
+  parent: IDCardStandard
+  id: PsychologistIDCard
+  name: ID картка психолога
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idpsychologist
+  - type: PresetIdCard
+    job: Psychologist
+
+- type: entity
+  parent: IDCardStandard
+  id: ReporterIDCard
+  name: ID картка репортера
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idreporter
+  - type: PresetIdCard
+    job: Reporter
+
+- type: entity
+  parent: IDCardStandard
+  id: BoxerIDCard
+  name: ID картка боксера
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idboxer
+  - type: PresetIdCard
+    job: Boxer
+
+- type: entity
+  parent: IDCardStandard
+  id: ZookeeperIDCard
+  name: ID картка зоолога
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idzookeeper
+  - type: PresetIdCard
+    job: Zookeeper
+
+- type: entity
+  parent: IDCardStandard
+  id: DetectiveIDCard
+  name: ID картка детектива
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: iddetective
+  - type: PresetIdCard
+    job: Detective
+
+- type: entity
+  parent: IDCardStandard
+  id: PrisonerIDCard
+  name: prisoner ID card
+  description: A generically printed ID card for scummy prisoners.
+  components:
+  - type: Sprite
+    layers:
+    - state: orange
+  - type: Item
+    heldPrefix: orange
+  - type: Access
+    tags:
+    - GenpopEnter
+  - type: GenpopIdCard
+  - type: IdCard
+    jobTitle: job-name-prisoner
+    jobIcon: JobIconPrisoner
+    canMicrowave: false
+  - type: ExpireIdCard
+    expireMessage: genpop-prisoner-id-expire
+    expiredAccess:
+    - GenpopLeave
+  - type: Speech
+    speechVerb: Robotic
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+    - WhitelistChameleonIdCard
+    - Recyclable
+  - type: StaticPrice # these are infinitely producible.
+    price: 0
+
+- type: entity
+  parent: CentcomIDCard
+  id: CBURNIDcard
+  name: ID картка РХБЗ
+  suffix: CBURN
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CBURN
+
+- type: entity
+  parent: IDCardStandard
+  id: CluwneIDCard
+  name: ID картка клуні
+  suffix: Unremoveable
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcluwne
+  - type: IdCard
+    jobTitle: job-title-cluwne
+    jobIcon: JobIconCluwne
+  - type: Unremoveable
+
+- type: entity
+  parent: EngineeringIDCard
+  id: SeniorEngineerIDCard
+  name: ID картка старшого інженера
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorengineer
+
+- type: entity
+  parent: ResearchIDCard
+  id: SeniorResearcherIDCard
+  name: ID картка старшого наукового співробітника
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+
+- type: entity
+  parent: MedicalIDCard
+  id: SeniorPhysicianIDCard
+  name: ID картка старшого лікаря
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorphysician
+
+- type: entity
+  parent: SecurityIDCard
+  id: SeniorOfficerIDCard
+  name: ID картка старшого офіцера
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorofficer
+
+- type: entity
+  parent: IDCardStandard
+  id: WizardIDCard
+  name: wizard ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: wizard
+    - state: idwizard
+  - type: Access
+    tags:
+    - Wizard
+    - External
+    - Maintenance
+
+- type: entity
+  parent: IDCardStandard
+  id: UniversalIDCard
+  name: універсальна ID картка 
+  suffix: Admin
+  description: Ідентифікаційна картка, яка відкриває вам доступ за межі ваших найсміливіших мрій.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/id_cards.rsi
+    layers:
+    - state: admin
+    - state: idadmin
+  - type: Clothing
+    sprite: Objects/Misc/id_cards.rsi
+  - type: Item
+    heldPrefix: green
+  - type: IdCard
+    jobTitle: job-title-universal
+    jobIcon: JobIconAdmin
+  - type: Access
+    groups:
+    - AllAccess
+    - Silicon
+    tags:
+    - CentralCommand
+    - NuclearOperative
+    - SyndicateAgent
+    - Wizard
+    - Xenoborg
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+  - type: AgentIDCard
+  - type: ActivatableUI
+    key: enum.AgentIDCardUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.AgentIDCardUiKey.Key:
+        type: AgentIDCardBoundUserInterface

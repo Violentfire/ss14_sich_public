@@ -1,0 +1,87 @@
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
+  id: ClothingNeckMantleCap
+  name: мантія капітана
+  description: Зручна та шикарна мантія личить лише найдосвідченішому капітану.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/mantles/capmantle.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/mantles/capmantle.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
+  id: ClothingNeckMantleCE
+  name: мантія головного інженера
+  description: Сегментована накладка на руку для досвідченого головного інженера, яка вказує на небезпеку роботи та небезпеки, з якими стикаються, щоб її отримати.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/mantles/cemantle.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/mantles/cemantle.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
+  id: ClothingNeckMantleCMO
+  name: мантія головного лікаря
+  description: Стерильна мантія головного лікаря. Часто буває у хімчистці.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/mantles/cmomantle.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/mantles/cmomantle.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
+  id: ClothingNeckMantleHOP
+  name: мантія голови персоналу
+  description: Хороший ГП знає, що штовхати папери - це лише половина справи... гладити собаку та виглядати модно - це друга половина.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/mantles/hopmantle.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/mantles/hopmantle.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
+  id: ClothingNeckMantleHOS
+  name: мантія голови служби безпеки
+  description: Перестрілки з агентами синдикату - звичайнісінький вівторок для цього ГБ. Ця мантія - символ відданості станції.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/mantles/hosmantle.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/mantles/hosmantle.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
+  id: ClothingNeckMantleRD
+  name: мантія директора наукового відділу
+  description: Для довгих днів у відділі, що складаються з вибухівки, отруйних газів, роботів-убивць і свіжої піци з вантажу; у цій мантії вам буде комфортно.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/mantles/rdmantle.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/mantles/rdmantle.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
+  id: ClothingNeckMantleQM
+  name: мантія квартирмейстера
+  description: Для майстра товарів і матеріалів, щоб керувати відділом, належна мантія для демонстрації першості!
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/mantles/qmmantle.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/mantles/qmmantle.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckMantle
+  name: мантія
+  description: М’яка мантія з того ж «синтетичного» хутра тварин, що й культове зимове пальто.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/mantles/mantle.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/mantles/mantle.rsi 

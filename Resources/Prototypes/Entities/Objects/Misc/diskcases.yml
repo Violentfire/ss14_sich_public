@@ -1,0 +1,21 @@
+- type: entity
+  name: футляр для диска
+  parent: BaseStorageItem
+  id: DiskCase
+  description: Футляр для зберігання диска з координатами.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/diskcases.rsi
+    state: icon_base
+  - type: Storage
+    grid:
+    - 0,0,0,1
+    maxItemSize: Normal
+    whitelist:
+      tags:
+        - Document
+        - CoordinatesDisk
+    storageOpenSound: /Audio/Machines/screwdriveropen.ogg
+    storageCloseSound: /Audio/Machines/screwdriverclose.ogg
+    storageInsertSound: /Audio/Items/crowbar.ogg
+    storageRemoveSound: /Audio/Items/crowbar.ogg

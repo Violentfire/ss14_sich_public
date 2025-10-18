@@ -1,0 +1,30 @@
+- type: entity
+  parent: ParticleAcceleratorFinishedPart
+  id: ParticleAcceleratorEndCap
+  name: заглушка ПЧ
+  description: Офіційно відома як масив генерації альфа-частинок. Це місце, де альфа-частинки генеруються з [ВИДАЛЕНО].
+  components:
+  - type: Sprite
+    sprite: Structures/Power/Generation/PA/end_cap.rsi
+    layers:
+    - state: completed
+      map: [ "enum.ParticleAcceleratorVisualLayers.Base" ]
+  - type: ParticleAcceleratorEndCap
+  - type: Construction
+    graph: ParticleAcceleratorEndCap
+  - type: MultipartMachinePart
+
+# Unfinished
+
+- type: entity
+  parent: ParticleAcceleratorUnfinishedBase
+  id: ParticleAcceleratorEndCapUnfinished
+  name: заглушка ПЧ
+  suffix: Unfinished
+  description: Офіційно відома як масив генерації альфа-частинок. Це місце, де альфа-частинки генеруються з [ВИДАЛЕНО]. Виглядає незавершеним.
+  components:
+  - type: Sprite
+    sprite: Structures/Power/Generation/PA/end_cap.rsi
+  - type: Construction
+    graph: ParticleAcceleratorEndCap
+  - type: MultipartMachinePart

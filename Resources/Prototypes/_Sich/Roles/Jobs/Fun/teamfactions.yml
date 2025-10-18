@@ -1,0 +1,133 @@
+# Chaos Inc.
+- type: job
+  id: ChaosIncRespentative
+  name: "Представник Корпорації Хаосу"
+  description: "Публічна особа що представляє Корпорацію Хаосу."
+  playTimeTracker: ChaosIncRespentative
+  setPreference: false
+  startingGear: ChaosIncRespentativeGear
+  icon: _Sich/Interface/Misc/job_icons.rsi
+  layers:
+    - state: ChaosIncRes
+  supervisors: "Корпорація Хаосу"
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+
+- type: startingGear
+  id: ChaosIncRespentativeGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerBlack
+    back: ClothingBackpackSatchelHolding
+    shoes: ClothingShoesBootsCombatFilled
+    head: ClothingHeadHatChaosIncBeret
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterCoatChaosIncTrench
+    id: CIRespentativeIDCard
+    ears: ClothingHeadsetAltCentCom
+    belt: WeaponTaser
+    pocket1: WeaponPulsePistol
+    pocket2: FlashlightSeclite
+
+- type: startingGear
+  id: ChaosIncOperative
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitTacticool
+    back: ClothingBackpackHolding
+    shoes: ClothingShoesBootsMagAdv
+    mask: ClothingMaskGasSwat
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    suitstorage: AirTankFilled
+    id: ERTSecurityPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltChiefEngineerFilled
+    pocket1: WeaponPulsePistol
+    pocket2: FlashlightSeclite
+    
+#SolFed and Co.
+
+- type: startingGear
+  id: SolFedPoliceGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSolFed
+    back: ClothingBackpackSecurity
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitSolFed
+    id: SolFedOfficerIDCard
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltSecurityFilled
+    pocket1: WeaponPulsePistol
+    pocket2: FlashlightSeclite
+    
+- type: startingGear
+  id: SBUSNGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSolFed
+    back: ClothingBackpackSecurity
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitUkraine
+    id: SBUSNIDCard
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltSecurityFilled
+    pocket1: WeaponPulsePistol
+    pocket2: FlashlightSeclite
+
+#CIA NT
+
+- type: startingGear
+  id: CIAAgentGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCIAAgent
+    back: ClothingBackpackSatchelHolding
+    shoes: ClothingShoesBootsCombatFilled
+    head: ClothingHeadHatCIABeret
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorBasic
+    id: CentcomPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: WeaponTaser
+    pocket1: WeaponPulsePistol
+    pocket2: BoxFolderBlack
+    
+- type: startingGear
+  id: DeathShadowOperative
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitTacticool
+    back: ClothingBackpackDeathSquadFilled
+    shoes: ClothingShoesBootsMagAdv
+    mask: ClothingMaskGasSwat
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitShadow
+    suitstorage: AirTankFilled
+    id: DeathsquadPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltMilitaryWebbingMedFilled
+    pocket1: WeaponPulsePistol
+    pocket2: FlashlightSeclite
+    
+#Renuin
+
+- type: startingGear
+  id: RenuinSoliderGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitTacticool
+    back: ClothingBackpackSecurity
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitRenuin
+    id: RenuinSoliderIDCard
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltMilitaryWebbing
+    pocket1: WeaponPistolN1984
+    pocket2: FlashlightSeclite

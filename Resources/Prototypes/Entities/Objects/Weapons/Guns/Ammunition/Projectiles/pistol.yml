@@ -1,0 +1,45 @@
+- type: entity
+  id: BulletPistol
+  name: куля (.35 авто)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 16
+
+- type: entity
+  id: BulletPistolPractice
+  name: куля (.35 авто тренувальний)
+  parent: BaseBulletPractice
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 2
+
+- type: entity
+  id: BulletPistolIncendiary
+  parent: BaseBulletIncendiary
+  name: куля (.35 авто запалювальний)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 12
+        Heat: 4
+
+- type: entity
+  id: BulletPistolUranium
+  parent: BaseBulletUranium
+  name: куля (.35 авто урановий)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Radiation: 6
+        Piercing: 10

@@ -1,0 +1,387 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBunny
+  name: кролячі вушка
+  description: Милі кролячі вушка.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/bunny.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/bunny.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCake
+  name: торт капелюх
+  description: Ви поклали торт собі на голову. Блискуче.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/cake.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/cake.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatChickenhead
+  name: голова курки
+  description: "Курка каже - Ко-ко-ко!"
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/chickenhead.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/chickenhead.rsi
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatFlowerWreath
+  name: квітковий вінок
+  description: Вінок з різнокольорових квітів. Можна носити як на голові, так і на шиї.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/flower-wreath.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/flower-wreath.rsi
+    slots:
+    - HEAD
+    - neck
+  - type: Construction
+    graph: flowerwreath
+    node: flowerwreath
+
+- type: entity
+  parent: ClothingHeadLightBase
+  id: ClothingHeadHatPumpkin
+  name: голова з гарбуза
+  description: Світильник Джека! Вважалося, що він відганяє злих духів.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/pumpkin.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/pumpkin.rsi
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: PointLight
+    enabled: false
+    radius: 3
+    energy: 1
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    color: "#cc6600"
+    netsync: false
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide
+    - FacialHair
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatPwig
+  name: перука
+  description: Всім встати, суддя йде! Але чесно кажучи, виглядає смішно.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/pwig.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/pwig.rsi
+  - type: HideLayerClothing
+    slots:
+    - HeadTop
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadMirror
+  name: головне дзеркао
+  description: Я сумніваюся що навіть ГЛ знає як використовувати цю штуку.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/head_mirror.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/head_mirror.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatRichard
+  name: річард
+  description: 'Тобі подобається робити людям боляче?'
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/richard.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/richard.rsi
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide
+    - FacialHair
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSkub
+  name: капелюх скуб
+  description: 'Ідеально поєднується з костюмом скуб.'
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/skubhead.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/skubhead.rsi
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatShrineMaidenWig
+  name: перука жриці храму
+  description: На мітці написано "Всі доходи йдуть до храму Хакурей". Має прикольний бантик.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/shrine-maidens-wig.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/shrine-maidens-wig.rsi
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCone
+  name: дорожній конус
+  description: В теорії, може завадити бойовим рослинам зупинити вас на шляху до мізків.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/cone.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/cone.rsi
+  - type: Item
+    storedRotation: 0
+  - type: PhysicalComposition #you can't just pass up some free plastic!
+    materialComposition:
+      Plastic: 100
+  - type: StaticPrice
+    price: 25
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatFancyCrown
+  name: корона
+  description: Пахне дохлим щуром. Примушує вас розмовляти як щур! Поняв?
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/fancycrown.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/fancycrown.rsi
+  - type: TypingIndicatorClothing
+    proto: regal
+  - type: StaticPrice
+    price: 3000
+  - type: AddAccentClothing
+    accent: MobsterAccent
+
+- type: entity
+  parent: [ ClothingHeadBase, BaseSyndicateContraband ]
+  id: ClothingHeadHatCatEars
+  name: котячі вушка
+  description: "НЯ!"
+  categories: [ DoNotMap ]
+  components:
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
+  - type: Sprite
+    sprite: Clothing/Head/Hats/catears.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/catears.rsi
+  - type: AddAccentClothing
+    accent: OwOAccent
+  - type: StaticPrice
+    price: 15000
+
+- type: entity
+  parent: [ClothingHeadHatCatEars, BaseToggleClothing]
+  id: ClothingHeadHatCatEarsValid
+  suffix: KILL, НЕ МАППИТИ
+  categories: [ DoNotMap ]
+  components:
+  - type: ToggleClothing
+    action: ActionBecomeValid
+    disableOnUnequip: true
+  - type: ComponentToggler
+    parent: true
+    components:
+    - type: KillSign
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
+  - type: Sprite
+    sprite: Clothing/Head/Hats/catears.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/catears.rsi
+  - type: AddAccentClothing
+    accent: OwOAccent
+
+- type: entity
+  parent: BaseToggleAction
+  id: ActionBecomeValid
+  name: Стати мішенню
+  description: "Помічає вас табличкою KILL ''OWO! Що це?''"
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatDogEars
+  name: вушка собаки
+  description: Тільки для гарних хлопчиків.
+  categories: [ DoNotMap ]
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/dogears.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/dogears.rsi
+  - type: AddAccentClothing
+    accent: BarkAccent
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSquid
+  name: кальмар
+  description: "Налякайте своїх друзів цією страшною маскою."
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/squiddy.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/squiddy.rsi
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide
+    - FacialHair
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatRedRacoon
+  name: голова червоного єнота
+  description: Пухнаста голова червоного єнота! Певно, він експерт по виживанню, але не вірте йому!
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/red_racoon.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/red_racoon.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide
+    - FacialHair
+
+- type: entity
+  parent: Clothing
+  id: WaterDropletHat
+  name: крапелька води
+  description: Робить ваших 8-ми оких друзів у 8 разів милішими!
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/waterdroplet.rsi
+    state: icon
+  - type: Item
+    sprite: Clothing/Head/Misc/waterdroplet.rsi
+    size: Tiny
+    storedRotation: -90
+  - type: Clothing
+    slots:
+    - HEAD
+  - type: Edible
+    edible: Drink
+    solution: drink
+    delay: 0.5
+    forceFeedDelay: 1.5
+    utensil: Spoon
+  - type: FlavorProfile
+    flavors:
+      - water
+  - type: DrainableSolution
+    solution: drink
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 2
+        reagents:
+        - ReagentId: Water
+          Quantity: 2
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 0.1
+    damage:
+      types:
+        Blunt: 1
+  - type: Damageable
+    damageContainer: Biological
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: desecration
+      - !type:SpillBehavior
+        solution: drink
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+      - WhitelistChameleon
+  - type: StaticPrice
+    price: 1
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHairflower
+  name: шпилька-квітка
+  description: Мила шпилька у вигляді квітки.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/hairflower.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/hairflower.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadPerformerWig
+  name: перука артистки
+  description: Трохи приглянувшись, можна помітити, що вона зроблена з оптоволокна.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Misc/performer-wig.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Misc/performer-wig.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide

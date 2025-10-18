@@ -1,0 +1,10 @@
+advertisement-donut-1 = Кожен з нас - маленький поліцейський!
+advertisement-donut-2 = Сподіваюся, ви голодні!
+advertisement-donut-3 = Понад 1 мільйон проданих пончиків!
+advertisement-donut-4 = Ми пишаємося консистенцією нашої продукції!
+advertisement-donut-5 = Солодкий, солодкий і смачний!
+advertisement-donut-6 = Пончику, не хвилюйся, будь щасливим!
+thankyou-donut-1 = Насолоджуйтесь своїм пончиком!
+thankyou-donut-2 = Ще один пончик продано!
+thankyou-donut-3 = Доброго дня, офіцер!
+thankyou-donut-4 = Сподіваюся, ти станеш залежним!

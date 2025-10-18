@@ -1,0 +1,634 @@
+## See also ../settings.yml and ../spawners.yml
+
+### Visitors with Visitor ID
+
+# Command
+
+- type: entity
+  id: RandomHumanoidVisitorCaptain
+  name: роль капітана-привида в «гостях»
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: captain
+    - type: RandomHumanoidSpawner
+      settings: VisitorCaptain
+
+- type: entity
+  id: RandomHumanoidVisitorCE
+  name: роль головного інженера-привида в «гостях»
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: ce
+    - type: RandomHumanoidSpawner
+      settings: VisitorCE
+
+- type: entity
+  id: RandomHumanoidVisitorCMO
+  name: роль головного лікаря-привида в «гостях»
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: cmo
+    - type: RandomHumanoidSpawner
+      settings: VisitorCMO
+
+- type: entity
+  id: RandomHumanoidVisitorHOP
+  name: роль голови персоналу-привида в «гостях»
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: hop
+    - type: RandomHumanoidSpawner
+      settings: VisitorHOP
+
+- type: entity
+  id: RandomHumanoidVisitorHOS
+  name: роль ГСБ-привида в «гостях»
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: hos
+    - type: RandomHumanoidSpawner
+      settings: VisitorHOS
+
+- type: entity
+  id: RandomHumanoidVisitorRD
+  name: роль ДНВ-привида в «гостях»
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: rd
+    - type: RandomHumanoidSpawner
+      settings: VisitorResearchDirector
+
+- type: entity
+  id: RandomHumanoidVisitorQM
+  name: роль квартирмейстра-привида в «гостях»
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: qm
+    - type: RandomHumanoidSpawner
+      settings: VisitorQM
+
+# Security
+
+- type: entity
+  id: RandomHumanoidVisitorSecurityCadet
+  name: роль кадета-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: security_cadet
+    - type: RandomHumanoidSpawner
+      settings: VisitorSecurityCadet
+
+- type: entity
+  id: RandomHumanoidVisitorSecurityOfficer
+  name: роль офіцера СБ-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: security_officer
+    - type: RandomHumanoidSpawner
+      settings: VisitorSecurityOfficer
+
+- type: entity
+  id: RandomHumanoidVisitorDetective
+  name: роль детектива-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: detective
+    - type: RandomHumanoidSpawner
+      settings: VisitorDetective
+
+- type: entity
+  id: RandomHumanoidVisitorWarden
+  name: роль наглядача-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: warden
+    - type: RandomHumanoidSpawner
+      settings: VisitorWarden
+
+# Cargo
+
+- type: entity
+  id: RandomHumanoidVisitorCargoTechnician
+  name: роль вантажника-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: cargo_tech
+    - type: RandomHumanoidSpawner
+      settings: VisitorCargoTechnician
+
+- type: entity
+  id: RandomHumanoidVisitorSalvageSpecialist
+  name: роль шахтаря-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: salvagespecialist
+    - type: RandomHumanoidSpawner
+      settings: VisitorSalvageSpecialist
+
+# Engineering
+
+- type: entity
+  id: RandomHumanoidVisitorAtmosTech
+  name: роль атмосферного інженера-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: atmospherics
+    - type: RandomHumanoidSpawner
+      settings: VisitorAtmosTech
+
+- type: entity
+  id: RandomHumanoidVisitorTechnicalAssistant
+  name: роль технічного асистента-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: technicalassistant
+    - type: RandomHumanoidSpawner
+      settings: VisitorTechnicalAssistant
+
+- type: entity
+  id: RandomHumanoidVisitorEngineer
+  name: роль інженера-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: engineer
+    - type: RandomHumanoidSpawner
+      settings: VisitorEngineer
+
+# Medical
+
+- type: entity
+  id: RandomHumanoidVisitorMedicalIntern
+  name: роль інтерна-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: medicalintern
+    - type: RandomHumanoidSpawner
+      settings: VisitorMedicalIntern
+
+- type: entity
+  id: RandomHumanoidVisitorMedicalDoctor
+  name: роль лікаря-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: doctor
+    - type: RandomHumanoidSpawner
+      settings: VisitorMedicalDoctor
+
+- type: entity
+  id: RandomHumanoidVisitorParamedic
+  name: роль парамедика-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: paramedic
+    - type: RandomHumanoidSpawner
+      settings: VisitorParamedic
+
+- type: entity
+  id: RandomHumanoidVisitorPsychologist
+  name: роль психолога-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: psychologist
+    - type: RandomHumanoidSpawner
+      settings: VisitorPsychologist
+
+- type: entity
+  id: RandomHumanoidVisitorChemist
+  name: роль хіміка-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: chemist
+    - type: RandomHumanoidSpawner
+      settings: VisitorChemist
+
+- type: entity
+  id: RandomHumanoidVisitorVirologist
+  name: роль вірусолога-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: virologist
+    - type: RandomHumanoidSpawner
+      settings: VisitorVirologist
+
+- type: entity
+  id: RandomHumanoidVisitorGeneticist
+  name: роль генетика-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: geneticist
+    - type: RandomHumanoidSpawner
+      settings: VisitorGeneticist
+
+- type: entity
+  id: RandomHumanoidVisitorDentist
+  name: роль дантиста-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: seniorphysician
+    - type: RandomHumanoidSpawner
+      settings: VisitorDentist
+
+# Science
+
+- type: entity
+  id: RandomHumanoidVisitorResearchAssistant
+  name: роль лаборанта-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: researchassistant
+    - type: RandomHumanoidSpawner
+      settings: VisitorResearchAssistant
+
+- type: entity
+  id: RandomHumanoidVisitorScientist
+  name: роль вченого-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: scientist
+    - type: RandomHumanoidSpawner
+      settings: VisitorScientist
+
+# Civilian
+
+- type: entity
+  id: RandomHumanoidVisitorBartender
+  name: роль бармена-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: bartender
+    - type: RandomHumanoidSpawner
+      settings: VisitorBartender
+
+- type: entity
+  id: RandomHumanoidVisitorBotanist
+  name: роль ботаніка-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: botanist
+    - type: RandomHumanoidSpawner
+      settings: VisitorBotanist
+
+- type: entity
+  id: RandomHumanoidVisitorBoxer
+  name: роль ботаніка-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: boxer
+    - type: RandomHumanoidSpawner
+      settings: VisitorBoxer
+
+- type: entity
+  id: RandomHumanoidVisitorChaplain
+  name: роль священника-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: chaplain
+    - type: RandomHumanoidSpawner
+      settings: VisitorChaplain
+
+- type: entity
+  id: RandomHumanoidVisitorChef
+  name: роль шефа-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: chef
+    - type: RandomHumanoidSpawner
+      settings: VisitorChef
+
+- type: entity
+  id: RandomHumanoidVisitorClown
+  name: роль клоуна-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: clown
+    - type: RandomHumanoidSpawner
+      settings: VisitorClown
+
+- type: entity
+  id: RandomHumanoidVisitorJanitor
+  name: роль прибиральника-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: janitor
+    - type: RandomHumanoidSpawner
+      settings: VisitorJanitor
+
+- type: entity
+  id: RandomHumanoidVisitorLawyer
+  name: роль адвоката-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: lawyer
+    - type: RandomHumanoidSpawner
+      settings: VisitorLawyer
+
+- type: entity
+  id: RandomHumanoidVisitorLawyerCentcom
+  name: роль адвоката центрального командування-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: lawyer
+    - type: RandomHumanoidSpawner
+      settings: VisitorLawyerCentcom
+
+- type: entity
+  id: RandomHumanoidVisitorLibrarian
+  name: роль бібліотекаря-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: librarian
+    - type: RandomHumanoidSpawner
+      settings: VisitorLibrarian
+
+- type: entity
+  id: RandomHumanoidVisitorMusician
+  name: роль музиканта-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: musician
+    - type: RandomHumanoidSpawner
+      settings: VisitorMusician
+
+- type: entity
+  id: RandomHumanoidVisitorMusicianFancy
+  name: роль стильового музиканта-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: musician
+    - type: RandomHumanoidSpawner
+      settings: VisitorMusicianFancy
+
+- type: entity
+  id: RandomHumanoidVisitorMusicianRelaxed
+  name: роль розслабленого музиканта-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: musician
+    - type: RandomHumanoidSpawner
+      settings: VisitorMusicianRelaxed
+
+- type: entity
+  id: RandomHumanoidVisitorMime
+  name: роль міма-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: mime
+    - type: RandomHumanoidSpawner
+      settings: VisitorMime
+
+- type: entity
+  id: RandomHumanoidVisitorReporter
+  name: роль журналіста-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: reporter
+    - type: RandomHumanoidSpawner
+      settings: VisitorReporter
+
+- type: entity
+  id: RandomHumanoidVisitorServiceWorker
+  name: роль сервісника-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: serviceworker
+    - type: RandomHumanoidSpawner
+      settings: VisitorServiceWorker
+
+- type: entity
+  id: RandomHumanoidVisitorZookeeper
+  name: роль зоолога-відвідувача
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: zookeeper
+    - type: RandomHumanoidSpawner
+      settings: VisitorZookeeper
+
+# Misc
+
+- type: entity
+  id: RandomHumanoidClownTroupeBanana
+  name: бананова трупа клоуна
+  parent: RandomHumanoidVisitorClown
+  components:
+    - type: RandomHumanoidSpawner
+      settings: ClownTroupeBanana
+
+### Visitors missing equipment for challenges
+
+# Command
+
+- type: entity
+  id: RandomHumanoidChallengeVictimCaptain
+  name: роль капітана жертви катастрофи
+  suffix: ВИПРОБУВАННЯ
+  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+  components:
+    - type: Sprite
+      sprite: Mobs/Species/Skeleton/parts.rsi
+      state: skull_icon
+    - type: RandomHumanoidSpawner
+      settings: ChallengeVictimCaptain
+
+- type: entity
+  id: RandomHumanoidChallengeVictimCE
+  parent: RandomHumanoidChallengeVictimCaptain
+  name: роль ГІ жертви катастрофи
+  suffix: ВИПРОБУВАННЯ
+  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+  components:
+    - type: RandomHumanoidSpawner
+      settings: ChallengeVictimChiefEngineer
+
+- type: entity
+  id: RandomHumanoidChallengeVictimCMO
+  parent: RandomHumanoidChallengeVictimCaptain
+  name: роль ГЛ жертви катастрофи
+  suffix: ВИПРОБУВАННЯ
+  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+  components:
+    - type: RandomHumanoidSpawner
+      settings: ChallengeVictimCMO
+
+- type: entity
+  id: RandomHumanoidChallengeVictimHOP
+  parent: RandomHumanoidChallengeVictimCaptain
+  name: роль ГП жертви катастрофи
+  suffix: ВИПРОБУВАННЯ
+  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+  components:
+    - type: RandomHumanoidSpawner
+      settings: ChallengeVictimHeadOfPersonnel
+
+- type: entity
+  id: RandomHumanoidChallengeVictimHOS
+  parent: RandomHumanoidChallengeVictimCaptain
+  name: роль ГСБ жертви катастрофи
+  suffix: ВИПРОБУВАННЯ
+  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+  components:
+    - type: RandomHumanoidSpawner
+      settings: ChallengeVictimHeadOfSecurity
+
+- type: entity
+  id: RandomHumanoidChallengeVictimRD
+  parent: RandomHumanoidChallengeVictimCaptain
+  name: роль ДНВ жертви катастрофи
+  suffix: ВИПРОБУВАННЯ
+  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+  components:
+    - type: RandomHumanoidSpawner
+      settings: ChallengeVictimResearchDirector
+
+- type: entity
+  id: RandomHumanoidChallengeVictimQM
+  parent: RandomHumanoidChallengeVictimCaptain
+  name: роль квартирмейстра жертви катастрофи
+  suffix: ВИПРОБУВАННЯ
+  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+  components:
+    - type: RandomHumanoidSpawner
+      settings: ChallengeVictimQuartermaster
+
+# Security
+
+# Cargo
+
+- type: entity
+  id: RandomHumanoidChallengeCargoTechnician
+  parent: RandomHumanoidChallengeVictimCaptain
+  name: роль вантажника жертви катастрофи
+  suffix: ВИПРОБУВАННЯ
+  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+  components:
+    - type: RandomHumanoidSpawner
+      settings: ChallengeCargoTechnician
+
+# Engineering
+
+# Medical
+
+# Science
+
+# Civilian
+
+# Misc
+
+### Syndicate & Hostiles
+
+- type: entity
+  id: RandomHumanoidSyndieSoldierTeamLeader
+  name: роль лідера загону синдикату
+  components:
+    - type: Sprite
+      sprite: Structures/Decoration/banner.rsi
+      state: banner_syndicate
+    - type: RandomHumanoidSpawner
+      settings: SyndieSoldierTeamLeader
+
+- type: entity
+  id: RandomHumanoidSyndieSoldier
+  name: роль солдату синдикату
+  components:
+    - type: Sprite
+      sprite: Structures/Decoration/banner.rsi
+      state: banner_syndicate
+    - type: RandomHumanoidSpawner
+      settings: SyndieSoldier
+
+- type: entity
+  id: RandomHumanoidSyndieVisitor
+  name: роль жертви катастрофи синдикат
+  components:
+    - type: Sprite
+      sprite: Structures/Decoration/banner.rsi
+      state: banner_syndicate
+    - type: RandomHumanoidSpawner
+      settings: SyndieVisitor
+
+- type: entity
+  id: RandomHumanoidPirateScooner
+  name: роль пірата
+  suffix: шхуна
+  components:
+    - type: Sprite
+      sprite: Structures/Decoration/banner.rsi
+      state: banner-red
+    - type: RandomHumanoidSpawner
+      settings: PirateScooner
+
+- type: entity
+  id: RandomHumanoidPirateCaptainScooner
+  name: роль капітана піратів
+  suffix: шхуна
+  components:
+    - type: Sprite
+      sprite: Structures/Decoration/banner.rsi
+      state: banner-red
+    - type: RandomHumanoidSpawner
+      settings: PirateCaptainScooner
+
+### Other
+
+- type: entity
+  id: RandomHumanoidVisitorBlackmarketeer
+  name: роль заїжджого чорномаркетолога
+  components:
+    - type: Sprite
+      sprite: Structures/Decoration/banner.rsi
+      state: banner-yellow
+    - type: RandomHumanoidSpawner
+      settings: VisitorBlackmarketeer
+
+
+- type: entity
+  id: RandomHumanoidCossack
+  name: роль козака
+  components:
+    - type: Sprite
+      sprite: Structures/Decoration/banner.rsi
+      state: banner-yellow
+    - type: RandomHumanoidSpawner
+      settings: Cossack

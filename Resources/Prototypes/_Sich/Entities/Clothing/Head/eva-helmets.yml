@@ -1,0 +1,12 @@
+#Syndicate EVA Helmet
+- type: entity
+  parent: ClothingHeadEVAHelmetBase
+  id: ClothingHeadHelmetContractor
+  name: ЄВА шолом контрактора
+  description: Дизайн розроблений таємничою та мутною організацією GoldenEye.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Sich/Clothing/Head/Helmets/eva_contractor.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Head/Helmets/eva_contractor.rsi

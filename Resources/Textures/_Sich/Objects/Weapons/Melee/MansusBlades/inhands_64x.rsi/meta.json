@@ -1,0 +1,75 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-4.0",
+    "copyright": "Taken from https://github.com/tgstation/tgstation/ at commit fb2d71495bfe81446159ef528534193d09dd8d34, sawn-inhand states modified from db-inhand by Flareguy",
+    "size": {
+        "x": 64,
+        "y": 64
+    },
+    "states": [
+        {
+            "name": "mansus-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "mansus-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "void-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "void-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "flesh-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "flesh-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "rust-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "rust-inhand-right",
+            "directions": 4
+        },
+		{
+            "name": "cosmic-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "cosmic-inhand-right",
+            "directions": 4
+        },
+		{
+            "name": "ash-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "ash-inhand-right",
+            "directions": 4
+        },
+		{
+            "name": "moon-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "moon-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "key-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "key-inhand-right",
+            "directions": 4
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+# Separate yml file for scrap helmet since it has so many construction steps.
+# Listed from first step of crafting to the final helmet
+
+- type: entity
+  name: відро з застібкою
+  parent: BaseItem
+  id: WiredBucketBase
+  description: Відро з застібкою з дроту, який слугує додатковим кріпленням як у шолома.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Helmets/scrap_helmet.rsi
+    state: construction-1
+  - type: Item
+    size: Normal
+    sprite: Clothing/Head/Helmets/scrap_helmet.rsi
+  - type: Construction
+    graph: scraphelmet
+    node: wiredbucket
+
+- type: entity
+  name: відро з отвором
+  parent: BaseItem
+  id: SlicedBucketBase
+  description: Відро з прорізаним отвором, аби можна було бачити. 
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Helmets/scrap_helmet.rsi
+    state: construction-2
+  - type: Item
+    size: Normal
+    sprite: Clothing/Head/Helmets/scrap_helmet.rsi
+  - type: Construction
+    graph: scraphelmet
+    node: slicedbucket
+
+- type: entity
+  name: сталеве відро
+  parent: BaseItem
+  id: SteelBucketBase
+  description: Відро з прикріпленою сталевою пластиною ззовні. Бажано було б обробити сталь для більш комфортного використання, але і так зійде.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Helmets/scrap_helmet.rsi
+    state: construction-3
+  - type: Item
+    size: Normal
+    sprite: Clothing/Head/Helmets/scrap_helmet.rsi
+  - type: Construction
+    graph: scraphelmet
+    node: steelbucket
+
+# The helmet itself
+- type: entity
+  parent: [ClothingHeadHelmetBase, BaseMajorContraband]
+  id: ClothingHeadHelmetScrap #When we get the tech for it this bad boy needs to be given a vision reduction when equipped. 1-2 tiles less than normal should be good.
+  name: шолом з мотлоху
+  description: Шолом, зібраний з тросів, сталі та відра.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Helmets/scrap_helmet.rsi
+  - type: Item
+    size: Normal
+  - type: Clothing
+    sprite: Clothing/Head/Helmets/scrap_helmet.rsi
+    equipSound: /Audio/Effects/metal_scrape2.ogg
+    unequipSound: /Audio/Effects/metal_scrape1.ogg
+    equipDelay: 3
+    unequipDelay: 3 #shorter on the helmet.
+  - type: IngestionBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
+  - type: Construction
+    graph: scraphelmet
+    node: scraphelmet

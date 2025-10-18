@@ -1,0 +1,48 @@
+<Document>
+# Письменство
+
+За допомогою ручки можна писати на папері або в книгах. Nanotrasen надає кожному запасну ручку в КПК.
+
+## Форматування
+
+Ви можете використовувати такі приписки:
+
+- [color=tan]\[color=color\]\[\/color\][/color] — змінити колір тексту
+- [color=tan]\[head=n\]\[\/head\][/color] — Де [italic]n[/italic] рівень заголовка (1 – 3)
+- [color=tan]\[bullet\/\][/color] — вставити маркований список (корисно для списків)
+- [color=tan][bold]\[bold\]\[\/bold\][/bold][/color], [color=tan][italic]\[italic\]\[\/italic\][/italic][/color] — для надання акценту на чомусь
+
+Ви можете поєднати [bold][italic]bold та italic[/italic][/bold] теги або скомбінувати їх в [color=tan][bolditalic]\[bolditalic\][/bolditalic][/color].
+
+Колір підтримує шістнадцяткову систему числення(HEX) або більшість назв кольорів у форматі HTML. Наприклад:
+
+- [color=#ff0000]\[color=#ff0000\]\[\/color\][/color]
+- [color=red]\[color=red\]\[\/color\][/color]
+
+## Особливі Шрифт 
+
+Окрім цього, на сервері є можливість редагування шрифту тексту і його розмір завдяки \[font=id size=12\]\ \[/font\]\. Снизу можна буде побачити як виглядатиме шрифт снизу
+- \[font="Default"\]\ [font="Default"] Текст 1234 [/font]
+- \[font="DefaultItalic"\]\ [font="DefaultItalic"]  Текст 1234 [/font]
+- \[font="DefaultBold"\]\ [font="DefaultBold"]  Текст 1234 [/font]
+- \[font="DefaultBoldItalic"\]\ [font="DefaultBoldItalic"]  Текст 1234 [/font]
+- \[font="NotoSansDisplay"\]\ [font="NotoSansDisplay"]  Текст 1234 [/font]
+- \[font="NotoSansDisplayItalic"\]\ [font="NotoSansDisplayItalic"]  Текст 1234 [/font]
+- \[font="NotoSansDisplayBold"\]\ [font="NotoSansDisplayBold"]  Текст 1234 [/font]
+- \[font="NotoSansDisplayBoldItalic"\]\ [font="NotoSansDisplayBoldItalic"]  Текст 1234 [/font]
+- Шрифт для картинок: \[font="Picture"\]\ [font="Picture"] Picture Шрифт для картинок 0 (нуль) 1234 [/font]
+- [font="BoxRound"] \[font="BoxRound"\]\ Текст 1234 [/font]
+- (працює лише з латиницею)\[font="AnimalSilence"\]\ [font="AnimalSilence"] Text 1234 [/font]
+- \[font="Monospace"\]\ [font="Monospace"] Текст 1234 [/font]
+- Шрифт для емодзі(Ламає текст) \[font="Emoji"\]\[font="Emoji"] 😀㊗︎ Текст 1234 [/font]
+
+
+Приклад як працює розмір тексту
+
+[font size=10] Звичайний текст 10
+[font="AnimalSilence" size=10] AnimalSilence 10 |
+[font="AnimalSilence" size=15] AnimalSilence 15   
+[font="AnimalSilence" size=20] AnimalSilence 20  [/font]
+
+
+</Document>

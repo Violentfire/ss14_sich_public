@@ -1,0 +1,54 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatAnimalCat
+  name: сірий котячий капелюх
+  description: Милий та пухнастий сірий капелюх.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Animals/cat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Animals/cat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatAnimalCatBrown
+  name: коричневий котячий капелюх
+  description: Милий та пухнастий коричневий капелюх.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Animals/cat2.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Animals/cat2.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatAnimalCatBlack
+  name: чорний котячий капелюх
+  description: Милий та пухнастий чорний капелюх.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Animals/cat3.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Animals/cat3.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatAnimalHeadslime
+  name: слайм-капелюх
+  description: Зелений та липкий слайм на голову. 
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Animals/headslime.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Animals/headslime.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatAnimalMonkey
+  name: мавпячий капелюх
+  description: Це капелюх у вигляді мавпи. В нього є отвір в роті, щоб їсти банани.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Animals/monkey.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Animals/monkey.rsi

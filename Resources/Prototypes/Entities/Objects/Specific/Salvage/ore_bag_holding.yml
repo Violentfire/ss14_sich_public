@@ -1,0 +1,16 @@
+- type: entity
+  name: сумка утримання для руди
+  id: OreBagOfHolding
+  parent: OreBag
+  description: Міцний мішок для шахтарів-мільярдерів для перевезення великої кількості руди. Намагнічує будь-яку руду, яка знаходиться поблизу, якщо її прикріпити до пояса.
+  components:
+  - type: MagnetPickup
+    range: 2
+  - type: Sprite
+    sprite: Objects/Specific/Mining/ore_bag_holding.rsi
+    state: icon
+  - type: Clothing
+    sprite: Objects/Specific/Mining/ore_bag_holding.rsi
+  - type: Storage
+    grid:
+    - 0,0,19,9

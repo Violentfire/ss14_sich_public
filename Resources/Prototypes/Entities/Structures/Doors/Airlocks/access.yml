@@ -1,0 +1,1295 @@
+# Airlocks
+- type: entity
+  parent: Airlock
+  id: AirlockServiceLocked
+  suffix: Сервіс, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsService ]
+  - type: Wires
+    layoutId: AirlockService
+
+- type: entity
+  parent: AirlockServiceLocked
+  id: AirlockLawyerLocked
+  suffix: Lawyer, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsLawyer ]
+
+- type: entity
+  parent: AirlockServiceLocked
+  id: AirlockTheatreLocked
+  suffix: Театр, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsTheatre ]
+
+- type: entity
+  parent: AirlockServiceLocked
+  id: AirlockServiceTheatreLocked
+  suffix: Service, Theatre, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsServiceTheatre ]
+
+- type: entity
+  parent: AirlockServiceLocked
+  id: AirlockChapelLocked
+  suffix: Каплиця, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChapel ]
+
+- type: entity
+  parent: AirlockServiceLocked
+  id: AirlockJanitorLocked
+  suffix: Прибиральник, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsJanitor ]
+
+- type: entity
+  parent: AirlockServiceLocked
+  id: AirlockKitchenLocked
+  suffix: Кухня, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsKitchen ]
+
+- type: entity
+  parent: AirlockServiceLocked
+  id: AirlockBarLocked
+  suffix: Бар, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBar ]
+
+- type: entity
+  parent: AirlockServiceLocked
+  id: AirlockBarKitchenLocked
+  suffix: Bar&Kitchen, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBarKitchen ]
+
+- type: entity
+  parent: AirlockHydroponics
+  id: AirlockHydroponicsLocked
+  suffix: Гідропоніка, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsHydroponics ]
+
+- type: entity
+  parent: AirlockExternal
+  id: AirlockExternalLocked
+  suffix: Зовнішній, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]
+
+- type: entity
+  parent: AirlockExternal
+  id: AirlockExternalCargoLocked
+  suffix: Зовнішній, Карго, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCargo ]
+  - type: Wires
+    layoutId: AirlockCargo
+
+- type: entity
+  parent: AirlockExternal
+  id: AirlockExternalEngineeringLocked
+  suffix: Зовнішній, Інженерний, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEngineering ]
+  - type: Wires
+    layoutId: AirlockEngineering
+
+- type: entity
+  parent: AirlockExternal
+  id: AirlockExternalCommandLocked
+  suffix: External, Command, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCommand ]
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: AirlockExternalGlass
+  id: AirlockExternalGlassCommandLocked
+  suffix: External, Glass, Command, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCommand ]
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: AirlockExternal
+  id: AirlockExternalAtmosphericsLocked
+  suffix: Зовнішній, Атмос, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsAtmospherics ]
+  - type: Wires
+    layoutId: AirlockEngineering
+
+- type: entity
+  parent: AirlockExternal
+  id: AirlockExternalSyndicateLocked
+  suffix: Зовнішній, Синдикат, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSyndicateAgent ]
+  - type: Wires
+    layoutId: AirlockSecurity
+
+- type: entity
+  parent: AirlockExternal
+  id: AirlockExternalNukeopLocked
+  suffix: Зовнішній, ЯдерОпер, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]
+  - type: Wires
+    layoutId: AirlockSecurity
+
+- type: entity
+  parent: AirlockFreezer
+  id: AirlockFreezerLocked
+  suffix: Кухня, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsKitchen ]
+
+- type: entity
+  parent: AirlockFreezer
+  id: AirlockFreezerKitchenHydroLocked
+  suffix: Кухня/Гідропоніка, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsKitchenHydroponics ]
+
+- type: entity
+  parent: AirlockFreezer
+  id: AirlockFreezerHydroponicsLocked
+  suffix: Гідропоніка, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsHydroponics ]
+
+- type: entity
+  parent: AirlockEngineering
+  id: AirlockEngineeringLocked
+  suffix: Інженерний, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEngineering ]
+
+- type: entity
+  parent: AirlockAtmospherics
+  id: AirlockAtmosphericsLocked
+  suffix: Атмос, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsAtmospherics ]
+
+- type: entity
+  parent: AirlockCargo
+  id: AirlockCargoLocked
+  suffix: Карго, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCargo ]
+
+- type: entity
+  parent: AirlockSalvage
+  id: AirlockSalvageLocked
+  suffix: Порятунок, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSalvage ]
+
+- type: entity
+  parent: AirlockMining
+  id: AirlockMiningLocked
+  suffix: Шахтарський(Порятунок), Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSalvage ]
+
+- type: entity
+  parent: AirlockMedical
+  id: AirlockMedicalLocked
+  suffix: Медичний, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMedical ]
+
+- type: entity
+  parent: AirlockVirology
+  id: AirlockVirologyLocked
+  suffix: Вірусологія, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMedical ]
+
+- type: entity
+  parent: AirlockChemistry
+  id: AirlockChemistryLocked
+  suffix: Хімія, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChemistry ]
+
+- type: entity
+  parent: AirlockMedical
+  id: AirlockMedicalMorgueLocked
+  suffix: Morgue, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMorgue ]
+
+- type: entity
+  parent: AirlockScience
+  id: AirlockScienceLocked
+  suffix: Науковий, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsResearch ]
+
+- type: entity
+  parent: AirlockScience
+  id: AirlockMedicalScienceLocked
+  suffix: Медичний/Науковий, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMedicalResearch ]
+
+- type: entity
+  parent: AirlockCentralCommand
+  id: AirlockCentralCommandLocked
+  suffix: Центральне Командування, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCentralCommand ]
+
+- type: entity
+  parent: AirlockCommand
+  id: AirlockCommandLocked
+  suffix: Командування, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCommand ]
+
+- type: entity
+  parent: AirlockCommand
+  id: AirlockCaptainLocked
+  suffix: Капітан, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCaptain ]
+
+- type: entity
+  parent: AirlockCommand
+  id: AirlockChiefMedicalOfficerLocked
+  suffix: Головний лікар, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChiefMedicalOfficer ]
+
+- type: entity
+  parent: AirlockCommand
+  id: AirlockChiefEngineerLocked
+  suffix: Головний інженер, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChiefEngineer ]
+
+- type: entity
+  parent: AirlockCommand
+  id: AirlockHeadOfSecurityLocked
+  suffix: Голова персоналу, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsHeadOfSecurity ]
+
+- type: entity
+  parent: AirlockCommand
+  id: AirlockResearchDirectorLocked
+  suffix: Директор наукового відділу, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsResearchDirector ]
+
+- type: entity
+  parent: AirlockCommand
+  id: AirlockHeadOfPersonnelLocked
+  suffix: Голова персоналу, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsHeadOfPersonnel ]
+
+- type: entity
+  parent: AirlockCommand
+  id: AirlockQuartermasterLocked
+  suffix: Квартермейстер, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsQuartermaster ]
+
+- type: entity
+  parent: AirlockSecurity
+  id: AirlockSecurityLocked
+  suffix: Служба безбпеки, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurity ]
+
+- type: entity
+  parent: AirlockSecurity
+  id: AirlockDetectiveLocked
+  suffix: Детектив, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsDetective ]
+
+- type: entity
+  parent: AirlockSecurity
+  id: AirlockBrigLocked
+  suffix: Бріг, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBrig ]
+
+- type: entity
+  parent: AirlockSecurity
+  id: AirlockSecurityLawyerLocked
+  suffix: Служба безпеки/Адвокат, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurityLawyer ]
+
+- type: entity
+  parent: AirlockSecurity
+  id: AirlockArmoryLocked
+  suffix: Зброярня, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsArmory ]
+  - type: Wires
+    layoutId: AirlockArmory
+
+- type: entity
+  parent: AirlockSecurity
+  id: AirlockVaultLocked
+  suffix: Сховище, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsVault ]
+
+- type: entity
+  parent: AirlockCommand
+  id: AirlockEVALocked
+  suffix: ЄВА, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]
+
+# Glass Airlocks
+- type: entity
+  parent: AirlockGlass
+  id: AirlockServiceGlassLocked
+  suffix: Сервіс, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsService ]
+  - type: Wires
+    layoutId: AirlockService
+
+- type: entity
+  parent: AirlockServiceGlassLocked
+  id: AirlockLawyerGlassLocked
+  suffix: Адвокат, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsLawyer ]
+
+- type: entity
+  parent: AirlockServiceGlassLocked
+  id: AirlockTheatreGlassLocked
+  suffix: Theatre, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsTheatre ]
+
+- type: entity
+  parent: AirlockServiceGlassLocked
+  id: AirlockServiceTheatreGlassLocked
+  suffix: Service, Theatre, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsServiceTheatre ]
+
+- type: entity
+  parent: AirlockServiceGlassLocked
+  id: AirlockBarGlassLocked
+  suffix: Бар, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBar ]
+
+- type: entity
+  parent: AirlockServiceGlassLocked
+  id: AirlockBarKitchenGlassLocked
+  suffix: Bar&Kitchen, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBarKitchen ]
+
+
+- type: entity
+  parent: AirlockExternalGlass
+  id: AirlockExternalGlassLocked
+  suffix: Зовнішній, Скло, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]
+
+- type: entity
+  parent: AirlockExternalGlass
+  id: AirlockExternalGlassCargoLocked
+  suffix: Зовнішній, Скло, Карго, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCargo ]
+  - type: Wires
+    layoutId: AirlockCargo
+
+- type: entity
+  parent: AirlockExternalGlass
+  id: AirlockExternalGlassSyndicateLocked
+  suffix: Зовнішній, Скло, Синдикат, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSyndicateAgent ]
+  - type: Wires
+    layoutId: AirlockSecurity
+
+- type: entity
+  parent: AirlockExternalGlass
+  id: AirlockExternalGlassNukeopLocked
+  suffix: Зовнішній, Скло, ЯдерОпер, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]
+  - type: Wires
+    layoutId: AirlockSecurity
+
+- type: entity
+  parent: AirlockExternalGlass
+  id: AirlockExternalGlassEngineeringLocked
+  suffix: Зовнішній, Скло, Інженерний, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEngineering ]
+  - type: Wires
+    layoutId: AirlockEngineering
+
+- type: entity
+  parent: AirlockExternalGlass
+  id: AirlockExternalGlassAtmosphericsLocked
+  suffix: Зовнішній, Скло, Атмос, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsAtmospherics ]
+  - type: Wires
+    layoutId: AirlockEngineering
+
+- type: entity
+  parent: AirlockServiceGlassLocked
+  id: AirlockKitchenGlassLocked
+  suffix: Кухня, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsKitchen ]
+
+- type: entity
+  parent: AirlockServiceGlassLocked
+  id: AirlockJanitorGlassLocked
+  suffix: Janitor, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsJanitor ]
+
+- type: entity
+  parent: AirlockHydroponicsGlass
+  id: AirlockHydroGlassLocked
+  suffix: Гідропоніка, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsHydroponics ]
+
+- type: entity
+  parent: AirlockServiceGlassLocked
+  id: AirlockChapelGlassLocked
+  suffix: Каплиця, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChapel ]
+
+- type: entity
+  parent: AirlockStandardGlass
+  id: AirlockChapelStandardGlassLocked
+  suffix: Chapel, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChapel ]
+  - type: Wires
+    layoutId: AirlockService
+
+- type: entity
+  parent: AirlockEngineeringGlass
+  id: AirlockEngineeringGlassLocked
+  suffix: Інженерний, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEngineering ]
+
+- type: entity
+  parent: AirlockAtmosphericsGlass
+  id: AirlockAtmosphericsGlassLocked
+  suffix: Атмос, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsAtmospherics ]
+
+- type: entity
+  parent: AirlockCargoGlass
+  id: AirlockCargoGlassLocked
+  suffix: Карго, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCargo ]
+
+- type: entity
+  parent: AirlockSalvageGlass
+  id: AirlockSalvageGlassLocked
+  suffix: Порятунок, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSalvage ]
+
+- type: entity
+  parent: AirlockMiningGlass
+  id: AirlockMiningGlassLocked
+  suffix: Шахтарський(Порятунок), Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSalvage ]
+
+- type: entity
+  parent: AirlockChemistryGlass
+  id: AirlockChemistryGlassLocked
+  suffix: Хімія, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChemistry ]
+
+- type: entity
+  parent: AirlockMedicalGlass
+  id: AirlockMedicalMorgueGlassLocked
+  suffix: Morgue, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMorgue ]
+
+- type: entity
+  parent: AirlockMedicalGlass
+  id: AirlockMedicalGlassLocked
+  suffix: Медичний, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMedical ]
+
+- type: entity
+  parent: AirlockVirologyGlass
+  id: AirlockVirologyGlassLocked
+  suffix: Вірусологія, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMedical ]
+
+- type: entity
+  parent: AirlockScienceGlass
+  id: AirlockScienceGlassLocked
+  suffix: Науковий, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsResearch ]
+
+- type: entity
+  parent: AirlockScienceGlass
+  id: AirlockMedicalScienceGlassLocked
+  suffix: Медичний/Науковий, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMedicalResearch ]
+
+- type: entity
+  parent: AirlockCentralCommandGlass
+  id: AirlockCentralCommandGlassLocked
+  suffix: Центральне Командування, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCentralCommand ]
+
+- type: entity
+  parent: AirlockCommandGlass
+  id: AirlockCommandGlassLocked
+  suffix: Командування, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCommand ]
+
+- type: entity
+  parent: AirlockCommandGlass
+  id: AirlockCaptainGlassLocked
+  suffix: Капітан, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCaptain ]
+
+- type: entity
+  parent: AirlockCommandGlass
+  id: AirlockChiefMedicalOfficerGlassLocked
+  suffix: Головний лікар, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChiefMedicalOfficer ]
+
+- type: entity
+  parent: AirlockCommandGlass
+  id: AirlockChiefEngineerGlassLocked
+  suffix: Головний інженер, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChiefEngineer ]
+
+- type: entity
+  parent: AirlockCommandGlass
+  id: AirlockHeadOfSecurityGlassLocked
+  suffix: Голова персоналу, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsHeadOfSecurity ]
+
+- type: entity
+  parent: AirlockCommandGlass
+  id: AirlockResearchDirectorGlassLocked
+  suffix: Директор наукового відділу, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsResearchDirector ]
+
+- type: entity
+  parent: AirlockCommandGlass
+  id: AirlockHeadOfPersonnelGlassLocked
+  suffix: Голова персоналу, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsHeadOfPersonnel ]
+
+- type: entity
+  parent: AirlockCommandGlass
+  id: AirlockQuartermasterGlassLocked
+  suffix: Квартермейстер, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsQuartermaster ]
+
+- type: entity
+  parent: AirlockSecurityGlass
+  id: AirlockSecurityGlassLocked
+  suffix: Служба безпеки, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurity ]
+
+- type: entity
+  parent: AirlockSecurityGlass
+  id: AirlockDetectiveGlassLocked
+  suffix: Детектив, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsDetective ]
+
+- type: entity
+  parent: AirlockSecurityGlass
+  id: AirlockBrigGlassLocked
+  suffix: Бріг, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBrig ]
+
+- type: entity
+  parent: AirlockSecurityGlass
+  id: AirlockSecurityLawyerGlassLocked
+  suffix: Служба безпеки/Адвокат, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurityLawyer ]
+
+- type: entity
+  parent: AirlockSecurityGlass
+  id: AirlockArmoryGlassLocked
+  suffix: Зброярня, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsArmory ]
+
+- type: entity
+  parent: AirlockCommandGlassLocked
+  id: AirlockEVAGlassLocked
+  suffix: ЄВА, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]
+
+- type: entity
+  parent: AirlockSyndicateGlass
+  id: AirlockSyndicateGlassLocked
+  suffix: Синдикат, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSyndicateAgent ]
+
+- type: entity
+  parent: AirlockSyndicateGlass
+  id: AirlockSyndicateNukeopGlassLocked
+  suffix: ЯдерОпер, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]
+
+# Maintenance Hatches
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintLocked
+  suffix: Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMaintenance ]
+
+- type: entity
+  parent: AirlockXeno
+  id: AirlockXenoMaintLocked
+  suffix: Maintenance, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMaintenance ]
+
+- type: entity
+  parent: AirlockMaintGlass
+  id: AirlockMaintGlassLocked
+  suffix: Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMaintenance ]
+
+- type: entity
+  parent: AirlockSalvageLocked
+  id: AirlockMaintSalvageLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockCargoLocked
+  id: AirlockMaintCargoLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockCommandLocked
+  id: AirlockMaintCommandLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockEngineeringLocked
+  id: AirlockMaintEngiLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockAtmosphericsLocked
+  id: AirlockMaintAtmoLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockBarLocked
+  id: AirlockMaintBarLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockBarKitchenLocked
+  id: AirlockMaintBarKitchenLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockChapelLocked
+  id: AirlockMaintChapelLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockHydroponicsLocked
+  id: AirlockMaintHydroLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockJanitorLocked
+  id: AirlockMaintJanitorLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockLawyerLocked
+  id: AirlockMaintLawyerLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockServiceLocked
+  id: AirlockMaintServiceLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockTheatreLocked
+  id: AirlockMaintTheatreLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockServiceTheatreLocked
+  id: AirlockMaintServiceTheatreLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockKitchenLocked
+  id: AirlockMaintKitchenLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockFreezerKitchenHydroLocked
+  id: AirlockMaintKitchenHydroLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockMedicalLocked
+  id: AirlockMaintMedLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockMedicalMorgueLocked
+  id: AirlockMedicalMorgueMaintLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockChemistryLocked
+  id: AirlockMaintChemLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockScienceLocked
+  id: AirlockMaintRnDLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockMedicalScienceLocked
+  id: AirlockMaintRnDMedLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockSecurityLocked
+  id: AirlockMaintSecLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockDetectiveLocked
+  id: AirlockMaintDetectiveLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockHeadOfPersonnelLocked
+  id: AirlockMaintHOPLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockCaptainLocked
+  id: AirlockMaintCaptainLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockChiefEngineerLocked
+  id: AirlockMaintChiefEngineerLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockChiefMedicalOfficerLocked
+  id: AirlockMaintChiefMedicalOfficerLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockHeadOfSecurityLocked
+  id: AirlockMaintHeadOfSecurityLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockResearchDirectorLocked
+  id: AirlockMaintResearchDirectorLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockQuartermasterLocked
+  id: AirlockMaintQuartermasterLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockArmoryLocked
+  id: AirlockMaintArmoryLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockSyndicate
+  id: AirlockSyndicateLocked
+  suffix: Синдикат, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSyndicateAgent ]
+
+- type: entity
+  parent: AirlockSyndicate
+  id: AirlockSyndicateNukeopLocked
+  suffix: ЯдерОпер, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]
+
+- type: entity
+  parent: AirlockXenoborg
+  id: AirlockXenoborgLocked
+  suffix: Xenoborg, Locked
+  components:
+  - type: StationAiWhitelist
+    enabled: false
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsXenoborg ]
+
+# Shuttle airlocks
+- type: entity
+  parent: AirlockShuttle
+  id: AirlockExternalShuttleLocked
+  suffix: Зовнішній, Стиковочний, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]
+
+- type: entity
+  parent: AirlockShuttleSyndicate
+  id: AirlockExternalShuttleSyndicateLocked
+  suffix: Зовнішній, Стиковочний, Синдикат, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSyndicateAgent ]
+
+- type: entity
+  parent: AirlockShuttleSyndicate
+  id: AirlockExternalShuttleNukeopLocked
+  suffix: Зовнішній, Стиковочний, ЯдерОпер, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]
+
+- type: entity
+  parent: AirlockShuttleXenoborg
+  id: AirlockGlassShuttleXenoborgLocked
+  suffix: External, Docking, Xenoborg, Locked
+  components:
+  - type: StationAiWhitelist
+    enabled: false
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsXenoborg ]
+
+- type: entity
+  parent: AirlockGlassShuttle
+  id: AirlockExternalGlassShuttleLocked
+  suffix: Зовнішній, Скло, Стиковочний, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]
+
+- type: entity
+  parent: AirlockGlassShuttleSyndicate
+  id: AirlockExternalGlassShuttleSyndicateLocked
+  suffix: Синдикат, Заблоковано, Скло
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSyndicateAgent ]
+
+- type: entity
+  parent: AirlockGlassShuttleSyndicate
+  id: AirlockExternalGlassShuttleNukeopLocked
+  suffix: ЯдерОпер, Заблоковано, Скло
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNukeop ]
+
+- type: entity
+  parent: AirlockGlassShuttle
+  id: AirlockExternalGlassShuttleEmergencyLocked
+  suffix: Зовнішній, Екстренний, Скло, Стиковочний, Заблоковано
+  components:
+  - type: PriorityDock
+    tag: DockEmergency
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]
+
+- type: entity
+  parent: AirlockGlassShuttle
+  id: AirlockExternalGlassShuttleArrivals
+  suffix: Екстренний, Прибуття, Скло, Стиковочний
+  components:
+  - type: PriorityDock
+    tag: DockArrivals
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]
+
+- type: entity
+  parent: AirlockGlassShuttle
+  id: AirlockExternalGlassShuttleEscape
+  suffix: Екстренний, Escape 3x4, Скло, Стиковочний
+  components:
+  - type: GridFill
+    addComponents:
+    - type: IFF
+      flags:
+      - HideLabel
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]
+
+#HighSecDoors
+- type: entity
+  parent: HighSecDoor
+  id: HighSecCentralCommandLocked
+  suffix: Центральне командування, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCentralCommand ]
+
+- type: entity
+  parent: HighSecDoor
+  id: HighSecCommandLocked
+  suffix: Командування, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCommand ]
+
+- type: entity
+  parent: HighSecDoor
+  id: HighSecCaptainLocked
+  suffix: Капітан, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCaptain ]
+
+- type: entity
+  parent: HighSecDoor
+  id: HighSecArmoryLocked
+  suffix: Зброярня, Заблоковано
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsArmory ]
+
+#Airtight hatch
+
+- type: entity
+  parent: AirlockHatch
+  id: AirlockHatchSyndicate
+  suffix: Syndicate, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSyndicateAgent ]

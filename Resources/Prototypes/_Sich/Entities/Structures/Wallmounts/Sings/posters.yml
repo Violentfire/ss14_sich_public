@@ -1,0 +1,232 @@
+- type: entity
+  parent: PosterBase
+  id: PosterBaseSich
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Sich/Structures/Wallmounts/posters.rsi
+
+- type: entity
+  parent: PosterBaseSich
+  id: sich_poster_settler
+  name: "Settler corp."
+  description: "Settler, корпорація яка відома своїми жахливими умовами праці й низькими стандартами, Вони відправляють велику кількість колоністів в далекі глибини космосу для видобутку плазми. Схоже вони настільки жадібні що навіть не дописали одну T на плакаті"
+  components:
+  - type: Sprite
+    state: sich_poster_settler
+
+- type: entity
+  parent: PosterBaseSich
+  id: sich_poster_reinyn
+  name: "Постер Ренюінь"
+  description: "Давно, в 2151-му в комуністичному Китаї сталася революція, результатом якої стала зміна уряду на більш демократичний. Але відалені колонії в яких був автономний центр для більш ефективного управління, проголосили автономію і створили Міжпланетна Асоціація Ренюінь."
+  components:
+  - type: Sprite
+    state: sich_poster_reinyn
+
+- type: entity
+  parent: PosterBaseSich
+  id: sich_poster_book_unath
+  name: "Хтива діва з Могесу 2"
+  description: "Постер нової книги 'Хтива діва з Могесу', яка розповідає про мандри Унатшки з Могесу яка стала домогосподаркою богатого пана. "
+  components:
+  - type: Sprite
+    state: sich_poster_book_unath
+
+- type: entity
+  parent: PosterBaseSich
+  id: sich_poster_drg
+  name: "Dark Rock Gold"
+  description: "Одна з найвідоміших компаній Доренвірської Конфедерація(держава дворфів), яка спеціалізується на видуботку корисних копалин і створенні найкрепчішого і смачнішого пива в усій галактиці з каміння"
+  components:
+  - type: Sprite
+    state: sich_poster_drg
+
+- type: entity
+  parent: PosterBaseSich
+  id: sich_poster_dse
+  name: "Dnipro Space Engineering"
+  description: "Одна з найвідоміших компаній Української Космічної Держави, яка створює двигуни для шатлів"
+  components:
+  - type: Sprite
+    state: sich_poster_dse
+
+- type: entity
+  parent: PosterBaseSich
+  id: sich_poster_free_slime2
+  name: "Зіпсований постер Нанатрейзен"
+  description: "Слаймолюди боряться за свої права, так як їх важають витратним матеріалом і майже не важають за живих істот. Невже кольоровим холодцям так погано живеться?"
+  components:
+  - type: Sprite
+    state: sich_poster_free_slime2
+
+- type: entity
+  parent: PosterBaseSich
+  id: sich_poster_slime_free
+  name: "Зіпсований постер Сонячної Федерації"
+  description: "Слаймолюди боряться за свої права, так як їх важають витратним матеріалом і майже не важають за живих істот. Невже кольоровим холодцям так погано живеться?"
+  components:
+  - type: Sprite
+    state: sich_poster_slime_free
+
+- type: entity
+  parent: PosterBaseSich
+  id: sich_poster_map_space
+  name: "Мапа ближнього сектора"
+  description: "Мапа сектора поблизу НДС 'Січ' Білим намальвана сама станція, жовтим колонії Української Космічної Держави(Лаваленд з ліва і Рутенія-Прайми напроти), червоним Сполучених Штатів Північної Америки(Гесперос зверху і Пандора напроти)."
+  components:
+  - type: Sprite
+    state: sich_poster_map_space
+
+- type: entity
+  parent: PosterBaseSich
+  id: sich_poster_map_space2
+  name: "Мапа космосу"
+  description: "Це мапа усього, на даний момент, дослідженого космосу. Оранжевим позначено тереторії Доренвірської Конфедерація(держава дворфів), синім тереторії Сонячної федерації(СПША, УКД, Азійське співтовариство, Європейська Федерація), червоним тереторії Ренюінь і жовтим зоряна республіка Мікаріс в якій живуть Ніани, і поруч з якими є планета арахнідів: Скеран."
+  components:
+  - type: Sprite
+    state: sich_poster_map_space2
+
+- type: entity
+  parent: PosterBaseSich
+  id: sich_poster_solar_federation
+  name: "Постер Сонячної Федерації"
+  description: "Сонячна Федерація, це держава людей, яка більше схожа на конфедерацію, так як кожна країна яка є на землі представляє саму себе. Була створена у середині 22-го століття."
+  components:
+  - type: Sprite
+    state: sich_poster_solar_federation
+
+- type: entity
+  parent: PosterBaseSich
+  id: poster_sich_passenger
+  name: "Постер книги 'Нотатки пасажира'"
+  description: "Колись NT проводило конкурс серед працівників на 3 найкращі роботи, одною з них є 'Нотатки пасажира'. Ця історія розповідає про героя який намагється виживати на космічній станції після початку вірусної загрози, що перетворює людей на зомбі. Чи зможе головний герой вижити та не перетворитися на ходячий труп?"
+  components:
+  - type: Sprite
+    state: poster_sich_passenger
+
+- type: entity
+  parent: PosterBaseSich
+  id: sich_poster_blood_knife
+  name: "Постер книги 'І крапля крові впала з кінчику її меча'"
+  description: "Колись NT проводило конкурс серед працівників на 3 найкращі роботи, одною з них є 'І крапля крові впала з кінчику її меча'. Історія розгортається навколо Кіріто Міто, жінки-самурая, вона отримує завдання від корпорації Nanotrеzen на відновлення контролю над бойовою станцією \"O picătură de sânge\" (\"Крапля крові\"), захопленої ворогами.Які перешкоди чекають на неї,чи зможе вона це зробити?"
+  components:
+  - type: Sprite
+    state: sich_poster_blood_knife
+
+- type: entity
+  parent: PosterBaseSich
+  id: sich_plastic_poster
+  name: "Постер журналу 'Робимо самі', випуск 1"
+  description: "В цьому журналі ви дізнаєтеся як зробити самостійно багато корисних речей! Наприклад ви знали що пластик для домашнього принтера можна зробити дома? Для цього потрібно змішати 5 уній Олія, 3 уній Попілу та 2 унію Сірчастої кислота і гарно нагріти"
+  components:
+  - type: Sprite
+    state: sich_plastic_poster
+
+- type: entity
+  parent: PosterBaseSich
+  id: poster_sich_space_marine
+  name: "Постер Космічних Десантників СПША"
+  description: "В твоїй крові тече ненависть до ксеноморфів, окупантів, і комуністів? Приєднуйся до Космічних Десантників і врятуй галактику від цієї погані!"
+  components:
+  - type: Sprite
+    state: poster_sich_space_marine
+
+- type: entity
+  parent: PosterBaseSich
+  id: PosterSichFilmDayPay
+  name: "Постер фільму - 'День виплат'"
+  description: "Фільм про те, як відбиті на голову друзі, вирішили пограбувати сховище станції. В кінці фільму їх усіх вбило сб.\""
+  components:
+  - type: Sprite
+    state: poster_sich_day_pay
+
+- type: entity
+  parent: PosterBaseSich
+  id: PosterSichFarCry
+  name: "Постер фільму - 'Фар Край'"
+  description: "Історія розказує про станцію, яку захопили терористи, і вони використовують членів екіпажу як рабів для тяжкої праці. У фільмі є багато драми, екшену і крові. Через свій фінансовий успіх, було випущено не менш цікавих продовжень.\""
+  components:
+  - type: Sprite
+    state: poster_sich_Far_Cray
+
+- type: entity
+  parent: PosterBaseSich
+  id: PosterSichGladiator
+  name: "Постер фільму - Гладіатор"
+  description: "Історія розказує про групу гладіаторів, яким проходиться битися за право жити. Кожен їх день наповнений кров'ю, кишками, і страхом що ця битва може опинитися останньою В кінці турніру вони вирішують повстати проти короля, але гвардія їх перш чим вони встигають добратися до королівського палацу.\""
+  components:
+  - type: Sprite
+    state: poster_sich_gladiator
+
+- type: entity
+  parent: PosterBaseSich
+  id: PosterSichHellowin
+  name: "Постер фільму - Кошмар перед геллові́ном"
+  description: "На початку фільму, уся станція готується до Гелловіну, але вони ще не знають, розвішують привидів, вирізають гарбузи, шиють костюми, запалюють свічки. Але вони ще не знають про те, що їх очікує....\""
+  components:
+  - type: Sprite
+    state: poster_sich_halloween
+
+- type: entity
+  parent: PosterBaseSich
+  id: PosterSichJaill
+  name: "Постер фільму - Втеча з під варти"
+  description: "Фільм розказує про тяжку долю в'язня, в новій космічній в'язниці. Її спонсорує чудова компанія Nanotrasen. Ходять чутки, що туди відправляють 'незручних' для бізнесу людей. В один чудовий цикл, усе починає йти до біса в пекло. На станцію прилітають невідомі терористи, в'язні усталюють бунт, охорона не справляється з усіма проблемами. Чи зможе вибратися живим головний герой, а якщо так, то якою ціною?\""
+  components:
+  - type: Sprite
+    state: poster_sich_jail
+
+- type: entity
+  parent: PosterBaseSich
+  id: PosterSichRimworld
+  name: "Постер фільму - Колонії"
+  description: "Цей фільм розказує про тяжку долі колонізаторів нових планет. В фільмі є драма, романтика і гарні краєвиди ще не заселеної планети. Фільм дуже сподобався публіці, тому були зроблені продовження з тими самими персонажами. Потім, були зроблені сиквели, розповідаючи зовсім про інших колонізаторів на зовсім інших планетах.\""
+  components:
+  - type: Sprite
+    state: poster_sich_rimworld
+
+- type: entity
+  parent: PosterBaseSich
+  id: PosterSichSkyPunk
+  name: "Постер фільму - Скайпанк"
+  description: "Цей фільм розповідає про всесвіт, де королівства живуть на летючих островах. Глядачі відмічають дуже гарну атмосферу, усі декорації в фільмі були виконані дуже якісно. Комп'ютерна графіка майже не була використана у фільмі. Сам фільм знімали на орбіті одної планети Доренвірської Конфедерації.\""
+  components:
+  - type: Sprite
+    state: poster_sich_sky_punk
+
+- type: entity
+  parent: PosterBaseSich
+  id: PosterSichSosfall
+  name: "Постер фільму - Аварійне падіння"
+  description: "Фільм розповідає про жахливу катастрофу, як в космічну станцію врізався метеорит, в результаті чого станція злетіла з орібти планети і почала падати в атмосфері\""
+  components:
+  - type: Sprite
+    state: poster_sich_sos_fall
+
+- type: entity
+  parent: PosterBaseSich
+  id: PosterSichStalker
+  name: "Постер фільму - Сталкер"
+  description: "Цей фільм, розповідає про істрою одного з сталкерів, який намагається заробити гроші в усім відомій Зоні. Фільм усім сподобався завдяки атмосфері і цікавому сюжету.\""
+  components:
+  - type: Sprite
+    state: poster_sich_Stalker
+
+- type: entity
+  parent: PosterBaseSich
+  id: PosterSichWarclown
+  name: "Постер фільму - Війна клоунів та мімів"
+  description: "A poster advertising online schooling about space. The classes listed seem to cover things from the basic usage of station equipment to complicated subjects like creating pipebombs or covering entire hallways in spacelube. A disclaimer reads \"It's never THAT bad, and at the end you might even get a tortilla.\""
+  components:
+  - type: Sprite
+    state: poster_sich_war_clown
+
+- type: entity
+  parent: PosterBaseSich
+  id: PosterSichWarmime
+  name: "Постер фільму - Війна клоунів та мімів"
+  description: "A poster advertising online schooling about space. The classes listed seem to cover things from the basic usage of station equipment to complicated subjects like creating pipebombs or covering entire hallways in spacelube. A disclaimer reads \"It's never THAT bad, and at the end you might even get a tortilla.\""
+  components:
+  - type: Sprite
+    state: poster_sich_war_mime

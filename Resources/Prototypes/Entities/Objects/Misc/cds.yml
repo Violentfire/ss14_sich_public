@@ -1,0 +1,19 @@
+- type: entity
+  name: диск координат
+  parent: BaseItem
+  id: CoordinatesDisk
+  description: Диск, що містить координати місця в космосі. Необхідний для того, щоб будь-який корабель, який подорожує на надсвітлових швидкостях, досягнув місця призначення. Встановлюється у консоль шатла.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/cd.rsi
+    state: icon
+  - type: StaticPrice
+    price: 100
+  - type: Tag
+    tags:
+    - CoordinatesDisk
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 1
+  - type: ShuttleDestinationCoordinates

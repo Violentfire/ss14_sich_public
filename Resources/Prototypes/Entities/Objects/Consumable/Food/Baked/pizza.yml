@@ -1,0 +1,760 @@
+# When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_meal.yml & food_single.yml
+# Base
+
+- type: entity
+  abstract: true
+  parent: FoodInjectableBase
+  id: FoodPizzaBase
+  components:
+  - type: FlavorProfile
+    flavors:
+      - oily
+      - bread
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/pizza.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 30
+        - ReagentId: Vitamin
+          Quantity: 5
+  - type: SliceableFood
+    count: 8
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,1
+    storedOffset: 0,-5
+  - type: Tag
+    tags:
+    - Pizza
+    - ReptilianFood
+
+- type: entity
+  parent: FoodInjectableBase # Not sliceable
+  id: FoodPizzaSliceBase
+  abstract: true
+  components:
+  - type: FlavorProfile
+    flavors:
+      - oily
+      - bread
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/pizza.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        # Note: Keep FoodPizzaMoldySlice & FoodPizzaSliceBase roughly in sync
+        maxVol: 6
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 0.8
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - Pizza
+    - ReptilianFood
+    - Slice
+
+# Pizza
+
+- type: entity
+  name: піца «Маргарита»
+  parent: FoodPizzaBase
+  id: FoodPizzaMargherita
+  description: Смак Італії.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+      - oily
+      - bread
+  - type: Sprite
+    layers:
+    - state: margherita
+  - type: SliceableFood
+    slice: FoodPizzaMargheritaSlice
+
+- type: entity
+  name: шматочок піци «Маргарита»
+  parent: FoodPizzaSliceBase
+  id: FoodPizzaMargheritaSlice
+  description: Шматочок Італії.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+      - oily
+      - bread
+  - type: Sprite
+    layers:
+    - state: margherita-slice
+  - type: Item
+    heldPrefix: margherita-slice
+
+- type: entity
+  name: "м'ясна піца"
+  parent: FoodPizzaBase
+  id: FoodPizzaMeat
+  description: "Масляна піца зі смачним м'ясом."
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - cheesy
+      - oily
+      - bread
+  - type: Sprite
+    layers:
+    - state: meat
+  - type: SliceableFood
+    slice: FoodPizzaMeatSlice
+  - type: Tag
+    tags:
+    - Meat
+    - Pizza
+
+- type: entity
+  name: "шматочок м'ясної піци"
+  parent: FoodPizzaSliceBase
+  id: FoodPizzaMeatSlice
+  description: "Поживний шматочок м'ясопіци"
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - cheesy
+      - oily
+      - bread
+  - type: Sprite
+    layers:
+    - state: meat-slice
+  - type: Item
+    heldPrefix: meat-slice
+  - type: Tag
+    tags:
+    - Meat
+    - Pizza
+    - Slice
+# Tastes like crust, tomato, cheese, meat.
+
+- type: entity
+  name: грибна піца
+  parent: FoodPizzaBase
+  id: FoodPizzaMushroom
+  description: Дуже особлива піца.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - mushroom
+      - oily
+      - bread
+  - type: Sprite
+    layers:
+    - state: mushroom
+  - type: SliceableFood
+    slice: FoodPizzaMushroomSlice
+
+- type: entity
+  name: шматочок грибної піци
+  parent: FoodPizzaSliceBase
+  id: FoodPizzaMushroomSlice
+  description: Можливо це останній шматок піци у твоєму житті.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - mushroom
+      - oily
+      - bread
+  - type: Sprite
+    layers:
+    - state: mushroom-slice
+  - type: Item
+    heldPrefix: mushroom-slice
+# Tastes like crust, tomato, cheese, mushroom.
+
+- type: entity
+  name: овочева піца
+  parent: FoodPizzaBase
+  id: FoodPizzaVegetable
+  description: Станційні вегетеріанці подякують вам за це.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - eggplant
+      - corn
+      - tomato
+      - oily
+      - cheesy
+      - bread
+  - type: Sprite
+    layers:
+    - state: vegetable
+  - type: SliceableFood
+    slice: FoodPizzaVegetableSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 25
+        - ReagentId: JuiceCarrot
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 5
+
+- type: entity
+  name: шматочок овочевої піци
+  parent: FoodPizzaSliceBase
+  id: FoodPizzaVegetableSlice
+  description: Цього шматку буде вдосталь аби задовільнити навіть найвибагливішого члена екіпажу.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - eggplant
+      - corn
+      - tomato
+      - carrot
+      - oily
+      - cheesy
+      - bread
+  - type: Sprite
+    layers:
+    - state: vegetable-slice
+  - type: Item
+    heldPrefix: vegetable-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: JuiceCarrot
+          Quantity: 1
+        - ReagentId: Vitamin
+          Quantity: 1
+
+# Tastes like crust, tomato, cheese, carrot.
+
+- type: entity
+  name: піца донк-кишенька
+  parent: FoodPizzaBase
+  id: FoodPizzaDonkpocket
+  description: Хто взагалі подумав що це буде гарна ідея?..
+  components:
+  - type: FlavorProfile
+    flavors:
+      - donk
+  - type: Sprite
+    layers:
+    - state: donkpocket
+  - type: SliceableFood
+    slice: FoodPizzaDonkpocketSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 27
+        - ReagentId: Vitamin
+          Quantity: 6
+        - ReagentId: Omnizine
+          Quantity: 9
+  - type: Tag
+    tags:
+    - Meat
+    - Pizza
+
+
+- type: entity
+  name: шматочок піци донк-кишеньки
+  parent: FoodPizzaSliceBase
+  id: FoodPizzaDonkpocketSlice
+  description: Пахне як донк-кишенька.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - donk
+  - type: Sprite
+    layers:
+    - state: donkpocket-slice
+  - type: Item
+    heldPrefix: donkpocket-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4.5
+        - ReagentId: Vitamin
+          Quantity: 1
+        - ReagentId: Omnizine
+          Quantity: 1.5
+  - type: Tag
+    tags:
+    - Meat
+    - Pizza
+    - Slice
+# Tastes like crust, tomato, cheese, meat, laziness.
+
+- type: entity
+  name: «сира» піца
+  parent: FoodPizzaBase
+  id: FoodPizzaDank
+  description: Улюблений вибір гіпі.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - oily
+      - bread
+      - cheesy
+      - leafy
+  - type: Sprite
+    layers:
+    - state: dank
+  - type: SliceableFood
+    slice: FoodPizzaDankSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: THC
+          Quantity: 30
+
+- type: entity
+  name: шматочок «сирої» піфци
+  parent: FoodPizzaSliceBase
+  id: FoodPizzaDankSlice
+  description: Так смачно, чууууваааак...
+  components:
+  - type: FlavorProfile
+    flavors:
+      - oily
+      - bread
+      - cheesy
+      - leafy
+  - type: Sprite
+    layers:
+    - state: dank-slice
+  - type: Item
+    heldPrefix: dank-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3.5
+        - ReagentId: THC
+          Quantity: 5
+# Tastes like crust, tomato, cheese, meat, satisfaction.
+
+- type: entity
+  name: піца з салямі
+  parent: FoodPizzaBase
+  id: FoodPizzaSassysage
+  description: Ви дійсно відчуваєте запах нахабства.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - cheesy
+      - oily
+      - bread
+  - type: Sprite
+    layers:
+    - state: sassysage
+  - type: SliceableFood
+    slice: FoodPizzaSassysageSlice
+  - type: Tag
+    tags:
+    - Meat
+    - Pizza
+
+- type: entity
+  name: шматочок піци з салямі
+  parent: FoodPizzaSliceBase
+  id: FoodPizzaSassysageSlice
+  description: Смачно нахабно.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - cheesy
+      - oily
+      - bread
+  - type: Sprite
+    layers:
+    - state: sassysage-slice
+  - type: Item
+    heldPrefix: sassysage-slice
+  - type: Tag
+    tags:
+    - Meat
+    - Pizza
+    - Slice
+# Tastes like crust, tomato, cheese, sausage, sass.
+
+- type: entity
+  name: «Гавайська» піца
+  parent: FoodPizzaBase
+  id: FoodPizzaPineapple
+  description: Змушує людей плакати. Сльози радості чи смутку залежать від того, наскільки людина любить ананас.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - pineapple
+      - cheesy
+      - oily
+      - bread
+  - type: Sprite
+    layers:
+    - state: pineapple
+  - type: SliceableFood
+    slice: FoodPizzaPineappleSlice
+  - type: Tag
+    tags:
+    - Meat
+    - Pizza
+
+- type: entity
+  name: шматочок «Гавайської» піци
+  parent: FoodPizzaSliceBase
+  id: FoodPizzaPineappleSlice
+  description: Шматочок радості/гріха.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - pineapple
+      - cheesy
+      - oily
+      - bread
+  - type: Sprite
+    layers:
+    - state: pineapple-slice
+  - type: Item
+    heldPrefix: pineapple-slice
+  - type: Tag
+    tags:
+    - Meat
+    - Pizza
+    - Slice
+# Tastes like crust, tomato, cheese, pineapple, ham.
+
+#TODO: This is a meme pizza from /tg/. It has specially coded mechanics.
+- type: entity
+  name: піца «Арнольда»
+  parent: FoodPizzaBase
+  id: FoodPizzaArnold
+  description: Привіт, ви подзвонили в піцерію Арнольда. Мене зараз немає, я пішов вбивати пепероні.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - cheesy
+      - oily
+      - bread
+      - gunpowder
+  - type: Sprite
+    layers:
+    - state: arnold
+  - type: SliceableFood
+    slice: FoodPizzaArnoldSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 85
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 30
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Iron
+          Quantity: 10
+        - ReagentId: Omnizine
+          Quantity: 30
+  - type: Tag
+    tags:
+    - Meat
+    - Pizza
+
+- type: entity
+  name: шматочок піци «Арнольда»
+  parent: FoodPizzaSliceBase
+  id: FoodPizzaArnoldSlice
+  description: Я приходжу, можливо, даю тобі піцу, можливо, відламую тобі руку.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - cheesy
+      - oily
+      - bread
+      - gunpowder
+  - type: Sprite
+    layers:
+    - state: arnold-slice
+  - type: Item
+    heldPrefix: arnold-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 0.8
+        - ReagentId: Iron
+          Quantity: 1.6
+        - ReagentId: Omnizine
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Meat
+    - Pizza
+    - Slice
+# Tastes like crust, tomato, cheese, pepperoni, 9 millimeter bullets.
+
+#TODO: Make this do poison damage and make cut pizza slices eventually rot into this.
+- type: entity
+  name: шматок запліснявілої піци
+  parent: FoodPizzaSliceBase
+  id: FoodPizzaMoldySlice
+  description: Колись це був чудовий шматок піци, але тепер він лежить тут, прогірклий і вкритий спорами.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bitter
+      - terrible
+      - mushroom
+  - type: Sprite
+    layers:
+    - state: moldy-slice
+  - type: Item
+    heldPrefix: moldy-slice
+  - type: Tag
+    tags:
+    - Trash
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        # Note: Keep FoodPizzaMoldySlice & FoodPizzaSliceBase roughly in sync
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Mold
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 1
+# Tastes like stale crust, rancid cheese, mushroom.
+
+- type: entity
+  name: гостра камене-піца
+  parent: FoodPizzaBase
+  id: FoodPizzaUranium
+  description: Гостра піца, вкрита перцем та ураном.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - spicy
+    - cheesy
+    - oily
+    - bread
+  - type: Sprite
+    layers:
+    - state: uranium-pizza
+  - type: SliceableFood
+    slice: FoodPizzaUraniumSlice
+  - type: Tag
+    tags:
+    - Meat
+    - Pizza
+  - type: PointLight
+    enabled: true
+    radius: 2
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Radium
+          Quantity: 4
+        - ReagentId: Uranium
+          Quantity: 16
+
+- type: entity
+  name: шматок гострої камене-піци
+  parent: FoodPizzaSliceBase
+  id: FoodPizzaUraniumSlice
+  description: Сяючий шматок гострої камене-піци.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - spicy
+    - cheesy
+    - oily
+    - bread
+  - type: Sprite
+    layers:
+    - state: uranium-slice
+  - type: Item
+    heldPrefix: uranium-slice
+  - type: Tag
+    tags:
+    - Meat
+    - Pizza
+    - Slice
+  - type: PointLight
+    enabled: true
+    radius: 2
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Radium
+          Quantity: 0.5
+        - ReagentId: Uranium
+          Quantity: 2
+
+# Tastes like crust, tomato, cheese, radiation.
+
+- type: entity
+  name: бавовняна піца
+  parent: FoodPizzaBase
+  id: FoodPizzaCotton
+  description: Пласке тканинне бавовняне тісто з бавовняною начинкою. Неймовірно.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - cotton
+    - bread
+  - type: Sprite
+    layers:
+    - state: cotton-pizza
+  - type: Edible
+    requiresSpecialDigestion: true
+  - type: SliceableFood
+    slice: FoodPizzaCottonSlice
+  - type: Tag
+    tags:
+    - ClothMade
+    - Pizza
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Fiber
+          Quantity: 10
+
+- type: entity
+  name: шматочок бавовняної піци
+  parent: FoodPizzaSliceBase
+  id: FoodPizzaCottonSlice
+  description: Шматочок бавовняної піци. З бавовною включно.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - cotton
+    - bread
+  - type: Sprite
+    layers:
+    - state: cotton-slice
+  - type: Item
+    heldPrefix: cotton-slice
+  - type: Tag
+    tags:
+    - ClothMade
+    - Pizza
+    - Slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3.5
+        - ReagentId: Vitamin
+          Quantity: 0.8
+        - ReagentId: Fiber
+          Quantity: 1.5
+
+- type: entity
+  name: world peazza
+  parent: FoodPizzaBase
+  id: FoodPizzaWorldpeas
+  description: Modern diplomacy in the shape of a disc.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bread
+      - numbingtranquility
+  - type: Sprite
+    layers:
+    - state: worldpeas
+  - type: SliceableFood
+    slice: FoodPizzaWorldpeasSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 45
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Happiness
+          Quantity: 12
+        - ReagentId: Pax
+          Quantity: 8
+
+- type: entity
+  name: slice of world peazza
+  parent: FoodPizzaSliceBase
+  id: FoodPizzaWorldpeasSlice
+  description: Dividing the world up is a small price to pay for harmony.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bread
+      - numbingtranquility
+  - type: Sprite
+    layers:
+    - state: worldpeas-slice
+  - type: Item
+    heldPrefix: worldpeas-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3.5
+        - ReagentId: Happiness
+          Quantity: 2
+        - ReagentId: Pax
+          Quantity: 1.5

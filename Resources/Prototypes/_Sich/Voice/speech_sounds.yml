@@ -1,0 +1,35 @@
+- type: speechSounds
+  id: IPC
+  saySound:
+    path: /Audio/Voice/Talk/pai.ogg # TODO CHANGE
+  askSound:
+    path: /Audio/Voice/Talk/pai_ask.ogg
+  exclaimSound:
+    path: /Audio/Voice/Talk/pai_exclaim.ogg
+
+- type: speechSounds
+  id: Tajara
+  saySound:
+    path: /Audio/_Sich/Voice/Tajaran/Tajara_say.ogg
+  askSound:
+    path: /Audio/_Sich/Voice/Tajaran/Tajara_ask.ogg
+  exclaimSound:
+    path: /Audio/_Sich/Voice/Tajaran/Tajara_exclaim.ogg
+
+- type: speechSounds
+  id: MaleAvali
+  saySound:
+    path: /Audio/_Sich/Voice/Talk/avali_1.ogg
+  askSound:
+    path: /Audio/_Sich/Voice/Talk/avali_1_ask.ogg
+  exclaimSound:
+    path: /Audio/_Sich/Voice/Talk/avali_1_exclaim.ogg
+
+- type: speechSounds
+  id: FemaleAvali
+  saySound:
+    path: /Audio/_Sich/Voice/Talk/avali_2.ogg
+  askSound:
+    path: /Audio/_Sich/Voice/Talk/avali_2_ask.ogg
+  exclaimSound:
+    path: /Audio/_Sich/Voice/Talk/avali_2_exclaim.ogg

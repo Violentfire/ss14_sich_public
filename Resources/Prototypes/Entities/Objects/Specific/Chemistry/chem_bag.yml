@@ -1,0 +1,33 @@
+- type: entity
+  name: сумка для хімікатів
+  id: ChemBag
+  parent: BaseStorageItem
+  description: Сумка для зберігання хімікатів та різних принад, таких як таблетки, каністри з таблетками, пляшки та шприци.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/chem_bag.rsi
+    state: icon
+  - type: Clothing
+    sprite: Objects/Specific/Chemistry/chem_bag.rsi
+    quickEquip: false
+    slots:
+    - belt
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Normal # allow up to 5 large beakers / 10 beakers / 10 pill canisters
+    grid:
+    - 0,0,4,3
+    quickInsert: true
+    areaInsert: true
+    whitelist:
+      components:
+        - FitsInDispenser
+        - Pill
+      tags:
+        - Document
+        - PillCanister
+        - Bottle
+        - Syringe
+        - Dropper
+  - type: Dumpable

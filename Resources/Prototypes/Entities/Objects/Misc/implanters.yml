@@ -1,0 +1,326 @@
+# Implanters
+
+- type: entity
+  name: імплантер
+  id: BaseImplanter
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: ItemSlots
+  - type: ContainerContainer
+    containers:
+      implanter_slot: !type:ContainerSlot { }
+  - type: Implanter
+    whitelist:
+      components:
+      - MobState # no chair microbomb
+    blacklist:
+      components:
+      - Guardian # no holoparasite macrobomb wombo combo
+      tags:
+      - Unimplantable
+    currentMode: Draw
+    implanterSlot:
+      name: Implant
+      locked: True
+      priority: 0
+      whitelist:
+        tags:
+        - SubdermalImplant
+    allowDeimplantAll: false
+    deimplantWhitelist:
+    - SadTromboneImplant
+    - LightImplant
+    - BikeHornImplant
+    - TrackingImplant
+    - StorageImplant
+    - FreedomImplant
+    - UplinkImplant
+    - EmpImplant
+    - ScramImplant
+    - DnaScramblerImplant
+    - MicroBombImplant
+    - MacroBombImplant
+    - DeathAcidifierImplant
+    - DeathRattleImplant
+    - MindShieldImplant
+    - FakeMindShieldImplant
+    - RadioImplant
+    - ChameleonControllerImplant
+    deimplantFailureDamage:
+      types:
+        Cellular: 50
+        Heat: 10
+  - type: Sprite
+    sprite: Objects/Specific/Medical/implanter.rsi
+    state: implanter0
+    layers:
+    - state: implanter0
+      map: [ "implantOnly" ]
+      visible: true
+    - state: implanter1
+      map: [ "implantFull" ]
+      visible: false
+  - type: Item
+    sprite: Objects/Specific/Medical/implanter.rsi
+    heldPrefix: implanter
+    size: Small
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ImplanterVisuals.Full:
+        implantFull:
+          True: {visible: true}
+          False: {visible: false}
+      enum.ImplanterImplantOnlyVisuals.ImplantOnly:
+        implantOnly:
+          True: {state: broken}
+          False: {state: implanter0}
+  - type: UserInterface
+    interfaces:
+      enum.DeimplantUiKey.Key:
+        type: DeimplantBoundUserInterface
+
+- type: entity
+  id: Implanter
+  parent: BaseImplanter
+  description: "Шприц подвійного призначення, розроблений для видалення конкретних підшкірних імплантів. Після видалення імплант зберігається всередині шприца і може бути повторно введений.\nУВАГА: Помилка оператора, наприклад, вибір типу імпланта, якого немає, спричиняє серйозну генетичну травму оператора."
+  components:
+  - type: Tag
+    tags:
+    - Trash
+
+- type: entity
+  id: ImplanterAdmeme
+  parent: Implanter
+  suffix: Admeme
+  components:
+  - type: Implanter
+    # go wild with sentient chairs with macrobombs
+    whitelist: null
+    blacklist: null
+    implantTime: 5
+    drawTime: 5
+
+- type: entity
+  id: BaseImplantOnlyImplanter
+  parent: Implanter
+  description: Одноразовий шприц, призначений виключно для введення підшкірних імплантів.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/implanter.rsi
+    state: implanter0
+    layers:
+    - state: implanter1
+      map: [ "implantFull" ]
+      visible: true
+    - state: implanter0
+      map: [ "implantOnly" ]
+  - type: Implanter
+    currentMode: Inject
+    implantOnly: true
+
+- type: entity
+  id: BaseImplantOnlyImplanterSyndi
+  parent: [BaseImplantOnlyImplanter, BaseSyndicateContraband]
+  name: імплантатор синдикату
+  description: Компактний одноразовий шприц, призначений виключно для ін’єкцій підшкірних імплантатів. Після використання обов’язково протріть його милом або ганчіркою, щоб видалити залишки ДНК!
+  abstract: true
+  components:
+  - type: Item
+    sprite: Objects/Specific/Medical/syndi_implanter.rsi
+    heldPrefix: implanter
+  - type: Sprite
+    sprite: Objects/Specific/Medical/syndi_implanter.rsi
+    state: implanter1
+    layers:
+    - state: implanter0
+      map: [ "implantFull" ]
+      visible: true
+    - state: implanter1
+      map: [ "implantOnly" ]
+  - type: GenericVisualizer
+    visuals:
+      enum.ImplanterVisuals.Full:
+        implantFull:
+          True: {visible: true}
+          False: {visible: false}
+      enum.ImplanterImplantOnlyVisuals.ImplantOnly:
+        implantOnly:
+          True: {state: broken}
+          False: {state: implanter1}
+  - type: Tag
+    tags: []
+
+#Fun implanters
+
+- type: entity
+  id: SadTromboneImplanter
+  name: імплантер сумного тромбона
+  parent: BaseImplantOnlyImplanter
+  components:
+  - type: Implanter
+    implant: SadTromboneImplant
+
+- type: entity
+  id: LightImplanter
+  name: імплантер лампи
+  parent: BaseImplantOnlyImplanter
+  components:
+  - type: Implanter
+    implant: LightImplant
+
+- type: entity
+  id: BikeHornImplanter
+  name: імплантер велосипедного клаксона
+  parent: BaseImplantOnlyImplanter
+  components:
+  - type: Implanter
+    implant: BikeHornImplant
+
+#Security implanters
+
+- type: entity
+  id: TrackingImplanter
+  name: імплантер відстеження
+  parent: BaseImplantOnlyImplanter
+  components:
+  - type: Implanter
+    implant: TrackingImplant
+
+#Traitor implanters
+
+- type: entity
+  id: StorageImplanter
+  name: імплантер сховища
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: StorageImplant
+
+- type: entity
+  id: FreedomImplanter
+  name: імплантер свободи
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: FreedomImplant
+
+- type: entity
+  id: RadioImplanter
+  name: syndicate radio implanter
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: RadioImplant
+
+- type: entity
+  id: UplinkImplanter
+  name: імплантер аплінку
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: UplinkImplant
+
+- type: entity
+  id: EmpImplanter
+  name: імплантер ЕМІ
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: EmpImplant
+
+- type: entity
+  id: ScramImplanter
+  name: імплантер телепортації
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: ScramImplant
+
+- type: entity
+  id: DnaScramblerImplanter
+  name: імплантер перемішування ДНК
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: DnaScramblerImplant
+
+- type: entity
+  id: ChameleonControllerImplanter
+  name: chameleon controller implanter
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: ChameleonControllerImplant
+
+#Nuclear Operative/Special implanters
+
+- type: entity
+  id: MicroBombImplanter
+  name: імплантер мікробомби
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: MicroBombImplant
+
+- type: entity
+  id: MacroBombImplanter
+  name: імплантер макробомби
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: MacroBombImplant
+
+- type: entity
+  id: DeathRattleImplanter
+  name: імплантер предсмертної конвульсії
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: DeathRattleImplant
+
+- type: entity
+  id: DeathAcidifierImplanter
+  name: імплантер роз'їдання тіла
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: DeathAcidifierImplant
+
+- type: entity
+  id: FakeMindShieldImplanter
+  name: fake mindshield implanter
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: FakeMindShieldImplant
+
+# Security and Command implanters
+
+- type: entity
+  id: MindShieldImplanter
+  name: імплантер захисту розуму
+  parent: BaseImplantOnlyImplanter
+  components:
+  - type: Implanter
+    implant: MindShieldImplant
+
+# Centcomm implanters
+
+- type: entity
+  id: RadioImplanterCentcomm
+  name: centcomm radio implanter
+  parent: BaseImplantOnlyImplanter
+  components:
+  - type: Implanter
+    implant: RadioImplantCentcomm
+
+- type: entity
+  id: DeathRattleImplanterCentcomm
+  name: centcomm death rattle implanter
+  parent: BaseImplantOnlyImplanter
+  components:
+  - type: Implanter
+    implant: DeathRattleImplantCentcomm

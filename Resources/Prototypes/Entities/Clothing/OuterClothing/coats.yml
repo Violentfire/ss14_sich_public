@@ -1,0 +1,485 @@
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatBomber
+  name: куртка бомбер
+  description: Товста, добре поношена куртка часів другої світової війни.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/bomber.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/bomber.rsi
+
+- type: entity
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, ClothingOuterArmorBase]
+  id: ClothingOuterCoatDetective
+  name: плащ детектива
+  description: Багатоцільовий плащ 18-го століття. Той, хто носить цей плащ налаштований серйозно.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/detective.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/detective.rsi
+  - type: StorageFill
+    contents:
+    - id: SmokingPipeFilledTobacco
+    - id: FlippoEngravedLighter
+  - type: ExplosionResistance
+    damageCoefficient: 1 #its a coat. it doesnt do shit
+
+- type: entity
+  parent: [ClothingOuterCoatDetectiveLoadout]
+  id: ClothingOuterCoatDetectiveLoadoutGrey
+  name: нуарний плащ
+  description: Ах, ваш чудовий, вірний плащ. Є кілька порізів тут і там, що надають йому більш вінтажного вигляду. Принаймні, так ви скажете коли дізнаєтесь що його ремонт коштуватиме 1,000 гривень.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/detective_grey.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/detective_grey.rsi
+
+
+- type: entity
+  parent: ClothingOuterCoatDetective
+  id: ClothingOuterCoatDetectiveLoadout
+  components:
+  - type: StorageFill
+    contents:
+    - id: SmokingPipeFilledTobacco
+    - id: FlippoLighter #Not the steal objective, only difference from normal detective trenchcoat
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatGentle
+  name: легкий плащ
+  description: Плащ, для ніжного чоловіка або жінки.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/gentlecoat.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/gentlecoat.rsi
+
+- type: entity
+  abstract: true
+  parent: AllowSuitStorageClothing
+  id: ClothingOuterArmorHoS
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.6
+        Heat: 0.7
+        Caustic: 0.75 # not the full 90% from ss13 because of the head
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  abstract: true
+  parent: AllowSuitStorageClothing
+  id: ClothingOuterArmorWarden
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.7
+        Heat: 0.7
+        Caustic: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  parent: [ClothingOuterArmorHoS, ClothingOuterStorageBase, BaseSecurityCommandContraband]
+  id: ClothingOuterCoatHoSTrench
+  name: броньована шинель
+  description: Ця шинель доповнена спеціальним сплавом для додаткового захисту, та стилю для тих хто має владу.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/hos_trenchcoat.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/hos_trenchcoat.rsi
+
+- type: entity
+  parent: ClothingOuterStorageToggleableBase
+  id: ClothingOuterCoatJensen
+  name: джинсове пальто
+  description: Це джинсове пальто. Ідеально для тих випадків, коли хочеться виглядати так ніби ти щойно вийшов з кадру ретро-фільму.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/jensencoat.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/jensencoat.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodChaplainHood
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatTrench
+  name: пальто-тренч
+  description: Звичайне, зручне тренч-пальто.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/trenchcoat.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/trenchcoat.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.95
+  - type: Edible
+    requiresSpecialDigestion: true
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 20
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCoatLab
+  name: лабораторний халат
+  description: Халат що може захистити від незначного розливу хімікатів.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/labcoat.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/labcoat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.75
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatLab]
+  id: ClothingOuterCoatLabOpened
+  name: лабораторний халат
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCoatLabChem
+  name: халат хіміка
+  description: Халат що може захистити від незначного розливу хімікатів. Має прикольні помаранчеві смужки на плечах.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/labcoat_chem.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/labcoat_chem.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.75
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatLabChem]
+  id: ClothingOuterCoatLabChemOpened
+  name: халат хіміка
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCoatLabViro
+  name: халат вірусолога
+  description: Халат що може захистити від незначного розливу хімікатів. Має прикольні помаранчеві смужки на рукавах. До речі, чули про дальтонізм?
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/labcoat_viro.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/labcoat_viro.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.75
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatLabViro]
+  id: ClothingOuterCoatLabViroOpened
+  name: халат вірусолога
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCoatLabGene
+  name: халат генетика
+  description: Халат що може захистити від незначного розливу хімікатів. Має сині смужки на рукавах.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/labcoat_gene.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/labcoat_gene.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.75
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatLabGene]
+  id: ClothingOuterCoatLabGeneOpened
+  name: халат генетика
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCoatLabCmo
+  name: халат головного лікаря
+  description: Зроблений на замовлення, спеціально для головного лікаря, надає покращений захист від розлитих хімікатів та незначних порізів.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/labcoat_cmo.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/labcoat_cmo.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.95
+        Heat: 0.95
+        Caustic: 0.65
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatLabCmo]
+  id: ClothingOuterCoatLabCmoOpened
+  name: халат головного лікаря
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCoatRnd
+  name: халат вченого
+  description: Халат що може захистити від незначного розливу хімікатів. Має фіолетові смужки на рукавах.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/labcoat_sci.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/labcoat_sci.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.75
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatRnd]
+  id: ClothingOuterCoatRndOpened
+  name: халат вченого
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCoatRobo
+  name: халат робототехніка
+  description: Більше схоже на модне пальто ніж на лабораторний халат. Допомагає видаляти плями крові як етикетку. Має прикольні червоні наплічники.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/labcoat_robo.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/labcoat_robo.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.75
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatRobo]
+  id: ClothingOuterCoatRoboOpened
+  name: халат робототехніка
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCoatRD
+  name: халат директора НВ
+  description: Виготовлений за передовими технологіями, цей лабораторний халат захищає від радіації, але не так добре як це робить експериментальний дослідницький скафандр.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/labcoat_rd.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/labcoat_rd.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.75
+        Radiation: 0.9
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatRD]
+  id: ClothingOuterCoatRDOpened
+  name: халат директора НВ
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatPirate
+  name: піратський плащ
+  description: "Тисяча чортів, підняти всіх на гору!"
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/pirate.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/pirate.rsi
+
+- type: entity
+  parent: [ClothingOuterArmorWarden, ClothingOuterStorageBase, BaseSecurityContraband]
+  id: ClothingOuterCoatWarden
+  name: армована куртка наглядача
+  description: Міцна, практична куртка призначена для захисту наглядача від будь-яких загроз пов'язаних з брігом.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/warden.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/warden.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterDameDane
+  name: куртка Якудза
+  description: П'ятниця...
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/damedanecoat.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/damedanecoat.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterClownPriest
+  name: мантія служителя Хонкоматері
+  description: Мантія, призначена для клоуна. Слава Хонкоматері!
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/clownpriest.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/clownpriest.rsi
+
+- type: entity
+  parent: [ClothingOuterStorageBase, BaseMajorContraband]
+  id: ClothingOuterDogi
+  name: самурайський догі
+  description: Догі - це вид традиційного Японського одягу. Догі виготовлено з важкої, міцної тканини, практична в бою і стильна на вигляд. Прикрашена складними візерунками та вишивкою на спині.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/dogi.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/dogi.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.65
+        Piercing: 0.85
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatParamedicWB
+  name: вітровка парамедика
+  description: Вітровка для парамедика, що надає чудовий захист від булдь якого космічного вітру.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/windbreaker_paramedic.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/windbreaker_paramedic.rsi
+
+- type: entity
+  parent: [ClothingOuterStorageBase, BaseSyndicateContraband]
+  id: ClothingOuterCoatSyndieCap
+  name: пальто Синдикату
+  description: Пальто Синдикату що вироблено з міцної тканини та оздоблено позолоченими візерунками. Додає відчуття елегантності та статусу.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecap.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecap.rsi
+
+- type: entity
+  parent: [BaseSyndicateContraband, ClothingOuterCoatHoSTrench] # BaseSyndicateContraband as first parent so contraband system takes that as priority, yeah I know
+  id: ClothingOuterCoatSyndieCapArmored
+  name: бронепальто Синдикату
+  description: Бронепальто Синдикату що вироблено з міцної тканини та оздоблено позолоченими візерунками. Додає елегантності, статусу, та захищеності.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecaparmored.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecaparmored.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatAMG
+  name: бронепальто брігмедика
+  description: Версія медичного халата з елементами бронежилета. Виглядає дивно, але сердце захистить. Напевно.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/brigmedic.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/brigmedic.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.85
+        Piercing: 0.65
+        Heat: 0.85
+        Caustic: 0.75
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCoatLabSeniorResearcher
+  name: халат старшого вченого
+  description: Халат що може захистити від незначного розливу хімікатів. Воротник та зап'ястя обведені фіолетовим кольором.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/labcoat_senior_researcher.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/labcoat_senior_researcher.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.75
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatLabSeniorResearcher]
+  id: ClothingOuterCoatLabSeniorResearcherOpened
+  name: senior researcher lab coat
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCoatLabSeniorPhysician
+  name: халат старшого лікаря
+  description: Халат що може захистити від незначного розливу хімікатів. Має блакитні рукава та помаранчему смужку на поясі.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/labcoat_senior_physician.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/labcoat_senior_physician.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.75
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatLabSeniorPhysician]
+  id: ClothingOuterCoatLabSeniorPhysicianOpened
+  name: senior physician lab coat
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatSpaceAsshole
+  name: плащ космічного покидька
+  description: Як там співалося? And there he was...
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/space_asshole.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/space_asshole.rsi
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCoatExpensive
+  name: дороге пальто
+  description: Дуже пухнасте пальто, зі шкіри дуже пухнастої тварини. Дуже дороге. (напевно)
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/expensive_coat.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/expensive_coat.rsi
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatExpensive]
+  id: ClothingOuterCoatExpensiveOpened
+  name: expensive coat

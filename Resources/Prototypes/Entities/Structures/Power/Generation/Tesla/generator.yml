@@ -1,0 +1,32 @@
+- type: entity
+  id: TeslaGenerator
+  name: генератор тесли
+  parent: BaseStructureDynamic
+  description: Дивний пристрій, який при налаштуванні виробляє потужну кулю тесли. Поставляється з тимчасовим запобіжником відключення, що утримує ізоляцію.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Power/Generation/Tesla/generator.rsi
+    state: icon
+  - type: SingularityGenerator # TODO: rename the generator
+    spawnId: TeslaEnergyBall
+  - type: InteractionOutline
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          # Using a circle here makes it a lot easier to pull it all the way from Cargo
+          !type:PhysShapeCircle
+            radius: 0.45
+        density: 190
+        # Keep an eye on ParticlesProjectile when adjusting these
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+  - type: Anchorable
+  - type: GuideHelp
+    guides:
+    - TeslaEngine
+    - Power
+

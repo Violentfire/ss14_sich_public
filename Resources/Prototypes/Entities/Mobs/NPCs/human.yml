@@ -1,0 +1,100 @@
+- type: entity
+  name: цивільний
+  parent: BaseMobHuman
+  id: MobCivilian
+  description: Жалюгідна купа таємниць.
+  components:
+  - type: InputMover
+  - type: MobMover
+  - type: Loadout
+    prototypes: [LimitedPassengerGear]
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+
+- type: entity
+  name: шахтар
+  parent: BaseMobHuman
+  id: MobSalvager
+  components:
+    - type: NpcFactionMember
+      factions:
+        - Syndicate
+    - type: Loadout
+      prototypes:
+        - SalvageSpecialistGear
+    - type: InputMover
+    - type: MobMover
+    - type: HTN
+      rootTask:
+        task: SimpleHumanoidHostileCompound
+
+- type: entity
+  name: космо-пірат
+  parent: BaseMobHuman
+  id: MobSpirate
+  description: Йарр!
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Syndicate
+  - type: Loadout
+    prototypes:
+      - PirateGear
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHumanoidHostileCompound
+
+- type: entity
+  name: піхотинець синдикату
+  parent: BaseMobHuman
+  id: MobSyndicateFootsoldier
+  components:
+    - type: NpcFactionMember
+      factions:
+        - Syndicate
+    - type: Loadout
+      prototypes:
+        - SyndicateFootsoldierGearRuin
+    - type: InputMover
+    - type: MobMover
+    - type: HTN
+      rootTask:
+        task: SimpleHumanoidHostileCompound
+
+- type: entity
+  name: пілот шатлу синдикату
+  parent: MobSyndicateFootsoldier
+  id: MobSyndicateFootsoldierPilot
+
+- type: entity
+  parent: BaseMobHuman
+  suffix: Dead
+  save: false # mobs are currently not saveable.
+  id: SalvageHumanCorpse
+  name: невпізнаний труп
+  description: Я думаю це мертва істота...
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: Damageable
+    damage:
+      types:
+        Bloodloss: 49
+        Asphyxiation: 76
+        Slash: 56
+        Blunt: 19
+  - type: Inventory
+    templateId: corpse
+
+- type: entity
+  parent: MobHuman
+  id: MobCluwne
+  name: особа
+  description: Поліморфн нещасний.
+  components:
+  - type: Cluwne
+  - type: Speech
+    speechVerb: Cluwne

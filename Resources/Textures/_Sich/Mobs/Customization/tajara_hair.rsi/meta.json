@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "https://github.com/Skyrat-SS13/Skyrat-tg/tree/40e3cdbb15b8bc0d5ef2fb46133adf805bda5297",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "hair_bangs",
+      "directions": 4
+    },
+	{
+      "name": "hair_clean",
+      "directions": 4
+    },
+	{
+      "name": "hair_combedback",
+      "directions": 4
+    },
+	{
+      "name": "hair_cuttail",
+      "directions": 4
+    },
+	{
+      "name": "hair_dreadlocks",
+      "directions": 4
+    },
+	{
+      "name": "hair_fingerwave",
+      "directions": 4
+    },
+	{
+      "name": "hair_long",
+      "directions": 4
+    },
+	{
+      "name": "hair_messy",
+      "directions": 4
+    },
+	{
+      "name": "hair_mohawk",
+      "directions": 4
+    },
+	{
+      "name": "hair_overeye",
+      "directions": 4
+    },
+	{
+      "name": "hair_plait",
+      "directions": 4
+    },
+	{
+      "name": "hair_ponytail",
+      "directions": 4
+    },
+	{
+      "name": "hair_rattail",
+      "directions": 4
+    },
+	{
+      "name": "hair_ribbons",
+      "directions": 4
+    },
+	{
+      "name": "hair_shaggy",
+      "directions": 4
+    },
+	{
+      "name": "hair_shy",
+      "directions": 4
+    },
+	{
+      "name": "hair_sidebraid",
+      "directions": 4
+    },
+	{
+      "name": "hair_straight",
+      "directions": 4
+    },
+	{
+      "name": "hair_tailedbangs",
+      "directions": 4
+    },
+	{
+      "name": "hair_tajspiky",
+      "directions": 4
+    },
+	{
+      "name": "hair_tbob",
+      "directions": 4
+    },
+	{
+      "name": "hair_tbraid",
+      "directions": 4
+    },
+	{
+      "name": "hair_tough",
+      "directions": 4
+    }
+  ]
+}

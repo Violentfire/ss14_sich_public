@@ -1,0 +1,307 @@
+﻿# When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_snack.yml
+# Base
+
+- type: entity
+  parent: FoodInjectableBase
+  id: FoodFrozenBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/frozen.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20 # For sprinkles or something? Idk.
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+
+# Ice-cream
+
+- type: entity
+  parent: FoodFrozenBase
+  id: FoodFrozenSandwich
+  name: морозиво-сендвіч
+  description: Портативне морозиво у власній упаковці.
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,0
+  - type: Sprite
+    state: sandwich
+
+- type: entity
+  parent: FoodFrozenBase
+  id: FoodFrozenSandwichStrawberry
+  name: полуничне морозиво-сендвіч
+  description: Порційне морозиво у власній упаковці, з полуничним смаком.
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,0
+  - type: Sprite
+    state: sandwich-strawberry
+
+- type: entity
+  name: косморозиво
+  parent: FoodFrozenBase
+  id: FoodFrozenFreezy
+  description: Найкраще морозиво в космосі!
+  components:
+  - type: Sprite
+    state: spacefreezy
+
+- type: entity
+  name: морозиво «санді»
+  parent: FoodFrozenBase
+  id: FoodFrozenSundae
+  description: Класичний десерт.
+  components:
+  - type: Sprite
+    state: spacefreezy
+
+- type: entity
+  parent: FoodFrozenBase
+  id: FoodFrozenCornuto
+  name: корнуто
+  description: Неаполітанський ріжок ванільно-шоколадного морозива. Погрожує посипкою з карамелізованих горіхів.
+  components:
+  - type: Item
+    storedRotation: -45
+  - type: Sprite
+    state: cornuto
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Theobromine
+          Quantity: 1
+
+# Popsicle
+
+- type: entity
+  name: апельсинове морозиво
+  parent: FoodFrozenBase
+  id: FoodFrozenPopsicleOrange
+  description: Класичне апельсинове морозиво. Сонячні заморожені ласощі.
+  components:
+  - type: Sprite
+    layers:
+    - state: stick
+    - state: popsicle-base
+    - state: popsicle
+      color: orange
+  - type: Edible
+    trash:
+    - FoodFrozenPopsicleTrash
+  - type: Tag
+    tags:
+    - Fruit
+    - Creamsicle
+
+- type: entity
+  name: ягідне морозиво
+  parent: FoodFrozenBase
+  id: FoodFrozenPopsicleBerry
+  description: Яскраве ягідне морозиво. Ягідні ласощі в замороженому вигляді.
+  components:
+  - type: Sprite
+    layers:
+    - state: stick
+    - state: popsicle-base
+    - state: popsicle
+      color: red
+  - type: Edible
+    trash:
+    - FoodFrozenPopsicleTrash
+  - type: Tag
+    tags:
+    - Fruit
+    - Creamsicle
+
+- type: entity
+  name: джамбове морозиво
+  parent: FoodFrozenBase
+  id: FoodFrozenPopsicleJumbo
+  description: Розкішне морозиво, вкрите насиченим шоколадом. Воно менше, ніж ви пам'ятаєте.
+  components:
+  - type: Sprite
+    layers:
+    - state: stick
+    - state: jumbo
+  - type: Edible
+    trash:
+    - FoodFrozenPopsicleTrash
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Theobromine
+          Quantity: 1
+
+# Snowcone
+
+# Use this one as a base for other colored snowcones. Apply a color to the alpha
+# layer depending on soda/syrup/waterever. Name and description will also have
+# to be modified.
+- type: entity
+  name: солодкий сніжок
+  #  name: [Flavor] snowcone
+  parent: FoodFrozenBase
+  id: FoodFrozenSnowconeBase
+  description: Лише колотий лід і простий сироп, мінімум зусиль.
+  #  description: [Liquid] drizzled over a snowball in a paper cup.
+  components:
+    - type: Sprite
+      layers:
+        - state: cone
+        - state: alpha-filling
+    #      color: foo
+    - type: Edible
+      trash:
+      - FoodFrozenSnowconeTrash
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 20 # For sprinkles or something? Idk.
+          reagents:
+            - ReagentId: Ice
+              Quantity: 8
+            - ReagentId: Water
+              Quantity: 2
+            - ReagentId: Sugar
+              Quantity: 2
+
+- type: entity
+  name: сніжок без смаку
+  parent: FoodFrozenSnowconeBase
+  id: FoodFrozenSnowcone
+  description: Це просто колотий лід. Все одно весело жувати.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+          - ReagentId: Ice
+            Quantity: 8
+
+- type: entity
+  name: ягідний сніжок
+  parent: FoodFrozenSnowconeBase
+  id: FoodFrozenSnowconeBerry
+  description: Ягідним сиропом поливаємо сніжок у паперовому стаканчику.
+  components:
+  - type: Sprite
+    layers:
+    - state: cone
+    - state: berry
+  - type: Edible
+    trash:
+    - FoodFrozenSnowconeTrash
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: фруктовий сніжок
+  parent: FoodFrozenSnowconeBase
+  id: FoodFrozenSnowconeFruit
+  description: Чудова суміш фруктових сиропів поливає сніжок у паперовому стаканчику.
+  components:
+  - type: Sprite
+    layers:
+    - state: cone
+    - state: fruitsalad
+  - type: Edible
+    trash:
+    - FoodFrozenSnowconeTrash
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: клуньжок
+  parent: FoodFrozenSnowconeBase
+  id: FoodFrozenSnowconeClown
+  description: Сміх розливався над сніжкою в паперовому стаканчику.
+  components:
+  - type: Sprite
+    layers:
+    - state: cone
+    - state: clown
+  - type: Edible
+    trash:
+    - FoodFrozenSnowconeTrash
+
+- type: entity
+  name: мімжок
+  parent: FoodFrozenSnowconeBase
+  id: FoodFrozenSnowconeMime
+  description: ...
+  components:
+  - type: Sprite
+    layers:
+    - state: cone
+    - state: mime
+  - type: Edible
+    trash:
+    - FoodFrozenSnowconeTrash
+
+- type: entity
+  name: веселковий сніжок
+  parent: FoodFrozenSnowconeBase
+  id: FoodFrozenSnowconeRainbow
+  description: Дуже барвистий сніжок у паперовому стаканчику.
+  components:
+  - type: Sprite
+    layers:
+    - state: cone
+    - state: rainbow
+  - type: Edible
+    trash:
+    - FoodFrozenSnowconeTrash
+
+# Trash
+
+- type: entity
+  parent: BaseItem
+  id: FoodFrozenSnowconeTrash
+  name: паперовий ріжок
+  description: "Зім'ятий паперовий конус, що використовується для морозива. Нічого не вартий."
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Objects/Consumable/Food/frozen.rsi
+    state: cone-trash
+  - type: Tag
+    tags:
+    - Trash
+
+- type: entity
+  name: паличка для морозива
+  parent: BaseItem
+  id: FoodFrozenPopsicleTrash
+  description: Колись тут було дуже смачно. Тепер це пустка.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/frozen.rsi
+    layers:
+      - state: stick
+        map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          stick: ""
+          stick2: ""
+  - type: Tag
+    tags:
+    - Trash
+  - type: SpaceGarbage

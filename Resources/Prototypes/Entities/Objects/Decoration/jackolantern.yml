@@ -1,0 +1,63 @@
+- type: entity
+  parent: BaseItem
+  id: CarvedPumpkin
+  name: вирізьблений гарбуз
+  description: Традиційна моторошна декорація.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/pumpkin.rsi
+    state: carved
+  - type: Item
+    size: Normal
+  - type: Construction
+    graph: PumpkinAddLight
+    node: start
+
+- type: entity
+  parent: CarvedPumpkin
+  id: PumpkinLantern
+  name: джек ліхтар
+  description: Різьблений гарбуз, що випромінює моторошне сяйво.
+  components:
+    - type: Sprite
+      state: lantern
+    - type: Appearance
+    - type: PointLight
+      enabled: true
+      color: "#cc6600"
+      radius: 2.0
+      energy: 4.0
+    - type: StealTarget
+      stealGroup: LAMP
+
+- type: entity
+  parent: CarvedPumpkin
+  id: CarvedPumpkinSmall
+  suffix: Маленький
+  components:
+    - type: Sprite
+      scale: 0.75, 0.75
+
+- type: entity
+  parent: CarvedPumpkin
+  id: CarvedPumpkinLarge
+  suffix: Великий
+  components:
+    - type: Sprite
+      scale: 1.5, 1.5
+
+- type: entity
+  parent: PumpkinLantern
+  id: PumpkinLanternSmall
+  suffix: Маленький
+  components:
+    - type: Sprite
+      scale: 0.75, 0.75
+
+- type: entity
+  parent: PumpkinLantern
+  id: PumpkinLanternLarge
+  suffix: Великий
+  components:
+    - type: Sprite
+      scale: 1.5, 1.5

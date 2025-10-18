@@ -1,0 +1,716 @@
+- type: entity
+  id: BaseLathe
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  abstract: true
+  name: верстат
+  components:
+  - type: Appearance
+  - type: WiresVisuals
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+          - MachineLayer
+  - type: Lathe
+  - type: MaterialStorage
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ChangeConstructionNodeBehavior
+        node: machineFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: WiresPanel
+  - type: ActivatableUI
+    key: enum.LatheUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.LatheUiKey.Key:
+        type: LatheBoundUserInterface
+      enum.ResearchClientUiKey.Key:
+        type: ResearchClientBoundUserInterface
+  - type: Transform
+    anchored: true
+  - type: Pullable
+  - type: StaticPrice
+    price: 800
+  - type: ResearchClient
+  - type: TechnologyDatabase
+
+# a lathe that can be sped up with space lube / slowed down with glue
+- type: entity
+  abstract: true
+  parent: BaseLathe
+  id: BaseLatheLube
+  components:
+  - type: ReagentSpeed
+    solution: lube
+    modifiers:
+      SpaceLube: 0.25
+      SpaceGlue: 5
+  - type: SolutionContainerManager
+    solutions:
+      lube:
+        maxVol: 250
+  - type: Spillable
+    solution: lube
+  - type: RefillableSolution
+    solution: lube
+  - type: ExaminableSolution
+    solution: lube
+
+- type: entity
+  abstract: true
+  id: BaseHyperlathe
+  components:
+  - type: Lathe
+    materialUseMultiplier: 0.5
+    timeMultiplier: 1.5
+  - type: LatheHeatProducing
+  - type: ReagentSpeed
+    modifiers:
+      SpaceLube: 0.8 # being faster means less heat so lube needs to be nerfed
+      SpaceGlue: 5 # no change from normal lathe, overheat!!!
+
+- type: entity
+  id: Autolathe
+  parent: BaseLatheLube
+  name: автолат
+  description: Виготовляє базові вироби з металу та скла. Має можливість обробляти креслення для друку нових рецептів.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/autolathe.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: AutolatheMachineCircuitboard
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+  - type: OreSiloClient
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    unlitIdleState: unlit
+    unlitRunningState: unlit-building
+    staticPacks:
+    - ToolsStatic
+    - PartsStatic
+    - AtmosStatic
+    - CablesStatic
+    - PaperworkStatic
+    - TowelsStatic
+    - CargoStatic
+    - MaterialsStatic
+    - BasicChemistryStatic
+    - RollerBedsStatic
+    - LightsStatic
+    - ServiceStatic
+    - PowerCellsStatic
+    - ElectronicsStatic
+  - type: EmagLatheRecipes
+    emagStaticPacks:
+    - SecurityAmmoStatic
+    - SyndicateAmmoStatic
+  - type: BlueprintReceiver
+    whitelist:
+      tags:
+      - BlueprintAutolathe
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      blueprint: !type:Container
+  - type: EmptyOnMachineDeconstruct
+    containers:
+    - blueprint
+
+- type: entity
+  id: AutolatheHyperConvection
+  parent: [Autolathe, BaseHyperlathe]
+  name: гіперконвекційний автолат
+  description: "Експериментальний автолат, який використовує силу екстремального тепла, щоб повільно створювати об'єкти більш економічно ефективно."
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/autolathe_hypercon.rsi
+  - type: Machine
+    board: AutolatheHyperConvectionMachineCircuitboard
+
+- type: entity
+  id: Protolathe
+  parent: BaseLatheLube
+  name: протолат
+  description: Перетворює сировину на передові продукти.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/protolathe.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: ProtolatheMachineCircuitboard
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+  - type: OreSiloClient
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    unlitIdleState: unlit
+    unlitRunningState: unlit-building
+    staticPacks:
+    - ChemistryStatic
+    - SurgeryStatic
+    dynamicPacks:
+    - AdvancedTools
+    - ScienceEquipment
+    - ScienceExplosives
+    - ScienceClothing
+    - PowerCells
+    - ScienceWeapons
+    - Mining
+    - AtmosTools
+    - EngineeringWeapons
+    - Chemistry
+    - Janitor
+    - Instruments
+    - Equipment
+  - type: EmagLatheRecipes
+    emagDynamicPacks:
+    - SecurityAmmo
+    - SecurityExplosives
+    - SecurityEquipment
+    - SecurityWeapons
+
+- type: entity
+  id: ProtolatheHyperConvection
+  parent: [Protolathe, BaseHyperlathe]
+  name: гіперконвекційний протолат
+  description: A highly-experimental protolathe that harnesses the power of extreme heat to slowly create objects more cost-effectively.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/protolathe_hypercon.rsi
+  - type: Machine
+    board: ProtolatheHyperConvectionMachineCircuitboard
+
+- type: entity
+  id: CircuitImprinter
+  parent: BaseLatheLube
+  name: принтер плат
+  description: Друкує плати для машин.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/circuit_imprinter.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: CircuitImprinterMachineCircuitboard
+  - type: Lathe
+    producingSound: /Audio/Machines/circuitprinter.ogg
+    idleState: icon
+    runningState: building
+    staticPacks:
+    - ScienceBoardsStatic
+    - ServiceBoardsStatic
+    - CargoBoardsStatic
+    - MedicalBoardsStatic
+    - EngineeringBoardsStatic
+    dynamicPacks:
+    - EngineeringBoards
+    - CargoBoards
+    - MedicalBoards
+    - ServiceBoards
+    - ScienceBoards
+    - CameraBoards
+    - MechBoards
+    - ShuttleBoards
+  - type: EmagLatheRecipes
+    emagDynamicPacks:
+    - SecurityBoards
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+  - type: OreSiloClient
+  - type: RequireProjectileTarget
+
+- type: entity
+  id: CircuitImprinterHyperConvection
+  parent: [CircuitImprinter, BaseHyperlathe]
+  name: гіперконвекційний принтер плат
+  description: Експериментальний принтер плат, який використовує силу екстремального тепла для повільного створення об'єктів з меншими витратами.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/circuit_imprinter_hypercon.rsi
+  - type: Machine
+    board: CircuitImprinterHyperConvectionMachineCircuitboard
+
+- type: entity
+  id: ExosuitFabricator
+  parent: BaseLatheLube
+  name: exosuit fabricator
+  description: Creates parts for robotics and other mechanical needs.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/exosuit_fabricator.rsi
+    layers:
+    - state: fab-idle
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: fab-load
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: fab-o
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: ExosuitFabricatorMachineCircuitboard
+  - type: Lathe
+    idleState: fab-idle
+    runningState: fab-active
+    staticPacks:
+    - RoboticsStatic
+    - BorgModulesStatic
+    - BorgLimbsStatic
+    dynamicPacks:
+    - Robotics
+    - BorgModules
+    - MechParts
+    - MechEquipment
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+  - type: OreSiloClient
+  - type: GuideHelp
+    guides:
+    - Robotics
+
+- type: entity
+  id: Biofabricator
+  parent: BaseLathe
+  name: біо-фабрикатор
+  description: Виробляє тваринні куби з біомаси.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/biofabricator.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+      color: "#ffaa99"
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+      color: "#ffaaaa"
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+      color: "#ffaaaa"
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: BiofabricatorMachineCircuitboard
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    staticPacks:
+    - FriendlyCubesStatic
+  - type: EmagLatheRecipes
+    emagStaticPacks:
+    - HostileCubesStatic
+
+- type: entity
+  id: SecurityTechFab
+  parent: BaseLatheLube
+  name: техфаб служби безпеки
+  description: Друкує обладнання для використання охоронцями.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: sec
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: SecurityTechFabCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    staticPacks:
+    - SecurityEquipmentStatic
+    - SecurityPracticeStatic
+    - SecurityAmmoStatic
+    - SecurityWeaponsStatic
+    dynamicPacks:
+    - SalvageSecurityBoards
+    - SalvageSecurityWeapons
+    - SecurityEquipment
+    - SecurityBoards
+    - SecurityExplosives
+    - SecurityAmmo
+    - SecurityWeapons
+    - SecurityDisablers
+  - type: EmagLatheRecipes
+    emagStaticPacks:
+    - SyndicateAmmoStatic
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+  - type: OreSiloClient
+  - type: LatheAnnouncing
+    channels: [Security]
+
+- type: entity
+  id: AmmoTechFab
+  parent: BaseLatheLube
+  name: техфаб набоїв
+  description: Друкує мінімум набоїв, який може знадобитися будь-якій бюджетній армії чи збройовому складу. Нічого особливого.
+  components:
+    - type: Sprite
+      sprite: Structures/Machines/techfab.rsi
+      layers:
+        - state: icon
+          map: ["enum.LatheVisualLayers.IsRunning"]
+        - state: ammo
+        - state: unlit
+          shader: unshaded
+          map: ["enum.PowerDeviceVisualLayers.Powered"]
+        - state: inserting
+          map: ["enum.MaterialStorageVisualLayers.Inserting"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: Machine
+      board: AmmoTechFabCircuitboard
+    - type: Lathe
+      idleState: icon
+      runningState: icon
+      staticPacks:
+      - SecurityAmmoStatic
+    - type: EmagLatheRecipes
+      emagStaticPacks:
+      - SyndicateAmmoStatic
+    - type: MaterialStorage
+      whitelist:
+        tags:
+          - Sheet
+          - RawMaterial
+          - Ingot
+    - type: OreSiloClient
+
+- type: entity
+  id: MedicalTechFab
+  parent: BaseLatheLube
+  name: медичний техфаб
+  description: Друкує обладнання для медичного відділу.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: med
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    staticPacks:
+    - TopicalsStatic
+    - ChemistryStatic
+    - MedicalStatic
+    - RollerBedsStatic
+    - MedicalClothingStatic
+    - EmptyMedkitsStatic
+    - SurgeryStatic
+    dynamicPacks:
+    - Chemistry
+  - type: Machine
+    board: MedicalTechFabCircuitboard
+  - type: StealTarget
+    stealGroup: MedicalTechFabCircuitboard
+  - type: OreSiloClient
+  - type: LatheAnnouncing
+    channels: [Medical]
+
+- type: entity
+  parent: BaseLathe
+  id: UniformPrinter
+  name: принтер уніформм
+  description: Друкує нову або замінну форму.
+  components:
+  - type: Transform
+    noRot: false
+  - type: Sprite
+    sprite: Structures/Machines/uniform_printer.rsi
+    snapCardinals: false
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+  - type: Machine
+    board: UniformPrinterMachineCircuitboard
+  - type: Lathe
+    producingSound: /Audio/Machines/uniformprinter.ogg
+    idleState: icon
+    runningState: building
+    staticPacks:
+    - TowelsStatic
+    - ClothingCivilian
+    - ClothingCargo
+    - ClothingCommand
+    - ClothingEngineering
+    - ClothingMedical
+    - ClothingScience
+    - ClothingSecurity
+    - ClothingService
+    - WinterCoats
+    - Ties
+    - Scarves
+    - Carpets
+    - Bedsheets
+  - type: EmagLatheRecipes
+    emagStaticPacks:
+    - ClothingCentComm
+    - ClothingSyndie
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+  - type: OreSiloClient
+
+- type: entity
+  id: Biogenerator
+  parent: BaseLathe
+  name: біогенератор
+  description: Перетворює рослини на біомасу, з якої можна виготовляти корисні речі.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/biofabricator.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: BiogeneratorMachineCircuitboard
+  - type: MaterialStorage
+  - type: ProduceMaterialExtractor
+  - type: ItemSlots
+    slots:
+      beaker_slot:
+        name: lathe-component-output-slot-beaker-name
+        whitelist:
+          components:
+          - FitsInDispenser
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      beaker_slot: !type:ContainerSlot
+  - type: Lathe
+    reagentOutputSlotId: beaker_slot
+    idleState: icon
+    runningState: building
+    staticPacks:
+    - BioGenIngredientsStatic
+    - BioGenMaterialsStatic
+
+- type: entity
+  parent: BaseLathe
+  id: OreProcessor
+  name: перероблювач руди
+  description: Це виробляє листи та злитки з руди.
+  components:
+    - type: Sprite
+      sprite: Structures/Machines/ore_processor.rsi
+      layers:
+        - state: icon
+          map: ["enum.LatheVisualLayers.IsRunning"]
+        - state: unlit
+          shader: unshaded
+          map: ["enum.PowerDeviceVisualLayers.Powered"]
+        - state: inserting
+          map: ["enum.MaterialStorageVisualLayers.Inserting"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: Machine
+      board: OreProcessorMachineCircuitboard
+    - type: MaterialStorage
+      ignoreColor: true
+      whitelist:
+        tags:
+          - Ore
+    - type: Lathe
+      idleState: icon
+      runningState: building
+      defaultProductionAmount: 10
+      staticPacks:
+      - OreSmelting
+      - RGlassSmelting
+
+- type: entity
+  parent: OreProcessor
+  id: OreProcessorIndustrial
+  name: просунутий перероблювач руди
+  description: Переробник руди, спеціально розроблений для масового виробництва металів у промислових цілях.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/ore_processor_industrial.rsi
+  - type: Machine
+    board: OreProcessorIndustrialMachineCircuitboard
+  - type: Lathe
+    materialUseMultiplier: 0.75
+    timeMultiplier: 0.5
+    staticPacks:
+    - OreSmelting
+    - RGlassSmelting
+    - AdvancedSmelting
+
+- type: entity
+  parent: BaseLathe
+  id: Sheetifier
+  name: лист-машина 2000
+  description: Дуже тонкий жарт англійською, проте затерто настільки, що вам не розібрати його.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/sheetifier.rsi
+    layers:
+    - state: base_machine
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: buttons_on
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: Machine
+    board: SheetifierMachineCircuitboard
+  - type: MaterialStorage
+    dropOnDeconstruct: false #should drop ores instead of ingots/sheets
+    ignoreColor: true
+    canEjectStoredMaterials: false
+    whitelist:
+      tags:
+      - Raw
+      - Wooden
+      - Boll
+  - type: Lathe
+    idleState: base_machine
+    runningState: base_machine_processing
+    staticPacks:
+    - SheetifierStatic
+
+- type: entity
+  parent: BaseLathe
+  id: CutterMachine
+  name: різчик плитки
+  description: Це різак. Він ріже. Додайте різноманітності підлозі вашої станції за допомогою приємних для ока візерунків! Не встромляйте пальці.
+  components:
+  - type: Transform
+    noRot: false
+  - type: Sprite
+    sprite: Structures/Machines/cuttermachine.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: CutterMachineCircuitboard
+  - type: Lathe
+    producingSound: /Audio/Machines/cutter.ogg
+    idleState: icon
+    runningState: building
+    staticPacks:
+    - FloorDarkTilesStatic
+    - FloorSteelTilesStatic
+    - FloorWhiteTilesStatic
+    - FloorMaintsTilesStatic
+    - FloorWoodTilesStatic
+    - FloorConcreteTilesStatic
+    - CircuitFloorsStatic
+    - FloorMarbleTilesStatic
+    dynamicPacks:
+    - FauxTiles
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - Metal
+        - Wooden
+        - RawMaterial
+        - Plastic
+  - type: OreSiloClient

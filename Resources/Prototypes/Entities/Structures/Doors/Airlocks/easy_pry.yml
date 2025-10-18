@@ -1,0 +1,63 @@
+- type: entity
+  parent: AirlockExternal
+  id: AirlockExternalEasyPry
+  suffix: Зовнішній, EasyPry
+  description: Воно відкривається, закривається і, можливо розчавить тебе, а за ним може бути лише порожнеча. Потрібно активувати вручну. Має клапан з написом "ПОВЕРНУТИ, ЩОБ ВІДКРИТИ".
+  components:
+  - type: PryUnpowered
+
+- type: entity
+  parent: AirlockExternalGlass
+  id: AirlockExternalGlassEasyPry
+  suffix: Зовнішній, Скло, EasyPry
+  description: Воно відкривається, закривається і, можливо розчавить тебе, а за ним може бути лише порожнеча. Потрібно активувати вручну. Має клапан з написом "ПОВЕРНУТИ, ЩОБ ВІДКРИТИ".
+  components:
+  - type: PryUnpowered
+
+- type: entity
+  parent: AirlockGlassShuttle
+  id: AirlockGlassShuttleEasyPry
+  suffix: EasyPry, Стиковочний
+  description: Необхідний для з'єднання двох космічних апаратів між собою. Має клапан з написом "ПОВЕРНУТИ, ЩОБ ВІДКРИТИ".
+  components:
+  - type: PryUnpowered
+
+- type: entity
+  parent: AirlockShuttle
+  id: AirlockShuttleEasyPry
+  suffix: EasyPry, Стиковочний
+  description: Необхідний для з'єднання двох космічних апаратів між собою. Має клапан з написом "ПОВЕРНУТИ, ЩОБ ВІДКРИТИ".
+  components:
+  - type: PryUnpowered
+
+- type: entity
+  parent: AirlockExternalLocked
+  id: AirlockExternalEasyPryLocked
+  suffix: Зовнішній, EasyPry, Заблоковано
+  description: Воно відкривається, закривається і, можливо розчавить тебе, а за ним може бути лише порожнеча. Потрібно активувати вручну. Має клапан з написом "ПОВЕРНУТИ, ЩОБ ВІДКРИТИ".
+  components:
+  - type: PryUnpowered
+
+- type: entity
+  parent: AirlockExternalGlassLocked
+  id: AirlockExternalGlassEasyPryLocked
+  suffix: Зовнішній, Скло, EasyPry, Заблоковано
+  description: Воно відкривається, закривається і, можливо розчавить тебе, а за ним може бути лише порожнеча. Потрібно активувати вручну. Має клапан з написом "ПОВЕРНУТИ, ЩОБ ВІДКРИТИ".
+  components:
+  - type: PryUnpowered
+
+- type: entity
+  parent: AirlockExternalGlassShuttleLocked
+  id: AirlockGlassShuttleEasyPryLocked
+  suffix: EasyPry, Стиковочний, Заблоковано
+  description: Необхідний для з'єднання двох космічних апаратів між собою. Має клапан з написом "ПОВЕРНУТИ, ЩОБ ВІДКРИТИ".
+  components:
+  - type: PryUnpowered
+
+- type: entity
+  parent: AirlockExternalShuttleLocked
+  id: AirlockShuttleEasyPryLocked
+  suffix: EasyPry, Стиковочний, Заблоковано
+  description: Необхідний для з'єднання двох космічних апаратів між собою. Має клапан з написом "ПОВЕРНУТИ, ЩОБ ВІДКРИТИ".
+  components:
+  - type: PryUnpowered

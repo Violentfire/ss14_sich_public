@@ -1,0 +1,47 @@
+# AutoLink variants of SignalButton (from Outer Rim)
+
+- type: entity
+  id: SignalButtonExt1
+  parent: SignalButton
+  name: зовнішня кнопка 1
+  suffix: Автолінк, Ext1
+  components:
+    - type: AutoLinkTransmitter
+      channel: Ext1
+
+- type: entity
+  id: SignalButtonExt2
+  parent: SignalButton
+  name: зовнішня кнопка 2
+  suffix: Автолінк, Ext2
+  components:
+    - type: AutoLinkTransmitter
+      channel: Ext2
+
+- type: entity
+  id: SignalButtonExt3
+  parent: SignalButton
+  name: зовнішня кнопка 3
+  suffix: Автолінк, Ext3
+  components:
+    - type: AutoLinkTransmitter
+      channel: Ext3
+
+- type: entity
+  id: SignalButtonBridge
+  parent: SignalButton
+  name: кнопка відкривання вікон містка
+  suffix: Автолінк, Місток
+  components:
+    - type: AutoLinkTransmitter
+      channel: Bridge
+
+- type: entity
+  id: SignalButtonWindows
+  parent: SignalButton
+  name: кнопка відкривання зовнішніх вікон
+  suffix: Автолінк, Віконна
+  components:
+    - type: AutoLinkTransmitter
+      channel: Windows
+

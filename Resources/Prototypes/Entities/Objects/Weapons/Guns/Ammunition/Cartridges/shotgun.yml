@@ -1,0 +1,172 @@
+- type: entity
+  id: BaseShellShotgun
+  name: набій (.50)
+  parent: BaseCartridge
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - ShellShotgun
+  - type: CartridgeAmmo
+    soundEject:
+      collection: ShellEject
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
+  id: ShellShotgunBeanbag
+  name: набій (.50 гумовий)
+  parent: [ BaseShellShotgun, BaseSecurityBartenderContraband ]
+  components:
+  - type: Tag
+    tags:
+    - ShellShotgun
+    - ShellShotgunLight
+  - type: Sprite
+    layers:
+      - state: beanbag
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunBeanbag
+  - type: SpentAmmoVisuals
+    state: "beanbag"
+
+- type: entity
+  id: ShellShotgunSlug
+  name: набій (.50 кульовий)
+  parent: [ BaseShellShotgun, BaseSecurityContraband]
+  components:
+  - type: Sprite
+    layers:
+      - state: slug
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunSlug
+  - type: SpentAmmoVisuals
+    state: "slug"
+
+- type: entity
+  id: ShellShotgunFlare
+  name: набій (.50 флаєрний)
+  parent: BaseShellShotgun
+  components:
+  - type: Tag
+    tags:
+    - ShellShotgun
+    - ShellShotgunLight
+  - type: Sprite
+    layers:
+      - state: flare
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunFlare
+  - type: SpentAmmoVisuals
+    state: "flare"
+
+- type: entity
+  id: ShellShotgun
+  name: набій (.50)
+  parent: [ BaseShellShotgun, BaseSecurityContraband ]
+  components:
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunSpread
+
+- type: entity
+  id: ShellShotgunIncendiary
+  name: набій (.50 запалювальний)
+  parent: [ BaseShellShotgun, BaseSecurityContraband ]
+  components:
+  - type: Sprite
+    layers:
+      - state: incendiary
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunIncendiarySpread
+  - type: SpentAmmoVisuals
+    state: "incendiary"
+
+- type: entity
+  id: ShellShotgunPractice
+  name: набій (.50 тренувальний)
+  parent: [ BaseShellShotgun, BaseSecurityContraband ]
+  components:
+  - type: Sprite
+    layers:
+      - state: practice
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunPracticeSpread
+  - type: SpentAmmoVisuals
+    state: "practice"
+
+- type: entity
+  id: ShellTranquilizer
+  name: набій (.50 транквілізаторний)
+  parent: [ BaseShellShotgun, BaseSecurityContraband ]
+  components:
+  - type: Tag
+    tags:
+    - ShellShotgun
+    - ShellShotgunLight
+  - type: Sprite
+    layers:
+      - state: tranquilizer
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunTranquilizer
+  - type: ChemicalAmmo
+  - type: SolutionContainerManager
+    solutions:
+      ammo:
+        reagents:
+        - ReagentId: ChloralHydrate
+          Quantity: 7
+  - type: SolutionTransfer
+    maxTransferAmount: 7
+  - type: SpentAmmoVisuals
+    state: "tranquilizer"
+
+- type: entity
+  id: ShellShotgunImprovised
+  name: саморобний патрон для дробовика
+  description: Саморобний набій для рушниці, який стриляє болючими металевими осколками. Розкид настільки широкий, що легше влучити в себе, ніж по цілі.
+  parent: [ BaseShellShotgun, BaseSecurityContraband ]
+  components:
+  - type: Tag
+    tags:
+    - ShellShotgun
+    - ShellShotgunLight
+  - type: Sprite
+    layers:
+      - state: improvised
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: Construction
+    graph: ImprovisedShotgunShellGraph
+    node: shell
+  - type: CartridgeAmmo
+    proto: PelletShotgunImprovisedSpread
+  - type: SpentAmmoVisuals
+    state: "improvised"
+
+- type: entity
+  id: ShellShotgunUranium
+  name: набій (.50 урановий)
+  parent: [ BaseShellShotgun, BaseSecurityContraband ]
+  components:
+    - type: Sprite
+      layers:
+        - state: depleted-uranium
+          map: [ "enum.AmmoVisualLayers.Base" ]
+    - type: CartridgeAmmo
+      proto: PelletShotgunUraniumSpread
+    - type: SpentAmmoVisuals
+      state: "depleted-uranium"
