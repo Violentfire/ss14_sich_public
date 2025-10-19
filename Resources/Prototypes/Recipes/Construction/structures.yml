@@ -78,7 +78,7 @@
 # here
 - type: construction
   id: WoodWall
-  graph: Barricade
+  graph: Girder
   startNode: start
   targetNode: woodWall
   category: construction-category-structures
