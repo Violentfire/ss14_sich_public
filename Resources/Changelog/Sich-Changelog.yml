@@ -1,4 +1,4 @@
-Entries:
+﻿Entries:
 - author: test
   changes:
   - message: test
@@ -6,3 +6,24 @@ Entries:
   id: 0
   time: '2025-05-25T05:10:58.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/38705
+- author: qrwas
+  changes:
+  - message: Sich Added fun!
+    type: Add
+  - message: Sich Removed fun!
+    type: Remove
+  - message: Sich Changed fun!
+    type: Tweak
+  - message: Sich Fixed fun!
+    type: Fix
+  - message: 1234132Added fun!
+    type: Add
+  - message: 13241324Removed fun!
+    type: Remove
+  - message: 13241324Changed fun!
+    type: Tweak
+  - message: 12341324Fixed fun!
+    type: Fix
+  id: 1
+  time: '2025-10-20T19:23:38.0000000+00:00'
+  url: https://github.com/Sich-me/ss14_sich_public/pull/20
