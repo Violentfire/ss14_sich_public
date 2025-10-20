@@ -1,4 +1,4 @@
-# "звукові" емоції
+# vocal emotes
 - type: emote
   id: Scream
   name: chat-emote-name-scream
@@ -267,7 +267,7 @@
    - клацає
    - клацають
 
-# Вульпканин
+# Vulpkanin
 - type: emote
   id: Bark
   name: chat-emote-name-bark
@@ -376,7 +376,7 @@
   - ричить
   - ричать
 
-# емоції рук
+# hand emotes
 - type: emote
   id: Clap
   name: chat-emote-name-clap
@@ -596,7 +596,7 @@
     - щебече
     - щебечуть
 
-# Емоції силіконів
+# Machine Emotes
 - type: emote
   id: Beep
   name: chat-emote-name-beep
