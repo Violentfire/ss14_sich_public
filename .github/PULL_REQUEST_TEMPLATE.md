@@ -1,34 +1,33 @@
 <!-- Guidelines: https://docs.spacestation14.io/en/getting-started/pr-guideline -->
 
 ## About the PR
-<!-- What did you change? -->
+<!-- Які зміни вносить цей PR? -->
 
 ## Why / Balance
-<!-- Discuss how this would affect game balance or explain why it was changed. Link any relevant discussions or issues. -->
+<!-- Опишіть, як це вплине на баланс гри, або поясніть, чому це було змінено. Додайте посилання на будь-які відповідні обговорення чи проблеми. -->
 
 ## Technical details
-<!-- Summary of code changes for easier review. -->
+<!-- Зведений огляд змін коду для легшого перегляду. -->
 
 ## Media
-<!-- Attach media if the PR makes ingame changes (clothing, items, features, etc). 
-Small fixes/refactors are exempt. Media may be used in SS14 progress reports with credit. -->
+<!-- Додайте медіафайли, якщо особистий представник вносить зміни в грі (одяг, предмети, функції тощо).
+Невеликі виправлення/рефакторинг звільняються. Медіафайли можна використовувати у звітах про хід гри SS14 із зазначенням авторства. -->
 
 ## Requirements
-<!-- Confirm the following by placing an X in the brackets [X]: -->
+<!-- Підтвердіть наступне, поставивши X у дужках [X]: -->
 - [ ] I have read and am following the [Pull Request and Changelog Guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
 - [ ] I have added media to this PR or it does not require an ingame showcase.
-<!-- You should understand that not following the above may get your PR closed at maintainer’s discretion -->
+<!-- Ви повинні розуміти, що недотримання вищезазначених інструкцій може призвести до закриття вашого запиту на розсуд розробника. -->
 
 ## Breaking changes
-<!-- List any breaking changes, including namespaces, public class/method/field changes, prototype renames; and provide instructions for fixing them.
-This will be posted in #codebase-changes. -->
+<!-- ЦЬОГО КАТЕГОРИЧНО НЕ ПОВИННО БУТИ В НАШИХ PR, але. Перелічіть будь-які критичні зміни, включаючи простори імен, зміни публічних класів/методів/полів, перейменування прототипів; та надайте інструкції щодо їх виправлення. -->
 
 **Changelog**
-<!-- Add a Changelog entry to make players aware of new features or changes that could affect gameplay.
-Make sure to read the guidelines and take this Changelog template out of the comment block in order for it to show up.
-Changelog must have a :cl: symbol, so the bot recognizes the changes and adds them to the game's changelog. -->
+<!-- Додайте запис у журналі змін, щоб повідомити гравців про нові функції або зміни, які можуть вплинути на ігровий процес.
+Обов'язково прочитайте інструкції та видаліть цей шаблон журналу змін з блоку коментарів, щоб він відображався.
+Журнал змін повинен мати запис ":cl: Sich", щоб бот розпізнав зміни та додав їх до журналу змін гри. -->
 <!--
-:cl:
+:cl: Sich
 - add: Added fun!
 - remove: Removed fun!
 - tweak: Changed fun!
