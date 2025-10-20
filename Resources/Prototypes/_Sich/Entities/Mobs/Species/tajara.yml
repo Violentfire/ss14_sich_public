@@ -64,7 +64,7 @@
   name: Urist McPaws
   parent: MobHumanDummy
   id: MobTajaraDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: A dummy tajara meant to be used in character setup.
   components:
   - type: HumanoidAppearance

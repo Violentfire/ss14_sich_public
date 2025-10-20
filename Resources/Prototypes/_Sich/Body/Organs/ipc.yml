@@ -22,7 +22,7 @@
   parent: BaseIPCOrgan
   name: integrated posibrain
   description: It seems to be a machine of sorts?
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       state: posibrain

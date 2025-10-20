@@ -123,7 +123,7 @@
     - state: ChaosInc
     - state: idciresp
   - type: IdCard
-    jobTitle: "Представник Корпорації Хаосу"
+    jobTitle: sich-job-chaos
     
 - type: entity
   parent: SolFedIDCard
@@ -135,7 +135,7 @@
     - state: SolFed
     - state: idsecfaction
   - type: IdCard
-    jobTitle: "Офіцер Поліції СолФеду"
+    jobTitle: sich-job-police-solfed
     
 - type: entity
   parent: USNIDCard
@@ -147,7 +147,7 @@
     - state: USN
     - state: idsecfaction
   - type: IdCard
-    jobTitle: "Офіцер СБУКД"
+    jobTitle: sich-job-officer-sbusn
     
 - type: entity
   parent: RenuinIDCard
@@ -159,4 +159,4 @@
     - state: Renuin
     - state: idsecurityofficer
   - type: IdCard
-    jobTitle: "Департамент Оперативного Реагування МАР"
+    jobTitle: sich-job-renuin-soilder

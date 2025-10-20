@@ -66,7 +66,7 @@
       Unsexed: UnisexIPC
     wilhelm:
       path: /Audio/_Sich/Voice/IPC/wilhelm.ogg
-      wilhelmProbability: 0.001
+    wilhelmProbability: 0.001
   - type: TypingIndicator
     proto: robot
   - type: Inventory
@@ -76,7 +76,7 @@
   name: Urist McBot
   parent: BaseSpeciesDummy
   id: MobIPCDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   save: false
   components:
   - type: Inventory
