@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatHoodMansusRobe
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: таємничий капюшон
   description: Дивного вигляду капюшон, яка тримає в собі таємничу силу...
   components:
