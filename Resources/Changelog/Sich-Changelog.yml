@@ -27,3 +27,42 @@
   id: 1
   time: '2025-10-20T19:23:38.0000000+00:00'
   url: https://github.com/Sich-me/ss14_sich_public/pull/20
+- author: qrwas
+  changes:
+  - message: Added fun!
+    type: Add
+  - message: Removed fun!
+    type: Remove
+  - message: Changed fun!
+    type: Tweak
+  - message: Fixed fun!
+    type: Fix
+  id: 2
+  time: '2025-10-20T19:56:55.0000000+00:00'
+  url: https://github.com/Sich-me/ss14_sich_public/pull/23
+- author: qrwas
+  changes:
+  - message: Added fun!
+    type: Add
+  - message: Removed fun!
+    type: Remove
+  - message: Changed fun!
+    type: Tweak
+  - message: Fixed fun!
+    type: Fix
+  id: 3
+  time: '2025-10-20T20:02:03.0000000+00:00'
+  url: https://github.com/Sich-me/ss14_sich_public/pull/24
+- author: qrwas
+  changes:
+  - message: Added fun!
+    type: Add
+  - message: Removed fun!
+    type: Remove
+  - message: Changed fun!
+    type: Tweak
+  - message: Fixed fun!
+    type: Fix
+  id: 4
+  time: '2025-10-20T20:16:05.0000000+00:00'
+  url: https://github.com/Sich-me/ss14_sich_public/pull/26
