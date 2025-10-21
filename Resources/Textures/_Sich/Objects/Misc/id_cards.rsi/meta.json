@@ -32,33 +32,6 @@
       "name": "idsecfaction"
     },
     {
-      "name": "idintern-sci"
-    },
-    {
-      "name": "idintern-cadet"
-    },
-    {
-      "name": "idintern-med"
-    },
-    {
-      "name": "idintern-service"
-    },
-    {
-      "name": "idintern-tech"
-    },
-    {
-      "name": "idseniorengineer"
-    },
-    {
-      "name": "idseniorresearcher"
-    },
-    {
-      "name": "idseniorphysician"
-    },
-    {
-      "name": "idsecurityofficer"
-    },
-    {
       "name": "gold-inhand-left",
       "directions": 4
     },
