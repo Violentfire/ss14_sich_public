@@ -21,7 +21,7 @@
       tags:
         - SalcoThrowForce
     - type: Sprite
-      sprite: Objects\Magic\cotelekinesis.rsi
+      sprite: Objects/Magic/cotelekinesis.rsi
       layers:
         - state: icon
     - type: Appearance
