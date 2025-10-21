@@ -4,6 +4,7 @@ import subprocess
 from typing import Iterable
 
 def main() -> int:
+    print("run this crlf shit")
     any_failed = False
     for file_name in get_text_files():
         if is_file_crlf(file_name):
