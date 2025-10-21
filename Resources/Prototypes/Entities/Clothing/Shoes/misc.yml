@@ -174,8 +174,8 @@
 - type: entity
   parent: ClothingShoesBase
   id: ClothingShoesBootsMoon
-  name: лунні чоботи
-  description: Антигравітаційні черевики, виготовлені з унікального гелю, отриманого з місячних каменів. Доставлені з Огайо.
+  name: місячні чоботи
+  description: Антигравітаційні чоботи, виготовлені з унікального гелю, отриманого з місячних каменів. Доставлені з Огайо.
   components:
   - type: Sprite
     sprite: Clothing/Shoes/Boots/moonboots.rsi
