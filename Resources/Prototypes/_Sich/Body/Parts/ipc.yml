@@ -30,7 +30,6 @@
       vital: true
     - type: Input
       context: "ghost"
-      sprite: _Sich/Mobs/Species/IPCs/parts.rsi
     - type: MovementSpeedModifier
       baseWalkSpeed: 0
       baseSprintSpeed: 0
