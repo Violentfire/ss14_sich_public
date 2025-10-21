@@ -168,8 +168,8 @@
         variation: 0.125
     Beep:
       path: /Audio/_Sich/Voice/IPC/beep_2000.ogg
-    Whirr:
-      collection: IPCWhirrs
+#    Whirr:
+#      collection: IPCWhirrs
     Honk:
       collection: BikeHorn
       params:
