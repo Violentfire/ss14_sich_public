@@ -35,6 +35,10 @@
       "name": "hair_long",
       "directions": 4
     },
+  {
+      "name": "hair_longtail",
+      "directions": 4
+    },
 	{
       "name": "hair_messy",
       "directions": 4
