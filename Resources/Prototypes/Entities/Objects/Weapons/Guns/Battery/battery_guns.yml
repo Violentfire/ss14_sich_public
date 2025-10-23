@@ -792,7 +792,7 @@
   name: око Бегонкера
   parent: BaseWeaponBatterySmall
   id: WeaponBehonkerLaser
-  description: Око Бегонкера, посланника Гонк Матері. Воно стріляє лазером при стисканні.
+  description: Око Бегонкера, посланника Гонкоматері. Воно стріляє лазером при стисканні.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/behonker_eye.rsi
