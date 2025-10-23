@@ -104,6 +104,9 @@
             "name": "chem"
         },
         {
+            "name": "chem2"
+        },
+        {
             "name": "commander"
         },
         {
@@ -278,6 +281,15 @@
             "name": "hydro"
         },
         {
+            "name": "hydro2"
+        },
+        {
+            "name": "hydro3"
+        },
+        {
+            "name": "hydro4"
+        },
+        {
             "name": "interrogation"
         },
         {
@@ -371,6 +383,12 @@
             "name": "sci"
         },
         {
+            "name": "sci1"
+        },
+        {
+            "name": "sci2"
+        },
+        {
             "name": "secure"
         },
         {
@@ -405,6 +423,9 @@
         },
         {
             "name": "xenobio"
+        },
+        {
+            "name": "xenobio2"
         },
         {
             "name": "zomlab"
