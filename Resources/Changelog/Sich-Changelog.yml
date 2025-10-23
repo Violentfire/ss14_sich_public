@@ -22,3 +22,12 @@
   id: 1
   time: '2025-10-20T20:26:35.0000000+00:00'
   url: https://github.com/Sich-me/ss14_sich_public/pull/28
+- author: HorvatBG-gif
+  changes:
+  - message: "\u0417\u043D\u0430\u043A \u0435\u0432\u0430\u043A\u0443\u0430\u0446\u0456\
+      \u0457 \u0442\u0435\u043F\u0435\u0440 \u0441\u0432\u0456\u0442\u0438\u0442\u044C\
+      \u0441\u044F \u0434\u0435\u0440\u0436\u0430\u0432\u043D\u043E\u044E!"
+    type: Fix
+  id: 2
+  time: '2025-10-23T08:32:49.0000000+00:00'
+  url: https://github.com/Sich-me/ss14_sich_public/pull/36
