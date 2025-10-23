@@ -173,8 +173,8 @@
 
 - type: entity
   parent: SeedBase
-  name: пачка насіння екстравимерного апельсинового дерева
-  description: "Екстравимерне насіння."
+  name: пачка насіння екстравимірного апельсинового дерева
+  description: "Екстравимірне насіння."
   id: ExtradimensionalOrangeSeeds
   components:
     - type: Seed
