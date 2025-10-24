@@ -1,5 +1,5 @@
 markings-used = Використані маркування
-markings-unused = Маркування:
+markings-unused = Маркування
 markings-add = Додати маркування
 markings-remove = Видалити маркування
 markings-rank-up = Вгору
