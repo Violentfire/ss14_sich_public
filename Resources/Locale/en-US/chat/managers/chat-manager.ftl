@@ -1,6 +1,6 @@
 ### UI
 
-chat-manager-max-message-length = Ваше повідомлення перевищує {$maxMessageLength} ліміт по символах
+chat-manager-max-message-length = Ваше повідомлення перевищує ліміт у {$limit} символів
 chat-manager-ooc-chat-enabled-message = Чат ООС було увімкнено.
 chat-manager-ooc-chat-disabled-message = Чат ООС було вимкнено.
 chat-manager-looc-chat-enabled-message = Чат ЛООС було увімкнено.
