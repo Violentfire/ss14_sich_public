@@ -57,7 +57,6 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
         Entry(";-;", "chatsan-cries"),
         Entry(";_;", "chatsan-cries"),
         Entry("qwq", "chatsan-cries"),
-        Entry(",),", "chatsan-cries"), // Sich-MIU
         Entry(":u", "chatsan-smiles-smugly"),
         Entry(":v", "chatsan-smiles-smugly"),
         Entry(">:i", "chatsan-annoyed"),
