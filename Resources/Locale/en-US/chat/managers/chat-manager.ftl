@@ -7,12 +7,12 @@ chat-manager-looc-chat-enabled-message = Чат ЛООС було увімкне
 chat-manager-looc-chat-disabled-message = Чат ЛООС було вимкнено.
 chat-manager-dead-looc-chat-enabled-message = Мертві гравці тепер можуть використовувати ЛООС.
 chat-manager-dead-looc-chat-disabled-message = Мертві гравці більше не можуть використовувати ЛООС.
-chat-manager-crit-looc-chat-enabled-message = Персонажи у крит. стані тепер можуть використовувати ЛООС.
-chat-manager-crit-looc-chat-disabled-message = Персонажи у крит. стані більше не можуть використовувати ЛООС.
+chat-manager-crit-looc-chat-enabled-message = Персонажі у крит. стані тепер можуть використовувати ЛООС.
+chat-manager-crit-looc-chat-disabled-message = Персонажі у крит. стані більше не можуть використовувати ЛООС.
 chat-manager-admin-ooc-chat-enabled-message = Чат Адмін ООС було увімкнено.
 chat-manager-admin-ooc-chat-disabled-message = Чат Адмін ООС було вимкнено.
 
-chat-manager-max-message-length-exceeded-message = Ваше повідомлення перевищує {$limit} ліміт по символах
+chat-manager-max-message-length-exceeded-message = Ваше повідомлення перевищує ліміт у {$limit} символів
 chat-manager-no-headset-on-message = У вас немає гарнітури!
 chat-manager-no-radio-key = Не вказано радіоключ!
 chat-manager-no-such-channel = Не існує каналу з ключем '{$key}'!
