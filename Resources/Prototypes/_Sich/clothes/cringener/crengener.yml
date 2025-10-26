@@ -1,0 +1,24 @@
+- type: entity
+  parent: [BaseItem, BaseStash]
+  id: SignriengenerSich
+  name: Знак "Увага Крінженери"
+  description: Обережно, працюють інжири! Поряд можливі втечі сингулярності, втечі тесли, втечі атмосфери, витоки плазми, металевий присмак у роті, та можливо, щось що працює як треба.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _Sich/Clothing/cringener.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    sprite: _Sich/Clothing/cringener.rsi
+  - type: RotatingLight
+  - type: PointLight
+    mask: /Textures/Effects/LightMasks/double_cone.png
+    color: "#FFE4CE"
+    radius: 1.5
+    energy: 2
+    softness: 1
+  - type: Storage
+    grid:
+    - 0,0,2,2
+

@@ -772,6 +772,12 @@
   - EngineeringWinterBoots
 
 - type: loadoutGroup
+  id: EngineerAdvenced
+  name: Дрібнички
+  loadouts:
+  - CriengineerSign
+
+- type: loadoutGroup
   id: TechnicalAssistantJumpsuit
   name: loadout-group-technical-assistant-jumpsuit
   loadouts:

@@ -129,3 +129,13 @@
     proto: SeniorEngineering
   equipment:
     id: SeniorEngineerPDA
+
+
+
+- type: loadout
+  id: CriengineerSign
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorEngineering
+  equipment:
+    id: SignriengenerSich
