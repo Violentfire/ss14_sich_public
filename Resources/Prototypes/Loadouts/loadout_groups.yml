@@ -772,7 +772,7 @@
   - EngineeringWinterBoots
 
 - type: loadoutGroup
-  id: EngineerAdvenced
+  id: EngineerAdvanced
   name: Дрібнички
   loadouts:
   - CriengineerSign
