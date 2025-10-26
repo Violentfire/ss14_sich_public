@@ -22,7 +22,7 @@ research-technology-optimized-microgalvanism = Оптимізований мік
 research-technology-space-scanning = Космічне сканування
 research-technology-excavation = Масові розкопки
 
-research-technology-salvage-weapons = Шахтарське зброя
+research-technology-salvage-weapons = Шахтарська зброя
 research-technology-draconic-munitions = Запалювальні боєприпаси
 research-technology-uranium-munitions = Уранові боєприпаси
 research-technology-explosive-technology = Технологія вибухівки
