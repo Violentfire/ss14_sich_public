@@ -68,3 +68,12 @@
   id: 4
   time: '2025-10-26T19:28:45.0000000+00:00'
   url: https://github.com/Sich-me/ss14_sich_public/pull/29
+- author: crvenih
+  changes:
+  - message: "\u0421\u043A\u043E\u0440\u043E\u0447\u0435\u043D\u043E \u0442\u0435\u043A\
+      \u0441\u0442 \u0443 \u043C\u0435\u043D\u044E \u043C\u0430\u0440\u043A\u0443\u0432\
+      \u0430\u043D\u044C."
+    type: Fix
+  id: 5
+  time: '2025-10-26T19:30:57.0000000+00:00'
+  url: https://github.com/Sich-me/ss14_sich_public/pull/40
