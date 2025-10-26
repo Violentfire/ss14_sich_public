@@ -1,0 +1,34 @@
+- type: entity
+  parent: [ClothingEyesBase]
+  id: MechanicalGlasses
+  name: механічні окуляри
+  description: Механічні окуляри на ремінці з можливістю налаштування наближення, що дозволяє зручно паяти та збирати дрібні механізми. Також мають для зварювання.
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/Eyes/Glasses/mechanical_glasses.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Eyes/Glasses/mechanical_glasses.rsi
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: EyeProtection
+  - type: Tag
+    tags:
+    - Sunglasses
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingEyesBase]
+  id: BigShotGlasses
+  name: окуляри торговця
+  description: Непогані окуляри з лінзами різного кольору. На етикетці до них написано «ТІЛЬКИ ЗАРАЗ - УСЬОГО ЗА 0,99! ВИ МОЖЕТЕ КУПИТИ УЛЬТРАКРУТІ ОКУЛЯРИ, ЯКІ ДАЮТЬ +999 ДО ТОРГІВЛІ! ДЛЯ ВСІЄЇ СІМ’Ї ТА ДІТЕЙ!»
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/Eyes/Glasses/bigshot_glasses.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Eyes/Glasses/bigshot_glasses.rsi
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: Tag
+    tags:
+    - WhitelistChameleon

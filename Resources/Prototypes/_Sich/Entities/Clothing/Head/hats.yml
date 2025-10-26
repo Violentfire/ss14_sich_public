@@ -27,3 +27,110 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBlackBow
+  name: чорний бант
+  description: Дуже добре поєднується з уніформою покоївок
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/Head/Hats/bow.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Head/Hats/bow.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWhiteBow
+  name: Білий бант
+  description: Гарний білий бант
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/Head/Hats/white_bow.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Head/Hats/white_bow.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatFrog
+  name: жабопелюх
+  description: Капелюх наче жаба, але капелюх!
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/Head/Hats/frog.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Head/Hats/frog.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatShroom
+  name: грибопелюх
+  description: Капелюх наче гриб, але капелюх!
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/Head/Hats/shroom.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Head/Hats/shroom.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWitchSich
+  name: капелюх відьми
+  description: Розкішний капелюх! Можливо колись він належав дуже впливовій відьмі ...
+  components:
+  - type: WizardClothes #Yes this will count
+  - type: Sprite
+    sprite: _Sich/Clothing/Head/Hats/witchhatSich.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Head/Hats/witchhatSich.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.089"
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - WhitelistChameleon
+    - ClothMade
+    - Recyclable
+  #- type: HideLayerClothing
+    #slots:
+    #- Hair
+    
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCrab
+  name: крабопелюх
+  description: Капелюх наче краб, але капелюх!
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/Head/Hats/crab.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Head/Hats/crab.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
