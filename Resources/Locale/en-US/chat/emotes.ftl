@@ -2,8 +2,8 @@
 chat-emote-name-scream = Кричати
 chat-emote-name-laugh = Сміятися
 chat-emote-name-honk = Гонкати
-chat-emote-name-sigh = Зітхати
-chat-emote-name-whistle = Свистіти
+chat-emote-name-sigh = Зітхати	
+chat-emote-name-whistle = Свистіти	
 chat-emote-name-crying = Плакати
 chat-emote-name-squish = Хлюпати
 chat-emote-name-chitter = Стрекотати
@@ -41,7 +41,7 @@ chat-emote-name-growl = Гарчати
 # Message
 chat-emote-msg-scream = кричить!
 chat-emote-msg-laugh = сміється.
-chat-emote-msg-honk = гонкає.
+chat-emote-msg-honk = гонк.
 chat-emote-msg-sigh = зітхає.
 chat-emote-msg-whistle = свистить.
 chat-emote-msg-crying = плаче.
