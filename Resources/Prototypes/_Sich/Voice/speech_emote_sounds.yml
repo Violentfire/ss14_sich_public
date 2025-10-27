@@ -116,12 +116,12 @@
       path: /Audio/Effects/beep1.ogg
       params:
         variation: 0.125
-    Beep:
-      collection: Beep
-    Whirr:
-      collection: IPCWhirrs
+    RobotBeep:
+      collection: RobotBeeps
+#   Whirr: - Воно не працювало й я не знаю, що це повино було бути, поки посидить під коментарем
+#      collection: IPCWhirrs
     Honk:
-      collection: Honk
+      collection: BikeHorn
       params:
         variation: 0.125
 
@@ -144,8 +144,8 @@
         variation: 0.125
     Beep:
       path: /Audio/_Sich/Voice/IPC/beep_500.ogg
-    Whirr:
-      collection: IPCWhirrs
+#    Whirr:
+#      collection: IPCWhirrs
     Honk:
       collection: BikeHorn
       params:
@@ -168,8 +168,8 @@
         variation: 0.125
     Beep:
       path: /Audio/_Sich/Voice/IPC/beep_2000.ogg
-    Whirr:
-      collection: IPCWhirrs
+#    Whirr:
+#      collection: IPCWhirrs
     Honk:
       collection: BikeHorn
       params:

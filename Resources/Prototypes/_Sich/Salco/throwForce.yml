@@ -15,7 +15,6 @@
           Structural: 0
     - type: MeleeThrowOnHit
       speed: 20
-      lifetime: 1
       unanchorOnHit: true
     - type: Tag
       tags:
@@ -67,11 +66,12 @@
   description: Використай свою силу для відкидання!
   categories: [HideSpawnMenu]
   components:
-    - type: InstantAction
+    - type: Action
       useDelay: 1
       icon: { sprite: Objects/Magic/cotelekinesis.rsi, state: icon }
       iconOn: { sprite: Objects/Magic/cotelekinesis.rsi, state: icon-on }
       itemIconStyle: NoItem
+    - type: InstantAction
       event: !type:ToggleActionEvent # tags
     - type: Tag
       tags:

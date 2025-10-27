@@ -6,9 +6,7 @@
   playTimeTracker: ChaosIncRespentative
   setPreference: false
   startingGear: ChaosIncRespentativeGear
-  icon: _Sich/Interface/Misc/job_icons.rsi
-  layers:
-    - state: ChaosIncRes
+  icon: "SichJobIconChaosIncRespentative"
   supervisors: "Корпорація Хаосу"
   canBeAntag: false
   accessGroups:
@@ -102,7 +100,7 @@
   id: DeathShadowOperative
   equipment:
     jumpsuit: ClothingUniformJumpsuitTacticool
-    back: ClothingBackpackDeathSquadFilled
+    back: ClothingBackpackDeathSquad
     shoes: ClothingShoesBootsMagAdv
     mask: ClothingMaskGasSwat
     eyes: ClothingEyesGlassesSecurity

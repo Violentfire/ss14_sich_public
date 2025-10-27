@@ -6,6 +6,9 @@ on:
   pull_request_target:
     types: [opened]
 
+permissions:
+  pull-requests: write
+
 jobs:
   add_label:
     runs-on: ubuntu-latest

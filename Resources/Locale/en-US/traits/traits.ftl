@@ -5,7 +5,7 @@ trait-poor-vision-name = Короткозорий
 trait-poor-vision-desc = Ваші очі вже не такі, як колись, вам важко бачити предмети на відстані без корекційних окулярів.
 
 trait-narcolepsy-name = Нарколепсія
-trait-narcolepsy-decs = Ви час від часу засинаєте
+trait-narcolepsy-desc = Ви час від часу засинаєте
 
 trait-pacifist-name = Пацифіст
 trait-pacifist-desc = Ви не можете нападати на жодну живу істоту або завдавати їй шкоди.

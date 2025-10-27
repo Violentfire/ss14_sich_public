@@ -123,6 +123,10 @@
       "name": "n1_r_foot",
       "directions": 4
     },
+  {
+      "name": "n1_wings",
+      "directions": 4
+    },
 	{
       "name": "des_head",
       "directions": 4

@@ -32,71 +32,7 @@
       "name": "idsecfaction"
     },
     {
-      "name": "idintern-sci"
-    },
-    {
-      "name": "idintern-cadet"
-    },
-    {
-      "name": "idintern-med"
-    },
-    {
-      "name": "idintern-service"
-    },
-    {
-      "name": "idintern-tech"
-    },
-    {
-      "name": "idseniorengineer"
-    },
-    {
-      "name": "idseniorresearcher"
-    },
-    {
-      "name": "idseniorphysician"
-    },
-    {
       "name": "idsecurityofficer"
-    },
-    {
-      "name": "gold-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "gold-inhand-right",
-      "directions": 4
-    },
-    {
-      "name": "default-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "default-inhand-right",
-      "directions": 4
-    },
-    {
-      "name": "silver-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "silver-inhand-right",
-      "directions": 4
-    },
-    {
-      "name": "orange-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "orange-inhand-right",
-      "directions": 4
-    },
-    {
-      "name": "blue-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "blue-inhand-right",
-      "directions": 4
     }
   ]
 }
