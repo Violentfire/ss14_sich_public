@@ -25,26 +25,26 @@ marking-TattooCampbellRightLeg = Right Leg Tattoo (Кемпбелл)
 marking-TattooEyeRight-tattoo_eye_r = Праве око
 marking-TattooEyeRight = Праве око
 
-marking-TattooEyeLeft-tattoo_eye_l = Ліва око
-marking-TattooEyeLeft = Ліва око
+marking-TattooEyeLeft-tattoo_eye_l = Ліве око
+marking-TattooEyeLeft = Ліве око
 
 marking-TattooEyeMothRight-tattoo_eye_moth_r = Праве око
 marking-TattooEyeMothRight = Праве око
 
-marking-TattooEyeMothLeft-tattoo_eye_moth_l = Ліва око
-marking-TattooEyeMothLeft = Ліва око
+marking-TattooEyeMothLeft-tattoo_eye_moth_l = Ліве око
+marking-TattooEyeMothLeft = Ліве око
 
 marking-TattooEyeVulpkaninRight-tattoo_eye_vulpkanin_r = Праве око
 marking-TattooEyeVulpkaninRight = Праве око
 
-marking-TattooEyeVulpkaninLeft-tattoo_eye_vulpkanin_l = Ліва око
-marking-TattooEyeVulpkaninLeft = Ліва око
+marking-TattooEyeVulpkaninLeft-tattoo_eye_vulpkanin_l = Ліве око
+marking-TattooEyeVulpkaninLeft = Ліве око
 
 marking-TattooEyeVoxRight-tattoo_eye_vox_r = Праве око
 marking-TattooEyeVoxRight = Праве око
 
-marking-TattooEyeVoxLeft-tattoo_eye_vox_l = Ліва око
-marking-TattooEyeVoxLeft = Ліва око
+marking-TattooEyeVoxLeft-tattoo_eye_vox_l = Ліве око
+marking-TattooEyeVoxLeft = Ліве око
 
 marking-TattooEyeshadowUpper-tattoo_eyeshadow_upper = Тіні (Верхні)
 marking-TattooEyeshadowUpper = Тіні (Верхні)
