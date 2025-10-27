@@ -1,2 +1,2 @@
-marking-CatEars = Cat Ears
-marking-CatTail = Cat Tail
+marking-CatEars = Котячі вуха
+marking-CatTail = Котячий хвіст
