@@ -7,20 +7,20 @@ marking-TattooNightlingChest = Татуювання торсу (Нічний п�
 marking-TattooSilverburghLeftLeg-tattoo_silverburgh_l_leg = Татуювання лівої ноги (Сільвербург)
 marking-TattooSilverburghLeftLeg = Татуювання лівої ноги (Сільвербург)
 
-marking-TattooSilverburghRightLeg-tattoo_silverburgh_r_leg = Right Leg Tattoo (Сільвербург)
-marking-TattooSilverburghRightLeg = Right Leg Tattoo (Сільвербург)
+marking-TattooSilverburghRightLeg-tattoo_silverburgh_r_leg = Татуювання правої ноги (Сільвербург)
+marking-TattooSilverburghRightLeg = Татуювання правої ноги (Сільвербург)
 
 marking-TattooCampbellLeftArm-tattoo_campbell_l_arm = Татуювання лівої руки (Кемпбелл)
 marking-TattooCampbellLeftArm = Татуювання лівої руки (Кемпбелл)
 
-marking-TattooCampbellRightArm-tattoo_campbell_r_arm = Right Arm Tattoo (Кемпбелл)
-marking-TattooCampbellRightArm = Right Arm Tattoo (Кемпбелл)
+marking-TattooCampbellRightArm-tattoo_campbell_r_arm = Татуювання правої руки (Кемпбелл)
+marking-TattooCampbellRightArm = Татуювання правої руки (Кемпбелл)
 
 marking-TattooCampbellLeftLeg-tattoo_campbell_l_leg = Татуювання лівої ноги (Кемпбелл)
 marking-TattooCampbellLeftLeg = Татуювання лівої ноги (Кемпбелл)
 
-marking-TattooCampbellRightLeg-tattoo_campbell_r_leg = Right Leg Tattoo (Кемпбелл)
-marking-TattooCampbellRightLeg = Right Leg Tattoo (Кемпбелл)
+marking-TattooCampbellRightLeg-tattoo_campbell_r_leg = Татуювання правої ноги (Кемпбелл)
+marking-TattooCampbellRightLeg = Татуювання правої ноги (Кемпбелл)
 
 marking-TattooEyeRight-tattoo_eye_r = Праве око
 marking-TattooEyeRight = Праве око
