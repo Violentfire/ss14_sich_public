@@ -19,3 +19,14 @@
     sprite: _Sich/Clothing/Uniforms/Jumpsuit/solfed_uniform.rsi
   - type: Clothing
     sprite: _Sich/Clothing/Uniforms/Jumpsuit/solfed_uniform.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: SichClothingUniformJumpsuitWitch
+  name: роба відьми
+  description: Фіолетова роба відьми, гарна річ на Гелловін.
+  components:
+  - type: Sprite
+    sprite: _Sich/Clothing/Uniforms/Jumpsuit/witch.rsi
+  - type: Clothing
+    sprite: _Sich/Clothing/Uniforms/Jumpsuit/witch.rsi
