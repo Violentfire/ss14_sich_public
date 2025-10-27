@@ -7,20 +7,20 @@ marking-LizardFrillsSimple = Lizard Frills (Simple)
 marking-LizardFrillsAquatic-frills_aquatic = Lizard Frills (Aquatic)
 marking-LizardFrillsAquatic = Lizard Frills (Aquatic)
 
-marking-LizardHornsAngler-horns_angler = Lizard Horns (Angler)
-marking-LizardHornsAngler = Lizard Horns (Angler)
+marking-LizardHornsAngler-horns_angler = Роги ящірки (Angler)
+marking-LizardHornsAngler = Роги ящірки (Angler)
 
-marking-LizardHornsCurled-horns_curled = Lizard Horns (Curled)
-marking-LizardHornsCurled = Lizard Horns (Curled)
+marking-LizardHornsCurled-horns_curled = Роги ящірки (Curled)
+marking-LizardHornsCurled = Роги ящірки (Curled)
 
-marking-LizardHornsRam-horns_ram = Lizard Horns (Ram)
-marking-LizardHornsRam = Lizard Horns (Ram)
+marking-LizardHornsRam-horns_ram = Роги ящірки (Ram)
+marking-LizardHornsRam = Роги ящірки (Ram)
 
-marking-LizardHornsShort-horns_short = Lizard Horns (Short)
-marking-LizardHornsShort = Lizard Horns (Short)
+marking-LizardHornsShort-horns_short = Роги ящірки (Short)
+marking-LizardHornsShort = Роги ящірки (Short)
 
-marking-LizardHornsSimple-horns_simple = Lizard Horns
-marking-LizardHornsSimple = Lizard Horns
+marking-LizardHornsSimple-horns_simple = Роги ящірки
+marking-LizardHornsSimple = Роги ящірки
 
 marking-LizardTailSmooth-tail_smooth_primary = Lizard Tail
 marking-LizardTailSmooth-tail_smooth_secondary = Under Tone
@@ -74,8 +74,8 @@ marking-LizardFrillsBig = Lizard Frills (Big)
 marking-LizardFrillsNeckfull-frills_neckfull = Lizard Frills (Neckfull)
 marking-LizardFrillsNeckfull = Lizard Frills (Neckfull)
 
-marking-LizardHornsDouble-horns_double = Lizard Horns (Double)
-marking-LizardHornsDouble = Lizard Horns (Double)
+marking-LizardHornsDouble-horns_double = Роги ящірки (Double)
+marking-LizardHornsDouble = Роги ящірки (Double)
 
 marking-LizardFrillsAxolotl-frills_axolotl = Lizard Frills (Axolotl)
 marking-LizardFrillsAxolotl = Lizard Frills (Axolotl)
@@ -84,20 +84,20 @@ marking-LizardFrillsHood-frills_hood_primary = Outer Hood
 marking-LizardFrillsHood-frills_hood_secondary = Inner Hood
 marking-LizardFrillsHood = Lizard Frills (Hood)
 
-marking-LizardHornsArgali-horns_argali = Lizard Horns (Argali)
-marking-LizardHornsArgali = Lizard Horns (Argali)
+marking-LizardHornsArgali-horns_argali = Роги ящірки (Argali)
+marking-LizardHornsArgali = Роги ящірки (Argali)
 
-marking-LizardHornsAyrshire-horns_ayrshire = Lizard Horns (Ayrshire)
-marking-LizardHornsAyrshire = Lizard Horns (Ayrshire)
+marking-LizardHornsAyrshire-horns_ayrshire = Роги ящірки (Ayrshire)
+marking-LizardHornsAyrshire = Роги ящірки (Ayrshire)
 
-marking-LizardHornsMyrsore-horns_myrsore = Lizard Horns (Myrsore)
-marking-LizardHornsMyrsore = Lizard Horns (Myrsore)
+marking-LizardHornsMyrsore-horns_myrsore = Роги ящірки (Myrsore)
+marking-LizardHornsMyrsore = Роги ящірки (Myrsore)
 
-marking-LizardHornsBighorn-horns_bighorn = Lizard Horns (Bighorn)
-marking-LizardHornsBighorn = Lizard Horns (Bighorn)
+marking-LizardHornsBighorn-horns_bighorn = Роги ящірки (Bighorn)
+marking-LizardHornsBighorn = Роги ящірки (Bighorn)
 
-marking-LizardHornsDemonic-horns_demonic = Lizard Horns (Demonic)
-marking-LizardHornsDemonic = Lizard Horns (Demonic)
+marking-LizardHornsDemonic-horns_demonic = Роги ящірки (Demonic)
+marking-LizardHornsDemonic = Роги ящірки (Demonic)
 
 marking-LizardHornsKoboldEars-horns_kobold_ears = Lizard Ears (Kobold)
 marking-LizardHornsKoboldEars = Lizard Ears (Kobold)
