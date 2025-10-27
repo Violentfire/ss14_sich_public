@@ -133,9 +133,9 @@
 
 
 - type: loadout
-  id: CriengineerSign
+  id: SichCriengineerSign
   effects:
   - !type:GroupLoadoutEffect
     proto: SeniorEngineering
   equipment:
-    id: SignriengenerSich
+    id: SichSignriengener

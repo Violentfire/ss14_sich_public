@@ -259,7 +259,7 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
-  - EngineerAdvanced
+  - SichEngineerAdvanced
 
 - type: roleLoadout
   id: JobTechnicalAssistant
@@ -284,7 +284,7 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
-  - EngineerAdvanced
+  - SichEngineerAdvanced
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
@@ -297,7 +297,7 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
-  - EngineerAdvanced
+  - SichEngineerAdvanced
 
 # Science
 - type: roleLoadout

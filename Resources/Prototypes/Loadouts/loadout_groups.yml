@@ -771,11 +771,6 @@
   - BrownShoes
   - EngineeringWinterBoots
 
-- type: loadoutGroup
-  id: EngineerAdvanced
-  name: Дрібнички
-  loadouts:
-  - CriengineerSign
 
 - type: loadoutGroup
   id: TechnicalAssistantJumpsuit
