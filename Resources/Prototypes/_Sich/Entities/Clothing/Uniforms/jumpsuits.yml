@@ -22,7 +22,7 @@
 
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitWitch
+  id: SichClothingUniformJumpsuitWitch
   name: роба відьми
   description: Фіолетова роба відьми, гарна річ на Гелловін.
   components:
