@@ -6,11 +6,11 @@
   components:
   - type: Sprite
     noRot: true
-    sprite: _Sich/Clothing/cringener.rsi
+    sprite: _Sich/Objects/Misc/cringener.rsi
     state: icon
   - type: Item
     size: Normal
-    sprite: _Sich/Clothing/cringener.rsi
+    sprite: _Sich/Objects/Misc/cringener.rsi
   - type: RotatingLight
   - type: PointLight
     mask: /Textures/Effects/LightMasks/double_cone.png
