@@ -12,6 +12,12 @@ marking-slot-add = Додати
 marking-slot-remove = Прибрати
 marking-slot = Комірка {$number}
 
+humanoid-marking-modifier-force = Force
+humanoid-marking-modifier-ignore-species = Ignore Species
+humanoid-marking-modifier-base-layers = Base layers
+humanoid-marking-modifier-enable = Enable
+humanoid-marking-modifier-prototype-id = Prototype id:
+
 # Categories
 
 markings-category-Special = Спеціальне

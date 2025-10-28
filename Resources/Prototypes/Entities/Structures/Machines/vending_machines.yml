@@ -1228,6 +1228,7 @@
   id: VendingMachineSovietSoda
   name: ВОДА
   description: Досить старий торговий автомат, смердить соціалізмом, мабуть, від цієї води ти будеш блювати.
+  suffix: VODA
   components:
   - type: VendingMachine
     pack: BodaInventory

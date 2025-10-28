@@ -79,6 +79,8 @@ guide-entry-anomalous-research = Дослідження аномалій
 guide-entry-scanners-and-vessels = Сканери та накопичувачі
 guide-entry-ape = A.P.E.
 guide-entry-xenoarchaeology = Ксеноархеологія
+guide-entry-xenoarchaeologyunlockingnodes = Розблокування вузлів
+guide-entry-analysisconsole = Консоль аналізу
 guide-entry-artifact-reports = Звіти про артефакти
 guide-entry-traversal-distorter = Траверсальний спотворювач
 guide-entry-machine-upgrading = Оновлення машини
@@ -129,6 +131,7 @@ guide-entry-salad-recipes = Салати
 guide-entry-medicinal-recipes = Лікувальні страви
 guide-entry-other-recipes = Інше
 guide-entry-secret-recipes = Таємні рецепти
+guide-entry-lawsets = Набори законів для силіконів
 
 guide-entry-antagonists = Антагоністи
 guide-entry-nuclear-operatives = Ядерні Оперативники
