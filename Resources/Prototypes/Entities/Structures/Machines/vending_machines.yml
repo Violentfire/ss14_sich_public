@@ -1228,6 +1228,7 @@
   id: VendingMachineSovietSoda
   name: ВОДА
   description: Досить старий торговий автомат, смердить соціалізмом, мабуть, від цієї води ти будеш блювати.
+  suffix: VODA
   components:
   - type: VendingMachine
     pack: BodaInventory
@@ -2115,8 +2116,8 @@
 - type: entity
   parent: VendingMachine
   id: VendingMachineHappyHonk
-  name: торговий автомат "Веселий Хонк"
-  description: Торговий автомат веселий хонк міл.
+  name: торговий автомат "Веселий Гонк"
+  description: Торговий автомат веселий гонк міл.
   components:
   - type: VendingMachine
     pack: HappyHonkDispenserInventory

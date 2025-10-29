@@ -611,6 +611,7 @@
     slots:
     - Belt
   - type: Gun
+    fireRate: 0.5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser.ogg
   - type: ProjectileBatteryAmmoProvider
@@ -789,10 +790,10 @@
       fireCost: 100
 
 - type: entity
-  name: око Біхонкера
+  name: око Бегонкера
   parent: BaseWeaponBatterySmall
   id: WeaponBehonkerLaser
-  description: Око Бехонкера, посланика Хонк Матері, воно стриляє лазером при стисканні.
+  description: Око Бегонкера, посланника Гонкоматері. Воно стріляє лазером при стисканні.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/behonker_eye.rsi
@@ -880,6 +881,7 @@
   - type: Tag
     tags:
     - HighRiskItem
+    - Sidearm
   - type: StealTarget
     stealGroup: WeaponEnergyMagnum
   - type: Gun

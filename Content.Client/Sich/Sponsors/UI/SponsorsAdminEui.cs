@@ -221,7 +221,7 @@ public sealed partial class SponsorsAdminEui : BaseEui
 
             if (italic)
             {
-                rankControl.StyleClasses.Add(StyleBase.StyleClassItalic);
+                rankControl.StyleClasses.Add(StyleClass.Italic);
             }
 
             rankControl.FontColorOverride = rankColor;

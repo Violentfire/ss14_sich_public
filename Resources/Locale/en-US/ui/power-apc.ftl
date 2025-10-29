@@ -11,6 +11,7 @@ apc-menu-charge-label = Заряд {$percent}
 apc-menu-power-state-good = Гарний
 apc-menu-power-state-low = Низький
 apc-menu-power-state-none = Відсутній
+apc-menu-power-state-label-text = { POWERWATTS($power) }
 
 # For the flavor text on the footer
 

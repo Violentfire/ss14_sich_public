@@ -11,6 +11,8 @@ credits-window-codebases-section-title = Space Station 13 код
 credits-window-original-remake-team-section-title = Оригінальна команда розробників Космічної станції 14
 credits-window-immortals-title = В пам'яті
 credits-window-special-thanks-section-title = Окреме дякую!
+credits-window-previous-page-button = Попереднія сторінка
+credits-window-next-page-button = Наступна сторінка
 
 credits-window-attributions-directory = [color=white]Directory:[/color] {$directory}
 credits-window-attributions-files = [color=white]Files:[/color] {$files}

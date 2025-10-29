@@ -99,7 +99,7 @@ public sealed partial class SponsorsEui : BaseEui
             {
                 Text = groupName,
                 FontColorOverride = groupColor,
-                StyleClasses = { StyleBase.StyleClassLabelHeading }
+                StyleClasses = { StyleClass.LabelHeading }
             };
             _menu.SponsorsList.AddChild(header);
 
@@ -118,7 +118,7 @@ public sealed partial class SponsorsEui : BaseEui
                 };
 
                 if (sponsor.RankId == null)
-                    rankLabel.StyleClasses.Add(StyleBase.StyleClassItalic);
+                    rankLabel.StyleClasses.Add(StyleClass.Italic);
 
                 _menu.SponsorsList.AddChild(nameLabel);
                 //_menu.SponsorsList.AddChild(rankLabel);
