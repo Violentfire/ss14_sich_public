@@ -64,7 +64,7 @@
     state: stamp-centcom
 
 - type: entity
-  name: гумова печатка священика
+  name: гумова печатка священника
   parent: RubberStampBase
   id: RubberStampChaplain
   categories: [ DoNotMap ]
