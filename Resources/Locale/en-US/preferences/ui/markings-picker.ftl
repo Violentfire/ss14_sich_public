@@ -1,16 +1,22 @@
 markings-used = Використані маркування
-markings-unused = Невикористані маркування
+markings-unused = Маркування
 markings-add = Додати маркування
 markings-remove = Видалити маркування
 markings-rank-up = Вгору
 markings-rank-down = Вниз
 markings-search = Пошук
-marking-points-remaining = Маркувань лишилось: {$points}
+marking-points-remaining = Лишилось: {$points}
 marking-used = {$marking-name}
 marking-used-forced = {$marking-name} (Forced)
 marking-slot-add = Додати
 marking-slot-remove = Прибрати
 marking-slot = Комірка {$number}
+
+humanoid-marking-modifier-force = Force
+humanoid-marking-modifier-ignore-species = Ignore Species
+humanoid-marking-modifier-base-layers = Base layers
+humanoid-marking-modifier-enable = Enable
+humanoid-marking-modifier-prototype-id = Prototype id:
 
 # Categories
 

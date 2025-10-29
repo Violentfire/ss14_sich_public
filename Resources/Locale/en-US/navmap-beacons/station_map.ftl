@@ -2,6 +2,7 @@ station-map-window-title = Мапа станції
 station-map-user-interface-flavor-left = Не панікуйте
 station-map-user-interface-flavor-right = v1.42
 station-map-filter-placeholder = Шукати по імені
+station-map-unknown-station = Невідома станція
 
 nav-beacon-window-title = Станційний маяк
 nav-beacon-toggle-visible = Видимий

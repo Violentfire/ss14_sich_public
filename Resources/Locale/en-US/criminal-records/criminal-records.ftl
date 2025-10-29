@@ -16,6 +16,8 @@ criminal-records-status-detained = Затримано
 criminal-records-status-suspected = Підозрюваний
 criminal-records-status-discharged = Звільнено
 criminal-records-status-paroled = Достроково звільнено
+criminal-records-status-hostile = Ворожий
+criminal-records-status-eliminated = Ліквідовано
 
 criminal-records-console-wanted-reason = [color=gray]Причина розшуку[/color]
 criminal-records-console-suspected-reason = [color=gray]Причина підозри[/color]
@@ -42,6 +44,10 @@ criminal-records-console-detained = {$name} ({$job}) було затримано
 criminal-records-console-released = {$name} ({$job}) було звільнено {$officer}.
 criminal-records-console-paroled = {$name} ({$job}) був достроково звільнений {$officer}.
 criminal-records-console-not-parole = {$officer} скасував умовно-дострокове звільнення {$name} ({$job}).
+criminal-records-console-hostile = {$name} ({$job}) був позначений як ворожий офіцером {$officer} з причини: {$reason}.
+criminal-records-console-not-hostile = {$name} ({$job}) більше не позначений як ворожий офіцером {$officer}.
+criminal-records-console-eliminated = {$name} ({$job}) був позначений як ліквідований офіцером {$officer}.
+criminal-records-console-not-eliminated = {$name} ({$job}) більше не позначений як ліквідований офіцером {$officer}.
 criminal-records-console-unknown-officer = <невідомий>
 
 ## Filters
