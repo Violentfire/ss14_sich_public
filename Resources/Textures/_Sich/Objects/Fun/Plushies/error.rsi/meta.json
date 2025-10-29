@@ -1,23 +1,12 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "drawed by Svetoslav505",
+  "copyright": "Sprites by Svetoslav505 on discord",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
-    {
-      "name": "gabriel_plushie"
-    },
-    {
-      "name": "gabrielplushie-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "gabrielplushie-inhand-right",
-      "directions": 4
-    },
     {
       "name": "errorplushie_off"
     },
@@ -38,9 +27,6 @@
     {
        "name": "errorplushie-inhand-right",
        "directions": 4
-  },
-  {
-      "name": "plushie_n1"
-    }
+  }
   ]
 }
