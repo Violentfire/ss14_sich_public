@@ -276,6 +276,7 @@
   - Trinkets
   - ChiefEngineerJobTrinkets
   - GroupSpeciesBreathTool
+  - SichEngineerAdvanced
 
 - type: roleLoadout
   id: JobTechnicalAssistant
@@ -302,6 +303,7 @@
   - Trinkets
   - StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
+  - SichEngineerAdvanced
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
@@ -315,6 +317,7 @@
   - Trinkets
   - AtmosphericTechnicianJobTrinkets
   - GroupSpeciesBreathTool
+  - SichEngineerAdvanced
 
 # Science
 - type: roleLoadout

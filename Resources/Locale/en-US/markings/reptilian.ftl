@@ -1,125 +1,125 @@
-marking-LizardFrillsShort-frills_short = Lizard Frills (Short)
-marking-LizardFrillsShort = Lizard Frills (Short)
+marking-LizardFrillsShort-frills_short = Жабри ящірки (Короткі)
+marking-LizardFrillsShort = Жабри ящірки (Короткі)
 
-marking-LizardFrillsSimple-frills_simple = Lizard Frills (Simple)
-marking-LizardFrillsSimple = Lizard Frills (Simple)
+marking-LizardFrillsSimple-frills_simple = Жабри ящірки (Прості)
+marking-LizardFrillsSimple = Жабри ящірки (Прості)
 
-marking-LizardFrillsAquatic-frills_aquatic = Lizard Frills (Aquatic)
-marking-LizardFrillsAquatic = Lizard Frills (Aquatic)
+marking-LizardFrillsAquatic-frills_aquatic = Жабри ящірки (Акватичні)
+marking-LizardFrillsAquatic = Жабри ящірки (Акватичні)
 
-marking-LizardHornsAngler-horns_angler = Lizard Horns (Angler)
-marking-LizardHornsAngler = Lizard Horns (Angler)
+marking-LizardHornsAngler-horns_angler = Роги ящірки (Приманка)
+marking-LizardHornsAngler = Роги ящірки (Приманка)
 
-marking-LizardHornsCurled-horns_curled = Lizard Horns (Curled)
-marking-LizardHornsCurled = Lizard Horns (Curled)
+marking-LizardHornsCurled-horns_curled = Роги ящірки (Закручені)
+marking-LizardHornsCurled = Роги ящірки (Закручені)
 
-marking-LizardHornsRam-horns_ram = Lizard Horns (Ram)
-marking-LizardHornsRam = Lizard Horns (Ram)
+marking-LizardHornsRam-horns_ram = Роги ящірки (Таран)
+marking-LizardHornsRam = Роги ящірки (Таран)
 
-marking-LizardHornsShort-horns_short = Lizard Horns (Short)
-marking-LizardHornsShort = Lizard Horns (Short)
+marking-LizardHornsShort-horns_short = Роги ящірки (Короткі)
+marking-LizardHornsShort = Роги ящірки (Короткі)
 
-marking-LizardHornsSimple-horns_simple = Lizard Horns
-marking-LizardHornsSimple = Lizard Horns
+marking-LizardHornsSimple-horns_simple = Роги ящірки
+marking-LizardHornsSimple = Роги ящірки
 
-marking-LizardTailSmooth-tail_smooth_primary = Lizard Tail
-marking-LizardTailSmooth-tail_smooth_secondary = Under Tone
-marking-LizardTailSmooth = Lizard Tail (Smooth)
+marking-LizardTailSmooth-tail_smooth_primary = Хвіст ящірки
+marking-LizardTailSmooth-tail_smooth_secondary = Під тон
+marking-LizardTailSmooth = Хвіст ящірки (Гладкий)
 
-marking-LizardTailLarge-tail_large = Lizard Tail (Large)
-marking-LizardTailLarge = Lizard Tail (Large)
+marking-LizardTailLarge-tail_large = Хвіст ящірки (Великий)
+marking-LizardTailLarge = Хвіст ящірки (Великий)
 
-marking-LizardTailSpikes-tail_spikes = Lizard Tail (Spiky)
-marking-LizardTailSpikes = Lizard Tail (Spiky)
+marking-LizardTailSpikes-tail_spikes = Хвіст ящірки (Гострий)
+marking-LizardTailSpikes = Хвіст ящірки (Гострий)
 
-marking-LizardTailLTiger-tail_ltiger = Lizard Tail (Light Tiger Stripes)
-marking-LizardTailLTiger = Lizard Tail (Light Tiger Stripes)
+marking-LizardTailLTiger-tail_ltiger = Хвіст ящірки (Світлі тигрові смуги)
+marking-LizardTailLTiger = Хвіст ящірки (Світлі тигрові смуги)
 
-marking-LizardTailDTiger-tail_dtiger = Lizard Tail (Dark Tiger Stripes)
-marking-LizardTailDTiger = Lizard Tail (Dark Tiger Stripes)
+marking-LizardTailDTiger-tail_dtiger = Хвіст ящірки (Темні тигрові смуги)
+marking-LizardTailDTiger = Хвіст ящірки (Темні тигрові смуги)
 
-marking-LizardTailAquatic-tail_aquatic = Lizard Tail (Aquatic)
-marking-LizardTailAquatic = Lizard Tail (Aquatic)
+marking-LizardTailAquatic-tail_aquatic = Хвіст ящірки (Акватичний)
+marking-LizardTailAquatic = Хвіст ящірки (Акватичний)
 
-marking-LizardSnoutRound-snout_round = Lizard Snout (Round)
-marking-LizardSnoutRound = Lizard Snout (Round)
+marking-LizardSnoutRound-snout_round = Писок ящірки (Круглий)
+marking-LizardSnoutRound = Писок ящірки (Круглий)
 
-marking-LizardSnoutSharp-snout_sharp = Lizard Snout (Sharp)
-marking-LizardSnoutSharp = Lizard Snout (Sharp)
+marking-LizardSnoutSharp-snout_sharp = Писок ящірки (Гострий)
+marking-LizardSnoutSharp = Писок ящірки (Гострий)
 
-marking-LizardChestTiger-body_tiger = Lizard Chest (Tiger)
-marking-LizardChestTiger = Lizard Chest (Tiger)
+marking-LizardChestTiger-body_tiger = Торс ящірки (Тигриний)
+marking-LizardChestTiger = Торс ящірки (Тигриний)
 
-marking-LizardHeadTiger-head_tiger = Lizard Head (Tiger)
-marking-LizardHeadTiger = Lizard Head (Tiger)
+marking-LizardHeadTiger-head_tiger = Голова ящірки (Тигрина)
+marking-LizardHeadTiger = Голова ящірки (Тигрина)
 
-marking-LizardLArmTiger-l_arm_tiger = Lizard Left Arm (Tiger)
-marking-LizardLArmTiger = Lizard Left Arm (Tiger)
+marking-LizardLArmTiger-l_arm_tiger = Ліва рука ящірки (Тигрина)
+marking-LizardLArmTiger = Ліва рука ящірки (Тигрина)
 
-marking-LizardLLegTiger-l_leg_tiger = Lizard Left Leg (Tiger)
-marking-LizardLLegTiger = Lizard Left Leg (Tiger)
+marking-LizardLLegTiger-l_leg_tiger = Ліва нога ящірки (Тигрина)
+marking-LizardLLegTiger = Ліва нога ящірки (Тигрина)
 
-marking-LizardRArmTiger-r_arm_tiger = Lizard Right Arm (Tiger)
-marking-LizardRArmTiger = Lizard Right Arm (Tiger)
+marking-LizardRArmTiger-r_arm_tiger = Права рука ящірки (Тигрина)
+marking-LizardRArmTiger = Права рука ящірки (Тигрина)
 
-marking-LizardRLegTiger-r_leg_tiger = Lizard Right Leg (Tiger)
-marking-LizardRLegTiger = Lizard Right Leg (Tiger)
+marking-LizardRLegTiger-r_leg_tiger = Права нога ящірки (Тигрина)
+marking-LizardRLegTiger = Права нога ящірки (Тигрина)
 
-marking-LizardFrillsDivinity-frills_divinity = Lizard Frills (Divinity)
-marking-LizardFrillsDivinity = Lizard Frills (Divinity)
+marking-LizardFrillsDivinity-frills_divinity = Жабри ящірки (Дивовижні)
+marking-LizardFrillsDivinity = Жабри ящірки (Дивовижні)
 
-marking-LizardFrillsBig-frills_big = Lizard Frills (Big)
-marking-LizardFrillsBig = Lizard Frills (Big)
+marking-LizardFrillsBig-frills_big = Жабри ящірки (Великі)
+marking-LizardFrillsBig = Жабри ящірки (Великі)
 
-marking-LizardFrillsNeckfull-frills_neckfull = Lizard Frills (Neckfull)
-marking-LizardFrillsNeckfull = Lizard Frills (Neckfull)
+marking-LizardFrillsNeckfull-frills_neckfull = Жабри ящірки (Нашийні)
+marking-LizardFrillsNeckfull = Жабри ящірки (Нашийні)
 
-marking-LizardHornsDouble-horns_double = Lizard Horns (Double)
-marking-LizardHornsDouble = Lizard Horns (Double)
+marking-LizardHornsDouble-horns_double = Роги ящірки (Подвійні)
+marking-LizardHornsDouble = Роги ящірки (Подвійні)
 
-marking-LizardFrillsAxolotl-frills_axolotl = Lizard Frills (Axolotl)
-marking-LizardFrillsAxolotl = Lizard Frills (Axolotl)
+marking-LizardFrillsAxolotl-frills_axolotl = Жабри ящірки (Аксолотль)
+marking-LizardFrillsAxolotl = Жабри ящірки (Аксолотль)
 
-marking-LizardFrillsHood-frills_hood_primary = Outer Hood
-marking-LizardFrillsHood-frills_hood_secondary = Inner Hood
-marking-LizardFrillsHood = Lizard Frills (Hood)
+marking-LizardFrillsHood-frills_hood_primary = Зовнішній капюшон
+marking-LizardFrillsHood-frills_hood_secondary = Внутрішній капюшон
+marking-LizardFrillsHood = Жабри ящірки (Капюшон)
 
-marking-LizardHornsArgali-horns_argali = Lizard Horns (Argali)
-marking-LizardHornsArgali = Lizard Horns (Argali)
+marking-LizardHornsArgali-horns_argali = Роги ящірки (Аргалі)
+marking-LizardHornsArgali = Роги ящірки (Аргалі)
 
-marking-LizardHornsAyrshire-horns_ayrshire = Lizard Horns (Ayrshire)
-marking-LizardHornsAyrshire = Lizard Horns (Ayrshire)
+marking-LizardHornsAyrshire-horns_ayrshire = Роги ящірки (Ейршир)
+marking-LizardHornsAyrshire = Роги ящірки (Ейршир)
 
-marking-LizardHornsMyrsore-horns_myrsore = Lizard Horns (Myrsore)
-marking-LizardHornsMyrsore = Lizard Horns (Myrsore)
+marking-LizardHornsMyrsore-horns_myrsore = Роги ящірки (Мюрсоре)
+marking-LizardHornsMyrsore = Роги ящірки (Мюрсоре)
 
-marking-LizardHornsBighorn-horns_bighorn = Lizard Horns (Bighorn)
-marking-LizardHornsBighorn = Lizard Horns (Bighorn)
+marking-LizardHornsBighorn-horns_bighorn = Роги ящірки (Великорогі)
+marking-LizardHornsBighorn = Роги ящірки (Великорогі)
 
-marking-LizardHornsDemonic-horns_demonic = Lizard Horns (Demonic)
-marking-LizardHornsDemonic = Lizard Horns (Demonic)
+marking-LizardHornsDemonic-horns_demonic = Роги ящірки (Демонічні)
+marking-LizardHornsDemonic = Роги ящірки (Демонічні)
 
-marking-LizardHornsKoboldEars-horns_kobold_ears = Lizard Ears (Kobold)
-marking-LizardHornsKoboldEars = Lizard Ears (Kobold)
+marking-LizardHornsKoboldEars-horns_kobold_ears = Вуха ящірки (Кобольдові)
+marking-LizardHornsKoboldEars = Вуха ящірки (Кобольдові)
 
-marking-LizardHornsFloppyKoboldEars-horns_floppy_kobold_ears = Lizard Ears (Floppy Kobold)
-marking-LizardHornsFloppyKoboldEars = Lizard Ears (Floppy Kobold)
+marking-LizardHornsFloppyKoboldEars-horns_floppy_kobold_ears = Вуха ящірки (Свисаючі кобольдові)
+marking-LizardHornsFloppyKoboldEars = Вуха ящірки (Свисаючі кобольдові)
 
-marking-LizardChestUnderbelly-body_underbelly = Lizard Chest (Underbelly)
-marking-LizardChestUnderbelly = Lizard Chest (Underbelly)
+marking-LizardChestUnderbelly-body_underbelly = Торс ящірки (Підчеревина)
+marking-LizardChestUnderbelly = Торс ящірки (Підчеревина)
 
-marking-LizardChestBackspikes-body_backspikes = Lizard Back spikes (Four)
-marking-LizardChestBackspikes = Lizard Back spikes (Four)
+marking-LizardChestBackspikes-body_backspikes = Наспинні шипи ящірки (Чотири)
+marking-LizardChestBackspikes = Наспинні шипи ящірки (Чотири)
 
-marking-LizardChestFin-body_fin = Lizard Fin
-marking-LizardChestFin = Lizard Fin
+marking-LizardChestFin-body_fin = Плавник ящірки
+marking-LizardChestFin = Плавник ящірки
 
-marking-LizardSnoutSplotch = Lizard Snout (Splotch)
-marking-LizardSnoutSplotch-snout_splotch_primary = Muzzle
-marking-LizardSnoutSplotch-snout_splotch_secondary = Snoot
+marking-LizardSnoutSplotch = Писок ящірки (Пляма)
+marking-LizardSnoutSplotch-snout_splotch_primary = Підборіддя
+marking-LizardSnoutSplotch-snout_splotch_secondary = Писок
 
-marking-LizardSnoutVisageSharp = Lizard Visage (Sharp)
-marking-LizardSnoutVisageSharp-visage_sharp = Lizard Visage (Sharp)
+marking-LizardSnoutVisageSharp = Морда ящірки (Гострий)
+marking-LizardSnoutVisageSharp-visage_sharp = Морда ящірки (Гострий)
 
-marking-LizardSnoutVisageRound = Lizard Visage (Round)
-marking-LizardSnoutVisageRound-visage_round = Lizard Visage (Round)
+marking-LizardSnoutVisageRound = Морда ящірки (Круглий)
+marking-LizardSnoutVisageRound-visage_round = Морда ящірки (Круглий)
