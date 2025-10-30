@@ -1,5 +1,5 @@
 marking-TattooVoxNightlingHead-tattoo_nightling_head = Татуювання голови (Нічний птах)
-marking-TattooVoxNightlingHead = VТатуювання голови (Нічний птах)
+marking-TattooVoxNightlingHead = Татуювання голови (Нічний птах)
 
 marking-TattooVoxArrowHead-tattoo_arrow_head = Татуювання голови (Стріла)
 marking-TattooVoxArrowHead = Татуювання голови (Стріла)
