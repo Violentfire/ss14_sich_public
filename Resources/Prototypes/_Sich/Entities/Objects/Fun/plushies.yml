@@ -5,8 +5,8 @@
   description: Це справді плюшевий N1!?
   components:
   - type: Sprite
-    state: plushie_n1
-    sprite: _Sich/Objects/Fun/plushies.rsi
+    state: n1plushie
+    sprite: _Sich/Objects/Fun/Plushies/n1.rsi
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Machines/Arcade/hahaha.ogg
@@ -33,8 +33,8 @@
   description: СПОГЛЯДАЙ СИЛОМИЦЬ ЯНГОЛА!
   components:
   - type: Sprite
-    sprite: _Sich/Objects/Fun/plushies.rsi
-    state: gabriel_plushie
+    sprite: _Sich/Objects/Fun/Plushies/gabriel.rsi
+    state: gabrielplushie
   - type: Item
     heldPrefix: gabrielplushie
   - type: EmitSoundOnUse
@@ -89,7 +89,7 @@
   description: error.mising.itemdiscription
   components:
   - type: Sprite
-    sprite: _Sich/Objects/Fun/plushies.rsi
+    sprite: _Sich/Objects/Fun/Plushies/error.rsi
     layers:
     - state: errorplushie_on
       map: [ "enum.ToggleableVisuals.Layer" ]
