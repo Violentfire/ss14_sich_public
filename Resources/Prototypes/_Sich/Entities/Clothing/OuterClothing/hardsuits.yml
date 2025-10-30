@@ -480,8 +480,8 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitAdmin
-  name: bluespace traveler hardsuit [admeme]
-  description: A modified Bluespace Traveler hardsuit, or Bluespace God, or whoever this guy is.
+  name: скафандр мандрівника блюспейс-простором [admeme]
+  description: Модифікований скафандр мандрівника у блюспейс-просторі, чи блюспейс-бога, чи як цього хлопа взагалі звати.
   components:
   - type: Sprite
     sprite: _Sich/Clothing/OuterClothing/Hardsuits/debugadmin.rsi

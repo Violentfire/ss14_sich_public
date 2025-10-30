@@ -1,5 +1,5 @@
 - type: entity
-  id: BonsaiPottedPlantBase
+  id: BonsaiPottedPlantBaseSich
   parent: PottedPlantBase
   name: бонсай у горщику
   description: Трохи модифікованої природи у горщику.
@@ -10,42 +10,42 @@
 
 - type: entity
   id: PottedBonsai1
-  parent: BonsaiPottedPlantBase
+  parent: BonsaiPottedPlantBaseSich
   components:
   - type: Sprite
     state: Bonsai_1
 
 - type: entity
   id: PottedBonsai2
-  parent: BonsaiPottedPlantBase
+  parent: BonsaiPottedPlantBaseSich
   components:
   - type: Sprite
     state: Bonsai_2
 
 - type: entity
   id: PottedBonsai3
-  parent: BonsaiPottedPlantBase
+  parent: BonsaiPottedPlantBaseSich
   components:
   - type: Sprite
     state: Bonsai_3
 
 - type: entity
   id: PottedBonsai4
-  parent: BonsaiPottedPlantBase
+  parent: BonsaiPottedPlantBaseSich
   components:
   - type: Sprite
     state: Bonsai_4
 
 - type: entity
   id: PottedBonsai5
-  parent: BonsaiPottedPlantBase
+  parent: BonsaiPottedPlantBaseSich
   components:
   - type: Sprite
     state: Bonsai_5
 
 - type: entity
   id: PottedBonsai6
-  parent: BonsaiPottedPlantBase
+  parent: BonsaiPottedPlantBaseSich
   components:
   - type: Sprite
     state: Bonsai_6

@@ -1,6 +1,6 @@
 - type: entity
   parent: ClothingOuterBaseToggleable
-  id: ClothingOuterMansusRobe
+  id: ClothingOuterMansusRobeSich
   name: таємнича роба
   description: Дивного вигляду роба, яка тримає в собі таємничу силу...
   components:

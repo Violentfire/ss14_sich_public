@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseFlag
-  id: UAFlag
+  id: UAFlagSich
   name: Прапор Української Космічної Держави
   description: "Слава Україні!"
   components:
@@ -10,7 +10,7 @@
     
 - type: entity
   parent: BaseFlag
-  id: SolFedFlag
+  id: SolFedFlagSich
   name: Прапор Сонячної Федерації
   description: "Прапор головної держави Людства. За демократію!"
   components:
@@ -20,7 +20,7 @@
     
 - type: entity
   parent: BaseFlag
-  id: DorenvirFlag
+  id: DorenvirFlagSich
   name: Прапор Доренвірської Конфедерації
   description: "Слава Каменюці! Породі Слава!"
   components:
@@ -30,7 +30,7 @@
     
 - type: entity
   parent: BaseFlag
-  id: MikarisFlag
+  id: MikarisFlagSich
   name: Прапор Зоряної Республіки Мікаріс
   description: "Сатія сяє над вашою головою."
   components:
@@ -40,7 +40,7 @@
     
 - type: entity
   parent: BaseFlag
-  id: AdomaiFlag
+  id: AdomaiFlagSich
   name: Прапор Нового Королівства Адомай
   description: "Вітри Адомаю пронизують вашу шкіру крізь одяг."
   components:
@@ -50,7 +50,7 @@
     
 - type: entity
   parent: BaseFlag
-  id: RenuinFlag
+  id: RenuinFlagSich
   name: Прапор Міжпланетної Асоціації Ренюінь
   description: "Ренюінь партія пишатись вами."
   components:
