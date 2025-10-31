@@ -24,6 +24,7 @@
     accent: zombieMoth
   - type: Speech
     speechVerb: Moth
+    speechSounds: Moth # Додавання білду Січі. Перенесено з КД
     allowedEmotes: ['Chitter', 'Squeak']
   - type: TypingIndicator
     proto: moth
