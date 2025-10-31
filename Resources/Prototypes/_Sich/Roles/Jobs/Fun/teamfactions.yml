@@ -20,7 +20,7 @@
     jumpsuit: ClothingUniformJumpsuitLawyerBlack
     back: ClothingBackpackSatchelHolding
     shoes: ClothingShoesBootsCombatFilled
-    head: ClothingHeadHatChaosIncBeret
+    head: SichClothingHeadHatChaosIncBeret
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesCombat
     outerClothing: SichClothingOuterCoatChaosIncTrench
@@ -49,7 +49,7 @@
 #SolFed and Co.
 
 - type: startingGear
-  id: SolFedPoliceGear
+  id: SichSolFedPoliceGear
   equipment:
     jumpsuit: SichClothingUniformJumpsuitSolFed
     back: ClothingBackpackSecurity
