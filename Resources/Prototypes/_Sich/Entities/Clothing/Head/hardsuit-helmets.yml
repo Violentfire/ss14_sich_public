@@ -385,8 +385,8 @@
   parent: ClothingHeadHelmetHardsuitSyndieCommander
   id: SichClothingHeadHelmetHardsuitAdmin
   categories: [ HideSpawnMenu ]
-  name: bluespace traveler hardsuit helmet [admeme]
-  description: Some modified bluespace helmet. Why does it look like a biker helmet?
+  name: шолом мандрівника блюспейс-простором [admeme]
+  description: Модифікований блюспейс шолом. Чому він підозріло схожий на байкерський шолом?..
   components:
   - type: Sprite
     sprite: _Sich/Clothing/Head/Hardsuits/debugadmin.rsi
