@@ -134,3 +134,14 @@
   id: 10
   time: '2025-10-30T18:14:03.0000000+00:00'
   url: https://github.com/Sich-me/ss14_sich_public/pull/49
+- author: Pyrizhok333x2
+  changes:
+  - message: "\u0410\u0432\u0442\u043E\u043C\u0430\u0442\u0438 \u0437 \u0457\u0436\
+      \u0435\u044E \u0442\u0435\u043F\u0435\u0440 \u043C\u0430\u044E\u0442\u044C \u0413\
+      \u0435\u043B\u043B\u043E\u0432\u0456\u043D\u0441\u044C\u043A\u0438\u0439 \u0437\
+      \u043E\u0432\u043D\u0456\u0448\u043D\u0456\u0439 \u0432\u0438\u0433\u043B\u044F\
+      \u0434"
+    type: Tweak
+  id: 11
+  time: '2025-10-31T12:18:37.0000000+00:00'
+  url: https://github.com/Sich-me/ss14_sich_public/pull/55
