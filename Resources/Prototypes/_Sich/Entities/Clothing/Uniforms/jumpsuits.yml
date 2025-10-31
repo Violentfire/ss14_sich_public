@@ -1,6 +1,6 @@
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitCIAAgentSich
+  id: SichClothingUniformJumpsuitCIAAgent
   name: уніформа агента МКР НТ
   description: Холодний чорний костюм, що зазвичай носять агенти Мережи Корпоративної Розвідки.
   components:

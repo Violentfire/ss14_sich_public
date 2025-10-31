@@ -1,5 +1,5 @@
 - type: entity
-  id: BonsaiPottedPlantBaseSich
+  id: SichBonsaiPottedPlantBase
   parent: PottedPlantBase
   name: бонсай у горщику
   description: Трохи модифікованої природи у горщику.
@@ -9,43 +9,43 @@
     sprite: _Sich/Structures/Furniture/bonsai.rsi
 
 - type: entity
-  id: PottedBonsai1
-  parent: BonsaiPottedPlantBaseSich
+  id: SichPottedBonsai1
+  parent: SichBonsaiPottedPlantBase
   components:
   - type: Sprite
     state: Bonsai_1
 
 - type: entity
-  id: PottedBonsai2
-  parent: BonsaiPottedPlantBaseSich
+  id: SichPottedBonsai2
+  parent: SichBonsaiPottedPlantBase
   components:
   - type: Sprite
     state: Bonsai_2
 
 - type: entity
-  id: PottedBonsai3
-  parent: BonsaiPottedPlantBaseSich
+  id: SichPottedBonsai3
+  parent: SichBonsaiPottedPlantBase
   components:
   - type: Sprite
     state: Bonsai_3
 
 - type: entity
-  id: PottedBonsai4
-  parent: BonsaiPottedPlantBaseSich
+  id: SichPottedBonsai4
+  parent: SichBonsaiPottedPlantBase
   components:
   - type: Sprite
     state: Bonsai_4
 
 - type: entity
-  id: PottedBonsai5
-  parent: BonsaiPottedPlantBaseSich
+  id: SichPottedBonsai5
+  parent: SichBonsaiPottedPlantBase
   components:
   - type: Sprite
     state: Bonsai_5
 
 - type: entity
-  id: PottedBonsai6
-  parent: BonsaiPottedPlantBaseSich
+  id: SichPottedBonsai6
+  parent: SichBonsaiPottedPlantBase
   components:
   - type: Sprite
     state: Bonsai_6

@@ -47,7 +47,7 @@
 - type: loadout
   id: ChaplainWitchHat
   equipment:
-    head: ClothingHeadHatWitch
+    head: SichClothingHeadHatWitch
 
 - type: loadout
   id: ChaplainWitchHatAlt
