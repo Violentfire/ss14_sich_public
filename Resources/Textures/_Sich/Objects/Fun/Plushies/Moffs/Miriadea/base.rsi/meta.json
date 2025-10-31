@@ -17,9 +17,26 @@
     {
       "name": "inhand-right",
       "directions": 4
-    },    {
+    },    
+    {
       "name": "inhand-left",
       "directions": 4
+    },
+    {
+      "name": "all_plushies",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
     }
   ]
 }

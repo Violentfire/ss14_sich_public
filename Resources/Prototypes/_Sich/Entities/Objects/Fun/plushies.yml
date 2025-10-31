@@ -204,9 +204,31 @@
   - type: UseDelay
     delay: 0.5
 
+## Спавнер для рандом пулів чи мапінгу
+- type: entity
+  id: SichPlushieMoffRandom
+  name: спавнер випадкової плюшевої ніани
+  suffix: випадкова, одна з наших
+  components:
+  - type: Sprite
+    sprite: _Sich/Objects/Fun/Plushies/Moffs/Miriadea/base.rsi
+    state: all_plushies
+  - type: RandomSpawner
+    prototypes:
+      - SichPlushieMoffMiriadeya
+      - SichPlushieMoffMiriadeyaBar
+      - SichPlushieMoffMiriadeyaScience
+      - SichPlushieMoffMirka
+      - SichPlushieMoffMirkaBar
+      - SichPlushieMoffMirkaService
+      - SichPlushieMoffRanch
+      - SichPlushieMoffRanchBar
+      - SichPlushieMoffRanchBotanic
+    offset: 0
+
 ## Міріадея. Міріадея Шовковязна. Персонажка Міюгі, авторки спрайтів серії цих плюшів
 - type: entity
-  parent: BasePlushieMoff
+  parent: SichBasePlushieMoff
   id: SichPlushieMoffMiriadeya
   name: плюшева ніана "Міріадея"
   description: " \"Темне тіло, що усіяне світлими плямами й ніжно переливається з ними, нагадує собою космічний пейзаж. Крила ж більш темні та прикрашені ледь чи не чорними візерунками. Виглядає більш розпушеною та м'якою, ніж має бути.\"
@@ -228,7 +250,7 @@
           Quantity: 20
 
 - type: entity
-  parent: PlushieMoffMiriadeya
+  parent: SichPlushieMoffMiriadeya
   id: SichPlushieMoffMiriadeyaBar
   name: плюшева ніана "Міріадея сервіс"
   description: " \"Наука — це вибухи та підпали, тому- Це з неї попіл посипався? . .\"
@@ -254,7 +276,7 @@
           Quantity: 2.5
 
 - type: entity
-  parent: PlushieMoffMiriadeya
+  parent: SichPlushieMoffMiriadeya
   id: SichPlushieMoffMiriadeyaScience
   name: плюшева ніана "Міріадея наука"
   description: " \"Дззз!\"
@@ -279,7 +301,7 @@
 
 ## Мірка. Мірка Злидина. Персонаж Дітрита
 - type: entity
-  parent: BasePlushieMoff
+  parent: SichBasePlushieMoff
   id: SichPlushieMoffMirka
   name: плюшева ніана "Мірка"
   description: " \"Пухнастий дисонанс - по-іншому це не назвеш, бо як таке диво може бути блакитним, як небо, а пухким, як хмара!\"
@@ -303,7 +325,7 @@
           Quantity: 5
 
 - type: entity
-  parent: PlushieMoffMirka
+  parent: SichPlushieMoffMirka
   id: SichPlushieMoffMirkaBar
   name: плюшева ніана "Мірка бар"
   description: " \"Це птах? Це літак? Ні! Це Мірчук Злиденюк!\"
@@ -313,7 +335,7 @@
     sprite: _Sich/Objects/Fun/Plushies/Moffs/Mirka/bartender.rsi
 
 - type: entity
-  parent: PlushieMoffMirka
+  parent: SichPlushieMoffMirka
   id: SichPlushieMoffMirkaService
   name: плюшева ніана "Мірка сервіс"
   description: " \"Кззз-\"
@@ -324,7 +346,7 @@
 
 ## Ранч. Ранч Епіполос. Персонаж Пігріхи
 - type: entity
-  parent: BasePlushieMoff
+  parent: SichBasePlushieMoff
   id: SichPlushieMoffRanch
   name: плюшева ніана "Ранч"
   description: " \"Нічим непримітний у плані зовнішності, синього кольору, антенки та крила зазвичай притиснуті до тіла, другі мають візерунок схожий на дуже бідне нічне небо, праве чутка припущене. Очі темно-синього кольору постійно бігають, концентруючись та звертаючи увагу на будь-яку хоч малу дію з боку оточення.\"
@@ -339,7 +361,7 @@
         offset: "0, 0.09375"
 
 - type: entity
-  parent: PlushieMoffRanch
+  parent: SichPlushieMoffRanch
   id: SichPlushieMoffRanchBar
   name: плюшева ніана "Ранч бар"
   description: " Дивлячись на цю іграшку з'являється відчуття, що вас зараз будуть допитувати.
@@ -360,7 +382,7 @@
           Quantity: 1
 
 - type: entity
-  parent: PlushieMoffRanch
+  parent: SichPlushieMoffRanch
   id: SichPlushieMoffRanchBotanic
   name: плюшева ніана "Ранч ботаніка"
   description: " \"Свіжа бавовна на стійці ботаніки!\", - лунає у вашій голові при погляді на цього плюша.
