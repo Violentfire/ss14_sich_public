@@ -226,7 +226,7 @@
       - id: ClothingMaskBreath
         prob: 0.03
         orGroup: dressersecondloot
-      - id: SichClothingHeadHatWitch
+      - id: ClothingHeadHatWitch
         prob: 0.03
         orGroup: dresserthirdloot
       - id: ClothingOuterCoatLab
