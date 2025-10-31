@@ -1099,7 +1099,7 @@
   - type: SpeakOnUIClosed
     pack: GetmoreChocolateCorpGoodbyes
   - type: Sprite
-    sprite: Resources/Textures/_Sich/Structures/Machines/VendingMachines/Halloween_Snack.rsi
+    sprite: _Sich/Structures/Machines/VendingMachines/Halloween_Snack.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -1149,7 +1149,7 @@
   suffix: Blue
   components:
   - type: Sprite
-    sprite: Resources/Textures/_Sich/Structures/Machines/VendingMachines/Halloween_Snack.rsi
+    sprite: _Sich/Structures/Machines/VendingMachines/Halloween_Snack.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -1169,7 +1169,7 @@
   suffix: Orange
   components:
   - type: Sprite
-    sprite: Resources/Textures/_Sich/Structures/Machines/VendingMachines/Halloween_Snack.rsi
+    sprite: _Sich/Structures/Machines/VendingMachines/Halloween_Snack.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -1189,7 +1189,7 @@
   suffix: Green
   components:
   - type: Sprite
-    sprite: Resources/Textures/_Sich/Structures/Machines/VendingMachines/Halloween_Snack.rsi
+    sprite: _Sich/Structures/Machines/VendingMachines/Halloween_Snack.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -1209,7 +1209,7 @@
   suffix: Teal
   components:
   - type: Sprite
-    sprite: Resources/Textures/_Sich/Structures/Machines/VendingMachines/Halloween_Snack.rsi
+    sprite: _Sich/Structures/Machines/VendingMachines/Halloween_Snack.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
