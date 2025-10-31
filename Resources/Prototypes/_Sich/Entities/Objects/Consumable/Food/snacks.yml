@@ -139,7 +139,7 @@
   parent: BaseItem
   id: SichFoodSnackEyeLollipop
   name: льодяник у вигляді ока
-  description: Це льодяник який виглядає як звичайне око, ні це не Око Ктулуху.
+  description: Це льодяник, який виглядає як звичайне око, ні це не Око Ктулху.
   components:
   - type: Sprite
     sprite: _Sich/Objects/Consumable/Food/candy.rsi
@@ -180,7 +180,7 @@
   parent: FoodSnackSwirlLollipop
   id: SichFoodSnackEyeLollipopOpen
   name: льодяник у вигляді ока
-  description: Це льодяник який виглядає як звичайне око, ні це не Око Ктулуху.
+  description: Це льодяник який виглядає як звичайне око, ні це не Око Ктулху.
   components:
   - type: Sprite
     sprite: _Sich/Objects/Consumable/Food/candy.rsi

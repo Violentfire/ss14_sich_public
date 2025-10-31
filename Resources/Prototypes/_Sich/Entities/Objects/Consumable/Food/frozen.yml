@@ -9,7 +9,7 @@
   name: поплавлене морозиво
   parent: SichFoodFrozenBase
   id: SichFoodFrozenMelted
-  description: схоже це морозиво дуже по плавило.
+  description: Схоже, це морозиво дуже поплавило.
   components:
   - type: Item
     inhandVisuals:
@@ -27,7 +27,7 @@
   name: морозиво привид
   parent: SichFoodFrozenBase
   id: SichFoodFrozenGhost
-  description: трохи прозоре морозиво у вигляді привида, на смак як пломбір з ектоплазмою.
+  description: Трохи прозоре морозиво у вигляді привида, на смак як пломбір з ектоплазмою.
   components:
   - type: Item
     inhandVisuals:
