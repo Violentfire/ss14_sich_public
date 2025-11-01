@@ -1,6 +1,6 @@
 - type: entity
   parent: [BaseItem, BaseStash]
-  id: SichSignriengener
+  id: SichSignCringineer
   name: Знак "Увага Кринженери"
   description: Обережно, працюють інжири! Поряд можливі втечі сингулярності, втечі тесли, втечі атмосфери, витоки плазми, металевий присмак у роті, та можливо, щось що працює як треба.
   components:

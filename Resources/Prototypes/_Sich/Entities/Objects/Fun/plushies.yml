@@ -1,6 +1,6 @@
 - type: entity
   parent: BasePlushie
-  id: PlushieN1
+  id: SichPlushieN1
   name: плюшевий N1 
   description: Це справді плюшевий N1!?
   components:
@@ -28,7 +28,7 @@
 
 - type: entity
   parent: BasePlushie
-  id: PlushieGabriel
+  id: SichPlushieGabriel
   name: Плюшевий Янгол
   description: СПОГЛЯДАЙ СИЛОМИЦЬ ЯНГОЛА!
   components:
@@ -84,7 +84,7 @@
     
 - type: entity
   parent: BasePlushie
-  id: PlushieUknown
+  id: SichPlushieError
   name: error.mising.itemname
   description: error.mising.itemdiscription
   components:
