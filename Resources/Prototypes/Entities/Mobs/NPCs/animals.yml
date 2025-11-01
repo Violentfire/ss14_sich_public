@@ -14,7 +14,7 @@
       state: bat
       sprite: Mobs/Animals/bat.rsi
   - type: Speech
-    speechSounds: Squeak
+    speechSounds: Moth # Додавання білду Січі. Перенесено з КД
     speechVerb: SmallMob
     allowedEmotes: ['Squeak']
   - type: Fixtures
