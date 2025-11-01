@@ -8,7 +8,7 @@
 
 - type: entity
   parent: SichPosterBase
-  id: SichPosterCintrabandSettler
+  id: SichPosterContrabandSettler
   name: "Settler corp."
   description: "Settler, корпорація яка відома своїми жахливими умовами праці й низькими стандартами. Вони відправляють велику кількість колоністів в далекі глибини космосу для видобутку плазми. Схоже вони настільки жадібні що навіть не дописали одну T на плакаті."
   components:
@@ -17,12 +17,12 @@
 
 - type: entity
   parent: SichPosterBase
-  id: SichPosterContrabandReinyn
+  id: SichPosterContrabandRenyin
   name: "Постер Ренюінь"
   description: "Давно, у 2151 році, в комуністичному Китаї сталася революція, унаслідок якої владу було змінено на більш демократичну. Однак віддалені колонії, у яких існував автономний центр для ефективнішого управління, проголосили незалежність і утворили Міжпланетну асоціацію Ренюінь."
   components:
   - type: Sprite
-    state: sich_poster_reinyn
+    state: sich_poster_renyin
 
 - type: entity
   parent: SichPosterBase
