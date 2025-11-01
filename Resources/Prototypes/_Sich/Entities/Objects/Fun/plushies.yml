@@ -204,28 +204,6 @@
   - type: UseDelay
     delay: 0.5
 
-## Спавнер для рандом пулів чи мапінгу
-- type: entity
-  id: SichPlushieMoffRandom
-  name: спавнер випадкової плюшевої ніани
-  suffix: випадкова, одна з наших
-  components:
-  - type: Sprite
-    sprite: _Sich/Objects/Fun/Plushies/Moffs/Miriadea/base.rsi
-    state: all_plushies
-  - type: RandomSpawner
-    prototypes:
-      - SichPlushieMoffMiriadeya
-      - SichPlushieMoffMiriadeyaBar
-      - SichPlushieMoffMiriadeyaScience
-      - SichPlushieMoffMirka
-      - SichPlushieMoffMirkaBar
-      - SichPlushieMoffMirkaService
-      - SichPlushieMoffRanch
-      - SichPlushieMoffRanchBar
-      - SichPlushieMoffRanchBotanic
-    offset: 0
-
 ## Міріадея. Міріадея Шовковязна. Персонажка Міюгі, авторки спрайтів серії цих плюшів
 - type: entity
   parent: SichBasePlushieMoff
@@ -253,8 +231,8 @@
   parent: SichPlushieMoffMiriadeya
   id: SichPlushieMoffMiriadeyaBar
   name: плюшева ніана "Міріадея сервіс"
-  description: " \"Наука — це вибухи та підпали, тому- Це з неї попіл посипався? . .\"
-    \n\nОдяг вченої на ній виглядає ідеально, проте здається, наче від неї доноситься запах горілого пуху. . ."
+  description: " \"Дззз!\"
+    \n\nВід погляду на неї ви відчуваєте внутрішню тривогу, що в сервісі сьогодні знову будуть подавати одну бавовняну випічку. . ."
   components:
   - type: Sprite
     sprite: _Sich/Objects/Fun/Plushies/Moffs/Miriadea/service.rsi
@@ -279,8 +257,8 @@
   parent: SichPlushieMoffMiriadeya
   id: SichPlushieMoffMiriadeyaScience
   name: плюшева ніана "Міріадея наука"
-  description: " \"Дззз!\"
-    \n\nВід погляду на неї ви відчуваєте внутрішню тривогу, що в сервісі сьогодні знову будуть подавати одну бавовняну випічку. . ."
+  description: " \"Наука — це вибухи та підпали, тому- Це з неї попіл посипався? . .\"
+    \n\nОдяг вченої на ній виглядає ідеально, проте здається, наче від неї доноситься запах горілого пуху. . ."
   components:
   - type: Sprite
     sprite: _Sich/Objects/Fun/Plushies/Moffs/Miriadea/scientist.rsi
